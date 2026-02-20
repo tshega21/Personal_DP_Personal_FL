@@ -76,6 +76,7 @@ class Ditto(BaseTrainerLocal):
       return key, opt.update_fn(batch_idx, mean_grad, opt_state)
 
     batch_update = private_batch_update if self.use_dp else batch_update
+    # just in time compatability --> something to do with how it runs on gpu
     batch_update = jit(batch_update)
 
     ############################################################################
@@ -114,6 +115,7 @@ class Ditto(BaseTrainerLocal):
         opt_state = opt.init_fn(local_params[t])
         for batch_idx, batch in enumerate(local_batches):
           prox_params = global_params
+          #private
           key, opt_state = batch_update(key, batch_idx, opt_state, prox_params, batch,
                                         self.noise_mults[t])
         new_local_params = opt.params_fn(opt_state)
