@@ -12,7 +12,7 @@ def read_config(config_file):
     Parameters
     ----------
     config_file : str
-        Path towards the con fig file in YAML.
+        Path towards the config file in YAML.
     Returns
     -------
     dict

@@ -8,7 +8,12 @@ NUM_LABELS = 10
 NUM_CLIENTS = 10
 
 data_path = os.path.join(datasets.RAW_DATA_DIR, "cifar10")
+
+#downloads dataset and creates training set
+
 train_data = CIFAR10(data_path, train=True, download=True)
+
+
 data, target = np.array(train_data.data), np.array(train_data.targets)
 
 # Create federated datasets
