@@ -45,6 +45,8 @@ except ModuleNotFoundError as e:
     print(f'{module_name} import failed: {e}')
 
 project_abspath = os.path.abspath(os.path.join(os.getcwd(),".."))
+
+#Configuration file reading
 dict = read_config(get_config_file_path(dataset_name=f"fed_{args.dataset}", debug=False))
 # save_dir
 save_dir = os.path.join(project_abspath, dict["save_dir"])

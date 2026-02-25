@@ -10,9 +10,10 @@ NUM_CLIENTS = 10
 data_path = os.path.join(datasets.RAW_DATA_DIR, "cifar10")
 
 #downloads dataset and creates training set
-
 train_data = CIFAR10(data_path, train=True, download=True)
 
+#data.shape = (50000, 32, 32, 3)
+#target.shape =  (50000)
 
 data, target = np.array(train_data.data), np.array(train_data.targets)
 
@@ -22,11 +23,15 @@ if not (os.path.exists(save_path)):
     os.mkdir(save_path)
 
 num_examples = len(train_data)
+
+#5000 images per client
 num_examples_per_client = num_examples // NUM_CLIENTS
 print(num_examples)
 
 perm = np.random.permutation(num_examples)
 for cid in range(NUM_CLIENTS):
+    
+    #slices shuffled indices for each client
     indices = np.array(perm[cid * num_examples_per_client : (cid+1) * num_examples_per_client]).astype(int)
     client_X = data[indices]
     client_y = target[indices]

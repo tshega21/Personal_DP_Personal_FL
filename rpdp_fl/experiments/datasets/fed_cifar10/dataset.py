@@ -10,6 +10,8 @@ from torchvision.transforms import Compose, Normalize, ToTensor
 
 CIFAR10_MEAN = (0.4914, 0.4822, 0.4465)
 CIFAR10_STD_DEV = (0.2023, 0.1994, 0.2010)
+
+# converts to rgb values from (0-255) - (0-1), values centered at zero
 CIFAR10_TRANSFORM = Compose([ToTensor(), Normalize(CIFAR10_MEAN, CIFAR10_STD_DEV)])
 
 class Cifar10Raw(Dataset):
@@ -39,10 +41,13 @@ class Cifar10Raw(Dataset):
             client_name = f"client{idx}"
             client_data = np.load(os.path.join(data_path, f"{client_name}.npy"), allow_pickle=True)
 
+
             features = [sample[0] for sample in client_data]
             labels = [sample[1] for sample in client_data]
 
             nb = len(client_data)
+            
+            #splits into test and training data
             indices_train, indices_test = train_test_split(
                 np.arange(nb),
                 test_size=1.0 - train_fraction,
@@ -51,10 +56,13 @@ class Cifar10Raw(Dataset):
                 shuffle=True
             )
             sets = np.array(["train"] * nb)
+            
+            #numpy feature allows indices to select multiple elements at once, cool
             sets[indices_test] = "test"
 
             self.features.append(features)
             self.labels.append(labels)
+            # indicates which indice corresponds to test or train
             self.sets.append(sets)
 
         # for center_data_file in self.data_dir.glob("*.npy"):
@@ -101,7 +109,9 @@ class Cifar10Raw(Dataset):
 class FedCifar10(Dataset):
     def __init__(
         self,
+        # raw data object from Cifar10Raw
         rawdata: Cifar10Raw,
+        #client id = center
         center: int = 0,
         train: bool = True,
         pooled: bool = False,

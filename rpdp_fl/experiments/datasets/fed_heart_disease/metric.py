@@ -4,7 +4,7 @@ def metric(y_true, y_pred, per_class=False):
     y_true = y_true.astype("uint8").flatten()
     y_pred = y_pred.flatten()
     # The try except is needed because when the metric is batched some batches
-    # have one class only
+    # have one class only, Binary classification
     try:
         # proposed modification in order to get a metric that calcs on center 2
         # (y=1 only on that center)
