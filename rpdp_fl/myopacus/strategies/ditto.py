@@ -2,7 +2,6 @@ import numpy as np
 import time
 import torch
 from typing import List
-import copy 
 
 from myopacus import PrivacyEngine
 from myopacus.strategies.strategies_utils import _Model
@@ -73,7 +72,7 @@ def evaluate_model_on_tests(
         return results_dict
     
 
-class FedAvg:
+class Ditto:
     """Federated Averaging Strategy class.
 
     The Federated Averaging strategy is the most simple centralized FL strategy.
@@ -130,6 +129,8 @@ class FedAvg:
         client_rate: float,
         num_steps: int,
         num_rounds: int,
+        num_personal_steps: int,
+        reg_param: float = 1, #regularization parameter
         privacy_engine: PrivacyEngine = None,
         device: str = "cuda:0",
         log: bool = False,
@@ -141,11 +142,15 @@ class FedAvg:
         **kwargs
     ):
         self.privacy_engine = privacy_engine
-        
+        self.reg_param = reg_param
+        self.num_personal_steps = num_personal_steps
         self.client_rate = client_rate
         self.num_rounds = num_rounds
         self.num_steps = num_steps
-
+        
+        #do I add this or no? how to include this in DP accounting :/
+        self.num_personal_steps = num_personal_steps
+        
         self.log = log
         self.log_period = log_period
         self.log_basename = log_basename
@@ -153,11 +158,10 @@ class FedAvg:
         self._seed = seed
         set_random_seed(self._seed)
 
-
-        
-        self.models_list = [
+        self.local_models_list = [
             _Model(
-                model=copy.deepcopy(model),
+                #don't need deepcopy because deepcopy is done in strategies_utils.py
+                model=model,
                 optimizer_class=optimizer_class,
                 lr=learning_rate,
                 train_dl=_train_dl,
@@ -172,13 +176,13 @@ class FedAvg:
                 logdir=self.logdir,
                 seed=self._seed,
             )
-            # creates local models for each client, i = client id
             for i, (_train_dl, _test_dl) in enumerate(list(zip(training_dataloaders, test_dataloaders)))
         ]
+        
 
         self.personal_models_list = [
             _Model(
-                model=copy.deepcopy(model),
+                model=model,
                 optimizer_class=optimizer_class,
                 lr=learning_rate,
                 train_dl=_train_dl,
@@ -193,7 +197,6 @@ class FedAvg:
                 logdir=self.logdir,
                 seed=self._seed,
             )
-            # creates local models for each client, i = client id
             for i, (_train_dl, _test_dl) in enumerate(list(zip(training_dataloaders, test_dataloaders)))
         ]
 
@@ -207,32 +210,44 @@ class FedAvg:
         self.num_clients = len(training_dataloaders)
         self.bits_counting_function = bits_counting_function
 
+    
+
+
     def _local_optimization(self, _model: _Model):
         """Carry out the local optimization step."""
         if self.privacy_engine is None:
             _model._local_train(self.num_steps)
+            
+        # privacy engine exists that is not idp (multiple accountants)
         elif not (self.privacy_engine.accountant.mechanism() == "idp"):
             _model._local_train(self.num_steps, \
                                 privacy_accountant=self.privacy_engine.accountant)
+            
+        # every client has their own privacy accountant
         else:
             _model._local_train(self.num_steps, \
                                 privacy_accountant=self.privacy_engine.accountant.accountants[_model.client_id])
-    """
-    NEED TO WRITE IN MODEL.local_train
-    WRITE PERSONALIZATION TRAINER
-    SUCH THAT THE PRIVACY ACCOUNTANT WORKS FOR IT
-    THINK I CAN CALL local_train in 
-    
-    """
-    def _personalized_optimization(self, _model: _Model):
+
+
+    def _personal_optimization(self,local_model: _Model, personal_model: _Model):
+        """Carry out the local optimization step."""
         if self.privacy_engine is None:
-            _model._personal_train(self.num_steps)
+            local_model._ditto_local_train(personal_model,\
+                                    self.num_personal_steps, self.reg_param)
+            
+        # privacy engine exists that is not idp (multiple accountants)
         elif not (self.privacy_engine.accountant.mechanism() == "idp"):
-            _model._personal_train(self.num_steps, \
+            local_model._ditto_local_train(personal_model, \
+                                self.num_personal_steps, self.reg_param, \
                                 privacy_accountant=self.privacy_engine.accountant)
+            
+        # every client has their own privacy accountant
+        #DO I ATTACH PRIVACY ENGINE TO LOCAL OR PERSONAL ***
         else:
-            _model._personal_train(self.num_steps, \
+            local_model._ditto_local_train(personal_model, \
+                               self.num_personal_steps, self.reg_param, \
                                 privacy_accountant=self.privacy_engine.accountant.accountants[_model.client_id])
+
 
     def perform_round(self):
         """Does a single federated averaging round. The following steps will be
@@ -241,66 +256,64 @@ class FedAvg:
         - each model will be trained locally for num_steps batches.
         - the parameter updates will be collected and averaged. Averages will be
           weighted by the number of samples in each client
-        - the averaged updates willl be used to update the local model
+        - the averaged updates will be used to update the local model
+        
+        Global round
         """
         local_updates = list()
         total_number_of_samples = 0
         selected_idx_client = []
-
-        #selects client indexes using self.client rate
+        
+        
         while len(selected_idx_client) == 0:
+            
+            # boolean mask that samples according to client_rate
             mask = (np.random.random(self.num_clients) < self.client_rate)
             selected_idx_client = np.where(mask == True)[0]
             print("selected_idx_client: ", selected_idx_client)
         
-        #trains models for selected clients
-        for idx in selected_idx_client:
-            _model = self.models_list[idx]
-            _personal_model = self.personal_models_list[idx]
+        model_lists = list(zip(self.local_models_list, self.personal_models_list))
+        
+        selected_models = [model_lists[idx] for idx in selected_idx_client]
+        #local training round for every client 
+        for local_model, personal_model in selected_models:
+            print(f"Client {local_model.client_id} ...")
+            # Local Optimization
+            _local_previous_state = local_model._get_current_params()
+            
+            # calls local_train from strategies_utils.py for num of local steps
+            self._local_optimization(local_model)
+            _local_next_state = local_model._get_current_params()
+            
+            self._personal_optimization(local_model, personal_model)
 
-            print(f"Client {_model.client_id} ...")
-
-
-
-            #  FedAvg Local Optimization
-
-            #w_t
-            _local_previous_state = _model._get_current_params()
-            self._local_optimization(_model)
-            _local_next_state = _model._get_current_params()
-
-
-            # Recovering updates - difference between next state and previous stae
+            # Recovering updates (w^t_k - w^t), how much params change after all local steps
             updates = [
                 new - old for new, old in zip(_local_next_state, _local_previous_state)
             ]
+            
+            #deletes copy of params
             del _local_next_state
 
             # Reset local model
-            for p_new, p_old in zip(_model.model.parameters(), _local_previous_state):
+            for p_new, p_old in zip(local_model.model.parameters(), _local_previous_state):
                 p_new.data = torch.from_numpy(p_old).to(p_new.device)
             del _local_previous_state
-
-
-            # Ditto Personalization Step
-            for _ in range(10):  # number of personalization steps
-                self._personalized_optimization(
-                    _personal_model,
-                    reference_model=_model,
-                )
-            
 
             if self.bits_counting_function is not None:
                 self.bits_counting_function(updates)
             
-            #local_updates stores n_samples for weighted averaging
-            local_updates.append({"updates": updates, "n_samples": len(_model._train_dl.dataset)})
-            total_number_of_samples += len(_model._train_dl.dataset)
+            # list of updates and update number of samples 
+            local_updates.append({"updates": updates, "n_samples": len(local_model._train_dl.dataset)})
+            total_number_of_samples += len(local_model._train_dl.dataset)
 
         # Aggregation step
+        
         aggregated_delta_weights = [
             None for _ in range(len(local_updates[0]["updates"]))
         ]
+        
+        # iterate through every parameter and weight
         for idx_weight in range(len(local_updates[0]["updates"])):
             aggregated_delta_weights[idx_weight] = sum(
                 [
@@ -309,10 +322,11 @@ class FedAvg:
                     for idx_client in range(len(selected_idx_client))
                 ]
             )
+            #weighted average
             aggregated_delta_weights[idx_weight] /= float(total_number_of_samples)
 
-        # Update models
-        for _model in self.models_list:
+        # reset local model to new global model
+        for _model in self.local_models_list:
             _model._update_params(aggregated_delta_weights)
 
     # def run(self, metric, device):
@@ -320,21 +334,37 @@ class FedAvg:
         """This method performs self.nrounds rounds of averaging
         and returns the list of models.
         """
-        all_round_results = []
+        all_round_results_global = []
+        all_round_results_personal = []
+
         for r in range(self.num_rounds):
             self.perform_round()
-            perf, y_true_dict, y_pred_dict = evaluate_model_on_tests(self.models_list, return_pred=True)
+            perf_global, y_true_dict1, y_pred_dict1 = evaluate_model_on_tests(self.local_models_list, return_pred=True)
+            perf_personal, y_true_dict2, y_pred_dict2 = evaluate_model_on_tests(self.personal_models_list, return_pred=True)
+
             if self.privacy_engine:
                 ret = self.privacy_engine.accountant.get_epsilon(delta=self.privacy_engine.target_delta, mode="max")
                 print("current privacy cost of all clients: ", ret)
 
-            correct = np.array(
-                [v for _, v in perf.items()]
+            correct_global = np.array(
+                [v for _, v in perf_global.items()]
             ).sum()
             total = np.array(
-                [len(v) for _, v in y_true_dict.items()]
+                [len(v) for _, v in y_true_dict1.items()]
             ).sum()
-            print(f"Round={r}, perf={list(perf.values())}, mean perf={correct}/{total} ({correct/total:.4f}%)")
-            all_round_results.append(round(correct/total, 4))
+            
+            correct_personal = np.array(
+                [v for _, v in perf_personal.items()]
+            ).sum()
+            total = np.array(
+                [len(v) for _, v in y_true_dict2.items()]
+            ).sum()
+            
+            print(f"Round={r}, global perf={list(perf_global.values())}, mean perf={correct_global}/{total} ({correct_global/total:.4f}%)")
+            print(f"Round={r}, personal perf={list(perf_personal.values())}, mean perf={correct_personal}/{total} ({correct_personal/total:.4f}%)")
 
-        return [m.model for m in self.models_list], all_round_results
+            all_round_results_global.append(round(correct_global/total, 4))
+            all_round_results_personal.append(round(correct_personal/total, 4))
+
+
+        return [m.model for m in self.local_models_list], all_round_results_global, all_round_results_personal

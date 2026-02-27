@@ -77,6 +77,8 @@ class _Model:
 
         self._train_dl = train_dl
         self._test_dl = test_dl # added by Junxu 
+        
+        #Where learning rate is specified
         self._optimizer = optimizer_class(self.model.parameters(), lr)
         self._loss = copy.deepcopy(loss)
         self._metric = copy.deepcopy(metric)
@@ -193,7 +195,105 @@ class _Model:
                     i += 1
                     current_batch_size = 0
                     
-     
+    def _ditto_local_train(self, personal_model, num_p_updates, reg_param, privacy_accountant = None):
+        """
+        This method passes in the personalized model object
+        performs a local update following federated averaging to self
+        performs ditto's method of personalized regularization to the personal
+        # Num_updates = num_steps in ditto.py
+        # personal_updates = # of rounds in which the personal training is occuring
+        
+        #sets model in training mode and eval mode to false
+        #modifies nn.BatchNorm behaviour --> normalizes inputs
+        """
+        self.model = self.model.train()
+        personal_model.model.train()
+        
+        l_2_reg = 0
+        #No privacy preservation
+        if privacy_accountant is None:
+            train_loader_iter = iter(self._train_dl)
+            i = 0
+            while i < num_p_updates:
+                try:
+                    batch = next(train_loader_iter)
+                except StopIteration:
+                    train_loader_iter = iter(self._train_dl)
+                    batch = next(train_loader_iter)
+            
+                batch = tuple(t.to(self._device) for t in batch)
+                if len(batch) == 2: # for other datasets
+                    #forward pass on train data batch
+                    logits = personal_model.model(batch[0])
+                    #calculate loss with true labels in batch
+                    loss = self._loss(logits, batch[1])
+
+                elif len(batch) == 4: # for snli dataset
+                    inputs = {'input_ids':    batch[0],
+                                'attention_mask': batch[1],
+                                'token_type_ids': batch[2],
+                                'labels':         batch[3]}
+                    outputs = personal_model.model(**inputs) # output = loss, logits, hidden_states, attentions
+                    loss, logits = outputs[:2]
+                    
+                # DITTO PERSONALIZATION
+                for param_personal, param_global in zip(self.model.parameters(), personal_model.model.parameters()):
+                    # gradient v_k 0.5 ||v_k - w^t||^2 = (v_k - w_t)
+                    # want to 
+                    l_2_reg += torch.sum(param_personal-param_global.detach())**2
+                loss = loss + (reg_param/2)*l_2_reg
+                
+                #backward pass - computes grads of loss wrt to local model parameters
+                loss.backward()
+                # updates model with optimizer
+                personal_model._optimizer.step()
+                #clears gradients for next batch, accumulated across microbatch
+                personal_model._optimizer.zero_grad()
+                i += 1
+
+        else:
+            train_loader_iter = iter(self._train_dl)
+            current_batch_size, i = 0, 0
+            while i < num_p_updates:
+                try:
+                    batch = next(train_loader_iter)
+                except StopIteration:
+                    train_loader_iter = iter(self._train_dl) # restart dataloader iteration
+                    batch = next(train_loader_iter)
+                current_batch_size += len(batch[-1]) 
+                batch = tuple(t.to(self._device) for t in batch)
+                if len(batch) == 2: # for other datasets
+                    logits = personal_model.model(batch[0])
+                    loss = self._loss(logits, batch[1])
+
+                elif len(batch) == 4: # for snli dataset
+                    inputs = {'input_ids':    batch[0],
+                                'attention_mask': batch[1],
+                                'token_type_ids': batch[2],
+                                'labels':         batch[3]}
+                    outputs = personal_model.model(**inputs) # output = loss, logits, hidden_states, attentions
+                    loss, logits = outputs[:2]
+                    
+                # DITTO PERSONALIZATION
+                for param_personal, param_global in zip(self.model.parameters(), personal_model.model.parameters()):
+                    # gradient v_k 0.5 ||v_k - w^t||^2 = (v_k - w_t)
+                    # want to detach param_global so it is not gradient 
+                    l_2_reg += torch.sum(param_personal-param_global.detach())**2
+                loss = loss + (reg_param/2)*l_2_reg
+
+                loss.backward()
+                personal_model._optimizer.step()
+                personal_model._optimizer.zero_grad()
+                
+
+                # if last history entry has num_steps - 1 = i
+                # i is only incremented at the end of DP accountant. history
+                if len(privacy_accountant) and (i == privacy_accountant.history[-1][-1] - 1):
+                    i += 1
+                    current_batch_size = 0
+                    
+        
+  
     @torch.no_grad()
     def _get_current_params(self):
         """Returns the current weights of the pytorch model.
