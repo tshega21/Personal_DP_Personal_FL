@@ -23,22 +23,28 @@ class RDPAccountant(IAccountant):
     def __init__(self):
         super().__init__()
     
+    # per batch accounting
     def step(self, *, noise_multiplier: float, sample_rate: float):
         if len(self.history) >= 1:
             last_noise_multiplier, last_sample_rate, num_steps = self.history.pop()
+            
+            #check if current step uses same DP parameters as last step
             if (
                 last_noise_multiplier == noise_multiplier
                 and last_sample_rate == sample_rate
             ):
+            #append same DP parameters with inccreased steps
                 self.history.append(
                     (last_noise_multiplier, last_sample_rate, num_steps + 1)
                 )
             else:
+            # restart num_steps counting for new DP parameters
                 self.history.append(
                     (last_noise_multiplier, last_sample_rate, num_steps)
                 )
                 self.history.append((noise_multiplier, sample_rate, 1))
 
+        #no history
         else:
             self.history.append((noise_multiplier, sample_rate, 1))
     

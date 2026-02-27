@@ -46,6 +46,8 @@ def make_optimizer_class(cls):
                 for param, accum_grad in zip(group['params'], group['accum_grads']):
                     if param.requires_grad:
                         param.grad.data = accum_grad.clone()
+                        
+                        #normalizes by minibatch size, averages per-sample gradients
                         param.grad.data.mul_(1 / minibatch_size)
             
             super(BaseOptimizerClass, self).step(*args, **kwargs)

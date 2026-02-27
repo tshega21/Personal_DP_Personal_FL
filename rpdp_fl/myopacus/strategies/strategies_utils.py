@@ -95,7 +95,11 @@ class _Model:
         set_random_seed(self._seed)
             
     def _make_private(self, privacy_engine):
+        
+        # privacy accountant for a client NOT ACTUALLY SURE WHAT THIS LINE DOES
         acct = copy.deepcopy(privacy_engine.accountant.accountants[self.client_id])
+        
+        #if the sample rate is not a float, return rpdp model, optimizer, train_dl, and acct
         if not isinstance(acct.sample_rate, float):
             self.model, self._optimizer, self._train_dl, acct = privacy_engine.make_private_with_fedrpdp(
                 module=self.model,
@@ -103,6 +107,7 @@ class _Model:
                 data_loader=self._train_dl,
                 accountant=acct
             )
+        #otherwise use with normal federated dp
         else:
             self.model, self._optimizer, self._train_dl, acct = privacy_engine.make_private_with_feddp(
                 module=self.model,
@@ -114,9 +119,15 @@ class _Model:
 
     def _local_train(self, num_updates, privacy_accountant = None):
         """This method trains the model using the dataloader given
-        for num_updates steps.
+        for num_updates.
         """
+        #IS NUM UPDATES = NUM STEPS?? NEED TO GO THROUGH PRIVACY ENGINE
+        #YES TENTATIVELY
+        
+        #sets model in training mode and eval mode to false
+        #modifies nn.BatchNorm behaviour --> normalizes inputs
         self.model = self.model.train()
+        
         if privacy_accountant is None:
             train_loader_iter = iter(self._train_dl)
             i = 0
@@ -129,7 +140,9 @@ class _Model:
             
                 batch = tuple(t.to(self._device) for t in batch)
                 if len(batch) == 2: # for other datasets
+                    #forward pass on train data batch
                     logits = self.model(batch[0])
+                    #calculate loss with true labels in batch
                     loss = self._loss(logits, batch[1])
 
                 elif len(batch) == 4: # for snli dataset
@@ -139,9 +152,12 @@ class _Model:
                                 'labels':         batch[3]}
                     outputs = self.model(**inputs) # output = loss, logits, hidden_states, attentions
                     loss, logits = outputs[:2]
-
+                
+                #backward pass - computes grads of loss wrt to model parameters
                 loss.backward()
+                # updates model with optimizer
                 self._optimizer.step()
+                #clears gradients for next batch, accumulated across microbatch
                 self._optimizer.zero_grad()
                 i += 1
 
@@ -152,7 +168,7 @@ class _Model:
                 try:
                     batch = next(train_loader_iter)
                 except StopIteration:
-                    train_loader_iter = iter(self._train_dl)
+                    train_loader_iter = iter(self._train_dl) # restart dataloader iteration
                     batch = next(train_loader_iter)
                 current_batch_size += len(batch[-1]) 
                 batch = tuple(t.to(self._device) for t in batch)
@@ -171,11 +187,13 @@ class _Model:
                 loss.backward()
                 self._optimizer.step()
                 self._optimizer.zero_grad()
+                # if last history entry has num_steps - 1 = i
+                # i is only incremented at the end of DP accountant. history
                 if len(privacy_accountant) and (i == privacy_accountant.history[-1][-1] - 1):
                     i += 1
                     current_batch_size = 0
-
-
+                    
+     
     @torch.no_grad()
     def _get_current_params(self):
         """Returns the current weights of the pytorch model.
