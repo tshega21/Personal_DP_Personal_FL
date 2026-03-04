@@ -2,12 +2,17 @@ import numpy as np
 import os
 from torchvision.datasets import CIFAR10
 
-import datasets
 
 NUM_LABELS = 10
 NUM_CLIENTS = 10
 
-data_path = os.path.join(datasets.RAW_DATA_DIR, "cifar10")
+
+
+dataset_abspath = os.path.abspath(os.path.join(os.getcwd(),"../.."))
+data_path = os.path.join(dataset_abspath, "cifar10")
+if not os.path.exists(data_path):
+    os.mkdir(data_path)
+
 
 #downloads dataset and creates training set
 train_data = CIFAR10(data_path, train=True, download=True)

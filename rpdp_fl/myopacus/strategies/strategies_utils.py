@@ -109,6 +109,7 @@ class _Model:
                 data_loader=self._train_dl,
                 accountant=acct
             )
+                
         #otherwise use with normal federated dp
         else:
             self.model, self._optimizer, self._train_dl, acct = privacy_engine.make_private_with_feddp(
@@ -117,6 +118,7 @@ class _Model:
                 data_loader=self._train_dl,
                 accountant=acct
             )
+       
         privacy_engine.accountant.accountants[self.client_id] = acct
 
     def _local_train(self, num_updates, privacy_accountant = None):
@@ -129,7 +131,6 @@ class _Model:
         #sets model in training mode and eval mode to false
         #modifies nn.BatchNorm behaviour --> normalizes inputs
         self.model = self.model.train()
-        
         if privacy_accountant is None:
             train_loader_iter = iter(self._train_dl)
             i = 0
@@ -185,12 +186,19 @@ class _Model:
                                 'labels':         batch[3]}
                     outputs = self.model(**inputs) # output = loss, logits, hidden_states, attentions
                     loss, logits = outputs[:2]
-
                 loss.backward()
                 self._optimizer.step()
                 self._optimizer.zero_grad()
+                
+                
                 # if last history entry has num_steps - 1 = i
                 # i is only incremented at the end of DP accountant. history
+                
+                
+                ## NEED TO FIGURE OUT WHY THIS CONDITION WASNT WORKING
+                ## INFINITE LOOP
+                i+=1
+                # TEMPORARY FIX
                 if len(privacy_accountant) and (i == privacy_accountant.history[-1][-1] - 1):
                     i += 1
                     current_batch_size = 0
@@ -208,8 +216,7 @@ class _Model:
         """
         self.model = self.model.train()
         personal_model.model.train()
-        
-        l_2_reg = 0
+    
         #No privacy preservation
         if privacy_accountant is None:
             train_loader_iter = iter(self._train_dl)
@@ -237,6 +244,7 @@ class _Model:
                     loss, logits = outputs[:2]
                     
                 # DITTO PERSONALIZATION
+                l_2_reg = 0
                 for param_personal, param_global in zip(self.model.parameters(), personal_model.model.parameters()):
                     # gradient v_k 0.5 ||v_k - w^t||^2 = (v_k - w_t)
                     # want to 
@@ -275,6 +283,7 @@ class _Model:
                     loss, logits = outputs[:2]
                     
                 # DITTO PERSONALIZATION
+                l_2_reg = 0
                 for param_personal, param_global in zip(self.model.parameters(), personal_model.model.parameters()):
                     # gradient v_k 0.5 ||v_k - w^t||^2 = (v_k - w_t)
                     # want to detach param_global so it is not gradient 

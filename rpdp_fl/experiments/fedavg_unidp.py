@@ -64,7 +64,8 @@ MAX_PHYSICAL_BATCH_SIZE = dict["dpfedavg"]["max_physical_batch_size"]
 if args.dataset == "heart_disease":
     data_path = os.path.join(project_abspath, dict["dataset_dir"])
 else:
-    data_path = os.path.join(project_abspath, dict["dataset_dir"][f"iid_{NUM_CLIENTS}"])
+    data_path = os.path.join(project_abspath, dict["dataset_dir"][f"niid_{NUM_CLIENTS}"])
+    #data_path = os.path.join(project_abspath, dict["dataset_dir"][f"iid_{NUM_CLIENTS}"])
 rawdata = RawClass(data_path=data_path)
 test_dls, training_dls = [], []
 for i in range(NUM_CLIENTS): # NUM_CLIENTS

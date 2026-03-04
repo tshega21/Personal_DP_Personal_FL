@@ -102,8 +102,8 @@ print(f"Mean performance of vanilla ditto personal, Perf={mean_perf_personal:.4f
 
 record_row = [{
     "timestamp": datetime.datetime.now().strftime("%Y-%m-%d %H:%M"),
-    "mean_perf_global": round(mean_perf_global, 4), "perf": perf_global,
-    "mean_perf_personal": round(mean_perf_personal, 4), "perf": perf_personal, 
+    "mean_perf_global": round(mean_perf_global, 4), "perf_global": perf_global,
+    "mean_perf_personal": round(mean_perf_personal, 4), "perf_personal": perf_personal, 
     "e": None, 
     "d": None, 
     "nm": None, 

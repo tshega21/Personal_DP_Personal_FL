@@ -204,8 +204,11 @@ class Ditto:
             assert (self.privacy_engine.accountant.mechanism() == "idp"), \
                  "DataType of `privacy_engine.accountant` must be `IndividualAccountant` in FL setup."
             
-            for _model in self.models_list:
-                _model._make_private(self.privacy_engine)
+            for l_model in self.local_models_list:
+                l_model._make_private(self.privacy_engine)
+            for p_model in self.personal_models_list:
+                p_model._make_private(self.privacy_engine)
+
 
         self.num_clients = len(training_dataloaders)
         self.bits_counting_function = bits_counting_function
@@ -246,7 +249,7 @@ class Ditto:
         else:
             local_model._ditto_local_train(personal_model, \
                                self.num_personal_steps, self.reg_param, \
-                                privacy_accountant=self.privacy_engine.accountant.accountants[_model.client_id])
+                                privacy_accountant=self.privacy_engine.accountant.accountants[local_model.client_id])
 
 
     def perform_round(self):
@@ -277,6 +280,8 @@ class Ditto:
         selected_models = [model_lists[idx] for idx in selected_idx_client]
         #local training round for every client 
         for local_model, personal_model in selected_models:
+            
+
             print(f"Client {local_model.client_id} ...")
             # Local Optimization
             _local_previous_state = local_model._get_current_params()
@@ -284,14 +289,14 @@ class Ditto:
             # calls local_train from strategies_utils.py for num of local steps
             self._local_optimization(local_model)
             _local_next_state = local_model._get_current_params()
-            
+
             self._personal_optimization(local_model, personal_model)
 
             # Recovering updates (w^t_k - w^t), how much params change after all local steps
             updates = [
                 new - old for new, old in zip(_local_next_state, _local_previous_state)
             ]
-            
+
             #deletes copy of params
             del _local_next_state
 
@@ -304,6 +309,7 @@ class Ditto:
                 self.bits_counting_function(updates)
             
             # list of updates and update number of samples 
+
             local_updates.append({"updates": updates, "n_samples": len(local_model._train_dl.dataset)})
             total_number_of_samples += len(local_model._train_dl.dataset)
 

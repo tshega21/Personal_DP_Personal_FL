@@ -1,7 +1,7 @@
 save_dir: experiments/results/fed_mnist
 # dataset info
 dataset_dir:
-  non-iid: experiments/datasets/fed_mnist/niid_10_5way_1200shot
+  niid_10: experiments/datasets/fed_mnist/niid_10_5way_1200shot
   iid_10: experiments/datasets/fed_mnist/iid_10
   iid_50: experiments/datasets/fed_mnist/iid_50
 num_labels: 10

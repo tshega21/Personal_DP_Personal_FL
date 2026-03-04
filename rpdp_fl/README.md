@@ -68,6 +68,15 @@ The top-level codes that start running the experiments displayed in our paper ca
 cd experiments
 # dataset flags: {"heart_disease", "mnist", "cifar10", "snli"}
 python fedavg_rpdp.py --dataset mnist --gpuid 0 --seed 42
+python fedavg_vanilla.py --dataset mnist --gpuid 0 --seed 42
+python fedavg_unidp.py --dataset mnist --gpuid 0 --seed 42
+
+python ditto_rpdp.py --dataset mnist --gpuid 0 --seed 42
+python ditto_vanilla.py --dataset mnist --gpuid 0 --seed 42
+python ditto_unidp.py --dataset mnist --gpuid 0 --seed 42
+
+
+
 ```
 We provide the estimated running time of each experiment for your reference:
 - `LogisticRegression-HeartDisease` experiment: ~3 compute-minutes

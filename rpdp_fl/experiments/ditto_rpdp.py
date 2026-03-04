@@ -13,7 +13,9 @@ from torch.utils.data import DataLoader
 
 from configs.config_utils import read_config, get_config_file_path
 from myopacus import PrivacyEngine
+from myopacus.strategies import FedAvg
 from myopacus.strategies import Ditto
+
 from myopacus.accountants.rpdp_utils import GENERATE_EPSILONS_FUNC
 
 parser = argparse.ArgumentParser()
@@ -137,14 +139,18 @@ for ename in epsilons:
     current_args["num_personal_steps"] =1
 
     s = Ditto(**current_args, log=False)
-    cm, perf = s.run()
-    mean_perf = np.mean(perf[-3:])
+    cm, perf_global, perf_personal = s.run()
+    mean_perf_global = np.mean(perf_global[-3:])
+    mean_perf_personal = np.mean(perf_personal[-3:])
     expected_batch_size = [int(sum(acct.sample_rate)) for acct in s.privacy_engine.accountant.accountants]
 
-    print(f"Mean performance of {name}, min_eps={min(target_epsilons[0]):.4f}, max_eps={max(target_epsilons[0]):.4f}, delta={TARGET_DELTA}, Perf={mean_perf:.4f}, seed={args.seed}")
+    print(f"Mean global performance of {name}, min_eps={min(target_epsilons[0]):.4f}, max_eps={max(target_epsilons[0]):.4f}, delta={TARGET_DELTA}, Perf={mean_perf_global:.4f}, seed={args.seed}")
+    print(f"Mean personal performance of {name}, min_eps={min(target_epsilons[0]):.4f}, max_eps={max(target_epsilons[0]):.4f}, delta={TARGET_DELTA}, Perf={mean_perf_personal:.4f}, seed={args.seed}")
+
     results_dict = [{
         "timestamp": datetime.datetime.now().strftime("%Y-%m-%d %H:%M"),
-        "mean_perf": round(mean_perf,4), "perf": perf, 
+        "mean_perf_global": round(mean_perf_global, 4), "perf_global": perf_global,
+        "mean_perf_personal": round(mean_perf_personal, 4), "perf_personal": perf_personal, 
         "e": f"{ename}-Ours", 
         "d": TARGET_DELTA, 
         "nm": round(s.privacy_engine.default_noise_multiplier, 2), 
@@ -155,7 +161,7 @@ for ename in epsilons:
         "client_rate": CLIENT_RATE}]
     results = pd.DataFrame.from_dict(results_dict)
     results.to_csv(save_filename, mode='a', index=False)
-    del privacy_engine, s, cm, mean_perf
+    del privacy_engine, s, cm, mean_perf_personal, mean_perf_global
 
     # We run FedAvg with rPDP (StrongForAll)
     set_random_seed(args.seed)
@@ -176,17 +182,23 @@ for ename in epsilons:
     current_args = copy.deepcopy(training_args)
     current_args["model"] = copy.deepcopy(global_init)
     current_args["privacy_engine"] = privacy_engine
-    
-    s = FedAvg(**current_args, log=False)
-    cm, perf = s.run()
-    mean_perf = np.mean(perf[-3:])
+    current_args["reg_param"] = 1
+    current_args["num_personal_steps"] =1
+
+    s = Ditto(**current_args, log=False)
+    cm, perf_global, perf_personal = s.run()
+    mean_perf_global = np.mean(perf_global[-3:])
+    mean_perf_personal = np.mean(perf_personal[-3:])
     expected_batch_size = [int(acct.sample_rate * len(train_dl.dataset)) for acct, train_dl in zip(s.privacy_engine.accountant.accountants, training_dls)]
-    
-    print(f"Mean performance of StrongForAll, eps={min_epsilon}, delta={TARGET_DELTA}, Perf={mean_perf:.4f}")
+
+    print(f"Mean global performance of {name}, min_eps={min(target_epsilons[0]):.4f}, max_eps={max(target_epsilons[0]):.4f}, delta={TARGET_DELTA}, Perf={mean_perf_global:.4f}, seed={args.seed}")
+    print(f"Mean personal performance of {name}, min_eps={min(target_epsilons[0]):.4f}, max_eps={max(target_epsilons[0]):.4f}, delta={TARGET_DELTA}, Perf={mean_perf_personal:.4f}, seed={args.seed}")
+
     results_dict = [{
         "timestamp": datetime.datetime.now().strftime("%Y-%m-%d %H:%M"),
-        "mean_perf": round(mean_perf,4), "perf": perf, 
-        "e": f"{ename}-StrongForAll({min_epsilon})", 
+        "mean_perf_global": round(mean_perf_global, 4), "perf_global": perf_global,
+        "mean_perf_personal": round(mean_perf_personal, 4), "perf_personal": perf_personal, 
+        "e": f"{ename}-Ours", 
         "d": TARGET_DELTA, 
         "nm": round(s.privacy_engine.default_noise_multiplier, 2), 
         "norm": MAX_GRAD_NORM, 
@@ -195,13 +207,19 @@ for ename in epsilons:
         "num_clients": NUM_CLIENTS,
         "client_rate": CLIENT_RATE}]
     results = pd.DataFrame.from_dict(results_dict)
-    results.to_csv(save_filename, mode='a', index=False, header=False)
-    del privacy_engine, s, cm, mean_perf
+    results.to_csv(save_filename, mode='a', index=False)
+    del privacy_engine, s, cm, mean_perf_personal, mean_perf_global
+    
+    
+    
 
     # We run FedAvg with rPDP (Dropout)
     print(" We run FedAvg with rPDP (Dropout) ...")
     set_random_seed(args.seed)
     temp_epsilons = copy.deepcopy(target_epsilons)
+    
+    #DIFFERENCE BETWEEN METHODS
+    #DROPS LOW EPSILON CLIENTS
     mean_epsilon = np.mean([np.mean(per_client_epsilons) for per_client_epsilons in temp_epsilons])
     for i in range(NUM_CLIENTS):
         mask = temp_epsilons[i] < mean_epsilon
@@ -222,17 +240,23 @@ for ename in epsilons:
     current_args = copy.deepcopy(training_args)
     current_args["model"] = copy.deepcopy(global_init)
     current_args["privacy_engine"] = privacy_engine
+    current_args["reg_param"] = 1
+    current_args["num_personal_steps"] = 1
 
     s = Ditto(**current_args, log=False)
-    cm, perf = s.run()
-    mean_perf = np.mean(perf[-3:])
+    cm, perf_global, perf_personal = s.run()
+    mean_perf_global = np.mean(perf_global[-3:])
+    mean_perf_personal = np.mean(perf_personal[-3:])
     expected_batch_size = [int(sum(acct.sample_rate)) for acct in s.privacy_engine.accountant.accountants]
 
-    print(f"Mean performance of Dropout, eps={mean_epsilon}, delta={TARGET_DELTA}, Perf={mean_perf:.4f}")
+    print(f"Mean global performance of {name}, min_eps={min(target_epsilons[0]):.4f}, max_eps={max(target_epsilons[0]):.4f}, delta={TARGET_DELTA}, Perf={mean_perf_global:.4f}, seed={args.seed}")
+    print(f"Mean personal performance of {name}, min_eps={min(target_epsilons[0]):.4f}, max_eps={max(target_epsilons[0]):.4f}, delta={TARGET_DELTA}, Perf={mean_perf_personal:.4f}, seed={args.seed}")
+
     results_dict = [{
         "timestamp": datetime.datetime.now().strftime("%Y-%m-%d %H:%M"),
-        "mean_perf": round(mean_perf,4), "perf": perf, 
-        "e": f"{ename}-Dropout({mean_epsilon})", 
+        "mean_perf_global": round(mean_perf_global, 4), "perf_global": perf_global,
+        "mean_perf_personal": round(mean_perf_personal, 4), "perf_personal": perf_personal, 
+        "e": f"{ename}-Ours", 
         "d": TARGET_DELTA, 
         "nm": round(s.privacy_engine.default_noise_multiplier, 2), 
         "norm": MAX_GRAD_NORM, 
@@ -241,5 +265,5 @@ for ename in epsilons:
         "num_clients": NUM_CLIENTS,
         "client_rate": CLIENT_RATE}]
     results = pd.DataFrame.from_dict(results_dict)
-    results.to_csv(save_filename, mode='a', index=False, header=False)
-    del privacy_engine, s, cm, mean_perf
+    results.to_csv(save_filename, mode='a', index=False)
+    del privacy_engine, s, cm, mean_perf_personal, mean_perf_global

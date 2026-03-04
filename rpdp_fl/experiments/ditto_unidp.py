@@ -115,13 +115,20 @@ current_args["privacy_engine"] = privacy_engine
 current_args["reg_param"] = 1
 current_args["num_personal_steps"] =1
 
+
+
 s = Ditto(**current_args, log=False)
-cm, perf = s.run()
-mean_perf = np.mean(perf[-3:])
-print(f"Mean performance of dp-fedavg, eps={TARGET_EPSILON}, delta={TARGET_DELTA}, Perf={mean_perf:.4f}")
+cm, perf_global, perf_personal = s.run()
+mean_perf_global = np.mean(perf_global[-3:])
+mean_perf_personal = np.mean(perf_personal[-3:])
+print(f"Mean performance of unidp ditto global, Perf={mean_perf_global:.4f}")
+print(f"Mean performance of unidp ditto personal, Perf={mean_perf_personal:.4f}")
+
+
 record_row = [{
     "timestamp": datetime.datetime.now().strftime("%Y-%m-%d %H:%M"),
-    "mean_perf": round(mean_perf, 4), "perf": perf, 
+    "mean_perf_global": round(mean_perf_global, 4), "perf-global": perf_global,
+    "mean_perf_personal": round(mean_perf_personal, 4), "perf_personal": perf_personal, 
     "e": TARGET_EPSILON, 
     "d": TARGET_DELTA, 
     "nm": round(s.privacy_engine.default_noise_multiplier, 2), 
@@ -133,3 +140,4 @@ record_row = [{
 }]
 results = pd.DataFrame.from_dict(record_row)
 results.to_csv(save_filename, mode='a', index=False)
+# ======== End Training ============

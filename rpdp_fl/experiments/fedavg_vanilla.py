@@ -59,7 +59,8 @@ LR = dict["fedavg"]["learning_rate"]
 if args.dataset == "heart_disease":
     data_path = os.path.join(project_abspath, dict["dataset_dir"])
 else:
-    data_path = os.path.join(project_abspath, dict["dataset_dir"][f"iid_{NUM_CLIENTS}"])
+    data_path = os.path.join(project_abspath, dict["dataset_dir"][f"niid_{NUM_CLIENTS}"])
+    #data_path = os.path.join(project_abspath, dict["dataset_dir"][f"iid_{NUM_CLIENTS}"])
     
 rawdata = RawClass(data_path=data_path)
 training_dls, test_dls = [], []

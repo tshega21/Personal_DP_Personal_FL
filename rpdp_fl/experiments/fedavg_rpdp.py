@@ -52,7 +52,9 @@ dict = read_config(get_config_file_path(dataset_name=f"fed_{args.dataset}", debu
 save_dir = os.path.join(project_abspath, dict["save_dir"])
 if not os.path.exists(save_dir):
     os.mkdir(save_dir)
-save_filename = os.path.join(save_dir, f"results_fedavg_rpdp_{args.dataset}_{args.seed}.csv")
+    
+#save_filename = os.path.join(save_dir, f"results_fedavg_rpdp_{args.dataset}_{args.seed}.csv")
+save_filename = os.path.join(save_dir, f"results_fedavg_rpdp_{args.dataset}_niid_{args.seed}.csv")
 
 NUM_CLIENTS = dict["fedavg"]["num_clients"]
 NUM_STEPS = dict["fedavg"]["num_steps"]
@@ -71,7 +73,8 @@ MAX_PHYSICAL_BATCH_SIZE = dict["dpfedavg"]["max_physical_batch_size"]
 if args.dataset == "heart_disease":
     data_path = os.path.join(project_abspath, dict["dataset_dir"])
 else:
-    data_path = os.path.join(project_abspath, dict["dataset_dir"][f"iid_{NUM_CLIENTS}"]) # data_path = os.path.join(project_abspath, dict["dataset_dir"][f"niid_{NUM_CLIENTS}"])
+    data_path = os.path.join(project_abspath, dict["dataset_dir"][f"niid_{NUM_CLIENTS}"])
+    #data_path = os.path.join(project_abspath, dict["dataset_dir"][f"iid_{NUM_CLIENTS}"]) # data_path = os.path.join(project_abspath, dict["dataset_dir"][f"niid_{NUM_CLIENTS}"])
 
 rawdata = RawClass(data_path=data_path)
 test_dls, training_dls = [], []
