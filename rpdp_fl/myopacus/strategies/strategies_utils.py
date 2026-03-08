@@ -214,18 +214,18 @@ class _Model:
         #sets model in training mode and eval mode to false
         #modifies nn.BatchNorm behaviour --> normalizes inputs
         """
-        self.model = self.model.train()
+        #self.model = self.model.train()
         personal_model.model.train()
     
         #No privacy preservation
         if privacy_accountant is None:
-            train_loader_iter = iter(self._train_dl)
+            train_loader_iter = iter(personal_model._train_dl)
             i = 0
             while i < num_p_updates:
                 try:
                     batch = next(train_loader_iter)
                 except StopIteration:
-                    train_loader_iter = iter(self._train_dl)
+                    train_loader_iter = iter(personal_model._train_dl)
                     batch = next(train_loader_iter)
             
                 batch = tuple(t.to(self._device) for t in batch)
@@ -246,27 +246,30 @@ class _Model:
                 # DITTO PERSONALIZATION
                 l_2_reg = 0
                 for param_personal, param_global in zip(self.model.parameters(), personal_model.model.parameters()):
-                    # gradient v_k 0.5 ||v_k - w^t||^2 = (v_k - w_t)
+                    # gradient v_k= 0.5 ||v_k - w^t||^2 = (v_k - w_t)
                     # want to 
-                    l_2_reg += torch.sum(param_personal-param_global.detach())**2
+                    l_2_reg += torch.sum((param_personal-param_global.detach())**2)
                 loss = loss + (reg_param/2)*l_2_reg
                 
+                #clears gradients for next batch, accumulated across microbatch
+                personal_model._optimizer.zero_grad()
                 #backward pass - computes grads of loss wrt to local model parameters
                 loss.backward()
                 # updates model with optimizer
                 personal_model._optimizer.step()
-                #clears gradients for next batch, accumulated across microbatch
-                personal_model._optimizer.zero_grad()
+                
                 i += 1
 
         else:
-            train_loader_iter = iter(self._train_dl)
+            
+            # DO I USE A DIFFERENT DATA LOADER OR THE LOCAL MODEL DATA LOADER
+            train_loader_iter = iter(personal_model._train_dl)
             current_batch_size, i = 0, 0
             while i < num_p_updates:
                 try:
                     batch = next(train_loader_iter)
                 except StopIteration:
-                    train_loader_iter = iter(self._train_dl) # restart dataloader iteration
+                    train_loader_iter = iter(personal_model._train_dl) # restart dataloader iteration
                     batch = next(train_loader_iter)
                 current_batch_size += len(batch[-1]) 
                 batch = tuple(t.to(self._device) for t in batch)
@@ -287,12 +290,13 @@ class _Model:
                 for param_personal, param_global in zip(self.model.parameters(), personal_model.model.parameters()):
                     # gradient v_k 0.5 ||v_k - w^t||^2 = (v_k - w_t)
                     # want to detach param_global so it is not gradient 
-                    l_2_reg += torch.sum(param_personal-param_global.detach())**2
+                    l_2_reg += torch.sum((param_personal-param_global.detach())**2)
                 loss = loss + (reg_param/2)*l_2_reg
 
+                personal_model._optimizer.zero_grad()
                 loss.backward()
                 personal_model._optimizer.step()
-                personal_model._optimizer.zero_grad()
+                
                 
 
                 # if last history entry has num_steps - 1 = i

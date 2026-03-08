@@ -2,6 +2,7 @@ import numpy as np
 import time
 import torch
 from typing import List
+import copy
 
 from myopacus import PrivacyEngine
 from myopacus.strategies.strategies_utils import _Model
@@ -143,7 +144,6 @@ class Ditto:
     ):
         self.privacy_engine = privacy_engine
         self.reg_param = reg_param
-        self.num_personal_steps = num_personal_steps
         self.client_rate = client_rate
         self.num_rounds = num_rounds
         self.num_steps = num_steps
@@ -206,8 +206,8 @@ class Ditto:
             
             for l_model in self.local_models_list:
                 l_model._make_private(self.privacy_engine)
-            for p_model in self.personal_models_list:
-                p_model._make_private(self.privacy_engine)
+            #for p_model in self.personal_models_list:
+            #    p_model._make_private(self.privacy_engine)
 
 
         self.num_clients = len(training_dataloaders)
@@ -232,24 +232,23 @@ class Ditto:
                                 privacy_accountant=self.privacy_engine.accountant.accountants[_model.client_id])
 
 
-    def _personal_optimization(self,local_model: _Model, personal_model: _Model):
+    def _personal_optimization(self, local_model: _Model, personal_model: _Model):
         """Carry out the local optimization step."""
+        local_copy = copy.deepcopy(local_model)
         if self.privacy_engine is None:
-            local_model._ditto_local_train(personal_model,\
+            local_copy._ditto_local_train(personal_model,\
                                     self.num_personal_steps, self.reg_param)
             
         # privacy engine exists that is not idp (multiple accountants)
         elif not (self.privacy_engine.accountant.mechanism() == "idp"):
-            local_model._ditto_local_train(personal_model, \
-                                self.num_personal_steps, self.reg_param, \
-                                privacy_accountant=self.privacy_engine.accountant)
+            local_copy._ditto_local_train(personal_model, \
+                                self.num_personal_steps, self.reg_param)
             
         # every client has their own privacy accountant
         #DO I ATTACH PRIVACY ENGINE TO LOCAL OR PERSONAL ***
         else:
-            local_model._ditto_local_train(personal_model, \
-                               self.num_personal_steps, self.reg_param, \
-                                privacy_accountant=self.privacy_engine.accountant.accountants[local_model.client_id])
+            local_copy._ditto_local_train(personal_model, \
+                               self.num_personal_steps, self.reg_param)
 
 
     def perform_round(self):
@@ -290,6 +289,7 @@ class Ditto:
             self._local_optimization(local_model)
             _local_next_state = local_model._get_current_params()
 
+            loca_copy = copy.deepcopy(local_model)
             self._personal_optimization(local_model, personal_model)
 
             # Recovering updates (w^t_k - w^t), how much params change after all local steps
@@ -352,25 +352,18 @@ class Ditto:
                 ret = self.privacy_engine.accountant.get_epsilon(delta=self.privacy_engine.target_delta, mode="max")
                 print("current privacy cost of all clients: ", ret)
 
-            correct_global = np.array(
-                [v for _, v in perf_global.items()]
-            ).sum()
-            total = np.array(
-                [len(v) for _, v in y_true_dict1.items()]
-            ).sum()
+            correct_global = np.array( [v for _, v in perf_global.items()] ).sum()
+            total_global = np.array( [len(v) for _, v in y_true_dict1.items()] ).sum()
             
-            correct_personal = np.array(
-                [v for _, v in perf_personal.items()]
-            ).sum()
-            total = np.array(
-                [len(v) for _, v in y_true_dict2.items()]
-            ).sum()
             
-            print(f"Round={r}, global perf={list(perf_global.values())}, mean perf={correct_global}/{total} ({correct_global/total:.4f}%)")
-            print(f"Round={r}, personal perf={list(perf_personal.values())}, mean perf={correct_personal}/{total} ({correct_personal/total:.4f}%)")
+            correct_personal = np.array(  [v for _, v in perf_personal.items()]).sum()
+            total_personal = np.array(  [len(v) for _, v in y_true_dict2.items()] ).sum()
+            
+            print(f"Round={r}, global perf={list(perf_global.values())}, mean perf={correct_global}/{total_global} ({correct_global/total_global:.4f}%)")
+            print(f"Round={r}, personal perf={list(perf_personal.values())}, mean perf={correct_personal}/{total_personal} ({correct_personal/total_personal:.4f}%)")
 
-            all_round_results_global.append(round(correct_global/total, 4))
-            all_round_results_personal.append(round(correct_personal/total, 4))
+            all_round_results_global.append(round(correct_global/total_global, 4))
+            all_round_results_personal.append(round(correct_personal/total_personal, 4))
 
 
         return [m.model for m in self.local_models_list], all_round_results_global, all_round_results_personal

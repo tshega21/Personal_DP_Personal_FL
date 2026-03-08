@@ -47,6 +47,9 @@ save_dir = os.path.join(project_abspath, dict["save_dir"])
 if not os.path.exists(save_dir):
     os.mkdir(save_dir)
 save_filename = os.path.join(save_dir, f"results_ditto_vanilla_{args.dataset}_{args.seed}.csv")
+save_filename_global = os.path.join(save_dir, f"results_ditto_global_vanilla_{args.dataset}_{args.seed}.csv")
+save_filename_personal = os.path.join(save_dir, f"results_ditto_personal_vanilla_{args.dataset}_{args.seed}.csv")
+
 
 NUM_CLIENTS = dict["fedavg"]["num_clients"]
 NUM_STEPS = dict["fedavg"]["num_steps"]
@@ -71,6 +74,7 @@ for i in range(NUM_CLIENTS):
     test_dls.append(DataLoader(test_ds, batch_size=BATCH_SIZE))
 
 """ Prepare model and loss """
+
 model = BaselineModel.to(device)
 criterion = BaselineLoss()
 
@@ -90,7 +94,7 @@ current_args = {
     "seed": args.seed
 }
 current_args["reg_param"] = 1
-current_args["num_personal_steps"] =1
+current_args["num_personal_steps"] = 30
 
 # ======== Start Training ==========
 s = Ditto(**current_args, log=False)
@@ -113,6 +117,35 @@ record_row = [{
     "num_clients": NUM_CLIENTS,
     "client_rate": CLIENT_RATE
 }]
+
+record_global = [{
+    "perf": str(perf_global),  # as a string
+    "mean_perf": round(np.mean(perf_global[-3:]), 4),
+    "e": None,
+    "d": None,
+    "nm": None,
+    "norm": None,
+    "bs": BATCH_SIZE,
+    "seed": args.seed
+}]
+
+# Prepare personal results
+record_personal = [{
+    "perf": str(perf_personal),
+    "mean_perf": round(np.mean(perf_personal[-3:]), 4),
+    "e": None,
+    "d": None,
+    "nm": None,
+    "norm": None,
+    "bs": BATCH_SIZE,
+    "seed": args.seed
+}]
+
+results_global = pd.DataFrame.from_dict(record_global)
+results_personal = pd.DataFrame.from_dict(record_personal)
 results = pd.DataFrame.from_dict(record_row)
+
 results.to_csv(save_filename, mode='a', index=False)
+results_global.to_csv(save_filename_global, mode='a', index=False)
+results_personal.to_csv(save_filename_personal, mode='a', index=False)
 # ======== End Training ============

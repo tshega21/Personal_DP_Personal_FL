@@ -55,6 +55,7 @@ save_dir = os.path.join(project_abspath, dict["save_dir"])
 if not os.path.exists(save_dir):
     os.mkdir(save_dir)
 save_filename = os.path.join(save_dir, f"results_ditto_rpdp_{args.dataset}_{args.seed}.csv")
+#save_filename = os.path.join(save_dir, f"results_ditto_rpdp_{args.dataset}_niid_{args.seed}.csv")
 
 NUM_CLIENTS = dict["fedavg"]["num_clients"]
 NUM_STEPS = dict["fedavg"]["num_steps"]
@@ -74,6 +75,7 @@ if args.dataset == "heart_disease":
     data_path = os.path.join(project_abspath, dict["dataset_dir"])
 else:
     data_path = os.path.join(project_abspath, dict["dataset_dir"][f"iid_{NUM_CLIENTS}"]) # data_path = os.path.join(project_abspath, dict["dataset_dir"][f"niid_{NUM_CLIENTS}"])
+    #data_path = os.path.join(project_abspath, dict["dataset_dir"][f"niid_{NUM_CLIENTS}"])
 
 rawdata = RawClass(data_path=data_path)
 test_dls, training_dls = [], []
@@ -136,7 +138,7 @@ for ename in epsilons:
     current_args["model"] = copy.deepcopy(global_init)
     current_args["privacy_engine"] = privacy_engine
     current_args["reg_param"] = 1
-    current_args["num_personal_steps"] =1
+    current_args["num_personal_steps"] =30
 
     s = Ditto(**current_args, log=False)
     cm, perf_global, perf_personal = s.run()
@@ -183,7 +185,7 @@ for ename in epsilons:
     current_args["model"] = copy.deepcopy(global_init)
     current_args["privacy_engine"] = privacy_engine
     current_args["reg_param"] = 1
-    current_args["num_personal_steps"] =1
+    current_args["num_personal_steps"] =30
 
     s = Ditto(**current_args, log=False)
     cm, perf_global, perf_personal = s.run()
@@ -198,7 +200,7 @@ for ename in epsilons:
         "timestamp": datetime.datetime.now().strftime("%Y-%m-%d %H:%M"),
         "mean_perf_global": round(mean_perf_global, 4), "perf_global": perf_global,
         "mean_perf_personal": round(mean_perf_personal, 4), "perf_personal": perf_personal, 
-        "e": f"{ename}-Ours", 
+        "e": f"{ename}-StrongForAll", 
         "d": TARGET_DELTA, 
         "nm": round(s.privacy_engine.default_noise_multiplier, 2), 
         "norm": MAX_GRAD_NORM, 
@@ -241,7 +243,7 @@ for ename in epsilons:
     current_args["model"] = copy.deepcopy(global_init)
     current_args["privacy_engine"] = privacy_engine
     current_args["reg_param"] = 1
-    current_args["num_personal_steps"] = 1
+    current_args["num_personal_steps"] = 30
 
     s = Ditto(**current_args, log=False)
     cm, perf_global, perf_personal = s.run()
@@ -256,7 +258,7 @@ for ename in epsilons:
         "timestamp": datetime.datetime.now().strftime("%Y-%m-%d %H:%M"),
         "mean_perf_global": round(mean_perf_global, 4), "perf_global": perf_global,
         "mean_perf_personal": round(mean_perf_personal, 4), "perf_personal": perf_personal, 
-        "e": f"{ename}-Ours", 
+        "e": f"{ename}-Dropout", 
         "d": TARGET_DELTA, 
         "nm": round(s.privacy_engine.default_noise_multiplier, 2), 
         "norm": MAX_GRAD_NORM, 

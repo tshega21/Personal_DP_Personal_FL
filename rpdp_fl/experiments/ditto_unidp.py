@@ -113,7 +113,7 @@ current_args = copy.deepcopy(training_args)
 current_args["model"] = copy.deepcopy(global_init)
 current_args["privacy_engine"] = privacy_engine
 current_args["reg_param"] = 1
-current_args["num_personal_steps"] =1
+current_args["num_personal_steps"] =30
 
 
 
@@ -138,6 +138,31 @@ record_row = [{
     "num_clients": NUM_CLIENTS,
     "client_rate": CLIENT_RATE
 }]
+
+record_global = [{
+    "perf": str(perf_global),  # store as string
+    "mean_perf": round(np.mean(perf_global[-3:]), 4),
+    "e": TARGET_EPSILON,
+    "d": TARGET_DELTA,
+    "nm": round(s.privacy_engine.default_noise_multiplier, 2),
+    "norm": MAX_GRAD_NORM,
+    "bs": BATCH_SIZE,
+    "seed": args.seed
+}]
+
+# Prepare personal results
+record_personal = [{
+    "perf": str(perf_personal),
+    "mean_perf": round(np.mean(perf_personal[-3:]), 4),
+    "e": TARGET_EPSILON,
+    "d": TARGET_DELTA,
+    "nm": round(s.privacy_engine.default_noise_multiplier, 2),
+    "norm": MAX_GRAD_NORM,
+    "bs": BATCH_SIZE,
+    "seed": args.seed
+}]
+
+
 results = pd.DataFrame.from_dict(record_row)
 results.to_csv(save_filename, mode='a', index=False)
 # ======== End Training ============
