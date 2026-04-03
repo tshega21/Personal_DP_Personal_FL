@@ -20,10 +20,18 @@ parser.add_argument("--gpuid", type=int, default=7,
                     help="Index of the GPU device.")
 parser.add_argument("--seed", type=int, default=41, 
                     help="random seed")
+parser.add_argument("--data_type", type=str, default="iid",
+                    choices=["iid", "niid"],
+                    help="Type of data partition: iid or niid")
 args = parser.parse_args()
 
 os.environ['CUDA_LAUNCH_BLOCKING'] = '1'
-torch.manual_seed(args.seed) 
+def set_random_seed(seed_value):
+    np.random.seed(seed_value)
+    torch.manual_seed(seed_value)
+    torch.cuda.manual_seed(seed_value)
+set_random_seed(args.seed)
+
 device = torch.device(f"cuda:{args.gpuid}" if torch.cuda.is_available() else "cpu")
 module_name = f"datasets.fed_{args.dataset}"
 try:
@@ -44,7 +52,10 @@ dict = read_config(get_config_file_path(dataset_name=f"fed_{args.dataset}", debu
 save_dir = os.path.join(project_abspath, dict["save_dir"])
 if not os.path.exists(save_dir):
     os.mkdir(save_dir)
-save_filename = os.path.join(save_dir, f"results_ditto_dp_{args.dataset}_{args.seed}.csv")
+
+save_filename_global = os.path.join(save_dir, f"{args.data_type}_results_ditto_global_unidp_{args.dataset}.csv")
+save_filename_personal = os.path.join(save_dir, f"{args.data_type}_results_ditto_personal_unidp_{args.dataset}.csv")
+
 
 NUM_CLIENTS = dict["fedavg"]["num_clients"]
 NUM_STEPS = dict["fedavg"]["num_steps"]
@@ -64,7 +75,7 @@ MAX_PHYSICAL_BATCH_SIZE = dict["dpfedavg"]["max_physical_batch_size"]
 if args.dataset == "heart_disease":
     data_path = os.path.join(project_abspath, dict["dataset_dir"])
 else:
-    data_path = os.path.join(project_abspath, dict["dataset_dir"][f"iid_{NUM_CLIENTS}"])
+    data_path = os.path.join(project_abspath, dict["dataset_dir"][f"{args.data_type}_{NUM_CLIENTS}"]) 
 rawdata = RawClass(data_path=data_path)
 test_dls, training_dls = [], []
 for i in range(NUM_CLIENTS): # NUM_CLIENTS
@@ -112,8 +123,8 @@ privacy_engine.prepare_feddp(
 current_args = copy.deepcopy(training_args)
 current_args["model"] = copy.deepcopy(global_init)
 current_args["privacy_engine"] = privacy_engine
-current_args["reg_param"] = 1
-current_args["num_personal_steps"] =30
+current_args["reg_param"] = 0.1
+current_args["num_personal_steps"] =15
 
 
 
@@ -124,20 +135,6 @@ mean_perf_personal = np.mean(perf_personal[-3:])
 print(f"Mean performance of unidp ditto global, Perf={mean_perf_global:.4f}")
 print(f"Mean performance of unidp ditto personal, Perf={mean_perf_personal:.4f}")
 
-
-record_row = [{
-    "timestamp": datetime.datetime.now().strftime("%Y-%m-%d %H:%M"),
-    "mean_perf_global": round(mean_perf_global, 4), "perf-global": perf_global,
-    "mean_perf_personal": round(mean_perf_personal, 4), "perf_personal": perf_personal, 
-    "e": TARGET_EPSILON, 
-    "d": TARGET_DELTA, 
-    "nm": round(s.privacy_engine.default_noise_multiplier, 2), 
-    "norm": MAX_GRAD_NORM, 
-    "bs": BATCH_SIZE, 
-    "lr": LR_DP,
-    "num_clients": NUM_CLIENTS,
-    "client_rate": CLIENT_RATE
-}]
 
 record_global = [{
     "perf": str(perf_global),  # store as string
@@ -162,7 +159,9 @@ record_personal = [{
     "seed": args.seed
 }]
 
+results_global = pd.DataFrame.from_dict(record_global)
+results_personal = pd.DataFrame.from_dict(record_personal)
 
-results = pd.DataFrame.from_dict(record_row)
-results.to_csv(save_filename, mode='a', index=False)
+results_global.to_csv(save_filename_global, mode='a', index=False)
+results_personal.to_csv(save_filename_personal, mode='a', index=False)
 # ======== End Training ============

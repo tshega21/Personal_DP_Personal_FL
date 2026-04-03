@@ -22,6 +22,9 @@ parser.add_argument("--gpuid", type=int, default=7,
                     help="Index of the GPU device.")
 parser.add_argument("--seed", type=int, default=41, 
                     help="random seed")
+parser.add_argument("--data_type", type=str, default="iid",
+                    choices=["iid", "niid"],
+                    help="Type of data partition: iid or niid")
 args = parser.parse_args()
 
 os.environ['CUDA_LAUNCH_BLOCKING'] = '1'
@@ -53,8 +56,8 @@ save_dir = os.path.join(project_abspath, dict["save_dir"])
 if not os.path.exists(save_dir):
     os.mkdir(save_dir)
     
-#save_filename = os.path.join(save_dir, f"results_fedavg_rpdp_{args.dataset}_{args.seed}.csv")
-save_filename = os.path.join(save_dir, f"results_fedavg_rpdp_{args.dataset}_niid_{args.seed}.csv")
+save_filename = os.path.join(save_dir, f"{args.data_type}_results_fedavg_rpdp_{args.dataset}.csv")
+
 
 NUM_CLIENTS = dict["fedavg"]["num_clients"]
 NUM_STEPS = dict["fedavg"]["num_steps"]
@@ -73,13 +76,15 @@ MAX_PHYSICAL_BATCH_SIZE = dict["dpfedavg"]["max_physical_batch_size"]
 if args.dataset == "heart_disease":
     data_path = os.path.join(project_abspath, dict["dataset_dir"])
 else:
-    data_path = os.path.join(project_abspath, dict["dataset_dir"][f"niid_{NUM_CLIENTS}"])
-    #data_path = os.path.join(project_abspath, dict["dataset_dir"][f"iid_{NUM_CLIENTS}"]) # data_path = os.path.join(project_abspath, dict["dataset_dir"][f"niid_{NUM_CLIENTS}"])
+    data_path = os.path.join(project_abspath, dict["dataset_dir"][f"{args.data_type}_{NUM_CLIENTS}"]) 
 
 rawdata = RawClass(data_path=data_path)
 test_dls, training_dls = [], []
 for i in range(NUM_CLIENTS): # NUM_CLIENTS
     train_data = FedClass(rawdata=rawdata, center=i, train=True)
+    
+    #SHOULD THIS BE FULL BATCH? SWITCHED TO BATCHSIZE ON OTHERS BUT THIS IS 
+    # WHAT THEY HAD ORIGINALLY
     train_dl = DataLoader(train_data, batch_size=len(train_data))
     training_dls.append(train_dl)
 
@@ -143,19 +148,37 @@ for ename in epsilons:
     expected_batch_size = [int(sum(acct.sample_rate)) for acct in s.privacy_engine.accountant.accountants]
 
     print(f"Mean performance of {name}, min_eps={min(target_epsilons[0]):.4f}, max_eps={max(target_epsilons[0]):.4f}, delta={TARGET_DELTA}, Perf={mean_perf:.4f}, seed={args.seed}")
+    """
     results_dict = [{
         "timestamp": datetime.datetime.now().strftime("%Y-%m-%d %H:%M"),
-        "mean_perf": round(mean_perf,4), "perf": perf, 
+        "perf": str(perf,
+        "mean_perf": round(mean_perf,4), 
         "e": f"{ename}-Ours", 
         "d": TARGET_DELTA, 
         "nm": round(s.privacy_engine.default_noise_multiplier, 2), 
         "norm": MAX_GRAD_NORM, 
-        "bs": expected_batch_size, 
-        "lr": LR_DP,
-        "num_clients": NUM_CLIENTS,
-        "client_rate": CLIENT_RATE}]
+        "bs": expected_batch_size[0], 
+        "seed": args.seed,
+        #"lr": LR_DP,
+        #"num_clients": NUM_CLIENTS,
+        #"client_rate": CLIENT_RATE}]
+        """
+        
+    results_dict = [{
+        "perf": str(perf),  # store as string
+        "mean_perf": round(mean_perf, 4),
+        "e": f"{ename}-Ours",
+        "d": TARGET_DELTA,
+        "nm": round(s.privacy_engine.default_noise_multiplier, 2),
+        "norm": MAX_GRAD_NORM,
+        "bs": expected_batch_size[0], 
+        "seed": args.seed
+    }]
+        
     results = pd.DataFrame.from_dict(results_dict)
-    results.to_csv(save_filename, mode='a', index=False)
+    
+    write_header = not os.path.exists(save_filename)
+    results.to_csv(save_filename, mode='a', index=False, header=write_header)
     del privacy_engine, s, cm, mean_perf
 
     # We run FedAvg with rPDP (StrongForAll)
@@ -164,6 +187,8 @@ for ename in epsilons:
     print(min_epsilon)
 
     privacy_engine = PrivacyEngine(accountant="fed_rdp", n_clients=NUM_CLIENTS)
+    
+    #DO THEY MEAN TO DO THIS HERE??
     privacy_engine.prepare_feddp(
         num_steps = NUM_STEPS,
         num_rounds = NUM_ROUNDS,
@@ -184,9 +209,11 @@ for ename in epsilons:
     expected_batch_size = [int(acct.sample_rate * len(train_dl.dataset)) for acct, train_dl in zip(s.privacy_engine.accountant.accountants, training_dls)]
     
     print(f"Mean performance of StrongForAll, eps={min_epsilon}, delta={TARGET_DELTA}, Perf={mean_perf:.4f}")
+    """
     results_dict = [{
         "timestamp": datetime.datetime.now().strftime("%Y-%m-%d %H:%M"),
-        "mean_perf": round(mean_perf,4), "perf": perf, 
+        "perf": str(perf), 
+        "mean_perf": round(mean_perf,4), 
         "e": f"{ename}-StrongForAll({min_epsilon})", 
         "d": TARGET_DELTA, 
         "nm": round(s.privacy_engine.default_noise_multiplier, 2), 
@@ -195,8 +222,21 @@ for ename in epsilons:
         "lr": LR_DP,
         "num_clients": NUM_CLIENTS,
         "client_rate": CLIENT_RATE}]
+    """
+    results_dict = [{
+        "perf": str(perf),  # store as string
+        "mean_perf": round(mean_perf, 4),
+        "e": f"{ename}-StrongForAll", 
+        "d": TARGET_DELTA,
+        "nm": round(s.privacy_engine.default_noise_multiplier, 2),
+        "norm": MAX_GRAD_NORM,
+        "bs": expected_batch_size[0], 
+        "seed": args.seed
+    }]
+
     results = pd.DataFrame.from_dict(results_dict)
-    results.to_csv(save_filename, mode='a', index=False, header=False)
+    write_header = not os.path.exists(save_filename)
+    results.to_csv(save_filename, mode='a', index=False, header=write_header)
     del privacy_engine, s, cm, mean_perf
 
     # We run FedAvg with rPDP (Dropout)
@@ -230,6 +270,7 @@ for ename in epsilons:
     expected_batch_size = [int(sum(acct.sample_rate)) for acct in s.privacy_engine.accountant.accountants]
 
     print(f"Mean performance of Dropout, eps={mean_epsilon}, delta={TARGET_DELTA}, Perf={mean_perf:.4f}")
+    """
     results_dict = [{
         "timestamp": datetime.datetime.now().strftime("%Y-%m-%d %H:%M"),
         "mean_perf": round(mean_perf,4), "perf": perf, 
@@ -241,6 +282,18 @@ for ename in epsilons:
         "lr": LR_DP,
         "num_clients": NUM_CLIENTS,
         "client_rate": CLIENT_RATE}]
+    """
+    results_dict = [{
+        "perf": str(perf),  # store as string
+        "mean_perf": round(mean_perf, 4),
+        "e": f"{ename}-Dropout", 
+        "d": TARGET_DELTA,
+        "nm": round(s.privacy_engine.default_noise_multiplier, 2),
+        "norm": MAX_GRAD_NORM,
+        "bs": expected_batch_size[0], 
+        "seed": args.seed
+    }]
     results = pd.DataFrame.from_dict(results_dict)
-    results.to_csv(save_filename, mode='a', index=False, header=False)
+    write_header = not os.path.exists(save_filename)
+    results.to_csv(save_filename, mode='a', index=False, header=write_header)
     del privacy_engine, s, cm, mean_perf

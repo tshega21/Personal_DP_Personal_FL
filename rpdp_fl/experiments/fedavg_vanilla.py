@@ -18,6 +18,9 @@ parser.add_argument("--gpuid", type=int, default=7,
                     help="Index of the GPU device.")
 parser.add_argument("--seed", type=int, default=41, 
                     help="random seed")
+parser.add_argument("--data_type", type=str, default="iid",
+                    choices=["iid", "niid"],
+                    help="Type of data partition: iid or niid")
 args = parser.parse_args()
 
 os.environ['CUDA_LAUNCH_BLOCKING'] = '1'
@@ -46,7 +49,9 @@ dict = read_config(get_config_file_path(dataset_name=f"fed_{args.dataset}", debu
 save_dir = os.path.join(project_abspath, dict["save_dir"])
 if not os.path.exists(save_dir):
     os.mkdir(save_dir)
-save_filename = os.path.join(save_dir, f"results_fedavg_{args.dataset}_{args.seed}.csv")
+    
+save_filename = os.path.join(save_dir, f"{args.data_type}_results_fedavg_vanilla_{args.dataset}.csv")
+
 
 NUM_CLIENTS = dict["fedavg"]["num_clients"]
 NUM_STEPS = dict["fedavg"]["num_steps"]
@@ -59,8 +64,7 @@ LR = dict["fedavg"]["learning_rate"]
 if args.dataset == "heart_disease":
     data_path = os.path.join(project_abspath, dict["dataset_dir"])
 else:
-    data_path = os.path.join(project_abspath, dict["dataset_dir"][f"niid_{NUM_CLIENTS}"])
-    #data_path = os.path.join(project_abspath, dict["dataset_dir"][f"iid_{NUM_CLIENTS}"])
+    data_path = os.path.join(project_abspath, dict["dataset_dir"][f"{args.data_type}_{NUM_CLIENTS}"])   
     
 rawdata = RawClass(data_path=data_path)
 training_dls, test_dls = [], []
@@ -70,6 +74,11 @@ for i in range(NUM_CLIENTS):
 
     test_ds = FedClass(rawdata=rawdata, center=i, train=False)
     test_dls.append(DataLoader(test_ds, batch_size=BATCH_SIZE))
+
+
+# creates Pooled dataset with data from all clients
+pooled_test_ds = FedClass(rawdata, pooled=True, train=False)
+pooled_test_dl = DataLoader(pooled_test_ds, batch_size=BATCH_SIZE)
 
 """ Prepare model and loss """
 model = BaselineModel.to(device)
@@ -95,10 +104,24 @@ s = FedAvg(**current_args, log=False)
 cm, perf = s.run()
 mean_perf = np.mean(perf[-3:])
 print(f"Mean performance of vanilla FedAvg, Perf={mean_perf:.4f}")
+
+record_row = [{
+    "perf": str(perf),  # as a string
+    "mean_perf": round(mean_perf, 4),
+    "e": "PrivacyFree",
+    "d": None,
+    "nm": None,
+    "norm": None,
+    "bs": BATCH_SIZE,
+    "seed": args.seed
+}]
+
+"""
+
 record_row = [{
     "timestamp": datetime.datetime.now().strftime("%Y-%m-%d %H:%M"),
     "mean_perf": round(mean_perf, 4), "perf": perf, 
-    "e": None, 
+    "e": "PrivacyFree", 
     "d": None, 
     "nm": None, 
     "norm": None, 
@@ -107,6 +130,8 @@ record_row = [{
     "num_clients": NUM_CLIENTS,
     "client_rate": CLIENT_RATE
 }]
+
+"""
 results = pd.DataFrame.from_dict(record_row)
 results.to_csv(save_filename, mode='a', index=False)
 # ======== End Training ============

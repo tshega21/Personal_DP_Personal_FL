@@ -207,6 +207,7 @@ class _Model:
         """
         This method passes in the personalized model object
         performs a local update following federated averaging to self
+        # self = local model with untrained global params
         performs ditto's method of personalized regularization to the personal
         # Num_updates = num_steps in ditto.py
         # personal_updates = # of rounds in which the personal training is occuring
@@ -228,12 +229,12 @@ class _Model:
                     train_loader_iter = iter(personal_model._train_dl)
                     batch = next(train_loader_iter)
             
-                batch = tuple(t.to(self._device) for t in batch)
+                batch = tuple(t.to(personal_model._device) for t in batch)
                 if len(batch) == 2: # for other datasets
                     #forward pass on train data batch
                     logits = personal_model.model(batch[0])
                     #calculate loss with true labels in batch
-                    loss = self._loss(logits, batch[1])
+                    loss = personal_model._loss(logits, batch[1])
 
                 elif len(batch) == 4: # for snli dataset
                     inputs = {'input_ids':    batch[0],
@@ -245,9 +246,9 @@ class _Model:
                     
                 # DITTO PERSONALIZATION
                 l_2_reg = 0
-                for param_personal, param_global in zip(self.model.parameters(), personal_model.model.parameters()):
+                for param_personal, param_global in zip(personal_model.model.parameters(),self.model.parameters()):
                     # gradient v_k= 0.5 ||v_k - w^t||^2 = (v_k - w_t)
-                    # want to 
+                    
                     l_2_reg += torch.sum((param_personal-param_global.detach())**2)
                 loss = loss + (reg_param/2)*l_2_reg
                 
@@ -272,10 +273,10 @@ class _Model:
                     train_loader_iter = iter(personal_model._train_dl) # restart dataloader iteration
                     batch = next(train_loader_iter)
                 current_batch_size += len(batch[-1]) 
-                batch = tuple(t.to(self._device) for t in batch)
+                batch = tuple(t.to(personal_model._device) for t in batch)
                 if len(batch) == 2: # for other datasets
                     logits = personal_model.model(batch[0])
-                    loss = self._loss(logits, batch[1])
+                    loss = personal_model._loss(logits, batch[1])
 
                 elif len(batch) == 4: # for snli dataset
                     inputs = {'input_ids':    batch[0],
@@ -287,7 +288,7 @@ class _Model:
                     
                 # DITTO PERSONALIZATION
                 l_2_reg = 0
-                for param_personal, param_global in zip(self.model.parameters(), personal_model.model.parameters()):
+                for param_personal, param_global in zip(personal_model.model.parameters(),self.model.parameters()):
                     # gradient v_k 0.5 ||v_k - w^t||^2 = (v_k - w_t)
                     # want to detach param_global so it is not gradient 
                     l_2_reg += torch.sum((param_personal-param_global.detach())**2)

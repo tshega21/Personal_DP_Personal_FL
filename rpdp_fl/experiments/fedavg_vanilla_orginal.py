@@ -10,7 +10,7 @@ import warnings
 warnings.simplefilter("ignore")
 
 from configs.config_utils import read_config, get_config_file_path
-from myopacus.strategies import Ditto
+from myopacus.strategies import FedAvgOriginal
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--dataset", type=str, default='heart_disease')
@@ -18,9 +18,6 @@ parser.add_argument("--gpuid", type=int, default=7,
                     help="Index of the GPU device.")
 parser.add_argument("--seed", type=int, default=41, 
                     help="random seed")
-parser.add_argument("--data_type", type=str, default="iid",
-                    choices=["iid", "niid"],
-                    help="Type of data partition: iid or niid")
 args = parser.parse_args()
 
 os.environ['CUDA_LAUNCH_BLOCKING'] = '1'
@@ -49,13 +46,7 @@ dict = read_config(get_config_file_path(dataset_name=f"fed_{args.dataset}", debu
 save_dir = os.path.join(project_abspath, dict["save_dir"])
 if not os.path.exists(save_dir):
     os.mkdir(save_dir)
-
-save_filename_global = os.path.join(save_dir, f"{args.data_type}_results_ditto_global_vanilla_{args.dataset}.csv")
-save_filename_personal = os.path.join(save_dir, f"{args.data_type}_results_ditto_personal_vanilla_{args.dataset}.csv")
-
-
-
-
+save_filename = os.path.join(save_dir, f"results_fedavg_{args.dataset}_{args.seed}.csv")
 
 NUM_CLIENTS = dict["fedavg"]["num_clients"]
 NUM_STEPS = dict["fedavg"]["num_steps"]
@@ -68,8 +59,7 @@ LR = dict["fedavg"]["learning_rate"]
 if args.dataset == "heart_disease":
     data_path = os.path.join(project_abspath, dict["dataset_dir"])
 else:
-    data_path = os.path.join(project_abspath, dict["dataset_dir"][f"{args.data_type}_{NUM_CLIENTS}"]) 
-
+    data_path = os.path.join(project_abspath, dict["dataset_dir"][f"niid_{NUM_CLIENTS}"])
     
 rawdata = RawClass(data_path=data_path)
 training_dls, test_dls = [], []
@@ -81,7 +71,6 @@ for i in range(NUM_CLIENTS):
     test_dls.append(DataLoader(test_ds, batch_size=BATCH_SIZE))
 
 """ Prepare model and loss """
-
 model = BaselineModel.to(device)
 criterion = BaselineLoss()
 
@@ -100,45 +89,23 @@ current_args = {
     "metric": metric,
     "seed": args.seed
 }
-current_args["reg_param"] = 0
-current_args["num_personal_steps"] = 15
-
 # ======== Start Training ==========
-s = Ditto(**current_args, log=False)
-cm, perf_global, perf_personal = s.run()
-mean_perf_global = np.mean(perf_global[-3:])
-mean_perf_personal = np.mean(perf_personal[-3:])
-print(f"Mean performance of vanilla ditto global, Perf={mean_perf_global:.4f}")
-print(f"Mean performance of vanilla ditto personal, Perf={mean_perf_personal:.4f}")
-
-
-
-record_global = [{
-    "perf": str(perf_global),  # as a string
-    "mean_perf": round(np.mean(perf_global[-3:]), 4),
-    "e": "PrivacyFree",
-    "d": None,
-    "nm": None,
-    "norm": None,
+s = FedAvgOriginal(**current_args, log=False)
+cm, perf = s.run()
+mean_perf = np.mean(perf[-3:])
+print(f"Mean performance of vanilla FedAvg, Perf={mean_perf:.4f}")
+record_row = [{
+    "timestamp": datetime.datetime.now().strftime("%Y-%m-%d %H:%M"),
+    "mean_perf": round(mean_perf, 4), "perf": perf, 
+    "e": None, 
+    "d": None, 
+    "nm": None, 
+    "norm": None, 
     "bs": BATCH_SIZE,
-    "seed": args.seed
+    "lr": LR,
+    "num_clients": NUM_CLIENTS,
+    "client_rate": CLIENT_RATE
 }]
-
-# Prepare personal results
-record_personal = [{
-    "perf": str(perf_personal),
-    "mean_perf": round(np.mean(perf_personal[-3:]), 4),
-    "e": "PrivacyFree",
-    "d": None,
-    "nm": None,
-    "norm": None,
-    "bs": BATCH_SIZE,
-    "seed": args.seed
-}]
-
-results_global = pd.DataFrame.from_dict(record_global)
-results_personal = pd.DataFrame.from_dict(record_personal)
-
-results_global.to_csv(save_filename_global, mode='a', index=False)
-results_personal.to_csv(save_filename_personal, mode='a', index=False)
+results = pd.DataFrame.from_dict(record_row)
+results.to_csv(save_filename, mode='a', index=False)
 # ======== End Training ============

@@ -2,34 +2,15 @@ import numpy as np
 import time
 import torch
 from typing import List
-import copy
 
 from myopacus import PrivacyEngine
 from myopacus.strategies.strategies_utils import _Model
 
-
-#def set_random_seed(seed_value):
-    #np.random.seed(seed_value)
-    #torch.manual_seed(seed_value)
-    #torch.cuda.manual_seed(seed_value)
-    
 def set_random_seed(seed_value):
-    
-    import random
-    random.seed(seed_value)
     np.random.seed(seed_value)
-
-    #PyTorch CPU
     torch.manual_seed(seed_value)
-    #PyTorch GPU 
     torch.cuda.manual_seed(seed_value)
-    torch.cuda.manual_seed_all(seed_value)
-
-    torch.backends.cudnn.deterministic = True
-    torch.backends.cudnn.benchmark = False
-
-    torch.set_num_threads(1)
-      
+    
 def evaluate_model_on_tests(
     models_list, return_pred=False
 ):
@@ -53,7 +34,6 @@ def evaluate_model_on_tests(
        
     with torch.no_grad():
         for _model in models_list:
-            
             _model.model.to(_model._device).eval()
             test_dataloader_iterator = iter(_model._test_dl)
             y_pred_final = []
@@ -92,7 +72,7 @@ def evaluate_model_on_tests(
         return results_dict
     
 
-class Ditto:
+class FedAvgOriginal:
     """Federated Averaging Strategy class.
 
     The Federated Averaging strategy is the most simple centralized FL strategy.
@@ -141,10 +121,6 @@ class Ditto:
         self,
         training_dataloaders: List, 
         test_dataloaders: List, # added by Junxu
-        
-        # Dataloader to test over all clients
-        pooled_test_dataloader:torch.utils.data.DataLoader, 
-        
         model: torch.nn.Module,
         loss: torch.nn.modules.loss._Loss,
         metric: callable,
@@ -153,8 +129,6 @@ class Ditto:
         client_rate: float,
         num_steps: int,
         num_rounds: int,
-        num_personal_steps: int,
-        reg_param: float = 1, #regularization parameter
         privacy_engine: PrivacyEngine = None,
         device: str = "cuda:0",
         log: bool = False,
@@ -166,14 +140,11 @@ class Ditto:
         **kwargs
     ):
         self.privacy_engine = privacy_engine
-        self.reg_param = reg_param
+        
         self.client_rate = client_rate
         self.num_rounds = num_rounds
         self.num_steps = num_steps
-        
-        #do I add this or no? how to include this in DP accounting :/
-        self.num_personal_steps = num_personal_steps
-        
+
         self.log = log
         self.log_period = log_period
         self.log_basename = log_basename
@@ -181,29 +152,7 @@ class Ditto:
         self._seed = seed
         set_random_seed(self._seed)
 
-        self.local_models_list = [
-            _Model(
-                #don't need deepcopy because deepcopy is done in strategies_utils.py
-                model=model,
-                optimizer_class=optimizer_class,
-                lr=learning_rate,
-                train_dl=_train_dl,
-                test_dl=_test_dl,
-                device=device,
-                metric=metric,
-                loss=loss,
-                log=self.log,
-                client_id=i,
-                log_period=self.log_period,
-                log_basename=self.log_basename,
-                logdir=self.logdir,
-                seed=self._seed,
-            )
-            for i, (_train_dl, _test_dl) in enumerate(list(zip(training_dataloaders, test_dataloaders)))
-        ]
-        
-        set_random_seed(self._seed)
-        self.personal_models_list = [
+        self.models_list = [
             _Model(
                 model=model,
                 optimizer_class=optimizer_class,
@@ -227,51 +176,22 @@ class Ditto:
             assert (self.privacy_engine.accountant.mechanism() == "idp"), \
                  "DataType of `privacy_engine.accountant` must be `IndividualAccountant` in FL setup."
             
-            for l_model in self.local_models_list:
-                l_model._make_private(self.privacy_engine)
-            #for p_model in self.personal_models_list:
-            #    p_model._make_private(self.privacy_engine)
-
+            for _model in self.models_list:
+                _model._make_private(self.privacy_engine)
 
         self.num_clients = len(training_dataloaders)
         self.bits_counting_function = bits_counting_function
-
-    
-
 
     def _local_optimization(self, _model: _Model):
         """Carry out the local optimization step."""
         if self.privacy_engine is None:
             _model._local_train(self.num_steps)
-            
-        # privacy engine exists that is not idp (multiple accountants)
         elif not (self.privacy_engine.accountant.mechanism() == "idp"):
             _model._local_train(self.num_steps, \
                                 privacy_accountant=self.privacy_engine.accountant)
-            
-        # every client has their own privacy accountant
         else:
             _model._local_train(self.num_steps, \
                                 privacy_accountant=self.privacy_engine.accountant.accountants[_model.client_id])
-
-
-    def _personal_optimization(self, local_model: _Model, personal_model: _Model):
-        """Carry out the local optimization step."""
-        if self.privacy_engine is None:
-            local_model._ditto_local_train(personal_model,\
-                                    self.num_personal_steps, self.reg_param)
-            
-        # privacy engine exists that is not idp (multiple accountants)
-        elif not (self.privacy_engine.accountant.mechanism() == "idp"):
-            local_model._ditto_local_train(personal_model, \
-                                self.num_personal_steps, self.reg_param)
-            
-        # every client has their own privacy accountant
-        #DO I ATTACH PRIVACY ENGINE TO LOCAL OR PERSONAL ***
-        else:
-            local_model._ditto_local_train(personal_model, \
-                               self.num_personal_steps, self.reg_param)
-
 
     def perform_round(self):
         """Does a single federated averaging round. The following steps will be
@@ -280,69 +200,44 @@ class Ditto:
         - each model will be trained locally for num_steps batches.
         - the parameter updates will be collected and averaged. Averages will be
           weighted by the number of samples in each client
-        - the averaged updates will be used to update the local model
-        
-        Global round
+        - the averaged updates willl be used to update the local model
         """
         local_updates = list()
         total_number_of_samples = 0
         selected_idx_client = []
-        
-        
         while len(selected_idx_client) == 0:
-            
-            # boolean mask that samples according to client_rate
             mask = (np.random.random(self.num_clients) < self.client_rate)
             selected_idx_client = np.where(mask == True)[0]
             print("selected_idx_client: ", selected_idx_client)
         
-        model_lists = list(zip(self.local_models_list, self.personal_models_list))
-        
-        selected_models = [model_lists[idx] for idx in selected_idx_client]
-        #local training round for every client 
-        for local_model, personal_model in selected_models:
-            
-
-            print(f"Client {local_model.client_id} ...")
+        for _model in np.array(self.models_list)[selected_idx_client]:
+            print(f"Client {_model.client_id} ...")
             # Local Optimization
-            _local_previous_state = local_model._get_current_params()
-            
-            #calls personalization on w_k initial global model
-            self._personal_optimization(local_model, personal_model)
+            _local_previous_state = _model._get_current_params()
+            self._local_optimization(_model)
+            _local_next_state = _model._get_current_params()
 
-            # calls local_train from strategies_utils.py for num of local steps
-            self._local_optimization(local_model)
-            _local_next_state = local_model._get_current_params()
-
-
-            # Recovering updates (w^t_k - w^t), how much params change after all local steps
+            # Recovering updates
             updates = [
                 new - old for new, old in zip(_local_next_state, _local_previous_state)
             ]
-
-            #deletes copy of params
             del _local_next_state
 
             # Reset local model
-            for p_new, p_old in zip(local_model.model.parameters(), _local_previous_state):
+            for p_new, p_old in zip(_model.model.parameters(), _local_previous_state):
                 p_new.data = torch.from_numpy(p_old).to(p_new.device)
             del _local_previous_state
 
             if self.bits_counting_function is not None:
                 self.bits_counting_function(updates)
             
-            # list of updates and update number of samples 
-
-            local_updates.append({"updates": updates, "n_samples": len(local_model._train_dl.dataset)})
-            total_number_of_samples += len(local_model._train_dl.dataset)
+            local_updates.append({"updates": updates, "n_samples": len(_model._train_dl.dataset)})
+            total_number_of_samples += len(_model._train_dl.dataset)
 
         # Aggregation step
-        
         aggregated_delta_weights = [
             None for _ in range(len(local_updates[0]["updates"]))
         ]
-        
-        # iterate through every parameter and weight
         for idx_weight in range(len(local_updates[0]["updates"])):
             aggregated_delta_weights[idx_weight] = sum(
                 [
@@ -351,11 +246,10 @@ class Ditto:
                     for idx_client in range(len(selected_idx_client))
                 ]
             )
-            #weighted average
             aggregated_delta_weights[idx_weight] /= float(total_number_of_samples)
 
-        # reset local model to new global model
-        for _model in self.local_models_list:
+        # Update models
+        for _model in self.models_list:
             _model._update_params(aggregated_delta_weights)
 
     # def run(self, metric, device):
@@ -363,30 +257,21 @@ class Ditto:
         """This method performs self.nrounds rounds of averaging
         and returns the list of models.
         """
-        all_round_results_global = []
-        all_round_results_personal = []
-
+        all_round_results = []
         for r in range(self.num_rounds):
             self.perform_round()
-            perf_global, y_true_dict1, y_pred_dict1 = evaluate_model_on_tests(self.local_models_list, return_pred=True)
-            perf_personal, y_true_dict2, y_pred_dict2 = evaluate_model_on_tests(self.personal_models_list, return_pred=True)
-
+            perf, y_true_dict, y_pred_dict = evaluate_model_on_tests(self.models_list, return_pred=True)
             if self.privacy_engine:
                 ret = self.privacy_engine.accountant.get_epsilon(delta=self.privacy_engine.target_delta, mode="max")
                 print("current privacy cost of all clients: ", ret)
 
-            correct_global = np.array( [v for _, v in perf_global.items()] ).sum()
-            total_global = np.array( [len(v) for _, v in y_true_dict1.items()] ).sum()
-            
-            
-            correct_personal = np.array(  [v for _, v in perf_personal.items()]).sum()
-            total_personal = np.array(  [len(v) for _, v in y_true_dict2.items()] ).sum()
-            
-            print(f"Round={r}, global perf={list(perf_global.values())}, mean perf={correct_global}/{total_global} ({correct_global/total_global:.4f}%)")
-            print(f"Round={r}, personal perf={list(perf_personal.values())}, mean perf={correct_personal}/{total_personal} ({correct_personal/total_personal:.4f}%)")
+            correct = np.array(
+                [v for _, v in perf.items()]
+            ).sum()
+            total = np.array(
+                [len(v) for _, v in y_true_dict.items()]
+            ).sum()
+            print(f"Round={r}, perf={list(perf.values())}, mean perf={correct}/{total} ({correct/total:.4f}%)")
+            all_round_results.append(round(correct/total, 4))
 
-            all_round_results_global.append(round(correct_global/total_global, 4))
-            all_round_results_personal.append(round(correct_personal/total_personal, 4))
-
-
-        return [m.model for m in self.local_models_list], all_round_results_global, all_round_results_personal
+        return [m.model for m in self.models_list], all_round_results

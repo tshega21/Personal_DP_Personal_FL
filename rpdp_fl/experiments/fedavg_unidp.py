@@ -20,10 +20,22 @@ parser.add_argument("--gpuid", type=int, default=7,
                     help="Index of the GPU device.")
 parser.add_argument("--seed", type=int, default=41, 
                     help="random seed")
+parser.add_argument("--data_type", type=str, default="iid",
+                    choices=["iid", "niid"],
+                    help="Type of data partition: iid or niid")
+args = parser.parse_args()
 args = parser.parse_args()
 
 os.environ['CUDA_LAUNCH_BLOCKING'] = '1'
-torch.manual_seed(args.seed) 
+
+def set_random_seed(seed_value):
+    np.random.seed(seed_value)
+    torch.manual_seed(seed_value)
+    torch.cuda.manual_seed(seed_value)
+set_random_seed(args.seed)
+
+#torch.manual_seed(args.seed) 
+
 device = torch.device(f"cuda:{args.gpuid}" if torch.cuda.is_available() else "cpu")
 module_name = f"datasets.fed_{args.dataset}"
 try:
@@ -44,7 +56,8 @@ dict = read_config(get_config_file_path(dataset_name=f"fed_{args.dataset}", debu
 save_dir = os.path.join(project_abspath, dict["save_dir"])
 if not os.path.exists(save_dir):
     os.mkdir(save_dir)
-save_filename = os.path.join(save_dir, f"results_fedavg_dp_{args.dataset}_{args.seed}.csv")
+save_filename = os.path.join(save_dir, f"{args.data_type}_results_fedavg_unidp_{args.dataset}.csv")
+
 
 NUM_CLIENTS = dict["fedavg"]["num_clients"]
 NUM_STEPS = dict["fedavg"]["num_steps"]
@@ -64,13 +77,13 @@ MAX_PHYSICAL_BATCH_SIZE = dict["dpfedavg"]["max_physical_batch_size"]
 if args.dataset == "heart_disease":
     data_path = os.path.join(project_abspath, dict["dataset_dir"])
 else:
-    data_path = os.path.join(project_abspath, dict["dataset_dir"][f"niid_{NUM_CLIENTS}"])
-    #data_path = os.path.join(project_abspath, dict["dataset_dir"][f"iid_{NUM_CLIENTS}"])
+    data_path = os.path.join(project_abspath, dict["dataset_dir"][f"{args.data_type}_{NUM_CLIENTS}"]) 
+    
 rawdata = RawClass(data_path=data_path)
 test_dls, training_dls = [], []
 for i in range(NUM_CLIENTS): # NUM_CLIENTS
     train_data = FedClass(rawdata=rawdata, center=i, train=True)
-    train_dl = DataLoader(train_data, batch_size=len(train_data))
+    train_dl = DataLoader(train_data, batch_size=BATCH_SIZE)
     training_dls.append(train_dl)
 
     test_data = FedClass(rawdata=rawdata, center=i, train=False)
@@ -118,6 +131,7 @@ s = FedAvg(**current_args, log=False)
 cm, perf = s.run()
 mean_perf = np.mean(perf[-3:])
 print(f"Mean performance of dp-fedavg, eps={TARGET_EPSILON}, delta={TARGET_DELTA}, Perf={mean_perf:.4f}")
+"""
 record_row = [{
     "timestamp": datetime.datetime.now().strftime("%Y-%m-%d %H:%M"),
     "mean_perf": round(mean_perf, 4), "perf": perf, 
@@ -130,5 +144,17 @@ record_row = [{
     "num_clients": NUM_CLIENTS,
     "client_rate": CLIENT_RATE
 }]
+"""
+record_row = [{
+    "perf": str(perf),  # store as string
+    "mean_perf": round(mean_perf, 4),
+    "e": TARGET_EPSILON,
+    "d": TARGET_DELTA,
+    "nm": round(s.privacy_engine.default_noise_multiplier, 2),
+    "norm": MAX_GRAD_NORM,
+    "bs": BATCH_SIZE,
+    "seed": args.seed
+}]
 results = pd.DataFrame.from_dict(record_row)
-results.to_csv(save_filename, mode='a', index=False)
+write_header = not os.path.exists(save_filename)
+results.to_csv(save_filename, mode='a', index=False, header=write_header)

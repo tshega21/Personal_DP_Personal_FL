@@ -7,9 +7,19 @@ from myopacus import PrivacyEngine
 from myopacus.strategies.strategies_utils import _Model
 
 def set_random_seed(seed_value):
+    import random
+    random.seed(seed_value)
     np.random.seed(seed_value)
+
     torch.manual_seed(seed_value)
     torch.cuda.manual_seed(seed_value)
+    torch.cuda.manual_seed_all(seed_value)
+
+    torch.backends.cudnn.deterministic = True
+    torch.backends.cudnn.benchmark = False
+
+    torch.set_num_threads(1)
+
     
 def evaluate_model_on_tests(
     models_list, return_pred=False
@@ -248,6 +258,8 @@ class FedAvg:
                 self.bits_counting_function(updates)
             
             # list of updates and update number of samples 
+            
+            #WHY IS NUMBER OF SAMPLES THE FULL DATASET
             local_updates.append({"updates": updates, "n_samples": len(_model._train_dl.dataset)})
             total_number_of_samples += len(_model._train_dl.dataset)
 
