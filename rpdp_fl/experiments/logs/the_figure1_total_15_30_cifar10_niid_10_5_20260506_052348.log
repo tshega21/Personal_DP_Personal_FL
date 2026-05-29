@@ -1,0 +1,1595 @@
+=== Data type: niid_10_5 ===
+--- Seed: 42 ---
+--- Personal steps: 15 ---
+---EPSILON 0.1 ---
+default_sample_rate: 0.030303030303030304
+noise_multiplier :  16.25
+default_sample_rate: 0.030303030303030304
+noise_multiplier :  8.75
+learning rate =  0.001
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 52
+sample_rate: 0.03, expected_batch_size: 32
+sample_rate: 0.03, expected_batch_size: 48
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 52
+sample_rate: 0.03, expected_batch_size: 32
+sample_rate: 0.03, expected_batch_size: 48
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Traceback (most recent call last):
+  File "dp_ditto_unidp.py", line 192, in <module>
+    cm, perf_global, perf_personal, perf_pooled = s.run()
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 436, in run
+    self.perform_round()
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 359, in perform_round
+    self._local_optimization(local_model)
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 269, in _local_optimization
+    _model._local_train(self.num_steps, \
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/strategies_utils.py", line 190, in _local_train
+    loss.backward()
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/_tensor.py", line 488, in backward
+    torch.autograd.backward(
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/autograd/__init__.py", line 197, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/nn/modules/module.py", line 62, in __call__
+    return self.hook(module, *args, **kwargs)
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/grad_sample/grad_sample_module.py", line 340, in capture_backprops_hook
+    create_or_accumulate_grad_sample(
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/grad_sample/grad_sample_module.py", line 57, in create_or_accumulate_grad_sample
+    param._current_grad_sample = torch.zeros(
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 288.00 MiB (GPU 0; 9.66 GiB total capacity; 3.55 GiB already allocated; 267.06 MiB free; 8.94 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+---EPSILON 0.5 ---
+default_sample_rate: 0.030303030303030304
+noise_multiplier :  4.140625
+default_sample_rate: 0.030303030303030304
+noise_multiplier :  2.3828125
+learning rate =  0.001
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 52
+sample_rate: 0.03, expected_batch_size: 32
+sample_rate: 0.03, expected_batch_size: 48
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 52
+sample_rate: 0.03, expected_batch_size: 32
+sample_rate: 0.03, expected_batch_size: 48
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Traceback (most recent call last):
+  File "dp_ditto_unidp.py", line 192, in <module>
+    cm, perf_global, perf_personal, perf_pooled = s.run()
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 436, in run
+    self.perform_round()
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 359, in perform_round
+    self._local_optimization(local_model)
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 269, in _local_optimization
+    _model._local_train(self.num_steps, \
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/strategies_utils.py", line 190, in _local_train
+    loss.backward()
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/_tensor.py", line 488, in backward
+    torch.autograd.backward(
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/autograd/__init__.py", line 197, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/nn/modules/module.py", line 62, in __call__
+    return self.hook(module, *args, **kwargs)
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/grad_sample/grad_sample_module.py", line 340, in capture_backprops_hook
+    create_or_accumulate_grad_sample(
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/grad_sample/grad_sample_module.py", line 57, in create_or_accumulate_grad_sample
+    param._current_grad_sample = torch.zeros(
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 288.00 MiB (GPU 0; 9.66 GiB total capacity; 3.55 GiB already allocated; 267.06 MiB free; 8.94 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+---EPSILON 1 ---
+default_sample_rate: 0.030303030303030304
+noise_multiplier :  2.36328125
+default_sample_rate: 0.030303030303030304
+noise_multiplier :  1.474609375
+learning rate =  0.001
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 52
+sample_rate: 0.03, expected_batch_size: 32
+sample_rate: 0.03, expected_batch_size: 48
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 52
+sample_rate: 0.03, expected_batch_size: 32
+sample_rate: 0.03, expected_batch_size: 48
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Traceback (most recent call last):
+  File "dp_ditto_unidp.py", line 192, in <module>
+    cm, perf_global, perf_personal, perf_pooled = s.run()
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 436, in run
+    self.perform_round()
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 359, in perform_round
+    self._local_optimization(local_model)
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 269, in _local_optimization
+    _model._local_train(self.num_steps, \
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/strategies_utils.py", line 190, in _local_train
+    loss.backward()
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/_tensor.py", line 488, in backward
+    torch.autograd.backward(
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/autograd/__init__.py", line 197, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/nn/modules/module.py", line 62, in __call__
+    return self.hook(module, *args, **kwargs)
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/grad_sample/grad_sample_module.py", line 340, in capture_backprops_hook
+    create_or_accumulate_grad_sample(
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/grad_sample/grad_sample_module.py", line 57, in create_or_accumulate_grad_sample
+    param._current_grad_sample = torch.zeros(
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 288.00 MiB (GPU 0; 9.66 GiB total capacity; 3.55 GiB already allocated; 267.06 MiB free; 8.94 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+---EPSILON 4 ---
+default_sample_rate: 0.030303030303030304
+noise_multiplier :  0.9918212890625
+default_sample_rate: 0.030303030303030304
+noise_multiplier :  0.767822265625
+learning rate =  0.001
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 52
+sample_rate: 0.03, expected_batch_size: 32
+sample_rate: 0.03, expected_batch_size: 48
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 52
+sample_rate: 0.03, expected_batch_size: 32
+sample_rate: 0.03, expected_batch_size: 48
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Traceback (most recent call last):
+  File "dp_ditto_unidp.py", line 192, in <module>
+    cm, perf_global, perf_personal, perf_pooled = s.run()
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 436, in run
+    self.perform_round()
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 359, in perform_round
+    self._local_optimization(local_model)
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 269, in _local_optimization
+    _model._local_train(self.num_steps, \
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/strategies_utils.py", line 190, in _local_train
+    loss.backward()
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/_tensor.py", line 488, in backward
+    torch.autograd.backward(
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/autograd/__init__.py", line 197, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/nn/modules/module.py", line 62, in __call__
+    return self.hook(module, *args, **kwargs)
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/grad_sample/grad_sample_module.py", line 340, in capture_backprops_hook
+    create_or_accumulate_grad_sample(
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/grad_sample/grad_sample_module.py", line 57, in create_or_accumulate_grad_sample
+    param._current_grad_sample = torch.zeros(
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 288.00 MiB (GPU 0; 9.66 GiB total capacity; 3.55 GiB already allocated; 267.06 MiB free; 8.94 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+---EPSILON 8 ---
+default_sample_rate: 0.030303030303030304
+noise_multiplier :  0.7611083984375
+default_sample_rate: 0.030303030303030304
+noise_multiplier :  0.60211181640625
+learning rate =  0.001
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 52
+sample_rate: 0.03, expected_batch_size: 32
+sample_rate: 0.03, expected_batch_size: 48
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 52
+sample_rate: 0.03, expected_batch_size: 32
+sample_rate: 0.03, expected_batch_size: 48
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Traceback (most recent call last):
+  File "dp_ditto_unidp.py", line 192, in <module>
+    cm, perf_global, perf_personal, perf_pooled = s.run()
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 436, in run
+    self.perform_round()
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 359, in perform_round
+    self._local_optimization(local_model)
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 269, in _local_optimization
+    _model._local_train(self.num_steps, \
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/strategies_utils.py", line 190, in _local_train
+    loss.backward()
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/_tensor.py", line 488, in backward
+    torch.autograd.backward(
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/autograd/__init__.py", line 197, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/nn/modules/module.py", line 62, in __call__
+    return self.hook(module, *args, **kwargs)
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/grad_sample/grad_sample_module.py", line 340, in capture_backprops_hook
+    create_or_accumulate_grad_sample(
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/grad_sample/grad_sample_module.py", line 57, in create_or_accumulate_grad_sample
+    param._current_grad_sample = torch.zeros(
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 288.00 MiB (GPU 0; 9.66 GiB total capacity; 3.55 GiB already allocated; 267.06 MiB free; 8.94 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+---EPSILON 16 ---
+default_sample_rate: 0.030303030303030304
+noise_multiplier :  0.5831146240234375
+default_sample_rate: 0.030303030303030304
+noise_multiplier :  0.4923248291015625
+learning rate =  0.001
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 52
+sample_rate: 0.03, expected_batch_size: 32
+sample_rate: 0.03, expected_batch_size: 48
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 52
+sample_rate: 0.03, expected_batch_size: 32
+sample_rate: 0.03, expected_batch_size: 48
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Traceback (most recent call last):
+  File "dp_ditto_unidp.py", line 192, in <module>
+    cm, perf_global, perf_personal, perf_pooled = s.run()
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 436, in run
+    self.perform_round()
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 359, in perform_round
+    self._local_optimization(local_model)
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 269, in _local_optimization
+    _model._local_train(self.num_steps, \
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/strategies_utils.py", line 190, in _local_train
+    loss.backward()
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/_tensor.py", line 488, in backward
+    torch.autograd.backward(
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/autograd/__init__.py", line 197, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/nn/modules/module.py", line 62, in __call__
+    return self.hook(module, *args, **kwargs)
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/grad_sample/grad_sample_module.py", line 340, in capture_backprops_hook
+    create_or_accumulate_grad_sample(
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/grad_sample/grad_sample_module.py", line 57, in create_or_accumulate_grad_sample
+    param._current_grad_sample = torch.zeros(
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 288.00 MiB (GPU 0; 9.66 GiB total capacity; 3.55 GiB already allocated; 267.06 MiB free; 8.94 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+--- Finished seed: 42 ---
+--- Seed: 43 ---
+--- Personal steps: 15 ---
+---EPSILON 0.1 ---
+default_sample_rate: 0.030303030303030304
+noise_multiplier :  16.25
+default_sample_rate: 0.030303030303030304
+noise_multiplier :  8.75
+learning rate =  0.001
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 52
+sample_rate: 0.03, expected_batch_size: 32
+sample_rate: 0.03, expected_batch_size: 48
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 52
+sample_rate: 0.03, expected_batch_size: 32
+sample_rate: 0.03, expected_batch_size: 48
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Traceback (most recent call last):
+  File "dp_ditto_unidp.py", line 192, in <module>
+    cm, perf_global, perf_personal, perf_pooled = s.run()
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 436, in run
+    self.perform_round()
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 359, in perform_round
+    self._local_optimization(local_model)
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 269, in _local_optimization
+    _model._local_train(self.num_steps, \
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/strategies_utils.py", line 190, in _local_train
+    loss.backward()
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/_tensor.py", line 488, in backward
+    torch.autograd.backward(
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/autograd/__init__.py", line 197, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/nn/modules/module.py", line 62, in __call__
+    return self.hook(module, *args, **kwargs)
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/grad_sample/grad_sample_module.py", line 340, in capture_backprops_hook
+    create_or_accumulate_grad_sample(
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/grad_sample/grad_sample_module.py", line 57, in create_or_accumulate_grad_sample
+    param._current_grad_sample = torch.zeros(
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 288.00 MiB (GPU 0; 9.66 GiB total capacity; 3.55 GiB already allocated; 247.06 MiB free; 8.96 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+---EPSILON 0.5 ---
+default_sample_rate: 0.030303030303030304
+noise_multiplier :  4.140625
+default_sample_rate: 0.030303030303030304
+noise_multiplier :  2.3828125
+learning rate =  0.001
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 52
+sample_rate: 0.03, expected_batch_size: 32
+sample_rate: 0.03, expected_batch_size: 48
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 52
+sample_rate: 0.03, expected_batch_size: 32
+sample_rate: 0.03, expected_batch_size: 48
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Traceback (most recent call last):
+  File "dp_ditto_unidp.py", line 192, in <module>
+    cm, perf_global, perf_personal, perf_pooled = s.run()
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 436, in run
+    self.perform_round()
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 359, in perform_round
+    self._local_optimization(local_model)
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 269, in _local_optimization
+    _model._local_train(self.num_steps, \
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/strategies_utils.py", line 190, in _local_train
+    loss.backward()
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/_tensor.py", line 488, in backward
+    torch.autograd.backward(
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/autograd/__init__.py", line 197, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/nn/modules/module.py", line 62, in __call__
+    return self.hook(module, *args, **kwargs)
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/grad_sample/grad_sample_module.py", line 340, in capture_backprops_hook
+    create_or_accumulate_grad_sample(
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/grad_sample/grad_sample_module.py", line 57, in create_or_accumulate_grad_sample
+    param._current_grad_sample = torch.zeros(
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 288.00 MiB (GPU 0; 9.66 GiB total capacity; 3.55 GiB already allocated; 247.06 MiB free; 8.96 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+---EPSILON 1 ---
+default_sample_rate: 0.030303030303030304
+noise_multiplier :  2.36328125
+default_sample_rate: 0.030303030303030304
+noise_multiplier :  1.474609375
+learning rate =  0.001
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 52
+sample_rate: 0.03, expected_batch_size: 32
+sample_rate: 0.03, expected_batch_size: 48
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 52
+sample_rate: 0.03, expected_batch_size: 32
+sample_rate: 0.03, expected_batch_size: 48
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Traceback (most recent call last):
+  File "dp_ditto_unidp.py", line 192, in <module>
+    cm, perf_global, perf_personal, perf_pooled = s.run()
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 436, in run
+    self.perform_round()
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 359, in perform_round
+    self._local_optimization(local_model)
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 269, in _local_optimization
+    _model._local_train(self.num_steps, \
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/strategies_utils.py", line 190, in _local_train
+    loss.backward()
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/_tensor.py", line 488, in backward
+    torch.autograd.backward(
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/autograd/__init__.py", line 197, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/nn/modules/module.py", line 62, in __call__
+    return self.hook(module, *args, **kwargs)
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/grad_sample/grad_sample_module.py", line 340, in capture_backprops_hook
+    create_or_accumulate_grad_sample(
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/grad_sample/grad_sample_module.py", line 57, in create_or_accumulate_grad_sample
+    param._current_grad_sample = torch.zeros(
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 288.00 MiB (GPU 0; 9.66 GiB total capacity; 3.55 GiB already allocated; 247.06 MiB free; 8.96 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+---EPSILON 4 ---
+default_sample_rate: 0.030303030303030304
+noise_multiplier :  0.9918212890625
+default_sample_rate: 0.030303030303030304
+noise_multiplier :  0.767822265625
+learning rate =  0.001
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 52
+sample_rate: 0.03, expected_batch_size: 32
+sample_rate: 0.03, expected_batch_size: 48
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 52
+sample_rate: 0.03, expected_batch_size: 32
+sample_rate: 0.03, expected_batch_size: 48
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Traceback (most recent call last):
+  File "dp_ditto_unidp.py", line 192, in <module>
+    cm, perf_global, perf_personal, perf_pooled = s.run()
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 436, in run
+    self.perform_round()
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 359, in perform_round
+    self._local_optimization(local_model)
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 269, in _local_optimization
+    _model._local_train(self.num_steps, \
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/strategies_utils.py", line 190, in _local_train
+    loss.backward()
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/_tensor.py", line 488, in backward
+    torch.autograd.backward(
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/autograd/__init__.py", line 197, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/nn/modules/module.py", line 62, in __call__
+    return self.hook(module, *args, **kwargs)
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/grad_sample/grad_sample_module.py", line 340, in capture_backprops_hook
+    create_or_accumulate_grad_sample(
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/grad_sample/grad_sample_module.py", line 57, in create_or_accumulate_grad_sample
+    param._current_grad_sample = torch.zeros(
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 288.00 MiB (GPU 0; 9.66 GiB total capacity; 3.55 GiB already allocated; 247.06 MiB free; 8.96 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+---EPSILON 8 ---
+default_sample_rate: 0.030303030303030304
+noise_multiplier :  0.7611083984375
+default_sample_rate: 0.030303030303030304
+noise_multiplier :  0.60211181640625
+learning rate =  0.001
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 52
+sample_rate: 0.03, expected_batch_size: 32
+sample_rate: 0.03, expected_batch_size: 48
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 52
+sample_rate: 0.03, expected_batch_size: 32
+sample_rate: 0.03, expected_batch_size: 48
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Traceback (most recent call last):
+  File "dp_ditto_unidp.py", line 192, in <module>
+    cm, perf_global, perf_personal, perf_pooled = s.run()
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 436, in run
+    self.perform_round()
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 359, in perform_round
+    self._local_optimization(local_model)
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 269, in _local_optimization
+    _model._local_train(self.num_steps, \
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/strategies_utils.py", line 190, in _local_train
+    loss.backward()
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/_tensor.py", line 488, in backward
+    torch.autograd.backward(
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/autograd/__init__.py", line 197, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/nn/modules/module.py", line 62, in __call__
+    return self.hook(module, *args, **kwargs)
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/grad_sample/grad_sample_module.py", line 340, in capture_backprops_hook
+    create_or_accumulate_grad_sample(
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/grad_sample/grad_sample_module.py", line 57, in create_or_accumulate_grad_sample
+    param._current_grad_sample = torch.zeros(
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 288.00 MiB (GPU 0; 9.66 GiB total capacity; 3.55 GiB already allocated; 247.06 MiB free; 8.96 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+---EPSILON 16 ---
+default_sample_rate: 0.030303030303030304
+noise_multiplier :  0.5831146240234375
+default_sample_rate: 0.030303030303030304
+noise_multiplier :  0.4923248291015625
+learning rate =  0.001
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 52
+sample_rate: 0.03, expected_batch_size: 32
+sample_rate: 0.03, expected_batch_size: 48
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 52
+sample_rate: 0.03, expected_batch_size: 32
+sample_rate: 0.03, expected_batch_size: 48
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Traceback (most recent call last):
+  File "dp_ditto_unidp.py", line 192, in <module>
+    cm, perf_global, perf_personal, perf_pooled = s.run()
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 436, in run
+    self.perform_round()
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 359, in perform_round
+    self._local_optimization(local_model)
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 269, in _local_optimization
+    _model._local_train(self.num_steps, \
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/strategies_utils.py", line 190, in _local_train
+    loss.backward()
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/_tensor.py", line 488, in backward
+    torch.autograd.backward(
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/autograd/__init__.py", line 197, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/nn/modules/module.py", line 62, in __call__
+    return self.hook(module, *args, **kwargs)
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/grad_sample/grad_sample_module.py", line 340, in capture_backprops_hook
+    create_or_accumulate_grad_sample(
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/grad_sample/grad_sample_module.py", line 57, in create_or_accumulate_grad_sample
+    param._current_grad_sample = torch.zeros(
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 288.00 MiB (GPU 0; 9.66 GiB total capacity; 3.55 GiB already allocated; 247.06 MiB free; 8.96 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+--- Finished seed: 43 ---
+--- Seed: 44 ---
+--- Personal steps: 15 ---
+---EPSILON 0.1 ---
+default_sample_rate: 0.030303030303030304
+noise_multiplier :  16.25
+default_sample_rate: 0.030303030303030304
+noise_multiplier :  8.75
+learning rate =  0.001
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 52
+sample_rate: 0.03, expected_batch_size: 32
+sample_rate: 0.03, expected_batch_size: 48
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 52
+sample_rate: 0.03, expected_batch_size: 32
+sample_rate: 0.03, expected_batch_size: 48
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Traceback (most recent call last):
+  File "dp_ditto_unidp.py", line 192, in <module>
+    cm, perf_global, perf_personal, perf_pooled = s.run()
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 436, in run
+    self.perform_round()
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 363, in perform_round
+    self._personal_optimization(personal_model, global_snapshot)            
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 287, in _personal_optimization
+    personal_model._ditto_local_train(global_params, \
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/strategies_utils.py", line 299, in _ditto_local_train
+    loss.backward()
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/_tensor.py", line 488, in backward
+    torch.autograd.backward(
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/autograd/__init__.py", line 197, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/nn/modules/module.py", line 62, in __call__
+    return self.hook(module, *args, **kwargs)
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/grad_sample/grad_sample_module.py", line 340, in capture_backprops_hook
+    create_or_accumulate_grad_sample(
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/grad_sample/grad_sample_module.py", line 57, in create_or_accumulate_grad_sample
+    param._current_grad_sample = torch.zeros(
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 288.00 MiB (GPU 0; 9.66 GiB total capacity; 3.58 GiB already allocated; 251.06 MiB free; 8.95 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+---EPSILON 0.5 ---
+default_sample_rate: 0.030303030303030304
+noise_multiplier :  4.140625
+default_sample_rate: 0.030303030303030304
+noise_multiplier :  2.3828125
+learning rate =  0.001
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 52
+sample_rate: 0.03, expected_batch_size: 32
+sample_rate: 0.03, expected_batch_size: 48
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 52
+sample_rate: 0.03, expected_batch_size: 32
+sample_rate: 0.03, expected_batch_size: 48
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Traceback (most recent call last):
+  File "dp_ditto_unidp.py", line 192, in <module>
+    cm, perf_global, perf_personal, perf_pooled = s.run()
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 436, in run
+    self.perform_round()
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 363, in perform_round
+    self._personal_optimization(personal_model, global_snapshot)            
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 287, in _personal_optimization
+    personal_model._ditto_local_train(global_params, \
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/strategies_utils.py", line 299, in _ditto_local_train
+    loss.backward()
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/_tensor.py", line 488, in backward
+    torch.autograd.backward(
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/autograd/__init__.py", line 197, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/nn/modules/module.py", line 62, in __call__
+    return self.hook(module, *args, **kwargs)
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/grad_sample/grad_sample_module.py", line 340, in capture_backprops_hook
+    create_or_accumulate_grad_sample(
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/grad_sample/grad_sample_module.py", line 57, in create_or_accumulate_grad_sample
+    param._current_grad_sample = torch.zeros(
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 288.00 MiB (GPU 0; 9.66 GiB total capacity; 3.58 GiB already allocated; 251.06 MiB free; 8.95 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+---EPSILON 1 ---
+default_sample_rate: 0.030303030303030304
+noise_multiplier :  2.36328125
+default_sample_rate: 0.030303030303030304
+noise_multiplier :  1.474609375
+learning rate =  0.001
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 52
+sample_rate: 0.03, expected_batch_size: 32
+sample_rate: 0.03, expected_batch_size: 48
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 52
+sample_rate: 0.03, expected_batch_size: 32
+sample_rate: 0.03, expected_batch_size: 48
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Traceback (most recent call last):
+  File "dp_ditto_unidp.py", line 192, in <module>
+    cm, perf_global, perf_personal, perf_pooled = s.run()
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 436, in run
+    self.perform_round()
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 363, in perform_round
+    self._personal_optimization(personal_model, global_snapshot)            
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 287, in _personal_optimization
+    personal_model._ditto_local_train(global_params, \
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/strategies_utils.py", line 299, in _ditto_local_train
+    loss.backward()
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/_tensor.py", line 488, in backward
+    torch.autograd.backward(
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/autograd/__init__.py", line 197, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/nn/modules/module.py", line 62, in __call__
+    return self.hook(module, *args, **kwargs)
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/grad_sample/grad_sample_module.py", line 340, in capture_backprops_hook
+    create_or_accumulate_grad_sample(
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/grad_sample/grad_sample_module.py", line 57, in create_or_accumulate_grad_sample
+    param._current_grad_sample = torch.zeros(
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 288.00 MiB (GPU 0; 9.66 GiB total capacity; 3.58 GiB already allocated; 251.06 MiB free; 8.95 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+---EPSILON 4 ---
+default_sample_rate: 0.030303030303030304
+noise_multiplier :  0.9918212890625
+default_sample_rate: 0.030303030303030304
+noise_multiplier :  0.767822265625
+learning rate =  0.001
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 52
+sample_rate: 0.03, expected_batch_size: 32
+sample_rate: 0.03, expected_batch_size: 48
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 52
+sample_rate: 0.03, expected_batch_size: 32
+sample_rate: 0.03, expected_batch_size: 48
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Traceback (most recent call last):
+  File "dp_ditto_unidp.py", line 192, in <module>
+    cm, perf_global, perf_personal, perf_pooled = s.run()
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 436, in run
+    self.perform_round()
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 363, in perform_round
+    self._personal_optimization(personal_model, global_snapshot)            
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 287, in _personal_optimization
+    personal_model._ditto_local_train(global_params, \
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/strategies_utils.py", line 299, in _ditto_local_train
+    loss.backward()
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/_tensor.py", line 488, in backward
+    torch.autograd.backward(
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/autograd/__init__.py", line 197, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/nn/modules/module.py", line 62, in __call__
+    return self.hook(module, *args, **kwargs)
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/grad_sample/grad_sample_module.py", line 340, in capture_backprops_hook
+    create_or_accumulate_grad_sample(
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/grad_sample/grad_sample_module.py", line 57, in create_or_accumulate_grad_sample
+    param._current_grad_sample = torch.zeros(
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 288.00 MiB (GPU 0; 9.66 GiB total capacity; 3.58 GiB already allocated; 251.06 MiB free; 8.95 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+---EPSILON 8 ---
+default_sample_rate: 0.030303030303030304
+noise_multiplier :  0.7611083984375
+default_sample_rate: 0.030303030303030304
+noise_multiplier :  0.60211181640625
+learning rate =  0.001
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 52
+sample_rate: 0.03, expected_batch_size: 32
+sample_rate: 0.03, expected_batch_size: 48
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 52
+sample_rate: 0.03, expected_batch_size: 32
+sample_rate: 0.03, expected_batch_size: 48
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Traceback (most recent call last):
+  File "dp_ditto_unidp.py", line 192, in <module>
+    cm, perf_global, perf_personal, perf_pooled = s.run()
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 436, in run
+    self.perform_round()
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 363, in perform_round
+    self._personal_optimization(personal_model, global_snapshot)            
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 287, in _personal_optimization
+    personal_model._ditto_local_train(global_params, \
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/strategies_utils.py", line 299, in _ditto_local_train
+    loss.backward()
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/_tensor.py", line 488, in backward
+    torch.autograd.backward(
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/autograd/__init__.py", line 197, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/nn/modules/module.py", line 62, in __call__
+    return self.hook(module, *args, **kwargs)
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/grad_sample/grad_sample_module.py", line 340, in capture_backprops_hook
+    create_or_accumulate_grad_sample(
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/grad_sample/grad_sample_module.py", line 57, in create_or_accumulate_grad_sample
+    param._current_grad_sample = torch.zeros(
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 288.00 MiB (GPU 0; 9.66 GiB total capacity; 3.58 GiB already allocated; 251.06 MiB free; 8.95 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+---EPSILON 16 ---
+default_sample_rate: 0.030303030303030304
+noise_multiplier :  0.5831146240234375
+default_sample_rate: 0.030303030303030304
+noise_multiplier :  0.4923248291015625
+learning rate =  0.001
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 52
+sample_rate: 0.03, expected_batch_size: 32
+sample_rate: 0.03, expected_batch_size: 48
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 52
+sample_rate: 0.03, expected_batch_size: 32
+sample_rate: 0.03, expected_batch_size: 48
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Traceback (most recent call last):
+  File "dp_ditto_unidp.py", line 192, in <module>
+    cm, perf_global, perf_personal, perf_pooled = s.run()
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 436, in run
+    self.perform_round()
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 363, in perform_round
+    self._personal_optimization(personal_model, global_snapshot)            
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 287, in _personal_optimization
+    personal_model._ditto_local_train(global_params, \
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/strategies_utils.py", line 299, in _ditto_local_train
+    loss.backward()
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/_tensor.py", line 488, in backward
+    torch.autograd.backward(
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/autograd/__init__.py", line 197, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/nn/modules/module.py", line 62, in __call__
+    return self.hook(module, *args, **kwargs)
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/grad_sample/grad_sample_module.py", line 340, in capture_backprops_hook
+    create_or_accumulate_grad_sample(
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/grad_sample/grad_sample_module.py", line 57, in create_or_accumulate_grad_sample
+    param._current_grad_sample = torch.zeros(
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 288.00 MiB (GPU 0; 9.66 GiB total capacity; 3.58 GiB already allocated; 251.06 MiB free; 8.95 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+--- Finished seed: 44 ---
+--- Seed: 45 ---
+--- Personal steps: 15 ---
+---EPSILON 0.1 ---
+default_sample_rate: 0.030303030303030304
+noise_multiplier :  16.25
+default_sample_rate: 0.030303030303030304
+noise_multiplier :  8.75
+learning rate =  0.001
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 52
+sample_rate: 0.03, expected_batch_size: 32
+sample_rate: 0.03, expected_batch_size: 48
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 52
+sample_rate: 0.03, expected_batch_size: 32
+sample_rate: 0.03, expected_batch_size: 48
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Traceback (most recent call last):
+  File "dp_ditto_unidp.py", line 192, in <module>
+    cm, perf_global, perf_personal, perf_pooled = s.run()
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 436, in run
+    self.perform_round()
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 359, in perform_round
+    self._local_optimization(local_model)
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 269, in _local_optimization
+    _model._local_train(self.num_steps, \
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/strategies_utils.py", line 190, in _local_train
+    loss.backward()
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/_tensor.py", line 488, in backward
+    torch.autograd.backward(
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/autograd/__init__.py", line 197, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/nn/modules/module.py", line 62, in __call__
+    return self.hook(module, *args, **kwargs)
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/grad_sample/grad_sample_module.py", line 340, in capture_backprops_hook
+    create_or_accumulate_grad_sample(
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/grad_sample/grad_sample_module.py", line 57, in create_or_accumulate_grad_sample
+    param._current_grad_sample = torch.zeros(
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 288.00 MiB (GPU 0; 9.66 GiB total capacity; 3.55 GiB already allocated; 247.06 MiB free; 8.96 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+---EPSILON 0.5 ---
+default_sample_rate: 0.030303030303030304
+noise_multiplier :  4.140625
+default_sample_rate: 0.030303030303030304
+noise_multiplier :  2.3828125
+learning rate =  0.001
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 52
+sample_rate: 0.03, expected_batch_size: 32
+sample_rate: 0.03, expected_batch_size: 48
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 52
+sample_rate: 0.03, expected_batch_size: 32
+sample_rate: 0.03, expected_batch_size: 48
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Traceback (most recent call last):
+  File "dp_ditto_unidp.py", line 192, in <module>
+    cm, perf_global, perf_personal, perf_pooled = s.run()
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 436, in run
+    self.perform_round()
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 359, in perform_round
+    self._local_optimization(local_model)
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 269, in _local_optimization
+    _model._local_train(self.num_steps, \
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/strategies_utils.py", line 190, in _local_train
+    loss.backward()
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/_tensor.py", line 488, in backward
+    torch.autograd.backward(
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/autograd/__init__.py", line 197, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/nn/modules/module.py", line 62, in __call__
+    return self.hook(module, *args, **kwargs)
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/grad_sample/grad_sample_module.py", line 340, in capture_backprops_hook
+    create_or_accumulate_grad_sample(
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/grad_sample/grad_sample_module.py", line 57, in create_or_accumulate_grad_sample
+    param._current_grad_sample = torch.zeros(
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 288.00 MiB (GPU 0; 9.66 GiB total capacity; 3.55 GiB already allocated; 247.06 MiB free; 8.96 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+---EPSILON 1 ---
+default_sample_rate: 0.030303030303030304
+noise_multiplier :  2.36328125
+default_sample_rate: 0.030303030303030304
+noise_multiplier :  1.474609375
+learning rate =  0.001
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 52
+sample_rate: 0.03, expected_batch_size: 32
+sample_rate: 0.03, expected_batch_size: 48
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 52
+sample_rate: 0.03, expected_batch_size: 32
+sample_rate: 0.03, expected_batch_size: 48
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Traceback (most recent call last):
+  File "dp_ditto_unidp.py", line 192, in <module>
+    cm, perf_global, perf_personal, perf_pooled = s.run()
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 436, in run
+    self.perform_round()
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 359, in perform_round
+    self._local_optimization(local_model)
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 269, in _local_optimization
+    _model._local_train(self.num_steps, \
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/strategies_utils.py", line 190, in _local_train
+    loss.backward()
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/_tensor.py", line 488, in backward
+    torch.autograd.backward(
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/autograd/__init__.py", line 197, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/nn/modules/module.py", line 62, in __call__
+    return self.hook(module, *args, **kwargs)
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/grad_sample/grad_sample_module.py", line 340, in capture_backprops_hook
+    create_or_accumulate_grad_sample(
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/grad_sample/grad_sample_module.py", line 57, in create_or_accumulate_grad_sample
+    param._current_grad_sample = torch.zeros(
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 288.00 MiB (GPU 0; 9.66 GiB total capacity; 3.55 GiB already allocated; 247.06 MiB free; 8.96 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+---EPSILON 4 ---
+default_sample_rate: 0.030303030303030304
+noise_multiplier :  0.9918212890625
+default_sample_rate: 0.030303030303030304
+noise_multiplier :  0.767822265625
+learning rate =  0.001
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 52
+sample_rate: 0.03, expected_batch_size: 32
+sample_rate: 0.03, expected_batch_size: 48
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 52
+sample_rate: 0.03, expected_batch_size: 32
+sample_rate: 0.03, expected_batch_size: 48
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Traceback (most recent call last):
+  File "dp_ditto_unidp.py", line 192, in <module>
+    cm, perf_global, perf_personal, perf_pooled = s.run()
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 436, in run
+    self.perform_round()
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 359, in perform_round
+    self._local_optimization(local_model)
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 269, in _local_optimization
+    _model._local_train(self.num_steps, \
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/strategies_utils.py", line 190, in _local_train
+    loss.backward()
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/_tensor.py", line 488, in backward
+    torch.autograd.backward(
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/autograd/__init__.py", line 197, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/nn/modules/module.py", line 62, in __call__
+    return self.hook(module, *args, **kwargs)
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/grad_sample/grad_sample_module.py", line 340, in capture_backprops_hook
+    create_or_accumulate_grad_sample(
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/grad_sample/grad_sample_module.py", line 57, in create_or_accumulate_grad_sample
+    param._current_grad_sample = torch.zeros(
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 288.00 MiB (GPU 0; 9.66 GiB total capacity; 3.55 GiB already allocated; 247.06 MiB free; 8.96 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+---EPSILON 8 ---
+default_sample_rate: 0.030303030303030304
+noise_multiplier :  0.7611083984375
+default_sample_rate: 0.030303030303030304
+noise_multiplier :  0.60211181640625
+learning rate =  0.001
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 52
+sample_rate: 0.03, expected_batch_size: 32
+sample_rate: 0.03, expected_batch_size: 48
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 52
+sample_rate: 0.03, expected_batch_size: 32
+sample_rate: 0.03, expected_batch_size: 48
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Traceback (most recent call last):
+  File "dp_ditto_unidp.py", line 192, in <module>
+    cm, perf_global, perf_personal, perf_pooled = s.run()
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 436, in run
+    self.perform_round()
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 359, in perform_round
+    self._local_optimization(local_model)
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 269, in _local_optimization
+    _model._local_train(self.num_steps, \
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/strategies_utils.py", line 190, in _local_train
+    loss.backward()
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/_tensor.py", line 488, in backward
+    torch.autograd.backward(
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/autograd/__init__.py", line 197, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/nn/modules/module.py", line 62, in __call__
+    return self.hook(module, *args, **kwargs)
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/grad_sample/grad_sample_module.py", line 340, in capture_backprops_hook
+    create_or_accumulate_grad_sample(
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/grad_sample/grad_sample_module.py", line 57, in create_or_accumulate_grad_sample
+    param._current_grad_sample = torch.zeros(
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 288.00 MiB (GPU 0; 9.66 GiB total capacity; 3.55 GiB already allocated; 247.06 MiB free; 8.96 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+---EPSILON 16 ---
+default_sample_rate: 0.030303030303030304
+noise_multiplier :  0.5831146240234375
+default_sample_rate: 0.030303030303030304
+noise_multiplier :  0.4923248291015625
+learning rate =  0.001
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 52
+sample_rate: 0.03, expected_batch_size: 32
+sample_rate: 0.03, expected_batch_size: 48
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 52
+sample_rate: 0.03, expected_batch_size: 32
+sample_rate: 0.03, expected_batch_size: 48
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Traceback (most recent call last):
+  File "dp_ditto_unidp.py", line 192, in <module>
+    cm, perf_global, perf_personal, perf_pooled = s.run()
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 436, in run
+    self.perform_round()
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 359, in perform_round
+    self._local_optimization(local_model)
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 269, in _local_optimization
+    _model._local_train(self.num_steps, \
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/strategies_utils.py", line 190, in _local_train
+    loss.backward()
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/_tensor.py", line 488, in backward
+    torch.autograd.backward(
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/autograd/__init__.py", line 197, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/nn/modules/module.py", line 62, in __call__
+    return self.hook(module, *args, **kwargs)
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/grad_sample/grad_sample_module.py", line 340, in capture_backprops_hook
+    create_or_accumulate_grad_sample(
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/grad_sample/grad_sample_module.py", line 57, in create_or_accumulate_grad_sample
+    param._current_grad_sample = torch.zeros(
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 288.00 MiB (GPU 0; 9.66 GiB total capacity; 3.55 GiB already allocated; 247.06 MiB free; 8.96 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+--- Finished seed: 45 ---
+--- Seed: 46 ---
+--- Personal steps: 15 ---
+---EPSILON 0.1 ---
+default_sample_rate: 0.030303030303030304
+noise_multiplier :  16.25
+default_sample_rate: 0.030303030303030304
+noise_multiplier :  8.75
+learning rate =  0.001
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 52
+sample_rate: 0.03, expected_batch_size: 32
+sample_rate: 0.03, expected_batch_size: 48
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 52
+sample_rate: 0.03, expected_batch_size: 32
+sample_rate: 0.03, expected_batch_size: 48
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Traceback (most recent call last):
+  File "dp_ditto_unidp.py", line 192, in <module>
+    cm, perf_global, perf_personal, perf_pooled = s.run()
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 436, in run
+    self.perform_round()
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 363, in perform_round
+    self._personal_optimization(personal_model, global_snapshot)            
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 287, in _personal_optimization
+    personal_model._ditto_local_train(global_params, \
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/strategies_utils.py", line 299, in _ditto_local_train
+    loss.backward()
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/_tensor.py", line 488, in backward
+    torch.autograd.backward(
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/autograd/__init__.py", line 197, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/nn/modules/module.py", line 62, in __call__
+    return self.hook(module, *args, **kwargs)
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/grad_sample/grad_sample_module.py", line 340, in capture_backprops_hook
+    create_or_accumulate_grad_sample(
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/grad_sample/grad_sample_module.py", line 57, in create_or_accumulate_grad_sample
+    param._current_grad_sample = torch.zeros(
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 288.00 MiB (GPU 0; 9.66 GiB total capacity; 3.57 GiB already allocated; 97.06 MiB free; 9.10 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+---EPSILON 0.5 ---
+default_sample_rate: 0.030303030303030304
+noise_multiplier :  4.140625
+default_sample_rate: 0.030303030303030304
+noise_multiplier :  2.3828125
+learning rate =  0.001
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 52
+sample_rate: 0.03, expected_batch_size: 32
+sample_rate: 0.03, expected_batch_size: 48
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 52
+sample_rate: 0.03, expected_batch_size: 32
+sample_rate: 0.03, expected_batch_size: 48
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Traceback (most recent call last):
+  File "dp_ditto_unidp.py", line 192, in <module>
+    cm, perf_global, perf_personal, perf_pooled = s.run()
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 436, in run
+    self.perform_round()
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 363, in perform_round
+    self._personal_optimization(personal_model, global_snapshot)            
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 287, in _personal_optimization
+    personal_model._ditto_local_train(global_params, \
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/strategies_utils.py", line 299, in _ditto_local_train
+    loss.backward()
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/_tensor.py", line 488, in backward
+    torch.autograd.backward(
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/autograd/__init__.py", line 197, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/nn/modules/module.py", line 62, in __call__
+    return self.hook(module, *args, **kwargs)
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/grad_sample/grad_sample_module.py", line 340, in capture_backprops_hook
+    create_or_accumulate_grad_sample(
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/grad_sample/grad_sample_module.py", line 57, in create_or_accumulate_grad_sample
+    param._current_grad_sample = torch.zeros(
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 288.00 MiB (GPU 0; 9.66 GiB total capacity; 3.57 GiB already allocated; 97.06 MiB free; 9.10 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+---EPSILON 1 ---
+default_sample_rate: 0.030303030303030304
+noise_multiplier :  2.36328125
+default_sample_rate: 0.030303030303030304
+noise_multiplier :  1.474609375
+learning rate =  0.001
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 52
+sample_rate: 0.03, expected_batch_size: 32
+sample_rate: 0.03, expected_batch_size: 48
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 52
+sample_rate: 0.03, expected_batch_size: 32
+sample_rate: 0.03, expected_batch_size: 48
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Traceback (most recent call last):
+  File "dp_ditto_unidp.py", line 192, in <module>
+    cm, perf_global, perf_personal, perf_pooled = s.run()
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 436, in run
+    self.perform_round()
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 363, in perform_round
+    self._personal_optimization(personal_model, global_snapshot)            
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 287, in _personal_optimization
+    personal_model._ditto_local_train(global_params, \
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/strategies_utils.py", line 299, in _ditto_local_train
+    loss.backward()
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/_tensor.py", line 488, in backward
+    torch.autograd.backward(
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/autograd/__init__.py", line 197, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/nn/modules/module.py", line 62, in __call__
+    return self.hook(module, *args, **kwargs)
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/grad_sample/grad_sample_module.py", line 340, in capture_backprops_hook
+    create_or_accumulate_grad_sample(
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/grad_sample/grad_sample_module.py", line 57, in create_or_accumulate_grad_sample
+    param._current_grad_sample = torch.zeros(
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 288.00 MiB (GPU 0; 9.66 GiB total capacity; 3.57 GiB already allocated; 97.06 MiB free; 9.10 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+---EPSILON 4 ---
+default_sample_rate: 0.030303030303030304
+noise_multiplier :  0.9918212890625
+default_sample_rate: 0.030303030303030304
+noise_multiplier :  0.767822265625
+learning rate =  0.001
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 52
+sample_rate: 0.03, expected_batch_size: 32
+sample_rate: 0.03, expected_batch_size: 48
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 52
+sample_rate: 0.03, expected_batch_size: 32
+sample_rate: 0.03, expected_batch_size: 48
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Traceback (most recent call last):
+  File "dp_ditto_unidp.py", line 192, in <module>
+    cm, perf_global, perf_personal, perf_pooled = s.run()
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 436, in run
+    self.perform_round()
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 363, in perform_round
+    self._personal_optimization(personal_model, global_snapshot)            
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 287, in _personal_optimization
+    personal_model._ditto_local_train(global_params, \
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/strategies_utils.py", line 299, in _ditto_local_train
+    loss.backward()
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/_tensor.py", line 488, in backward
+    torch.autograd.backward(
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/autograd/__init__.py", line 197, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/nn/modules/module.py", line 62, in __call__
+    return self.hook(module, *args, **kwargs)
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/grad_sample/grad_sample_module.py", line 340, in capture_backprops_hook
+    create_or_accumulate_grad_sample(
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/grad_sample/grad_sample_module.py", line 57, in create_or_accumulate_grad_sample
+    param._current_grad_sample = torch.zeros(
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 288.00 MiB (GPU 0; 9.66 GiB total capacity; 3.57 GiB already allocated; 97.06 MiB free; 9.10 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+---EPSILON 8 ---
+default_sample_rate: 0.030303030303030304
+noise_multiplier :  0.7611083984375
+default_sample_rate: 0.030303030303030304
+noise_multiplier :  0.60211181640625
+learning rate =  0.001
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 52
+sample_rate: 0.03, expected_batch_size: 32
+sample_rate: 0.03, expected_batch_size: 48
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 52
+sample_rate: 0.03, expected_batch_size: 32
+sample_rate: 0.03, expected_batch_size: 48
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Traceback (most recent call last):
+  File "dp_ditto_unidp.py", line 192, in <module>
+    cm, perf_global, perf_personal, perf_pooled = s.run()
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 436, in run
+    self.perform_round()
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 363, in perform_round
+    self._personal_optimization(personal_model, global_snapshot)            
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 287, in _personal_optimization
+    personal_model._ditto_local_train(global_params, \
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/strategies_utils.py", line 299, in _ditto_local_train
+    loss.backward()
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/_tensor.py", line 488, in backward
+    torch.autograd.backward(
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/autograd/__init__.py", line 197, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/nn/modules/module.py", line 62, in __call__
+    return self.hook(module, *args, **kwargs)
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/grad_sample/grad_sample_module.py", line 340, in capture_backprops_hook
+    create_or_accumulate_grad_sample(
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/grad_sample/grad_sample_module.py", line 57, in create_or_accumulate_grad_sample
+    param._current_grad_sample = torch.zeros(
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 288.00 MiB (GPU 0; 9.66 GiB total capacity; 3.57 GiB already allocated; 97.06 MiB free; 9.10 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+---EPSILON 16 ---
+default_sample_rate: 0.030303030303030304
+noise_multiplier :  0.5831146240234375
+default_sample_rate: 0.030303030303030304
+noise_multiplier :  0.4923248291015625
+learning rate =  0.001
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 52
+sample_rate: 0.03, expected_batch_size: 32
+sample_rate: 0.03, expected_batch_size: 48
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 120
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 100
+sample_rate: 0.03, expected_batch_size: 52
+sample_rate: 0.03, expected_batch_size: 32
+sample_rate: 0.03, expected_batch_size: 48
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Traceback (most recent call last):
+  File "dp_ditto_unidp.py", line 192, in <module>
+    cm, perf_global, perf_personal, perf_pooled = s.run()
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 436, in run
+    self.perform_round()
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 363, in perform_round
+    self._personal_optimization(personal_model, global_snapshot)            
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 287, in _personal_optimization
+    personal_model._ditto_local_train(global_params, \
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/strategies_utils.py", line 299, in _ditto_local_train
+    loss.backward()
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/_tensor.py", line 488, in backward
+    torch.autograd.backward(
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/autograd/__init__.py", line 197, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/nn/modules/module.py", line 62, in __call__
+    return self.hook(module, *args, **kwargs)
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/grad_sample/grad_sample_module.py", line 340, in capture_backprops_hook
+    create_or_accumulate_grad_sample(
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/grad_sample/grad_sample_module.py", line 57, in create_or_accumulate_grad_sample
+    param._current_grad_sample = torch.zeros(
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 288.00 MiB (GPU 0; 9.66 GiB total capacity; 3.57 GiB already allocated; 97.06 MiB free; 9.10 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+--- Finished seed: 46 ---
+=== Finished data_type: niid_10_5 ===

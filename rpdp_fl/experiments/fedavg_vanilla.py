@@ -16,11 +16,20 @@ parser = argparse.ArgumentParser()
 parser.add_argument("--dataset", type=str, default='heart_disease')
 parser.add_argument("--gpuid", type=int, default=7,
                     help="Index of the GPU device.")
+
+parser.add_argument(
+    "--data_type", type=str, default="iid_10",
+    choices=[
+        "niid_10_5",
+        "niid_10_2",
+        "niid_dir_1",
+        "niid_dir_5",
+        "iid_10",
+    ],
+    help="Dataset partition type"
+)
 parser.add_argument("--seed", type=int, default=41, 
                     help="random seed")
-parser.add_argument("--data_type", type=str, default="iid",
-                    choices=["iid", "niid"],
-                    help="Type of data partition: iid or niid")
 args = parser.parse_args()
 
 os.environ['CUDA_LAUNCH_BLOCKING'] = '1'
@@ -46,11 +55,20 @@ except ModuleNotFoundError as e:
 project_abspath = os.path.abspath(os.path.join(os.getcwd(),".."))
 dict = read_config(get_config_file_path(dataset_name=f"fed_{args.dataset}", debug=False))
 # save_dir
-save_dir = os.path.join(project_abspath, dict["save_dir"])
-if not os.path.exists(save_dir):
-    os.mkdir(save_dir)
-    
-save_filename = os.path.join(save_dir, f"{args.data_type}_results_fedavg_vanilla_{args.dataset}.csv")
+
+opt_method = "fedavg"
+# Base save directory from config "results folder"
+base_save_dir = os.path.join(project_abspath, dict["save_dir"])
+
+# Subfolder by dataset type (e.g., iid / niid)
+save_dir = os.path.join(base_save_dir, args.data_type,opt_method)
+
+# Ensure the folder exists
+os.makedirs(save_dir, exist_ok=True)
+
+
+
+save_file = os.path.join(save_dir, f"{args.data_type}_results_fedavg_vanilla_{args.dataset}.csv")
 
 
 NUM_CLIENTS = dict["fedavg"]["num_clients"]
@@ -64,21 +82,22 @@ LR = dict["fedavg"]["learning_rate"]
 if args.dataset == "heart_disease":
     data_path = os.path.join(project_abspath, dict["dataset_dir"])
 else:
-    data_path = os.path.join(project_abspath, dict["dataset_dir"][f"{args.data_type}_{NUM_CLIENTS}"])   
+    data_path = os.path.join(project_abspath, dict["dataset_dir"][f"{args.data_type}"])   
     
 rawdata = RawClass(data_path=data_path)
 training_dls, test_dls = [], []
+
+train_datasets = []
+test_datasets = []
+
+    
 for i in range(NUM_CLIENTS):
     train_ds = FedClass(rawdata=rawdata, center=i, train=True)
-    training_dls.append(DataLoader(train_ds, batch_size=BATCH_SIZE, shuffle=True))
-
     test_ds = FedClass(rawdata=rawdata, center=i, train=False)
+    
+    training_dls.append(DataLoader(train_ds, batch_size=BATCH_SIZE, shuffle=True))
     test_dls.append(DataLoader(test_ds, batch_size=BATCH_SIZE))
 
-
-# creates Pooled dataset with data from all clients
-pooled_test_ds = FedClass(rawdata, pooled=True, train=False)
-pooled_test_dl = DataLoader(pooled_test_ds, batch_size=BATCH_SIZE)
 
 """ Prepare model and loss """
 model = BaselineModel.to(device)
@@ -133,5 +152,5 @@ record_row = [{
 
 """
 results = pd.DataFrame.from_dict(record_row)
-results.to_csv(save_filename, mode='a', index=False)
+results.to_csv(save_file, mode='a', index=False)
 # ======== End Training ============

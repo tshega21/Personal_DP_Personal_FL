@@ -870,6 +870,8 @@ class PrivacyEngine:
         max_epsilon: float,
         max_grad_norm: float,
         max_physical_batch_size: int,
+        # DR. TRUEX
+        #sorted_labels: list[tuple[int, int]] = [],
         **kwargs
     ):  
         

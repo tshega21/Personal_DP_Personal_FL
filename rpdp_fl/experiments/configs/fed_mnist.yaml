@@ -1,9 +1,11 @@
 save_dir: experiments/results/fed_mnist
 # dataset info
 dataset_dir:
-  niid_10: experiments/datasets/fed_mnist/niid_10_5way_1200shot
+  niid_10_2: experiments/datasets/fed_mnist/niid_10_2way_3000shot
+  niid_10_5: experiments/datasets/fed_mnist/niid_10_5way_1200shot
+  niid_dir_1: experiments/datasets/fed_mnist/dirichlet_10_alpha_1
+  niid_dir_5: experiments/datasets/fed_mnist/dirichlet_10_alpha_5
   iid_10: experiments/datasets/fed_mnist/iid_10
-  iid_50: experiments/datasets/fed_mnist/iid_50
 num_labels: 10
 # for fedavg experiments
 fedavg:
@@ -12,7 +14,7 @@ fedavg:
   num_rounds: 15
   client_rate: 0.5
   batch_size: 128
-  learning_rate: 0.01
+  learning_rate: 0.001 #0.001 for niid, 0.01 otherwise
 dpfedavg:
   learning_rate: 0.01
   max_grad_norm: 1.0
@@ -24,7 +26,8 @@ rpdpfedavg:
   min_epsilon: 0.1
   settings: {
       ThreeLevels: [
-          [[0.7,0.2,0.1], [0.1, 1.0, 5.0]]
+          [[0.1,0.2,0.7], [0.1, 1.0, 5.0]]
+          #[[0.7,0.2,0.1], [0.1, 4.0, 10.0]]
         ],
       BoundedPareto: [
           [4, 0.1]

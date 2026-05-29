@@ -42,7 +42,7 @@ def get_optimizer_class(clipping: str, distributed: bool, grad_sample_mode: str 
     elif clipping == "per_layer" and distributed is True:
         if grad_sample_mode == "hooks":
             return DistributedPerLayerOptimizer
-        elif grad_sample_mode == "ew":
+        elif grad_sample_mode == "ew": #lol
             return SimpleDistributedPerLayerOptimizer
         else:
             raise ValueError(f"Unexpected grad_sample_mode: {grad_sample_mode}")

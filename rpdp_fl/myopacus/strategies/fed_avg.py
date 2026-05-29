@@ -2,12 +2,12 @@ import numpy as np
 import time
 import torch
 from typing import List
+import random
 
 from myopacus import PrivacyEngine
 from myopacus.strategies.strategies_utils import _Model
 
 def set_random_seed(seed_value):
-    import random
     random.seed(seed_value)
     np.random.seed(seed_value)
 

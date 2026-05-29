@@ -16,11 +16,23 @@ parser = argparse.ArgumentParser()
 parser.add_argument("--dataset", type=str, default='heart_disease')
 parser.add_argument("--gpuid", type=int, default=7,
                     help="Index of the GPU device.")
-parser.add_argument("--seed", type=int, default=41, 
+parser.add_argument(
+    "--data_type", type=str, default="iid_10",
+    choices=[
+        "niid_10_5",
+        "niid_10_2",
+        "niid_dir_1",
+        "niid_dir_5",
+        "iid_10",
+    ],
+    help="Dataset partition type"
+)
+parser.add_argument("--reg_param", type=float, default=0.1, 
+                    help="regularization parameter")
+parser.add_argument("--num_personal_steps", type=int, default=5, 
                     help="random seed")
-parser.add_argument("--data_type", type=str, default="iid",
-                    choices=["iid", "niid"],
-                    help="Type of data partition: iid or niid")
+parser.add_argument("--seed", type=int, default=42, 
+                    help="random seed")
 args = parser.parse_args()
 
 os.environ['CUDA_LAUNCH_BLOCKING'] = '1'
@@ -46,14 +58,20 @@ except ModuleNotFoundError as e:
 project_abspath = os.path.abspath(os.path.join(os.getcwd(),".."))
 dict = read_config(get_config_file_path(dataset_name=f"fed_{args.dataset}", debug=False))
 # save_dir
-save_dir = os.path.join(project_abspath, dict["save_dir"])
-if not os.path.exists(save_dir):
-    os.mkdir(save_dir)
 
-save_filename_global = os.path.join(save_dir, f"{args.data_type}_results_ditto_global_vanilla_{args.dataset}.csv")
-save_filename_personal = os.path.join(save_dir, f"{args.data_type}_results_ditto_personal_vanilla_{args.dataset}.csv")
+opt_method = "ditto"
+# Base save directory from config "results folder"
+base_save_dir = os.path.join(project_abspath, dict["save_dir"])
+
+# Subfolder by dataset type (e.g., iid / niid)
+save_dir = os.path.join(base_save_dir, args.data_type,opt_method)
+
+# Ensure the folder exists
+os.makedirs(save_dir, exist_ok=True)
 
 
+
+save_file = os.path.join(save_dir, f"{args.data_type}_results_ditto_vanilla_{args.dataset}.csv")
 
 
 
@@ -68,25 +86,41 @@ LR = dict["fedavg"]["learning_rate"]
 if args.dataset == "heart_disease":
     data_path = os.path.join(project_abspath, dict["dataset_dir"])
 else:
-    data_path = os.path.join(project_abspath, dict["dataset_dir"][f"{args.data_type}_{NUM_CLIENTS}"]) 
+    data_path = os.path.join(project_abspath, dict["dataset_dir"][f"{args.data_type}"]) 
 
-    
+
 rawdata = RawClass(data_path=data_path)
 training_dls, test_dls = [], []
+
+
+
 for i in range(NUM_CLIENTS):
+    g = torch.Generator()
+    seed = 1000+i
+    g.manual_seed(seed)
+
+    
     train_ds = FedClass(rawdata=rawdata, center=i, train=True)
-    training_dls.append(DataLoader(train_ds, batch_size=BATCH_SIZE, shuffle=True))
-
+    #print(len(train_ds))
     test_ds = FedClass(rawdata=rawdata, center=i, train=False)
-    test_dls.append(DataLoader(test_ds, batch_size=BATCH_SIZE))
+    
+    training_dls.append(DataLoader(train_ds,batch_size=BATCH_SIZE,shuffle=True,generator=g))
+    test_dls.append(DataLoader(test_ds, batch_size=BATCH_SIZE, shuffle=False))
 
-""" Prepare model and loss """
+    
+# creates Pooled dataset with data from all clients
+pooled_test_ds = FedClass(rawdata, pooled=True, train=False)
+pooled_test_dl = DataLoader(pooled_test_ds, batch_size=BATCH_SIZE)
+
+
+#Prepare model and loss
 
 model = BaselineModel.to(device)
 criterion = BaselineLoss()
 
 results_all_reps = []
 current_args = {
+
     "training_dataloaders": training_dls,
     "test_dataloaders": test_dls,
     "model": model,
@@ -100,45 +134,49 @@ current_args = {
     "metric": metric,
     "seed": args.seed
 }
-current_args["reg_param"] = 0
-current_args["num_personal_steps"] = 15
+current_args["reg_param"] = args.reg_param
+current_args["num_personal_steps"] = args.num_personal_steps
+current_args["pooled_test_dataloader"] = pooled_test_dl
+print("learning rate = ", current_args["learning_rate"])
 
 # ======== Start Training ==========
 s = Ditto(**current_args, log=False)
-cm, perf_global, perf_personal = s.run()
-mean_perf_global = np.mean(perf_global[-3:])
-mean_perf_personal = np.mean(perf_personal[-3:])
-print(f"Mean performance of vanilla ditto global, Perf={mean_perf_global:.4f}")
-print(f"Mean performance of vanilla ditto personal, Perf={mean_perf_personal:.4f}")
+cm, perf_global, perf_personal, perf_pooled = s.run()
 
+perf_data = {
+    "global": perf_global,
+    "personal": perf_personal,
+    "pooled": perf_pooled
+}
 
+# Save records for global, personal, and personal pooled acurracy 
+for key in ["global", "personal", "pooled"]:
+    perf = perf_data[key]
+    mean_perf = np.mean(perf[-3:])
+    
+    print(f"All rounds performance of vanilla ditto {key}, Perf={perf}")
+    print(f"Mean performance of vanilla ditto {key}, Perf={mean_perf:.4f}")
 
-record_global = [{
-    "perf": str(perf_global),  # as a string
-    "mean_perf": round(np.mean(perf_global[-3:]), 4),
+    
+    record = [{ 
+    "type": key,
+    "lambda": args.reg_param,
+    "num_personal_steps": args.num_personal_steps,
+    "perf": str(perf),
+    "mean_perf": round(mean_perf, 4),
     "e": "PrivacyFree",
     "d": None,
     "nm": None,
     "norm": None,
     "bs": BATCH_SIZE,
     "seed": args.seed
-}]
+    }]
 
-# Prepare personal results
-record_personal = [{
-    "perf": str(perf_personal),
-    "mean_perf": round(np.mean(perf_personal[-3:]), 4),
-    "e": "PrivacyFree",
-    "d": None,
-    "nm": None,
-    "norm": None,
-    "bs": BATCH_SIZE,
-    "seed": args.seed
-}]
+    results_df = pd.DataFrame.from_dict(record)
+    
+    # Append to CSV
+    write_header = not os.path.exists(save_file)
+    results_df.to_csv(save_file, mode='a', index=False, header = write_header)
 
-results_global = pd.DataFrame.from_dict(record_global)
-results_personal = pd.DataFrame.from_dict(record_personal)
-
-results_global.to_csv(save_filename_global, mode='a', index=False)
-results_personal.to_csv(save_filename_personal, mode='a', index=False)
+    
 # ======== End Training ============

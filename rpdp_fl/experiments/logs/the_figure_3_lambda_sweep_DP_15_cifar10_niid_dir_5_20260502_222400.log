@@ -1,0 +1,965 @@
+PARAMS: dataset=cifar10, gpu=0, data_type=niid_dir_5, num_steps=15
+=== Running epsilon=0.1 ===
+=== Running reg_param=0 ===
+Running seed 42
+default_sample_rate: 0.0321285140562249
+noise_multiplier :  17.5
+learning rate =  0.001
+sample_rate: 0.03, expected_batch_size: 31
+sample_rate: 0.03, expected_batch_size: 151
+sample_rate: 0.03, expected_batch_size: 74
+sample_rate: 0.03, expected_batch_size: 118
+sample_rate: 0.03, expected_batch_size: 67
+sample_rate: 0.03, expected_batch_size: 155
+sample_rate: 0.03, expected_batch_size: 124
+sample_rate: 0.03, expected_batch_size: 230
+sample_rate: 0.03, expected_batch_size: 70
+sample_rate: 0.03, expected_batch_size: 35
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [0.08888823319215859, 0.07703564694823684, 0.07272213613933853, 0.08107878720691361, 0.08888823319215859, 0.08107878720691361, 0.08888823319215859, 0.09270411002929647, 0.08888823319215859, 0.08506495807746348]
+Round=14, per client global perf=[0.072, 0.1138, 0.1141, 0.0505, 0.2004, 0.2257, 0.1201, 0.2175, 0.2312, 0.0591], mean perf=2662/17005 (0.1565%)
+Round=14, per client personal perf=[0.5545, 0.4624, 0.5327, 0.5334, 0.513, 0.4646, 0.4635, 0.3771, 0.4322, 0.473], mean perf=7848/17005 (0.4615%)
+Round=14, per client personal pooled=[0.1936, 0.1741, 0.131, 0.1491, 0.1705, 0.1904, 0.2018, 0.2413, 0.1808, 0.1587], mean perf=30459/170050 (0.1791%)
+Mean performance of unidp ditto global,  eps=0.1, Perf=0.1548
+Mean performance of unidp ditto personal,  eps=0.1, Perf=0.4657
+Mean performance of unidp ditto pooled,  eps=0.1, Perf=0.1697
+Finished seed 42
+----------------------------------------
+=== Running reg_param=0.001 ===
+Running seed 42
+default_sample_rate: 0.0321285140562249
+noise_multiplier :  17.5
+learning rate =  0.001
+sample_rate: 0.03, expected_batch_size: 31
+sample_rate: 0.03, expected_batch_size: 151
+sample_rate: 0.03, expected_batch_size: 74
+sample_rate: 0.03, expected_batch_size: 118
+sample_rate: 0.03, expected_batch_size: 67
+sample_rate: 0.03, expected_batch_size: 155
+sample_rate: 0.03, expected_batch_size: 124
+sample_rate: 0.03, expected_batch_size: 230
+sample_rate: 0.03, expected_batch_size: 70
+sample_rate: 0.03, expected_batch_size: 35
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [0.08888823319215859, 0.07703564694823684, 0.07272213613933853, 0.08107878720691361, 0.08888823319215859, 0.08107878720691361, 0.08888823319215859, 0.09270411002929647, 0.08888823319215859, 0.08506495807746348]
+Round=14, per client global perf=[0.072, 0.1138, 0.1141, 0.0505, 0.2004, 0.2257, 0.1201, 0.2175, 0.2312, 0.0591], mean perf=2662/17005 (0.1565%)
+Round=14, per client personal perf=[0.5623, 0.4604, 0.5268, 0.6102, 0.5167, 0.4364, 0.3849, 0.3641, 0.3871, 0.4609], mean perf=7657/17005 (0.4503%)
+Round=14, per client personal pooled=[0.2138, 0.1581, 0.1358, 0.1614, 0.1736, 0.185, 0.1789, 0.2126, 0.1682, 0.1558], mean perf=29643/170050 (0.1743%)
+Mean performance of unidp ditto global,  eps=0.1, Perf=0.1548
+Mean performance of unidp ditto personal,  eps=0.1, Perf=0.4448
+Mean performance of unidp ditto pooled,  eps=0.1, Perf=0.1624
+Finished seed 42
+----------------------------------------
+=== Running reg_param=0.01 ===
+Running seed 42
+default_sample_rate: 0.0321285140562249
+noise_multiplier :  17.5
+learning rate =  0.001
+sample_rate: 0.03, expected_batch_size: 31
+sample_rate: 0.03, expected_batch_size: 151
+sample_rate: 0.03, expected_batch_size: 74
+sample_rate: 0.03, expected_batch_size: 118
+sample_rate: 0.03, expected_batch_size: 67
+sample_rate: 0.03, expected_batch_size: 155
+sample_rate: 0.03, expected_batch_size: 124
+sample_rate: 0.03, expected_batch_size: 230
+sample_rate: 0.03, expected_batch_size: 70
+sample_rate: 0.03, expected_batch_size: 35
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [0.08888823319215859, 0.07703564694823684, 0.07272213613933853, 0.08107878720691361, 0.08888823319215859, 0.08107878720691361, 0.08888823319215859, 0.09270411002929647, 0.08888823319215859, 0.08506495807746348]
+Round=14, per client global perf=[0.072, 0.1138, 0.1141, 0.0505, 0.2004, 0.2257, 0.1201, 0.2175, 0.2312, 0.0591], mean perf=2662/17005 (0.1565%)
+Round=14, per client personal perf=[0.4008, 0.455, 0.5109, 0.6476, 0.5046, 0.4135, 0.4234, 0.3392, 0.3853, 0.4504], mean perf=7520/17005 (0.4422%)
+Round=14, per client personal pooled=[0.1014, 0.1471, 0.1146, 0.1626, 0.1685, 0.1727, 0.1884, 0.1979, 0.1671, 0.1564], mean perf=26815/170050 (0.1577%)
+Mean performance of unidp ditto global,  eps=0.1, Perf=0.1548
+Mean performance of unidp ditto personal,  eps=0.1, Perf=0.4349
+Mean performance of unidp ditto pooled,  eps=0.1, Perf=0.1499
+Finished seed 42
+----------------------------------------
+=== Running reg_param=0.1 ===
+Running seed 42
+default_sample_rate: 0.0321285140562249
+noise_multiplier :  17.5
+learning rate =  0.001
+sample_rate: 0.03, expected_batch_size: 31
+sample_rate: 0.03, expected_batch_size: 151
+sample_rate: 0.03, expected_batch_size: 74
+sample_rate: 0.03, expected_batch_size: 118
+sample_rate: 0.03, expected_batch_size: 67
+sample_rate: 0.03, expected_batch_size: 155
+sample_rate: 0.03, expected_batch_size: 124
+sample_rate: 0.03, expected_batch_size: 230
+sample_rate: 0.03, expected_batch_size: 70
+sample_rate: 0.03, expected_batch_size: 35
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [0.08888823319215859, 0.07703564694823684, 0.07272213613933853, 0.08107878720691361, 0.08888823319215859, 0.08107878720691361, 0.08888823319215859, 0.09270411002929647, 0.08888823319215859, 0.08506495807746348]
+Round=14, per client global perf=[0.072, 0.1138, 0.1141, 0.0505, 0.2004, 0.2257, 0.1201, 0.2175, 0.2312, 0.0591], mean perf=2662/17005 (0.1565%)
+Round=14, per client personal perf=[0.4008, 0.4156, 0.5126, 0.4908, 0.3432, 0.2751, 0.2758, 0.304, 0.4066, 0.5078], mean perf=6242/17005 (0.3671%)
+Round=14, per client personal pooled=[0.1014, 0.101, 0.1002, 0.0982, 0.1345, 0.0989, 0.117, 0.1615, 0.1613, 0.1234], mean perf=20363/170050 (0.1197%)
+Mean performance of unidp ditto global,  eps=0.1, Perf=0.1548
+Mean performance of unidp ditto personal,  eps=0.1, Perf=0.3302
+Mean performance of unidp ditto pooled,  eps=0.1, Perf=0.1095
+Finished seed 42
+----------------------------------------
+=== Running reg_param=1.0 ===
+Running seed 42
+default_sample_rate: 0.0321285140562249
+noise_multiplier :  17.5
+learning rate =  0.001
+sample_rate: 0.03, expected_batch_size: 31
+sample_rate: 0.03, expected_batch_size: 151
+sample_rate: 0.03, expected_batch_size: 74
+sample_rate: 0.03, expected_batch_size: 118
+sample_rate: 0.03, expected_batch_size: 67
+sample_rate: 0.03, expected_batch_size: 155
+sample_rate: 0.03, expected_batch_size: 124
+sample_rate: 0.03, expected_batch_size: 230
+sample_rate: 0.03, expected_batch_size: 70
+sample_rate: 0.03, expected_batch_size: 35
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [0.08888823319215859, 0.07703564694823684, 0.07272213613933853, 0.08107878720691361, 0.08888823319215859, 0.08107878720691361, 0.08888823319215859, 0.09270411002929647, 0.08888823319215859, 0.08506495807746348]
+Round=14, per client global perf=[0.072, 0.1138, 0.1141, 0.0505, 0.2004, 0.2257, 0.1201, 0.2175, 0.2312, 0.0591], mean perf=2662/17005 (0.1565%)
+Round=14, per client personal perf=[0.4008, 0.4156, 0.5126, 0.4908, 0.192, 0.2751, 0.2548, 0.1688, 0.2693, 0.4939], mean perf=5374/17005 (0.3160%)
+Round=14, per client personal pooled=[0.1014, 0.101, 0.1002, 0.0982, 0.0982, 0.0989, 0.1026, 0.1112, 0.0989, 0.101], mean perf=17203/170050 (0.1012%)
+Mean performance of unidp ditto global,  eps=0.1, Perf=0.1548
+Mean performance of unidp ditto personal,  eps=0.1, Perf=0.3036
+Mean performance of unidp ditto pooled,  eps=0.1, Perf=0.1026
+Finished seed 42
+----------------------------------------
+=== Running reg_param=10 ===
+Running seed 42
+default_sample_rate: 0.0321285140562249
+noise_multiplier :  17.5
+learning rate =  0.001
+sample_rate: 0.03, expected_batch_size: 31
+sample_rate: 0.03, expected_batch_size: 151
+sample_rate: 0.03, expected_batch_size: 74
+sample_rate: 0.03, expected_batch_size: 118
+sample_rate: 0.03, expected_batch_size: 67
+sample_rate: 0.03, expected_batch_size: 155
+sample_rate: 0.03, expected_batch_size: 124
+sample_rate: 0.03, expected_batch_size: 230
+sample_rate: 0.03, expected_batch_size: 70
+sample_rate: 0.03, expected_batch_size: 35
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [0.08888823319215859, 0.07703564694823684, 0.07272213613933853, 0.08107878720691361, 0.08888823319215859, 0.08107878720691361, 0.08888823319215859, 0.09270411002929647, 0.08888823319215859, 0.08506495807746348]
+Round=14, per client global perf=[0.072, 0.1138, 0.1141, 0.0505, 0.2004, 0.2257, 0.1201, 0.2175, 0.2312, 0.0591], mean perf=2662/17005 (0.1565%)
+Round=14, per client personal perf=[0.4008, 0.4156, 0.5126, 0.4908, 0.4332, 0.1702, 0.2548, 0.1582, 0.3144, 0.4939], mean perf=5385/17005 (0.3167%)
+Round=14, per client personal pooled=[0.1014, 0.101, 0.1002, 0.0982, 0.1192, 0.1086, 0.1026, 0.0987, 0.1277, 0.101], mean perf=18002/170050 (0.1059%)
+Mean performance of unidp ditto global,  eps=0.1, Perf=0.1548
+Mean performance of unidp ditto personal,  eps=0.1, Perf=0.2805
+Mean performance of unidp ditto pooled,  eps=0.1, Perf=0.1023
+Finished seed 42
+----------------------------------------
+=== Running epsilon=0.5 ===
+=== Running reg_param=0 ===
+Running seed 42
+default_sample_rate: 0.0321285140562249
+noise_multiplier :  4.375
+learning rate =  0.001
+sample_rate: 0.03, expected_batch_size: 31
+sample_rate: 0.03, expected_batch_size: 151
+sample_rate: 0.03, expected_batch_size: 74
+sample_rate: 0.03, expected_batch_size: 118
+sample_rate: 0.03, expected_batch_size: 67
+sample_rate: 0.03, expected_batch_size: 155
+sample_rate: 0.03, expected_batch_size: 124
+sample_rate: 0.03, expected_batch_size: 230
+sample_rate: 0.03, expected_batch_size: 70
+sample_rate: 0.03, expected_batch_size: 35
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [0.474142570610315, 0.41353172691307594, 0.3922250484547046, 0.4341270961111893, 0.474142570610315, 0.4341270961111893, 0.474142570610315, 0.49289517166685826, 0.474142570610315, 0.45413483336075217]
+Round=14, per client global perf=[0.1362, 0.2123, 0.1384, 0.2746, 0.3469, 0.2486, 0.2107, 0.313, 0.3003, 0.1043], mean perf=4243/17005 (0.2495%)
+Round=14, per client personal perf=[0.5545, 0.4624, 0.5327, 0.5334, 0.513, 0.4646, 0.4635, 0.3771, 0.4322, 0.473], mean perf=7848/17005 (0.4615%)
+Round=14, per client personal pooled=[0.1936, 0.1741, 0.131, 0.1491, 0.1705, 0.1904, 0.2018, 0.2413, 0.1808, 0.1587], mean perf=30459/170050 (0.1791%)
+Mean performance of unidp ditto global,  eps=0.5, Perf=0.2444
+Mean performance of unidp ditto personal,  eps=0.5, Perf=0.4657
+Mean performance of unidp ditto pooled,  eps=0.5, Perf=0.1697
+Finished seed 42
+----------------------------------------
+=== Running reg_param=0.001 ===
+Running seed 42
+default_sample_rate: 0.0321285140562249
+noise_multiplier :  4.375
+learning rate =  0.001
+sample_rate: 0.03, expected_batch_size: 31
+sample_rate: 0.03, expected_batch_size: 151
+sample_rate: 0.03, expected_batch_size: 74
+sample_rate: 0.03, expected_batch_size: 118
+sample_rate: 0.03, expected_batch_size: 67
+sample_rate: 0.03, expected_batch_size: 155
+sample_rate: 0.03, expected_batch_size: 124
+sample_rate: 0.03, expected_batch_size: 230
+sample_rate: 0.03, expected_batch_size: 70
+sample_rate: 0.03, expected_batch_size: 35
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [0.474142570610315, 0.41353172691307594, 0.3922250484547046, 0.4341270961111893, 0.474142570610315, 0.4341270961111893, 0.474142570610315, 0.49289517166685826, 0.474142570610315, 0.45413483336075217]
+Round=14, per client global perf=[0.1362, 0.2123, 0.1384, 0.2746, 0.3469, 0.2486, 0.2107, 0.313, 0.3003, 0.1043], mean perf=4243/17005 (0.2495%)
+Round=14, per client personal perf=[0.5603, 0.4345, 0.5302, 0.5371, 0.5037, 0.4079, 0.4389, 0.3606, 0.434, 0.4383], mean perf=7508/17005 (0.4415%)
+Round=14, per client personal pooled=[0.2061, 0.1153, 0.1335, 0.1493, 0.1694, 0.1718, 0.1934, 0.2141, 0.1796, 0.1509], mean perf=28624/170050 (0.1683%)
+Mean performance of unidp ditto global,  eps=0.5, Perf=0.2444
+Mean performance of unidp ditto personal,  eps=0.5, Perf=0.4459
+Mean performance of unidp ditto pooled,  eps=0.5, Perf=0.1618
+Finished seed 42
+----------------------------------------
+=== Running reg_param=0.01 ===
+Running seed 42
+default_sample_rate: 0.0321285140562249
+noise_multiplier :  4.375
+learning rate =  0.001
+sample_rate: 0.03, expected_batch_size: 31
+sample_rate: 0.03, expected_batch_size: 151
+sample_rate: 0.03, expected_batch_size: 74
+sample_rate: 0.03, expected_batch_size: 118
+sample_rate: 0.03, expected_batch_size: 67
+sample_rate: 0.03, expected_batch_size: 155
+sample_rate: 0.03, expected_batch_size: 124
+sample_rate: 0.03, expected_batch_size: 230
+sample_rate: 0.03, expected_batch_size: 70
+sample_rate: 0.03, expected_batch_size: 35
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [0.474142570610315, 0.41353172691307594, 0.3922250484547046, 0.4341270961111893, 0.474142570610315, 0.4341270961111893, 0.474142570610315, 0.49289517166685826, 0.474142570610315, 0.45413483336075217]
+Round=14, per client global perf=[0.1362, 0.2123, 0.1384, 0.2746, 0.3469, 0.2486, 0.2107, 0.313, 0.3003, 0.1043], mean perf=4243/17005 (0.2495%)
+Round=14, per client personal perf=[0.4981, 0.4456, 0.4413, 0.6554, 0.513, 0.3994, 0.3649, 0.3289, 0.3853, 0.36], mean perf=7246/17005 (0.4261%)
+Round=14, per client personal pooled=[0.1635, 0.1414, 0.1217, 0.167, 0.1724, 0.1692, 0.1731, 0.1863, 0.1645, 0.1291], mean perf=27007/170050 (0.1588%)
+Mean performance of unidp ditto global,  eps=0.5, Perf=0.2444
+Mean performance of unidp ditto personal,  eps=0.5, Perf=0.4229
+Mean performance of unidp ditto pooled,  eps=0.5, Perf=0.1503
+Finished seed 42
+----------------------------------------
+=== Running reg_param=0.1 ===
+Running seed 42
+default_sample_rate: 0.0321285140562249
+noise_multiplier :  4.375
+learning rate =  0.001
+sample_rate: 0.03, expected_batch_size: 31
+sample_rate: 0.03, expected_batch_size: 151
+sample_rate: 0.03, expected_batch_size: 74
+sample_rate: 0.03, expected_batch_size: 118
+sample_rate: 0.03, expected_batch_size: 67
+sample_rate: 0.03, expected_batch_size: 155
+sample_rate: 0.03, expected_batch_size: 124
+sample_rate: 0.03, expected_batch_size: 230
+sample_rate: 0.03, expected_batch_size: 70
+sample_rate: 0.03, expected_batch_size: 35
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [0.474142570610315, 0.41353172691307594, 0.3922250484547046, 0.4341270961111893, 0.474142570610315, 0.4341270961111893, 0.474142570610315, 0.49289517166685826, 0.474142570610315, 0.45413483336075217]
+Round=14, per client global perf=[0.1362, 0.2123, 0.1384, 0.2746, 0.3469, 0.2486, 0.2107, 0.313, 0.3003, 0.1043], mean perf=4243/17005 (0.2495%)
+Round=14, per client personal perf=[0.4008, 0.4156, 0.5126, 0.4992, 0.4879, 0.2751, 0.2548, 0.2245, 0.3224, 0.5165], mean perf=5988/17005 (0.3521%)
+Round=14, per client personal pooled=[0.1017, 0.101, 0.1002, 0.1012, 0.1627, 0.0989, 0.1026, 0.1597, 0.1327, 0.1237], mean perf=20141/170050 (0.1184%)
+Mean performance of unidp ditto global,  eps=0.5, Perf=0.2444
+Mean performance of unidp ditto personal,  eps=0.5, Perf=0.3220
+Mean performance of unidp ditto pooled,  eps=0.5, Perf=0.1087
+Finished seed 42
+----------------------------------------
+=== Running reg_param=1.0 ===
+Running seed 42
+default_sample_rate: 0.0321285140562249
+noise_multiplier :  4.375
+learning rate =  0.001
+sample_rate: 0.03, expected_batch_size: 31
+sample_rate: 0.03, expected_batch_size: 151
+sample_rate: 0.03, expected_batch_size: 74
+sample_rate: 0.03, expected_batch_size: 118
+sample_rate: 0.03, expected_batch_size: 67
+sample_rate: 0.03, expected_batch_size: 155
+sample_rate: 0.03, expected_batch_size: 124
+sample_rate: 0.03, expected_batch_size: 230
+sample_rate: 0.03, expected_batch_size: 70
+sample_rate: 0.03, expected_batch_size: 35
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [0.474142570610315, 0.41353172691307594, 0.3922250484547046, 0.4341270961111893, 0.474142570610315, 0.4341270961111893, 0.474142570610315, 0.49289517166685826, 0.474142570610315, 0.45413483336075217]
+Round=14, per client global perf=[0.1362, 0.2123, 0.1384, 0.2746, 0.3469, 0.2486, 0.2107, 0.313, 0.3003, 0.1043], mean perf=4243/17005 (0.2495%)
+Round=14, per client personal perf=[0.4027, 0.4156, 0.5126, 0.4908, 0.192, 0.2751, 0.2548, 0.1799, 0.2693, 0.4939], mean perf=5416/17005 (0.3185%)
+Round=14, per client personal pooled=[0.1022, 0.101, 0.1002, 0.0982, 0.0982, 0.0989, 0.1026, 0.1318, 0.0989, 0.101], mean perf=17566/170050 (0.1033%)
+Mean performance of unidp ditto global,  eps=0.5, Perf=0.2444
+Mean performance of unidp ditto personal,  eps=0.5, Perf=0.3013
+Mean performance of unidp ditto pooled,  eps=0.5, Perf=0.1040
+Finished seed 42
+----------------------------------------
+=== Running reg_param=10 ===
+Running seed 42
+default_sample_rate: 0.0321285140562249
+noise_multiplier :  4.375
+learning rate =  0.001
+sample_rate: 0.03, expected_batch_size: 31
+sample_rate: 0.03, expected_batch_size: 151
+sample_rate: 0.03, expected_batch_size: 74
+sample_rate: 0.03, expected_batch_size: 118
+sample_rate: 0.03, expected_batch_size: 67
+sample_rate: 0.03, expected_batch_size: 155
+sample_rate: 0.03, expected_batch_size: 124
+sample_rate: 0.03, expected_batch_size: 230
+sample_rate: 0.03, expected_batch_size: 70
+sample_rate: 0.03, expected_batch_size: 35
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [0.474142570610315, 0.41353172691307594, 0.3922250484547046, 0.4341270961111893, 0.474142570610315, 0.4341270961111893, 0.474142570610315, 0.49289517166685826, 0.474142570610315, 0.45413483336075217]
+Round=14, per client global perf=[0.1362, 0.2123, 0.1384, 0.2746, 0.3469, 0.2486, 0.2107, 0.313, 0.3003, 0.1043], mean perf=4243/17005 (0.2495%)
+Round=14, per client personal perf=[0.1634, 0.0756, 0.5126, 0.1262, 0.192, 0.3327, 0.2548, 0.2959, 0.24, 0.4939], mean perf=4311/17005 (0.2535%)
+Round=14, per client personal pooled=[0.1026, 0.0996, 0.1002, 0.1026, 0.0982, 0.1002, 0.1026, 0.1776, 0.1036, 0.101], mean perf=18505/170050 (0.1088%)
+Mean performance of unidp ditto global,  eps=0.5, Perf=0.2444
+Mean performance of unidp ditto personal,  eps=0.5, Perf=0.2877
+Mean performance of unidp ditto pooled,  eps=0.5, Perf=0.1062
+Finished seed 42
+----------------------------------------
+=== Running epsilon=1 ===
+=== Running reg_param=0 ===
+Running seed 42
+default_sample_rate: 0.0321285140562249
+noise_multiplier :  2.5
+learning rate =  0.001
+sample_rate: 0.03, expected_batch_size: 31
+sample_rate: 0.03, expected_batch_size: 151
+sample_rate: 0.03, expected_batch_size: 74
+sample_rate: 0.03, expected_batch_size: 118
+sample_rate: 0.03, expected_batch_size: 67
+sample_rate: 0.03, expected_batch_size: 155
+sample_rate: 0.03, expected_batch_size: 124
+sample_rate: 0.03, expected_batch_size: 230
+sample_rate: 0.03, expected_batch_size: 70
+sample_rate: 0.03, expected_batch_size: 35
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [0.9524190699344655, 0.8342220461319841, 0.7907178438303538, 0.8744056400242666, 0.9524190699344655, 0.8744056400242666, 0.9524190699344655, 0.9906892062658469, 0.9524190699344655, 0.913412354979366]
+Round=14, per client global perf=[0.1712, 0.2554, 0.1971, 0.3225, 0.3998, 0.2566, 0.2673, 0.3846, 0.3481, 0.1548], mean perf=5065/17005 (0.2979%)
+Round=14, per client personal perf=[0.5545, 0.4624, 0.5327, 0.5334, 0.513, 0.4646, 0.4635, 0.3771, 0.4322, 0.473], mean perf=7848/17005 (0.4615%)
+Round=14, per client personal pooled=[0.1936, 0.1741, 0.131, 0.1491, 0.1705, 0.1904, 0.2018, 0.2413, 0.1808, 0.1587], mean perf=30459/170050 (0.1791%)
+Mean performance of unidp ditto global,  eps=1.0, Perf=0.2934
+Mean performance of unidp ditto personal,  eps=1.0, Perf=0.4657
+Mean performance of unidp ditto pooled,  eps=1.0, Perf=0.1697
+Finished seed 42
+----------------------------------------
+=== Running reg_param=0.001 ===
+Running seed 42
+default_sample_rate: 0.0321285140562249
+noise_multiplier :  2.5
+learning rate =  0.001
+sample_rate: 0.03, expected_batch_size: 31
+sample_rate: 0.03, expected_batch_size: 151
+sample_rate: 0.03, expected_batch_size: 74
+sample_rate: 0.03, expected_batch_size: 118
+sample_rate: 0.03, expected_batch_size: 67
+sample_rate: 0.03, expected_batch_size: 155
+sample_rate: 0.03, expected_batch_size: 124
+sample_rate: 0.03, expected_batch_size: 230
+sample_rate: 0.03, expected_batch_size: 70
+sample_rate: 0.03, expected_batch_size: 35
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [0.9524190699344655, 0.8342220461319841, 0.7907178438303538, 0.8744056400242666, 0.9524190699344655, 0.8744056400242666, 0.9524190699344655, 0.9906892062658469, 0.9524190699344655, 0.913412354979366]
+Round=14, per client global perf=[0.1712, 0.2554, 0.1971, 0.3225, 0.3998, 0.2566, 0.2673, 0.3846, 0.3481, 0.1548], mean perf=5065/17005 (0.2979%)
+Round=14, per client personal perf=[0.4903, 0.4439, 0.5268, 0.6312, 0.5195, 0.4043, 0.466, 0.3643, 0.4314, 0.4104], mean perf=7727/17005 (0.4544%)
+Round=14, per client personal pooled=[0.1546, 0.1637, 0.1277, 0.1627, 0.1707, 0.1742, 0.2006, 0.2173, 0.1856, 0.1477], mean perf=28990/170050 (0.1705%)
+Mean performance of unidp ditto global,  eps=1.0, Perf=0.2934
+Mean performance of unidp ditto personal,  eps=1.0, Perf=0.4525
+Mean performance of unidp ditto pooled,  eps=1.0, Perf=0.1633
+Finished seed 42
+----------------------------------------
+=== Running reg_param=0.01 ===
+Running seed 42
+default_sample_rate: 0.0321285140562249
+noise_multiplier :  2.5
+learning rate =  0.001
+sample_rate: 0.03, expected_batch_size: 31
+sample_rate: 0.03, expected_batch_size: 151
+sample_rate: 0.03, expected_batch_size: 74
+sample_rate: 0.03, expected_batch_size: 118
+sample_rate: 0.03, expected_batch_size: 67
+sample_rate: 0.03, expected_batch_size: 155
+sample_rate: 0.03, expected_batch_size: 124
+sample_rate: 0.03, expected_batch_size: 230
+sample_rate: 0.03, expected_batch_size: 70
+sample_rate: 0.03, expected_batch_size: 35
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [0.9524190699344655, 0.8342220461319841, 0.7907178438303538, 0.8744056400242666, 0.9524190699344655, 0.8744056400242666, 0.9524190699344655, 0.9906892062658469, 0.9524190699344655, 0.913412354979366]
+Round=14, per client global perf=[0.1712, 0.2554, 0.1971, 0.3225, 0.3998, 0.2566, 0.2673, 0.3846, 0.3481, 0.1548], mean perf=5065/17005 (0.2979%)
+Round=14, per client personal perf=[0.4591, 0.4156, 0.5117, 0.6554, 0.4685, 0.4051, 0.3478, 0.3481, 0.38, 0.4365], mean perf=7278/17005 (0.4280%)
+Round=14, per client personal pooled=[0.1498, 0.101, 0.1025, 0.171, 0.1637, 0.1748, 0.1645, 0.1972, 0.1668, 0.1485], mean perf=26182/170050 (0.1540%)
+Mean performance of unidp ditto global,  eps=1.0, Perf=0.2934
+Mean performance of unidp ditto personal,  eps=1.0, Perf=0.4259
+Mean performance of unidp ditto pooled,  eps=1.0, Perf=0.1476
+Finished seed 42
+----------------------------------------
+=== Running reg_param=0.1 ===
+Running seed 42
+default_sample_rate: 0.0321285140562249
+noise_multiplier :  2.5
+learning rate =  0.001
+sample_rate: 0.03, expected_batch_size: 31
+sample_rate: 0.03, expected_batch_size: 151
+sample_rate: 0.03, expected_batch_size: 74
+sample_rate: 0.03, expected_batch_size: 118
+sample_rate: 0.03, expected_batch_size: 67
+sample_rate: 0.03, expected_batch_size: 155
+sample_rate: 0.03, expected_batch_size: 124
+sample_rate: 0.03, expected_batch_size: 230
+sample_rate: 0.03, expected_batch_size: 70
+sample_rate: 0.03, expected_batch_size: 35
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [0.9524190699344655, 0.8342220461319841, 0.7907178438303538, 0.8744056400242666, 0.9524190699344655, 0.8744056400242666, 0.9524190699344655, 0.9906892062658469, 0.9524190699344655, 0.913412354979366]
+Round=14, per client global perf=[0.1712, 0.2554, 0.1971, 0.3225, 0.3998, 0.2566, 0.2673, 0.3846, 0.3481, 0.1548], mean perf=5065/17005 (0.2979%)
+Round=14, per client personal perf=[0.4008, 0.4156, 0.5126, 0.5213, 0.4082, 0.2751, 0.3413, 0.2329, 0.2719, 0.4939], mean perf=6078/17005 (0.3574%)
+Round=14, per client personal pooled=[0.1014, 0.101, 0.1002, 0.1089, 0.1454, 0.0989, 0.1571, 0.1555, 0.1002, 0.101], mean perf=19888/170050 (0.1170%)
+Mean performance of unidp ditto global,  eps=1.0, Perf=0.2934
+Mean performance of unidp ditto personal,  eps=1.0, Perf=0.3305
+Mean performance of unidp ditto pooled,  eps=1.0, Perf=0.1080
+Finished seed 42
+----------------------------------------
+=== Running reg_param=1.0 ===
+Running seed 42
+default_sample_rate: 0.0321285140562249
+noise_multiplier :  2.5
+learning rate =  0.001
+sample_rate: 0.03, expected_batch_size: 31
+sample_rate: 0.03, expected_batch_size: 151
+sample_rate: 0.03, expected_batch_size: 74
+sample_rate: 0.03, expected_batch_size: 118
+sample_rate: 0.03, expected_batch_size: 67
+sample_rate: 0.03, expected_batch_size: 155
+sample_rate: 0.03, expected_batch_size: 124
+sample_rate: 0.03, expected_batch_size: 230
+sample_rate: 0.03, expected_batch_size: 70
+sample_rate: 0.03, expected_batch_size: 35
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [0.9524190699344655, 0.8342220461319841, 0.7907178438303538, 0.8744056400242666, 0.9524190699344655, 0.8744056400242666, 0.9524190699344655, 0.9906892062658469, 0.9524190699344655, 0.913412354979366]
+Round=14, per client global perf=[0.1712, 0.2554, 0.1971, 0.3225, 0.3998, 0.2566, 0.2673, 0.3846, 0.3481, 0.1548], mean perf=5065/17005 (0.2979%)
+Round=14, per client personal perf=[0.428, 0.069, 0.5126, 0.5055, 0.192, 0.3327, 0.2548, 0.1496, 0.1763, 0.4939], mean perf=4539/17005 (0.2669%)
+Round=14, per client personal pooled=[0.1284, 0.1002, 0.1002, 0.1035, 0.0982, 0.1002, 0.1026, 0.0996, 0.0991, 0.1011], mean perf=17569/170050 (0.1033%)
+Mean performance of unidp ditto global,  eps=1.0, Perf=0.2934
+Mean performance of unidp ditto personal,  eps=1.0, Perf=0.2950
+Mean performance of unidp ditto pooled,  eps=1.0, Perf=0.1023
+Finished seed 42
+----------------------------------------
+=== Running reg_param=10 ===
+Running seed 42
+default_sample_rate: 0.0321285140562249
+noise_multiplier :  2.5
+learning rate =  0.001
+sample_rate: 0.03, expected_batch_size: 31
+sample_rate: 0.03, expected_batch_size: 151
+sample_rate: 0.03, expected_batch_size: 74
+sample_rate: 0.03, expected_batch_size: 118
+sample_rate: 0.03, expected_batch_size: 67
+sample_rate: 0.03, expected_batch_size: 155
+sample_rate: 0.03, expected_batch_size: 124
+sample_rate: 0.03, expected_batch_size: 230
+sample_rate: 0.03, expected_batch_size: 70
+sample_rate: 0.03, expected_batch_size: 35
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [0.9524190699344655, 0.8342220461319841, 0.7907178438303538, 0.8744056400242666, 0.9524190699344655, 0.8744056400242666, 0.9524190699344655, 0.9906892062658469, 0.9524190699344655, 0.913412354979366]
+Round=14, per client global perf=[0.1712, 0.2554, 0.1971, 0.3225, 0.3998, 0.2566, 0.2673, 0.3846, 0.3481, 0.1548], mean perf=5065/17005 (0.2979%)
+Round=14, per client personal perf=[0.1732, 0.4156, 0.2357, 0.4908, 0.0714, 0.1758, 0.2548, 0.2567, 0.1833, 0.4939], mean perf=4778/17005 (0.2810%)
+Round=14, per client personal pooled=[0.1066, 0.101, 0.1002, 0.0982, 0.131, 0.0987, 0.1026, 0.1133, 0.1027, 0.1012], mean perf=17950/170050 (0.1056%)
+Mean performance of unidp ditto global,  eps=1.0, Perf=0.2934
+Mean performance of unidp ditto personal,  eps=1.0, Perf=0.2946
+Mean performance of unidp ditto pooled,  eps=1.0, Perf=0.1034
+Finished seed 42
+----------------------------------------
+=== Running epsilon=8 ===
+=== Running reg_param=0 ===
+Running seed 42
+default_sample_rate: 0.0321285140562249
+noise_multiplier :  0.77850341796875
+learning rate =  0.001
+sample_rate: 0.03, expected_batch_size: 31
+sample_rate: 0.03, expected_batch_size: 151
+sample_rate: 0.03, expected_batch_size: 74
+sample_rate: 0.03, expected_batch_size: 118
+sample_rate: 0.03, expected_batch_size: 67
+sample_rate: 0.03, expected_batch_size: 155
+sample_rate: 0.03, expected_batch_size: 124
+sample_rate: 0.03, expected_batch_size: 230
+sample_rate: 0.03, expected_batch_size: 70
+sample_rate: 0.03, expected_batch_size: 35
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [7.632647316618896, 6.532602831711029, 6.16592133674174, 6.899284326680319, 7.632647316618896, 6.899284326680319, 7.632647316618896, 7.999328811588186, 7.632647316618896, 7.2659658216496075]
+Round=14, per client global perf=[0.3813, 0.3088, 0.3876, 0.4056, 0.4462, 0.3254, 0.4585, 0.4798, 0.4393, 0.2817], mean perf=6819/17005 (0.4010%)
+Round=14, per client personal perf=[0.5545, 0.4624, 0.5327, 0.5334, 0.513, 0.4646, 0.4635, 0.3771, 0.4322, 0.473], mean perf=7848/17005 (0.4615%)
+Round=14, per client personal pooled=[0.1936, 0.1741, 0.131, 0.1491, 0.1705, 0.1904, 0.2018, 0.2413, 0.1808, 0.1587], mean perf=30459/170050 (0.1791%)
+Mean performance of unidp ditto global,  eps=8.0, Perf=0.3928
+Mean performance of unidp ditto personal,  eps=8.0, Perf=0.4657
+Mean performance of unidp ditto pooled,  eps=8.0, Perf=0.1697
+Finished seed 42
+----------------------------------------
+=== Running reg_param=0.001 ===
+Running seed 42
+default_sample_rate: 0.0321285140562249
+noise_multiplier :  0.77850341796875
+learning rate =  0.001
+sample_rate: 0.03, expected_batch_size: 31
+sample_rate: 0.03, expected_batch_size: 151
+sample_rate: 0.03, expected_batch_size: 74
+sample_rate: 0.03, expected_batch_size: 118
+sample_rate: 0.03, expected_batch_size: 67
+sample_rate: 0.03, expected_batch_size: 155
+sample_rate: 0.03, expected_batch_size: 124
+sample_rate: 0.03, expected_batch_size: 230
+sample_rate: 0.03, expected_batch_size: 70
+sample_rate: 0.03, expected_batch_size: 35
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [7.632647316618896, 6.532602831711029, 6.16592133674174, 6.899284326680319, 7.632647316618896, 6.899284326680319, 7.632647316618896, 7.999328811588186, 7.632647316618896, 7.2659658216496075]
+Round=14, per client global perf=[0.3813, 0.3088, 0.3876, 0.4056, 0.4462, 0.3254, 0.4585, 0.4798, 0.4393, 0.2817], mean perf=6819/17005 (0.4010%)
+Round=14, per client personal perf=[0.535, 0.4554, 0.5285, 0.6265, 0.525, 0.3862, 0.4725, 0.373, 0.434, 0.4278], mean perf=7790/17005 (0.4581%)
+Round=14, per client personal pooled=[0.1961, 0.1707, 0.128, 0.163, 0.1796, 0.171, 0.2037, 0.2274, 0.1733, 0.1517], mean perf=30006/170050 (0.1765%)
+Mean performance of unidp ditto global,  eps=8.0, Perf=0.3928
+Mean performance of unidp ditto personal,  eps=8.0, Perf=0.4559
+Mean performance of unidp ditto pooled,  eps=8.0, Perf=0.1666
+Finished seed 42
+----------------------------------------
+=== Running reg_param=0.01 ===
+Running seed 42
+default_sample_rate: 0.0321285140562249
+noise_multiplier :  0.77850341796875
+learning rate =  0.001
+sample_rate: 0.03, expected_batch_size: 31
+sample_rate: 0.03, expected_batch_size: 151
+sample_rate: 0.03, expected_batch_size: 74
+sample_rate: 0.03, expected_batch_size: 118
+sample_rate: 0.03, expected_batch_size: 67
+sample_rate: 0.03, expected_batch_size: 155
+sample_rate: 0.03, expected_batch_size: 124
+sample_rate: 0.03, expected_batch_size: 230
+sample_rate: 0.03, expected_batch_size: 70
+sample_rate: 0.03, expected_batch_size: 35
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [7.632647316618896, 6.532602831711029, 6.16592133674174, 6.899284326680319, 7.632647316618896, 6.899284326680319, 7.632647316618896, 7.999328811588186, 7.632647316618896, 7.2659658216496075]
+Round=14, per client global perf=[0.3813, 0.3088, 0.3876, 0.4056, 0.4462, 0.3254, 0.4585, 0.4798, 0.4393, 0.2817], mean perf=6819/17005 (0.4010%)
+Round=14, per client personal perf=[0.4942, 0.4156, 0.5126, 0.6586, 0.4926, 0.4115, 0.3944, 0.3086, 0.4163, 0.4696], mean perf=7352/17005 (0.4323%)
+Round=14, per client personal pooled=[0.185, 0.101, 0.1002, 0.1605, 0.1698, 0.1625, 0.1753, 0.1993, 0.1702, 0.1532], mean perf=26817/170050 (0.1577%)
+Mean performance of unidp ditto global,  eps=8.0, Perf=0.3928
+Mean performance of unidp ditto personal,  eps=8.0, Perf=0.4296
+Mean performance of unidp ditto pooled,  eps=8.0, Perf=0.1498
+Finished seed 42
+----------------------------------------
+=== Running reg_param=0.1 ===
+Running seed 42
+default_sample_rate: 0.0321285140562249
+noise_multiplier :  0.77850341796875
+learning rate =  0.001
+sample_rate: 0.03, expected_batch_size: 31
+sample_rate: 0.03, expected_batch_size: 151
+sample_rate: 0.03, expected_batch_size: 74
+sample_rate: 0.03, expected_batch_size: 118
+sample_rate: 0.03, expected_batch_size: 67
+sample_rate: 0.03, expected_batch_size: 155
+sample_rate: 0.03, expected_batch_size: 124
+sample_rate: 0.03, expected_batch_size: 230
+sample_rate: 0.03, expected_batch_size: 70
+sample_rate: 0.03, expected_batch_size: 35
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [7.632647316618896, 6.532602831711029, 6.16592133674174, 6.899284326680319, 7.632647316618896, 6.899284326680319, 7.632647316618896, 7.999328811588186, 7.632647316618896, 7.2659658216496075]
+Round=14, per client global perf=[0.3813, 0.3088, 0.3876, 0.4056, 0.4462, 0.3254, 0.4585, 0.4798, 0.4393, 0.2817], mean perf=6819/17005 (0.4010%)
+Round=14, per client personal perf=[0.4008, 0.4156, 0.5126, 0.4908, 0.475, 0.2751, 0.2548, 0.2075, 0.3915, 0.5409], mean perf=5987/17005 (0.3521%)
+Round=14, per client personal pooled=[0.1014, 0.101, 0.1002, 0.0982, 0.1625, 0.0989, 0.1026, 0.1509, 0.1562, 0.1547], mean perf=20858/170050 (0.1227%)
+Mean performance of unidp ditto global,  eps=8.0, Perf=0.3928
+Mean performance of unidp ditto personal,  eps=8.0, Perf=0.3485
+Mean performance of unidp ditto pooled,  eps=8.0, Perf=0.1141
+Finished seed 42
+----------------------------------------
+=== Running reg_param=1.0 ===
+Running seed 42
+default_sample_rate: 0.0321285140562249
+noise_multiplier :  0.77850341796875
+learning rate =  0.001
+sample_rate: 0.03, expected_batch_size: 31
+sample_rate: 0.03, expected_batch_size: 151
+sample_rate: 0.03, expected_batch_size: 74
+sample_rate: 0.03, expected_batch_size: 118
+sample_rate: 0.03, expected_batch_size: 67
+sample_rate: 0.03, expected_batch_size: 155
+sample_rate: 0.03, expected_batch_size: 124
+sample_rate: 0.03, expected_batch_size: 230
+sample_rate: 0.03, expected_batch_size: 70
+sample_rate: 0.03, expected_batch_size: 35
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [7.632647316618896, 6.532602831711029, 6.16592133674174, 6.899284326680319, 7.632647316618896, 6.899284326680319, 7.632647316618896, 7.999328811588186, 7.632647316618896, 7.2659658216496075]
+Round=14, per client global perf=[0.3813, 0.3088, 0.3876, 0.4056, 0.4462, 0.3254, 0.4585, 0.4798, 0.4393, 0.2817], mean perf=6819/17005 (0.4010%)
+Round=14, per client personal perf=[0.1634, 0.4156, 0.2357, 0.2872, 0.192, 0.2751, 0.2548, 0.1582, 0.1763, 0.4974], mean perf=4393/17005 (0.2583%)
+Round=14, per client personal pooled=[0.1026, 0.101, 0.1002, 0.1014, 0.0982, 0.0989, 0.1026, 0.0987, 0.0991, 0.1049], mean perf=17136/170050 (0.1008%)
+Mean performance of unidp ditto global,  eps=8.0, Perf=0.3928
+Mean performance of unidp ditto personal,  eps=8.0, Perf=0.2966
+Mean performance of unidp ditto pooled,  eps=8.0, Perf=0.1062
+Finished seed 42
+----------------------------------------
+=== Running reg_param=10 ===
+Running seed 42
+default_sample_rate: 0.0321285140562249
+noise_multiplier :  0.77850341796875
+learning rate =  0.001
+sample_rate: 0.03, expected_batch_size: 31
+sample_rate: 0.03, expected_batch_size: 151
+sample_rate: 0.03, expected_batch_size: 74
+sample_rate: 0.03, expected_batch_size: 118
+sample_rate: 0.03, expected_batch_size: 67
+sample_rate: 0.03, expected_batch_size: 155
+sample_rate: 0.03, expected_batch_size: 124
+sample_rate: 0.03, expected_batch_size: 230
+sample_rate: 0.03, expected_batch_size: 70
+sample_rate: 0.03, expected_batch_size: 35
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [7.632647316618896, 6.532602831711029, 6.16592133674174, 6.899284326680319, 7.632647316618896, 6.899284326680319, 7.632647316618896, 7.999328811588186, 7.632647316618896, 7.2659658216496075]
+Round=14, per client global perf=[0.3813, 0.3088, 0.3876, 0.4056, 0.4462, 0.3254, 0.4585, 0.4798, 0.4393, 0.2817], mean perf=6819/17005 (0.4010%)
+Round=14, per client personal perf=[0.2043, 0.2119, 0.5126, 0.5518, 0.0353, 0.1018, 0.3203, 0.1496, 0.1692, 0.1148], mean perf=4022/17005 (0.2365%)
+Round=14, per client personal pooled=[0.1691, 0.132, 0.1002, 0.1184, 0.1002, 0.1033, 0.102, 0.0996, 0.1277, 0.102], mean perf=19632/170050 (0.1154%)
+Mean performance of unidp ditto global,  eps=8.0, Perf=0.3928
+Mean performance of unidp ditto personal,  eps=8.0, Perf=0.2425
+Mean performance of unidp ditto pooled,  eps=8.0, Perf=0.1231
+Finished seed 42
+----------------------------------------

@@ -1,0 +1,142 @@
+PARAMS: dataset=mnist, gpu=0, data_type=iid_10, num_steps=15
+=== Running reg_param=1 ===
+Running seed 42
+learning rate =  0.01
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+Round=14, per client global perf=[0.9868, 0.9804, 0.9892, 0.9833, 0.9838, 0.9858, 0.9868, 0.9873, 0.9892, 0.9863], mean perf=20112/20400 (0.9859%)
+Round=14, per client personal perf=[0.9858, 0.9794, 0.9828, 0.9794, 0.9819, 0.9863, 0.9887, 0.9877, 0.9868, 0.9828], mean perf=20077/20400 (0.9842%)
+Round=14, per client personal pooled=[0.9831, 0.9834, 0.9817, 0.9847, 0.9825, 0.984, 0.9847, 0.9834, 0.9846, 0.9835], mean perf=200643/204000 (0.9835%)
+All rounds performance of vanilla ditto global, Perf=[0.5126, 0.9607, 0.9729, 0.9774, 0.9778, 0.9806, 0.9821, 0.9816, 0.9833, 0.9836, 0.9822, 0.983, 0.9847, 0.984, 0.9859]
+Mean performance of vanilla ditto global, Perf=0.9849
+All rounds performance of vanilla ditto personal, Perf=[0.1108, 0.4102, 0.6744, 0.866, 0.9688, 0.9726, 0.9736, 0.9779, 0.9798, 0.9825, 0.9821, 0.9821, 0.9817, 0.9833, 0.9842]
+Mean performance of vanilla ditto personal, Perf=0.9831
+All rounds performance of vanilla ditto pooled, Perf=[0.1113, 0.4089, 0.6734, 0.8666, 0.9693, 0.9734, 0.9747, 0.9786, 0.9797, 0.9815, 0.9816, 0.9821, 0.9814, 0.9827, 0.9835]
+Mean performance of vanilla ditto pooled, Perf=0.9825
+Finished seed 42
+----------------------------------------
+Running seed 43
+learning rate =  0.01
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+Round=14, per client global perf=[0.9887, 0.9828, 0.9843, 0.9779, 0.9799, 0.9833, 0.9877, 0.9858, 0.9848, 0.9838], mean perf=20072/20400 (0.9839%)
+Round=14, per client personal perf=[0.9848, 0.9789, 0.9799, 0.976, 0.9794, 0.9784, 0.9789, 0.9873, 0.9819, 0.9775], mean perf=19998/20400 (0.9803%)
+Round=14, per client personal pooled=[0.9824, 0.9809, 0.9808, 0.9819, 0.9789, 0.9789, 0.9783, 0.98, 0.9778, 0.9797], mean perf=199912/204000 (0.9800%)
+All rounds performance of vanilla ditto global, Perf=[0.6652, 0.9579, 0.9713, 0.9763, 0.9769, 0.9804, 0.982, 0.9787, 0.9796, 0.98, 0.982, 0.9827, 0.9825, 0.9824, 0.9839]
+Mean performance of vanilla ditto global, Perf=0.9829
+All rounds performance of vanilla ditto personal, Perf=[0.1137, 0.5055, 0.7687, 0.7891, 0.8771, 0.8874, 0.8906, 0.8903, 0.8896, 0.9753, 0.977, 0.9788, 0.9797, 0.9789, 0.9803]
+Mean performance of vanilla ditto personal, Perf=0.9796
+All rounds performance of vanilla ditto pooled, Perf=[0.1173, 0.5083, 0.7699, 0.7911, 0.8792, 0.8888, 0.8916, 0.892, 0.8912, 0.9764, 0.9774, 0.9788, 0.9792, 0.9788, 0.98]
+Mean performance of vanilla ditto pooled, Perf=0.9793
+Finished seed 43
+----------------------------------------
+Running seed 44
+learning rate =  0.01
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+Round=14, per client global perf=[0.9873, 0.9833, 0.9838, 0.9804, 0.9897, 0.9819, 0.9877, 0.9873, 0.9892, 0.9833], mean perf=20102/20400 (0.9854%)
+Round=14, per client personal perf=[0.9848, 0.9858, 0.9794, 0.9789, 0.9848, 0.9784, 0.9814, 0.9838, 0.9838, 0.9799], mean perf=20035/20400 (0.9821%)
+Round=14, per client personal pooled=[0.9837, 0.9827, 0.983, 0.9822, 0.9825, 0.9816, 0.9816, 0.9822, 0.9827, 0.9819], mean perf=200413/204000 (0.9824%)
+All rounds performance of vanilla ditto global, Perf=[0.4404, 0.95, 0.9649, 0.9721, 0.9773, 0.9799, 0.9808, 0.9834, 0.9827, 0.9821, 0.9845, 0.9825, 0.9838, 0.9841, 0.9854]
+Mean performance of vanilla ditto global, Perf=0.9844
+All rounds performance of vanilla ditto personal, Perf=[0.1353, 0.3521, 0.6729, 0.795, 0.7966, 0.8874, 0.8921, 0.9769, 0.9789, 0.9782, 0.9777, 0.9786, 0.9809, 0.9821, 0.9821]
+Mean performance of vanilla ditto personal, Perf=0.9817
+All rounds performance of vanilla ditto pooled, Perf=[0.1364, 0.3535, 0.6744, 0.7952, 0.7965, 0.8884, 0.8929, 0.9759, 0.9786, 0.9785, 0.978, 0.9789, 0.9811, 0.9821, 0.9824]
+Mean performance of vanilla ditto pooled, Perf=0.9819
+Finished seed 44
+----------------------------------------
+Running seed 45
+learning rate =  0.01
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+Round=14, per client global perf=[0.9882, 0.9853, 0.9848, 0.9789, 0.9838, 0.9838, 0.9853, 0.9873, 0.9858, 0.9819], mean perf=20084/20400 (0.9845%)
+Round=14, per client personal perf=[0.9833, 0.9804, 0.9833, 0.9824, 0.9779, 0.9779, 0.9843, 0.9838, 0.9838, 0.9799], mean perf=20027/20400 (0.9817%)
+Round=14, per client personal pooled=[0.9801, 0.9826, 0.9822, 0.9803, 0.9805, 0.9803, 0.9825, 0.9803, 0.9807, 0.9793], mean perf=200102/204000 (0.9809%)
+All rounds performance of vanilla ditto global, Perf=[0.9214, 0.9611, 0.9703, 0.9741, 0.9743, 0.978, 0.978, 0.9814, 0.9814, 0.9821, 0.9843, 0.9833, 0.9846, 0.9848, 0.9845]
+Mean performance of vanilla ditto global, Perf=0.9846
+All rounds performance of vanilla ditto personal, Perf=[0.1327, 0.2885, 0.7872, 0.7958, 0.9652, 0.9676, 0.9694, 0.9748, 0.9777, 0.9774, 0.9791, 0.9804, 0.9816, 0.9817, 0.9817]
+Mean performance of vanilla ditto personal, Perf=0.9817
+All rounds performance of vanilla ditto pooled, Perf=[0.1307, 0.2871, 0.7861, 0.7947, 0.9637, 0.9672, 0.9698, 0.9752, 0.9773, 0.9773, 0.9794, 0.9803, 0.9807, 0.9812, 0.9809]
+Mean performance of vanilla ditto pooled, Perf=0.9809
+Finished seed 45
+----------------------------------------
+Running seed 46
+learning rate =  0.01
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+Round=14, per client global perf=[0.9853, 0.9843, 0.9873, 0.9804, 0.9828, 0.9863, 0.9868, 0.9897, 0.9863, 0.9848], mean perf=20102/20400 (0.9854%)
+Round=14, per client personal perf=[0.9838, 0.9804, 0.9843, 0.9784, 0.9848, 0.9819, 0.9824, 0.9873, 0.9863, 0.9814], mean perf=20055/20400 (0.9831%)
+Round=14, per client personal pooled=[0.9807, 0.9827, 0.982, 0.9831, 0.9855, 0.9838, 0.9825, 0.9825, 0.9836, 0.9829], mean perf=200521/204000 (0.9829%)
+All rounds performance of vanilla ditto global, Perf=[0.5314, 0.9557, 0.9707, 0.972, 0.9784, 0.98, 0.9798, 0.9816, 0.9812, 0.9823, 0.9845, 0.9858, 0.9851, 0.9847, 0.9854]
+Mean performance of vanilla ditto global, Perf=0.9851
+All rounds performance of vanilla ditto personal, Perf=[0.1165, 0.5227, 0.8105, 0.9283, 0.9692, 0.9717, 0.9766, 0.9777, 0.9787, 0.9799, 0.9807, 0.983, 0.983, 0.9835, 0.9831]
+Mean performance of vanilla ditto personal, Perf=0.9832
+All rounds performance of vanilla ditto pooled, Perf=[0.1156, 0.5233, 0.8111, 0.9281, 0.9692, 0.9711, 0.9754, 0.9775, 0.9785, 0.98, 0.9806, 0.9823, 0.9834, 0.984, 0.9829]
+Mean performance of vanilla ditto pooled, Perf=0.9834
+Finished seed 46
+----------------------------------------

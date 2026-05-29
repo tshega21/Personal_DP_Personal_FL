@@ -4,8 +4,10 @@ import random
 
 from torchvision.datasets import MNIST
 
-WAY = 5
-SHOT = 1200
+#WAY = 5
+WAY = 2
+#SHOT = 1200
+SHOT = 3000
 NUM_LABELS = 10
 NUM_CLIENTS = 10
 
@@ -91,6 +93,6 @@ for cid in range(NUM_CLIENTS):
 
     combined = list(zip(client_X, client_y)) 
     random.shuffle(combined)
-    print(cname, len(combined))
+    #print(cname, len(combined), np.unique(client_y))
     np.save(os.path.join(save_path, f"{cname}.npy"), combined)
     

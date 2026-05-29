@@ -1,0 +1,1625 @@
+PARAMS: dataset=mnist, gpu=0, data_type=niid_dir_1
+=== Running reg_param=0, num_steps=15 ===
+Running seed 42
+/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/experiments/datasets/fed_mnist/dirichlet_10_alpha_1
+ We run FedAvg with rPDP (ThreeLevels-0) ...
+max_epsilon :  10.0  noise_multiplier :  9.736328125
+The R-Squared value of the best-fit curve : 0.999749898528281
+learning rate =  0.01
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 231
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 425
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 301
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 842
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 550
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 79
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 810
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 563
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 68
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 483
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [3.554611437795162, 3.554611437795162, 2.8039339861853394, 3.3043856205918876, 3.8048372549984366, 3.554611437795162, 3.8048372549984366, 4.055063072201711, 4.305288889404985, 3.0541598033886133]
+Round=14, per client global perf=[0.4041, 0.761, 0.6294, 0.5841, 0.9092, 0.9113, 0.9442, 0.4934, 0.6771, 0.2606], mean perf=13525/20406 (0.6628%)
+Round=14, per client personal perf=[0.9649, 0.99, 0.9703, 0.9805, 0.9872, 0.9973, 0.991, 0.9825, 0.9624, 0.9643], mean perf=20022/20406 (0.9812%)
+Round=14, per client personal pooled=[0.5766, 0.4204, 0.3807, 0.5169, 0.382, 0.3475, 0.4898, 0.3569, 0.5323, 0.1957], mean perf=85684/204060 (0.4199%)
+Mean performance of ditto rpdp global, Perf=0.6627
+Mean performance of ditto rpdp personal, Perf=0.9810
+Mean performance of ditto rpdp pooled, Perf=0.4222
+ We run FedAvg with rPDP (BoundedPareto-0) ...
+max_epsilon :  10.0  noise_multiplier :  9.736328125
+The R-Squared value of the best-fit curve : 0.999749898528281
+learning rate =  0.01
+sample_rate: (min) 0.03, (max) 0.76, expected_batch_size: 156
+sample_rate: (min) 0.03, (max) 0.69, expected_batch_size: 284
+sample_rate: (min) 0.03, (max) 0.67, expected_batch_size: 196
+sample_rate: (min) 0.03, (max) 0.98, expected_batch_size: 570
+sample_rate: (min) 0.03, (max) 0.93, expected_batch_size: 381
+sample_rate: (min) 0.03, (max) 0.73, expected_batch_size: 55
+sample_rate: (min) 0.03, (max) 0.75, expected_batch_size: 542
+sample_rate: (min) 0.03, (max) 0.81, expected_batch_size: 380
+sample_rate: (min) 0.03, (max) 0.62, expected_batch_size: 45
+sample_rate: (min) 0.03, (max) 0.62, expected_batch_size: 324
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [4.752415310075706, 4.319656280960529, 3.116421646411862, 6.0748074655109106, 6.577901701762658, 4.552836647619267, 4.9460204841016475, 5.726566365650261, 4.42076175750789, 3.1533820324004593]
+Round=14, per client global perf=[0.3902, 0.618, 0.4774, 0.4402, 0.8891, 0.9032, 0.9286, 0.4884, 0.605, 0.3144], mean perf=12414/20406 (0.6084%)
+Round=14, per client personal perf=[0.9603, 0.9839, 0.9717, 0.9807, 0.9903, 0.9946, 0.9863, 0.9852, 0.953, 0.9674], mean perf=20008/20406 (0.9805%)
+Round=14, per client personal pooled=[0.5042, 0.4397, 0.4063, 0.5675, 0.3887, 0.3196, 0.5127, 0.335, 0.5297, 0.232], mean perf=86426/204060 (0.4235%)
+Mean performance of ditto rpdp global, Perf=0.6212
+Mean performance of ditto rpdp personal, Perf=0.9798
+Mean performance of ditto rpdp pooled, Perf=0.4136
+ We run FedAvg with rPDP (BoundedMixGauss-0) ...
+max_epsilon :  10.0  noise_multiplier :  9.736328125
+The R-Squared value of the best-fit curve : 0.999749898528281
+learning rate =  0.01
+sample_rate: (min) 0.03, (max) 0.71, expected_batch_size: 223
+sample_rate: (min) 0.03, (max) 0.72, expected_batch_size: 412
+sample_rate: (min) 0.03, (max) 0.79, expected_batch_size: 322
+sample_rate: (min) 0.03, (max) 0.72, expected_batch_size: 837
+sample_rate: (min) 0.03, (max) 0.72, expected_batch_size: 562
+sample_rate: (min) 0.03, (max) 0.71, expected_batch_size: 86
+sample_rate: (min) 0.03, (max) 0.74, expected_batch_size: 822
+sample_rate: (min) 0.03, (max) 0.73, expected_batch_size: 583
+sample_rate: (min) 0.03, (max) 0.74, expected_batch_size: 66
+sample_rate: (min) 0.03, (max) 0.73, expected_batch_size: 473
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [4.441464740445936, 4.452560630310308, 3.957148978803456, 4.232126556619421, 4.743771711921414, 4.44047523458072, 4.902195316160628, 5.07613599708928, 5.357871969683328, 3.8727212988002124]
+Round=14, per client global perf=[0.393, 0.7229, 0.6231, 0.6361, 0.9088, 0.9059, 0.9358, 0.4903, 0.7273, 0.3369], mean perf=13779/20406 (0.6752%)
+Round=14, per client personal perf=[0.9668, 0.9869, 0.971, 0.9749, 0.9868, 0.9946, 0.9879, 0.9837, 0.953, 0.9784], mean perf=20015/20406 (0.9808%)
+Round=14, per client personal pooled=[0.6952, 0.3793, 0.3832, 0.5358, 0.3647, 0.3355, 0.4976, 0.3596, 0.5295, 0.3697], mean perf=90809/204060 (0.4450%)
+Mean performance of ditto rpdp global, Perf=0.6602
+Mean performance of ditto rpdp personal, Perf=0.9806
+Mean performance of ditto rpdp pooled, Perf=0.4325
+Finished seed 42
+----------------------------------------
+=== Running reg_param=0, num_steps=30 ===
+Running seed 42
+/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/experiments/datasets/fed_mnist/dirichlet_10_alpha_1
+ We run FedAvg with rPDP (ThreeLevels-0) ...
+max_epsilon :  10.0  noise_multiplier :  9.736328125
+The R-Squared value of the best-fit curve : 0.999749898528281
+learning rate =  0.01
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 231
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 425
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 301
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 842
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 550
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 79
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 810
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 563
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 68
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 483
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [3.554611437795162, 3.554611437795162, 2.8039339861853394, 3.3043856205918876, 3.8048372549984366, 3.554611437795162, 3.8048372549984366, 4.055063072201711, 4.305288889404985, 3.0541598033886133]
+Round=14, per client global perf=[0.4041, 0.7626, 0.6301, 0.5849, 0.9088, 0.914, 0.9444, 0.4941, 0.6803, 0.2579], mean perf=13530/20406 (0.6630%)
+Round=14, per client personal perf=[0.9622, 0.988, 0.9802, 0.9823, 0.9911, 0.9973, 0.9945, 0.9848, 0.9655, 0.9868], mean perf=20117/20406 (0.9858%)
+Round=14, per client personal pooled=[0.7134, 0.4341, 0.4495, 0.5714, 0.4204, 0.3436, 0.5184, 0.3731, 0.535, 0.445], mean perf=98028/204060 (0.4804%)
+Mean performance of ditto rpdp global, Perf=0.6624
+Mean performance of ditto rpdp personal, Perf=0.9838
+Mean performance of ditto rpdp pooled, Perf=0.4709
+ We run FedAvg with rPDP (BoundedPareto-0) ...
+max_epsilon :  10.0  noise_multiplier :  9.736328125
+The R-Squared value of the best-fit curve : 0.999749898528281
+learning rate =  0.01
+sample_rate: (min) 0.03, (max) 0.76, expected_batch_size: 156
+sample_rate: (min) 0.03, (max) 0.69, expected_batch_size: 284
+sample_rate: (min) 0.03, (max) 0.67, expected_batch_size: 196
+sample_rate: (min) 0.03, (max) 0.98, expected_batch_size: 570
+sample_rate: (min) 0.03, (max) 0.93, expected_batch_size: 381
+sample_rate: (min) 0.03, (max) 0.73, expected_batch_size: 55
+sample_rate: (min) 0.03, (max) 0.75, expected_batch_size: 542
+sample_rate: (min) 0.03, (max) 0.81, expected_batch_size: 380
+sample_rate: (min) 0.03, (max) 0.62, expected_batch_size: 45
+sample_rate: (min) 0.03, (max) 0.62, expected_batch_size: 324
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [4.752415310075706, 4.319656280960529, 3.116421646411862, 6.0748074655109106, 6.577901701762658, 4.552836647619267, 4.9460204841016475, 5.726566365650261, 4.42076175750789, 3.1533820324004593]
+Round=14, per client global perf=[0.3847, 0.6225, 0.4802, 0.4321, 0.8887, 0.8952, 0.9223, 0.4869, 0.6019, 0.3051], mean perf=12335/20406 (0.6045%)
+Round=14, per client personal perf=[0.9751, 0.991, 0.9738, 0.9866, 0.9899, 0.9973, 0.9947, 0.9905, 0.9561, 0.9784], mean perf=20136/20406 (0.9868%)
+Round=14, per client personal pooled=[0.6711, 0.4693, 0.4734, 0.5638, 0.4353, 0.3311, 0.5148, 0.3739, 0.5302, 0.4429], mean perf=98069/204060 (0.4806%)
+Mean performance of ditto rpdp global, Perf=0.6196
+Mean performance of ditto rpdp personal, Perf=0.9856
+Mean performance of ditto rpdp pooled, Perf=0.4721
+ We run FedAvg with rPDP (BoundedMixGauss-0) ...
+max_epsilon :  10.0  noise_multiplier :  9.736328125
+The R-Squared value of the best-fit curve : 0.999749898528281
+learning rate =  0.01
+sample_rate: (min) 0.03, (max) 0.71, expected_batch_size: 223
+sample_rate: (min) 0.03, (max) 0.72, expected_batch_size: 412
+sample_rate: (min) 0.03, (max) 0.79, expected_batch_size: 322
+sample_rate: (min) 0.03, (max) 0.72, expected_batch_size: 837
+sample_rate: (min) 0.03, (max) 0.72, expected_batch_size: 562
+sample_rate: (min) 0.03, (max) 0.71, expected_batch_size: 86
+sample_rate: (min) 0.03, (max) 0.74, expected_batch_size: 822
+sample_rate: (min) 0.03, (max) 0.73, expected_batch_size: 583
+sample_rate: (min) 0.03, (max) 0.74, expected_batch_size: 66
+sample_rate: (min) 0.03, (max) 0.73, expected_batch_size: 473
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [4.441464740445936, 4.452560630310308, 3.957148978803456, 4.232126556619421, 4.743771711921414, 4.44047523458072, 4.902195316160628, 5.07613599708928, 5.357871969683328, 3.8727212988002124]
+Round=14, per client global perf=[0.3948, 0.7269, 0.633, 0.6384, 0.91, 0.9032, 0.9379, 0.4915, 0.7367, 0.3638], mean perf=13889/20406 (0.6806%)
+Round=14, per client personal perf=[0.9668, 0.9874, 0.9767, 0.9805, 0.9872, 0.9946, 0.9921, 0.9844, 0.9624, 0.9903], mean perf=20095/20406 (0.9848%)
+Round=14, per client personal pooled=[0.7062, 0.4757, 0.4055, 0.5173, 0.4909, 0.3275, 0.5607, 0.4218, 0.5362, 0.476], mean perf=100354/204060 (0.4918%)
+Mean performance of ditto rpdp global, Perf=0.6638
+Mean performance of ditto rpdp personal, Perf=0.9851
+Mean performance of ditto rpdp pooled, Perf=0.4761
+Finished seed 42
+----------------------------------------
+=== Running reg_param=0.001, num_steps=15 ===
+Running seed 42
+/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/experiments/datasets/fed_mnist/dirichlet_10_alpha_1
+ We run FedAvg with rPDP (ThreeLevels-0) ...
+max_epsilon :  10.0  noise_multiplier :  9.736328125
+The R-Squared value of the best-fit curve : 0.999749898528281
+learning rate =  0.01
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 231
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 425
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 301
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 842
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 550
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 79
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 810
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 563
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 68
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 483
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [3.554611437795162, 3.554611437795162, 2.8039339861853394, 3.3043856205918876, 3.8048372549984366, 3.554611437795162, 3.8048372549984366, 4.055063072201711, 4.305288889404985, 3.0541598033886133]
+Round=14, per client global perf=[0.4041, 0.761, 0.6294, 0.5841, 0.9092, 0.9113, 0.9442, 0.4934, 0.6771, 0.2606], mean perf=13525/20406 (0.6628%)
+Round=14, per client personal perf=[0.9705, 0.9885, 0.9809, 0.9845, 0.9783, 0.9919, 0.9921, 0.9799, 0.953, 0.9802], mean perf=20061/20406 (0.9831%)
+Round=14, per client personal pooled=[0.7052, 0.3851, 0.4397, 0.5316, 0.3029, 0.3364, 0.5116, 0.3847, 0.5195, 0.3059], mean perf=90247/204060 (0.4423%)
+Mean performance of ditto rpdp global, Perf=0.6627
+Mean performance of ditto rpdp personal, Perf=0.9819
+Mean performance of ditto rpdp pooled, Perf=0.4348
+ We run FedAvg with rPDP (BoundedPareto-0) ...
+max_epsilon :  10.0  noise_multiplier :  9.736328125
+The R-Squared value of the best-fit curve : 0.999749898528281
+learning rate =  0.01
+sample_rate: (min) 0.03, (max) 0.76, expected_batch_size: 156
+sample_rate: (min) 0.03, (max) 0.69, expected_batch_size: 284
+sample_rate: (min) 0.03, (max) 0.67, expected_batch_size: 196
+sample_rate: (min) 0.03, (max) 0.98, expected_batch_size: 570
+sample_rate: (min) 0.03, (max) 0.93, expected_batch_size: 381
+sample_rate: (min) 0.03, (max) 0.73, expected_batch_size: 55
+sample_rate: (min) 0.03, (max) 0.75, expected_batch_size: 542
+sample_rate: (min) 0.03, (max) 0.81, expected_batch_size: 380
+sample_rate: (min) 0.03, (max) 0.62, expected_batch_size: 45
+sample_rate: (min) 0.03, (max) 0.62, expected_batch_size: 324
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [4.752415310075706, 4.319656280960529, 3.116421646411862, 6.0748074655109106, 6.577901701762658, 4.552836647619267, 4.9460204841016475, 5.726566365650261, 4.42076175750789, 3.1533820324004593]
+Round=14, per client global perf=[0.3902, 0.618, 0.4774, 0.4402, 0.8891, 0.9032, 0.9286, 0.4884, 0.605, 0.3144], mean perf=12414/20406 (0.6084%)
+Round=14, per client personal perf=[0.9779, 0.9895, 0.9618, 0.9805, 0.9895, 0.9946, 0.9781, 0.9825, 0.9592, 0.9819], mean perf=20018/20406 (0.9810%)
+Round=14, per client personal pooled=[0.672, 0.4546, 0.4071, 0.5065, 0.3605, 0.3375, 0.4419, 0.3431, 0.5252, 0.355], mean perf=89854/204060 (0.4403%)
+Mean performance of ditto rpdp global, Perf=0.6212
+Mean performance of ditto rpdp personal, Perf=0.9806
+Mean performance of ditto rpdp pooled, Perf=0.4302
+ We run FedAvg with rPDP (BoundedMixGauss-0) ...
+max_epsilon :  10.0  noise_multiplier :  9.736328125
+The R-Squared value of the best-fit curve : 0.999749898528281
+learning rate =  0.01
+sample_rate: (min) 0.03, (max) 0.71, expected_batch_size: 223
+sample_rate: (min) 0.03, (max) 0.72, expected_batch_size: 412
+sample_rate: (min) 0.03, (max) 0.79, expected_batch_size: 322
+sample_rate: (min) 0.03, (max) 0.72, expected_batch_size: 837
+sample_rate: (min) 0.03, (max) 0.72, expected_batch_size: 562
+sample_rate: (min) 0.03, (max) 0.71, expected_batch_size: 86
+sample_rate: (min) 0.03, (max) 0.74, expected_batch_size: 822
+sample_rate: (min) 0.03, (max) 0.73, expected_batch_size: 583
+sample_rate: (min) 0.03, (max) 0.74, expected_batch_size: 66
+sample_rate: (min) 0.03, (max) 0.73, expected_batch_size: 473
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [4.441464740445936, 4.452560630310308, 3.957148978803456, 4.232126556619421, 4.743771711921414, 4.44047523458072, 4.902195316160628, 5.07613599708928, 5.357871969683328, 3.8727212988002124]
+Round=14, per client global perf=[0.393, 0.7229, 0.6231, 0.6361, 0.9088, 0.9059, 0.9358, 0.4903, 0.7273, 0.3369], mean perf=13779/20406 (0.6752%)
+Round=14, per client personal perf=[0.9631, 0.9905, 0.971, 0.9595, 0.986, 0.9946, 0.99, 0.9814, 0.9624, 0.9806], mean perf=19965/20406 (0.9784%)
+Round=14, per client personal pooled=[0.6098, 0.3966, 0.4198, 0.5442, 0.329, 0.3531, 0.5005, 0.3522, 0.5257, 0.316], mean perf=88703/204060 (0.4347%)
+Mean performance of ditto rpdp global, Perf=0.6602
+Mean performance of ditto rpdp personal, Perf=0.9793
+Mean performance of ditto rpdp pooled, Perf=0.4342
+Finished seed 42
+----------------------------------------
+=== Running reg_param=0.001, num_steps=30 ===
+Running seed 42
+/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/experiments/datasets/fed_mnist/dirichlet_10_alpha_1
+ We run FedAvg with rPDP (ThreeLevels-0) ...
+max_epsilon :  10.0  noise_multiplier :  9.736328125
+The R-Squared value of the best-fit curve : 0.999749898528281
+learning rate =  0.01
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 231
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 425
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 301
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 842
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 550
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 79
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 810
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 563
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 68
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 483
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [3.554611437795162, 3.554611437795162, 2.8039339861853394, 3.3043856205918876, 3.8048372549984366, 3.554611437795162, 3.8048372549984366, 4.055063072201711, 4.305288889404985, 3.0541598033886133]
+Round=14, per client global perf=[0.4041, 0.7626, 0.6301, 0.5849, 0.9088, 0.914, 0.9444, 0.4941, 0.6803, 0.2579], mean perf=13530/20406 (0.6630%)
+Round=14, per client personal perf=[0.9585, 0.99, 0.9781, 0.9838, 0.9907, 1.0, 0.9934, 0.9863, 0.9592, 0.9784], mean perf=20099/20406 (0.9850%)
+Round=14, per client personal pooled=[0.6201, 0.4018, 0.3957, 0.5531, 0.4309, 0.3408, 0.5151, 0.3715, 0.5316, 0.4348], mean perf=93774/204060 (0.4595%)
+Mean performance of ditto rpdp global, Perf=0.6624
+Mean performance of ditto rpdp personal, Perf=0.9851
+Mean performance of ditto rpdp pooled, Perf=0.4666
+ We run FedAvg with rPDP (BoundedPareto-0) ...
+max_epsilon :  10.0  noise_multiplier :  9.736328125
+The R-Squared value of the best-fit curve : 0.999749898528281
+learning rate =  0.01
+sample_rate: (min) 0.03, (max) 0.76, expected_batch_size: 156
+sample_rate: (min) 0.03, (max) 0.69, expected_batch_size: 284
+sample_rate: (min) 0.03, (max) 0.67, expected_batch_size: 196
+sample_rate: (min) 0.03, (max) 0.98, expected_batch_size: 570
+sample_rate: (min) 0.03, (max) 0.93, expected_batch_size: 381
+sample_rate: (min) 0.03, (max) 0.73, expected_batch_size: 55
+sample_rate: (min) 0.03, (max) 0.75, expected_batch_size: 542
+sample_rate: (min) 0.03, (max) 0.81, expected_batch_size: 380
+sample_rate: (min) 0.03, (max) 0.62, expected_batch_size: 45
+sample_rate: (min) 0.03, (max) 0.62, expected_batch_size: 324
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [4.752415310075706, 4.319656280960529, 3.116421646411862, 6.0748074655109106, 6.577901701762658, 4.552836647619267, 4.9460204841016475, 5.726566365650261, 4.42076175750789, 3.1533820324004593]
+Round=14, per client global perf=[0.3847, 0.6225, 0.4802, 0.4321, 0.8887, 0.8952, 0.9223, 0.4869, 0.6019, 0.3051], mean perf=12335/20406 (0.6045%)
+Round=14, per client personal perf=[0.9234, 0.9885, 0.9781, 0.9891, 0.9903, 0.9973, 0.9905, 0.9886, 0.9404, 0.9868], mean perf=20085/20406 (0.9843%)
+Round=14, per client personal pooled=[0.6999, 0.4419, 0.4814, 0.5758, 0.4514, 0.3466, 0.514, 0.3535, 0.5409, 0.4462], mean perf=99001/204060 (0.4852%)
+Mean performance of ditto rpdp global, Perf=0.6196
+Mean performance of ditto rpdp personal, Perf=0.9853
+Mean performance of ditto rpdp pooled, Perf=0.4783
+ We run FedAvg with rPDP (BoundedMixGauss-0) ...
+max_epsilon :  10.0  noise_multiplier :  9.736328125
+The R-Squared value of the best-fit curve : 0.999749898528281
+learning rate =  0.01
+sample_rate: (min) 0.03, (max) 0.71, expected_batch_size: 223
+sample_rate: (min) 0.03, (max) 0.72, expected_batch_size: 412
+sample_rate: (min) 0.03, (max) 0.79, expected_batch_size: 322
+sample_rate: (min) 0.03, (max) 0.72, expected_batch_size: 837
+sample_rate: (min) 0.03, (max) 0.72, expected_batch_size: 562
+sample_rate: (min) 0.03, (max) 0.71, expected_batch_size: 86
+sample_rate: (min) 0.03, (max) 0.74, expected_batch_size: 822
+sample_rate: (min) 0.03, (max) 0.73, expected_batch_size: 583
+sample_rate: (min) 0.03, (max) 0.74, expected_batch_size: 66
+sample_rate: (min) 0.03, (max) 0.73, expected_batch_size: 473
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [4.441464740445936, 4.452560630310308, 3.957148978803456, 4.232126556619421, 4.743771711921414, 4.44047523458072, 4.902195316160628, 5.07613599708928, 5.357871969683328, 3.8727212988002124]
+Round=14, per client global perf=[0.3948, 0.7269, 0.633, 0.6384, 0.91, 0.9032, 0.9379, 0.4915, 0.7367, 0.3638], mean perf=13889/20406 (0.6806%)
+Round=14, per client personal perf=[0.9723, 0.9905, 0.9738, 0.9787, 0.9822, 0.9946, 0.9926, 0.9852, 0.9592, 0.9899], mean perf=20085/20406 (0.9843%)
+Round=14, per client personal pooled=[0.669, 0.4399, 0.3863, 0.5334, 0.4746, 0.3331, 0.5506, 0.3637, 0.5246, 0.4759], mean perf=96947/204060 (0.4751%)
+Mean performance of ditto rpdp global, Perf=0.6638
+Mean performance of ditto rpdp personal, Perf=0.9827
+Mean performance of ditto rpdp pooled, Perf=0.4623
+Finished seed 42
+----------------------------------------
+=== Running reg_param=0.01, num_steps=15 ===
+Running seed 42
+/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/experiments/datasets/fed_mnist/dirichlet_10_alpha_1
+ We run FedAvg with rPDP (ThreeLevels-0) ...
+max_epsilon :  10.0  noise_multiplier :  9.736328125
+The R-Squared value of the best-fit curve : 0.999749898528281
+learning rate =  0.01
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 231
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 425
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 301
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 842
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 550
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 79
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 810
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 563
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 68
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 483
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [3.554611437795162, 3.554611437795162, 2.8039339861853394, 3.3043856205918876, 3.8048372549984366, 3.554611437795162, 3.8048372549984366, 4.055063072201711, 4.305288889404985, 3.0541598033886133]
+Round=14, per client global perf=[0.4041, 0.761, 0.6294, 0.5841, 0.9092, 0.9113, 0.9442, 0.4934, 0.6771, 0.2606], mean perf=13525/20406 (0.6628%)
+Round=14, per client personal perf=[0.9622, 0.9839, 0.9137, 0.9693, 0.9853, 0.9704, 0.9874, 0.9825, 0.931, 0.9771], mean perf=19873/20406 (0.9739%)
+Round=14, per client personal pooled=[0.6483, 0.3894, 0.5089, 0.5483, 0.3343, 0.3235, 0.5063, 0.3684, 0.4817, 0.4336], mean perf=92698/204060 (0.4543%)
+Mean performance of ditto rpdp global, Perf=0.6627
+Mean performance of ditto rpdp personal, Perf=0.9737
+Mean performance of ditto rpdp pooled, Perf=0.4396
+ We run FedAvg with rPDP (BoundedPareto-0) ...
+max_epsilon :  10.0  noise_multiplier :  9.736328125
+The R-Squared value of the best-fit curve : 0.999749898528281
+learning rate =  0.01
+sample_rate: (min) 0.03, (max) 0.76, expected_batch_size: 156
+sample_rate: (min) 0.03, (max) 0.69, expected_batch_size: 284
+sample_rate: (min) 0.03, (max) 0.67, expected_batch_size: 196
+sample_rate: (min) 0.03, (max) 0.98, expected_batch_size: 570
+sample_rate: (min) 0.03, (max) 0.93, expected_batch_size: 381
+sample_rate: (min) 0.03, (max) 0.73, expected_batch_size: 55
+sample_rate: (min) 0.03, (max) 0.75, expected_batch_size: 542
+sample_rate: (min) 0.03, (max) 0.81, expected_batch_size: 380
+sample_rate: (min) 0.03, (max) 0.62, expected_batch_size: 45
+sample_rate: (min) 0.03, (max) 0.62, expected_batch_size: 324
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [4.752415310075706, 4.319656280960529, 3.116421646411862, 6.0748074655109106, 6.577901701762658, 4.552836647619267, 4.9460204841016475, 5.726566365650261, 4.42076175750789, 3.1533820324004593]
+Round=14, per client global perf=[0.3902, 0.618, 0.4774, 0.4402, 0.8891, 0.9032, 0.9286, 0.4884, 0.605, 0.3144], mean perf=12414/20406 (0.6084%)
+Round=14, per client personal perf=[0.9419, 0.9819, 0.954, 0.9805, 0.9833, 0.9973, 0.9887, 0.9844, 0.9342, 0.9731], mean perf=19955/20406 (0.9779%)
+Round=14, per client personal pooled=[0.6516, 0.4569, 0.4433, 0.5389, 0.3242, 0.3879, 0.5088, 0.3436, 0.4931, 0.3759], mean perf=92320/204060 (0.4524%)
+Mean performance of ditto rpdp global, Perf=0.6212
+Mean performance of ditto rpdp personal, Perf=0.9787
+Mean performance of ditto rpdp pooled, Perf=0.4444
+ We run FedAvg with rPDP (BoundedMixGauss-0) ...
+max_epsilon :  10.0  noise_multiplier :  9.736328125
+The R-Squared value of the best-fit curve : 0.999749898528281
+learning rate =  0.01
+sample_rate: (min) 0.03, (max) 0.71, expected_batch_size: 223
+sample_rate: (min) 0.03, (max) 0.72, expected_batch_size: 412
+sample_rate: (min) 0.03, (max) 0.79, expected_batch_size: 322
+sample_rate: (min) 0.03, (max) 0.72, expected_batch_size: 837
+sample_rate: (min) 0.03, (max) 0.72, expected_batch_size: 562
+sample_rate: (min) 0.03, (max) 0.71, expected_batch_size: 86
+sample_rate: (min) 0.03, (max) 0.74, expected_batch_size: 822
+sample_rate: (min) 0.03, (max) 0.73, expected_batch_size: 583
+sample_rate: (min) 0.03, (max) 0.74, expected_batch_size: 66
+sample_rate: (min) 0.03, (max) 0.73, expected_batch_size: 473
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [4.441464740445936, 4.452560630310308, 3.957148978803456, 4.232126556619421, 4.743771711921414, 4.44047523458072, 4.902195316160628, 5.07613599708928, 5.357871969683328, 3.8727212988002124]
+Round=14, per client global perf=[0.393, 0.7229, 0.6231, 0.6361, 0.9088, 0.9059, 0.9358, 0.4903, 0.7273, 0.3369], mean perf=13779/20406 (0.6752%)
+Round=14, per client personal perf=[0.9613, 0.9799, 0.9788, 0.9714, 0.9884, 1.0, 0.9876, 0.9803, 0.9342, 0.9753], mean perf=19975/20406 (0.9789%)
+Round=14, per client personal pooled=[0.6331, 0.3697, 0.4045, 0.5381, 0.4015, 0.3641, 0.5157, 0.3313, 0.5038, 0.3315], mean perf=89651/204060 (0.4393%)
+Mean performance of ditto rpdp global, Perf=0.6602
+Mean performance of ditto rpdp personal, Perf=0.9777
+Mean performance of ditto rpdp pooled, Perf=0.4334
+Finished seed 42
+----------------------------------------
+=== Running reg_param=0.01, num_steps=30 ===
+Running seed 42
+/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/experiments/datasets/fed_mnist/dirichlet_10_alpha_1
+ We run FedAvg with rPDP (ThreeLevels-0) ...
+max_epsilon :  10.0  noise_multiplier :  9.736328125
+The R-Squared value of the best-fit curve : 0.999749898528281
+learning rate =  0.01
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 231
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 425
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 301
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 842
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 550
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 79
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 810
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 563
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 68
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 483
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [3.554611437795162, 3.554611437795162, 2.8039339861853394, 3.3043856205918876, 3.8048372549984366, 3.554611437795162, 3.8048372549984366, 4.055063072201711, 4.305288889404985, 3.0541598033886133]
+Round=14, per client global perf=[0.4041, 0.7626, 0.6301, 0.5849, 0.9088, 0.914, 0.9444, 0.4941, 0.6803, 0.2579], mean perf=13530/20406 (0.6630%)
+Round=14, per client personal perf=[0.9686, 0.9895, 0.9738, 0.9769, 0.9876, 0.9973, 0.9882, 0.9719, 0.906, 0.9806], mean perf=19997/20406 (0.9800%)
+Round=14, per client personal pooled=[0.6944, 0.4155, 0.529, 0.5472, 0.4335, 0.3744, 0.5433, 0.3686, 0.4796, 0.4136], mean perf=97926/204060 (0.4799%)
+Mean performance of ditto rpdp global, Perf=0.6624
+Mean performance of ditto rpdp personal, Perf=0.9779
+Mean performance of ditto rpdp pooled, Perf=0.4654
+ We run FedAvg with rPDP (BoundedPareto-0) ...
+max_epsilon :  10.0  noise_multiplier :  9.736328125
+The R-Squared value of the best-fit curve : 0.999749898528281
+learning rate =  0.01
+sample_rate: (min) 0.03, (max) 0.76, expected_batch_size: 156
+sample_rate: (min) 0.03, (max) 0.69, expected_batch_size: 284
+sample_rate: (min) 0.03, (max) 0.67, expected_batch_size: 196
+sample_rate: (min) 0.03, (max) 0.98, expected_batch_size: 570
+sample_rate: (min) 0.03, (max) 0.93, expected_batch_size: 381
+sample_rate: (min) 0.03, (max) 0.73, expected_batch_size: 55
+sample_rate: (min) 0.03, (max) 0.75, expected_batch_size: 542
+sample_rate: (min) 0.03, (max) 0.81, expected_batch_size: 380
+sample_rate: (min) 0.03, (max) 0.62, expected_batch_size: 45
+sample_rate: (min) 0.03, (max) 0.62, expected_batch_size: 324
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [4.752415310075706, 4.319656280960529, 3.116421646411862, 6.0748074655109106, 6.577901701762658, 4.552836647619267, 4.9460204841016475, 5.726566365650261, 4.42076175750789, 3.1533820324004593]
+Round=14, per client global perf=[0.3847, 0.6225, 0.4802, 0.4321, 0.8887, 0.8952, 0.9223, 0.4869, 0.6019, 0.3051], mean perf=12335/20406 (0.6045%)
+Round=14, per client personal perf=[0.9677, 0.9885, 0.9597, 0.9752, 0.9891, 0.9839, 0.9908, 0.9829, 0.931, 0.9877], mean perf=20029/20406 (0.9815%)
+Round=14, per client personal pooled=[0.6737, 0.4443, 0.47, 0.5687, 0.4286, 0.2874, 0.4911, 0.3491, 0.5192, 0.378], mean perf=94072/204060 (0.4610%)
+Mean performance of ditto rpdp global, Perf=0.6196
+Mean performance of ditto rpdp personal, Perf=0.9788
+Mean performance of ditto rpdp pooled, Perf=0.4482
+ We run FedAvg with rPDP (BoundedMixGauss-0) ...
+max_epsilon :  10.0  noise_multiplier :  9.736328125
+The R-Squared value of the best-fit curve : 0.999749898528281
+learning rate =  0.01
+sample_rate: (min) 0.03, (max) 0.71, expected_batch_size: 223
+sample_rate: (min) 0.03, (max) 0.72, expected_batch_size: 412
+sample_rate: (min) 0.03, (max) 0.79, expected_batch_size: 322
+sample_rate: (min) 0.03, (max) 0.72, expected_batch_size: 837
+sample_rate: (min) 0.03, (max) 0.72, expected_batch_size: 562
+sample_rate: (min) 0.03, (max) 0.71, expected_batch_size: 86
+sample_rate: (min) 0.03, (max) 0.74, expected_batch_size: 822
+sample_rate: (min) 0.03, (max) 0.73, expected_batch_size: 583
+sample_rate: (min) 0.03, (max) 0.74, expected_batch_size: 66
+sample_rate: (min) 0.03, (max) 0.73, expected_batch_size: 473
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [4.441464740445936, 4.452560630310308, 3.957148978803456, 4.232126556619421, 4.743771711921414, 4.44047523458072, 4.902195316160628, 5.07613599708928, 5.357871969683328, 3.8727212988002124]
+Round=14, per client global perf=[0.3948, 0.7269, 0.633, 0.6384, 0.91, 0.9032, 0.9379, 0.4915, 0.7367, 0.3638], mean perf=13889/20406 (0.6806%)
+Round=14, per client personal perf=[0.9585, 0.9834, 0.9689, 0.9805, 0.9798, 0.9866, 0.9887, 0.9882, 0.9467, 0.9683], mean perf=19987/20406 (0.9795%)
+Round=14, per client personal pooled=[0.6809, 0.4412, 0.4204, 0.5353, 0.4771, 0.3198, 0.5333, 0.3779, 0.5128, 0.3564], mean perf=94993/204060 (0.4655%)
+Mean performance of ditto rpdp global, Perf=0.6638
+Mean performance of ditto rpdp personal, Perf=0.9800
+Mean performance of ditto rpdp pooled, Perf=0.4456
+Finished seed 42
+----------------------------------------
+=== Running reg_param=0.1, num_steps=15 ===
+Running seed 42
+/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/experiments/datasets/fed_mnist/dirichlet_10_alpha_1
+ We run FedAvg with rPDP (ThreeLevels-0) ...
+max_epsilon :  10.0  noise_multiplier :  9.736328125
+The R-Squared value of the best-fit curve : 0.999749898528281
+learning rate =  0.01
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 231
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 425
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 301
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 842
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 550
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 79
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 810
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 563
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 68
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 483
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [3.554611437795162, 3.554611437795162, 2.8039339861853394, 3.3043856205918876, 3.8048372549984366, 3.554611437795162, 3.8048372549984366, 4.055063072201711, 4.305288889404985, 3.0541598033886133]
+Round=14, per client global perf=[0.4041, 0.761, 0.6294, 0.5841, 0.9092, 0.9113, 0.9442, 0.4934, 0.6771, 0.2606], mean perf=13525/20406 (0.6628%)
+Round=14, per client personal perf=[0.9483, 0.9804, 0.9604, 0.9625, 0.9822, 0.9758, 0.9702, 0.9723, 0.8997, 0.9713], mean perf=19769/20406 (0.9688%)
+Round=14, per client personal pooled=[0.6786, 0.5646, 0.5135, 0.5205, 0.2679, 0.2703, 0.4303, 0.4264, 0.5433, 0.5131], mean perf=96492/204060 (0.4729%)
+Mean performance of ditto rpdp global, Perf=0.6627
+Mean performance of ditto rpdp personal, Perf=0.9651
+Mean performance of ditto rpdp pooled, Perf=0.4619
+ We run FedAvg with rPDP (BoundedPareto-0) ...
+max_epsilon :  10.0  noise_multiplier :  9.736328125
+The R-Squared value of the best-fit curve : 0.999749898528281
+learning rate =  0.01
+sample_rate: (min) 0.03, (max) 0.76, expected_batch_size: 156
+sample_rate: (min) 0.03, (max) 0.69, expected_batch_size: 284
+sample_rate: (min) 0.03, (max) 0.67, expected_batch_size: 196
+sample_rate: (min) 0.03, (max) 0.98, expected_batch_size: 570
+sample_rate: (min) 0.03, (max) 0.93, expected_batch_size: 381
+sample_rate: (min) 0.03, (max) 0.73, expected_batch_size: 55
+sample_rate: (min) 0.03, (max) 0.75, expected_batch_size: 542
+sample_rate: (min) 0.03, (max) 0.81, expected_batch_size: 380
+sample_rate: (min) 0.03, (max) 0.62, expected_batch_size: 45
+sample_rate: (min) 0.03, (max) 0.62, expected_batch_size: 324
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [4.752415310075706, 4.319656280960529, 3.116421646411862, 6.0748074655109106, 6.577901701762658, 4.552836647619267, 4.9460204841016475, 5.726566365650261, 4.42076175750789, 3.1533820324004593]
+Round=14, per client global perf=[0.3902, 0.618, 0.4774, 0.4402, 0.8891, 0.9032, 0.9286, 0.4884, 0.605, 0.3144], mean perf=12414/20406 (0.6084%)
+Round=14, per client personal perf=[0.9041, 0.9749, 0.9491, 0.9437, 0.9748, 0.9651, 0.9789, 0.9746, 0.8809, 0.9669], mean perf=19620/20406 (0.9615%)
+Round=14, per client personal pooled=[0.5799, 0.5082, 0.3605, 0.5258, 0.3597, 0.4458, 0.5227, 0.3671, 0.4756, 0.4672], mean perf=94124/204060 (0.4613%)
+Mean performance of ditto rpdp global, Perf=0.6212
+Mean performance of ditto rpdp personal, Perf=0.9565
+Mean performance of ditto rpdp pooled, Perf=0.4430
+ We run FedAvg with rPDP (BoundedMixGauss-0) ...
+max_epsilon :  10.0  noise_multiplier :  9.736328125
+The R-Squared value of the best-fit curve : 0.999749898528281
+learning rate =  0.01
+sample_rate: (min) 0.03, (max) 0.71, expected_batch_size: 223
+sample_rate: (min) 0.03, (max) 0.72, expected_batch_size: 412
+sample_rate: (min) 0.03, (max) 0.79, expected_batch_size: 322
+sample_rate: (min) 0.03, (max) 0.72, expected_batch_size: 837
+sample_rate: (min) 0.03, (max) 0.72, expected_batch_size: 562
+sample_rate: (min) 0.03, (max) 0.71, expected_batch_size: 86
+sample_rate: (min) 0.03, (max) 0.74, expected_batch_size: 822
+sample_rate: (min) 0.03, (max) 0.73, expected_batch_size: 583
+sample_rate: (min) 0.03, (max) 0.74, expected_batch_size: 66
+sample_rate: (min) 0.03, (max) 0.73, expected_batch_size: 473
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [4.441464740445936, 4.452560630310308, 3.957148978803456, 4.232126556619421, 4.743771711921414, 4.44047523458072, 4.902195316160628, 5.07613599708928, 5.357871969683328, 3.8727212988002124]
+Round=14, per client global perf=[0.393, 0.7229, 0.6231, 0.6361, 0.9088, 0.9059, 0.9358, 0.4903, 0.7273, 0.3369], mean perf=13779/20406 (0.6752%)
+Round=14, per client personal perf=[0.953, 0.9558, 0.9625, 0.9622, 0.9822, 0.9946, 0.98, 0.9662, 0.8997, 0.963], mean perf=19736/20406 (0.9672%)
+Round=14, per client personal pooled=[0.6356, 0.5211, 0.4409, 0.5022, 0.4172, 0.3631, 0.531, 0.4292, 0.589, 0.3038], mean perf=96586/204060 (0.4733%)
+Mean performance of ditto rpdp global, Perf=0.6602
+Mean performance of ditto rpdp personal, Perf=0.9681
+Mean performance of ditto rpdp pooled, Perf=0.4764
+Finished seed 42
+----------------------------------------
+=== Running reg_param=0.1, num_steps=30 ===
+Running seed 42
+/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/experiments/datasets/fed_mnist/dirichlet_10_alpha_1
+ We run FedAvg with rPDP (ThreeLevels-0) ...
+max_epsilon :  10.0  noise_multiplier :  9.736328125
+The R-Squared value of the best-fit curve : 0.999749898528281
+learning rate =  0.01
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 231
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 425
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 301
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 842
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 550
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 79
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 810
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 563
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 68
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 483
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [3.554611437795162, 3.554611437795162, 2.8039339861853394, 3.3043856205918876, 3.8048372549984366, 3.554611437795162, 3.8048372549984366, 4.055063072201711, 4.305288889404985, 3.0541598033886133]
+Round=14, per client global perf=[0.4041, 0.7626, 0.6301, 0.5849, 0.9088, 0.914, 0.9444, 0.4941, 0.6803, 0.2579], mean perf=13530/20406 (0.6630%)
+Round=14, per client personal perf=[0.9428, 0.9613, 0.9653, 0.9539, 0.974, 0.9919, 0.9684, 0.9757, 0.9216, 0.9511], mean perf=19646/20406 (0.9628%)
+Round=14, per client personal pooled=[0.6835, 0.4655, 0.4928, 0.532, 0.4039, 0.3992, 0.5113, 0.452, 0.6133, 0.309], mean perf=99224/204060 (0.4862%)
+Mean performance of ditto rpdp global, Perf=0.6624
+Mean performance of ditto rpdp personal, Perf=0.9604
+Mean performance of ditto rpdp pooled, Perf=0.4662
+ We run FedAvg with rPDP (BoundedPareto-0) ...
+max_epsilon :  10.0  noise_multiplier :  9.736328125
+The R-Squared value of the best-fit curve : 0.999749898528281
+learning rate =  0.01
+sample_rate: (min) 0.03, (max) 0.76, expected_batch_size: 156
+sample_rate: (min) 0.03, (max) 0.69, expected_batch_size: 284
+sample_rate: (min) 0.03, (max) 0.67, expected_batch_size: 196
+sample_rate: (min) 0.03, (max) 0.98, expected_batch_size: 570
+sample_rate: (min) 0.03, (max) 0.93, expected_batch_size: 381
+sample_rate: (min) 0.03, (max) 0.73, expected_batch_size: 55
+sample_rate: (min) 0.03, (max) 0.75, expected_batch_size: 542
+sample_rate: (min) 0.03, (max) 0.81, expected_batch_size: 380
+sample_rate: (min) 0.03, (max) 0.62, expected_batch_size: 45
+sample_rate: (min) 0.03, (max) 0.62, expected_batch_size: 324
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [4.752415310075706, 4.319656280960529, 3.116421646411862, 6.0748074655109106, 6.577901701762658, 4.552836647619267, 4.9460204841016475, 5.726566365650261, 4.42076175750789, 3.1533820324004593]
+Round=14, per client global perf=[0.3847, 0.6225, 0.4802, 0.4321, 0.8887, 0.8952, 0.9223, 0.4869, 0.6019, 0.3051], mean perf=12335/20406 (0.6045%)
+Round=14, per client personal perf=[0.9437, 0.9729, 0.9484, 0.9159, 0.9717, 0.9946, 0.9708, 0.9742, 0.8339, 0.9365], mean perf=19435/20406 (0.9524%)
+Round=14, per client personal pooled=[0.6457, 0.4363, 0.5266, 0.5227, 0.3615, 0.3593, 0.4471, 0.3177, 0.5133, 0.3783], mean perf=91999/204060 (0.4508%)
+Mean performance of ditto rpdp global, Perf=0.6196
+Mean performance of ditto rpdp personal, Perf=0.9591
+Mean performance of ditto rpdp pooled, Perf=0.4551
+ We run FedAvg with rPDP (BoundedMixGauss-0) ...
+max_epsilon :  10.0  noise_multiplier :  9.736328125
+The R-Squared value of the best-fit curve : 0.999749898528281
+learning rate =  0.01
+sample_rate: (min) 0.03, (max) 0.71, expected_batch_size: 223
+sample_rate: (min) 0.03, (max) 0.72, expected_batch_size: 412
+sample_rate: (min) 0.03, (max) 0.79, expected_batch_size: 322
+sample_rate: (min) 0.03, (max) 0.72, expected_batch_size: 837
+sample_rate: (min) 0.03, (max) 0.72, expected_batch_size: 562
+sample_rate: (min) 0.03, (max) 0.71, expected_batch_size: 86
+sample_rate: (min) 0.03, (max) 0.74, expected_batch_size: 822
+sample_rate: (min) 0.03, (max) 0.73, expected_batch_size: 583
+sample_rate: (min) 0.03, (max) 0.74, expected_batch_size: 66
+sample_rate: (min) 0.03, (max) 0.73, expected_batch_size: 473
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [4.441464740445936, 4.452560630310308, 3.957148978803456, 4.232126556619421, 4.743771711921414, 4.44047523458072, 4.902195316160628, 5.07613599708928, 5.357871969683328, 3.8727212988002124]
+Round=14, per client global perf=[0.3948, 0.7269, 0.633, 0.6384, 0.91, 0.9032, 0.9379, 0.4915, 0.7367, 0.3638], mean perf=13889/20406 (0.6806%)
+Round=14, per client personal perf=[0.9105, 0.9593, 0.9597, 0.9638, 0.9651, 0.9892, 0.9745, 0.9738, 0.9185, 0.8924], mean perf=19498/20406 (0.9555%)
+Round=14, per client personal pooled=[0.684, 0.4682, 0.3988, 0.5234, 0.3836, 0.3779, 0.613, 0.4285, 0.5838, 0.4768], mean perf=100765/204060 (0.4938%)
+Mean performance of ditto rpdp global, Perf=0.6638
+Mean performance of ditto rpdp personal, Perf=0.9608
+Mean performance of ditto rpdp pooled, Perf=0.4669
+Finished seed 42
+----------------------------------------
+=== Running reg_param=1.0, num_steps=15 ===
+Running seed 42
+/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/experiments/datasets/fed_mnist/dirichlet_10_alpha_1
+ We run FedAvg with rPDP (ThreeLevels-0) ...
+max_epsilon :  10.0  noise_multiplier :  9.736328125
+The R-Squared value of the best-fit curve : 0.999749898528281
+learning rate =  0.01
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 231
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 425
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 301
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 842
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 550
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 79
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 810
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 563
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 68
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 483
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [3.554611437795162, 3.554611437795162, 2.8039339861853394, 3.3043856205918876, 3.8048372549984366, 3.554611437795162, 3.8048372549984366, 4.055063072201711, 4.305288889404985, 3.0541598033886133]
+Round=14, per client global perf=[0.4041, 0.761, 0.6294, 0.5841, 0.9092, 0.9113, 0.9442, 0.4934, 0.6771, 0.2606], mean perf=13525/20406 (0.6628%)
+Round=14, per client personal perf=[0.9197, 0.9187, 0.9123, 0.9483, 0.9577, 0.9839, 0.9705, 0.9583, 0.8746, 0.9608], mean perf=19363/20406 (0.9489%)
+Round=14, per client personal pooled=[0.6171, 0.5948, 0.474, 0.5916, 0.3624, 0.4923, 0.5607, 0.4656, 0.5288, 0.5656], mean perf=107190/204060 (0.5253%)
+Mean performance of ditto rpdp global, Perf=0.6627
+Mean performance of ditto rpdp personal, Perf=0.9438
+Mean performance of ditto rpdp pooled, Perf=0.5366
+ We run FedAvg with rPDP (BoundedPareto-0) ...
+max_epsilon :  10.0  noise_multiplier :  9.736328125
+The R-Squared value of the best-fit curve : 0.999749898528281
+learning rate =  0.01
+sample_rate: (min) 0.03, (max) 0.76, expected_batch_size: 156
+sample_rate: (min) 0.03, (max) 0.69, expected_batch_size: 284
+sample_rate: (min) 0.03, (max) 0.67, expected_batch_size: 196
+sample_rate: (min) 0.03, (max) 0.98, expected_batch_size: 570
+sample_rate: (min) 0.03, (max) 0.93, expected_batch_size: 381
+sample_rate: (min) 0.03, (max) 0.73, expected_batch_size: 55
+sample_rate: (min) 0.03, (max) 0.75, expected_batch_size: 542
+sample_rate: (min) 0.03, (max) 0.81, expected_batch_size: 380
+sample_rate: (min) 0.03, (max) 0.62, expected_batch_size: 45
+sample_rate: (min) 0.03, (max) 0.62, expected_batch_size: 324
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [4.752415310075706, 4.319656280960529, 3.116421646411862, 6.0748074655109106, 6.577901701762658, 4.552836647619267, 4.9460204841016475, 5.726566365650261, 4.42076175750789, 3.1533820324004593]
+Round=14, per client global perf=[0.3902, 0.618, 0.4774, 0.4402, 0.8891, 0.9032, 0.9286, 0.4884, 0.605, 0.3144], mean perf=12414/20406 (0.6084%)
+Round=14, per client personal perf=[0.7804, 0.9408, 0.9342, 0.924, 0.967, 0.9919, 0.9258, 0.948, 0.8903, 0.9471], mean perf=18995/20406 (0.9309%)
+Round=14, per client personal pooled=[0.5625, 0.4857, 0.4808, 0.5466, 0.4191, 0.3826, 0.5662, 0.4125, 0.5196, 0.4512], mean perf=98497/204060 (0.4827%)
+Mean performance of ditto rpdp global, Perf=0.6212
+Mean performance of ditto rpdp personal, Perf=0.9332
+Mean performance of ditto rpdp pooled, Perf=0.4859
+ We run FedAvg with rPDP (BoundedMixGauss-0) ...
+max_epsilon :  10.0  noise_multiplier :  9.736328125
+The R-Squared value of the best-fit curve : 0.999749898528281
+learning rate =  0.01
+sample_rate: (min) 0.03, (max) 0.71, expected_batch_size: 223
+sample_rate: (min) 0.03, (max) 0.72, expected_batch_size: 412
+sample_rate: (min) 0.03, (max) 0.79, expected_batch_size: 322
+sample_rate: (min) 0.03, (max) 0.72, expected_batch_size: 837
+sample_rate: (min) 0.03, (max) 0.72, expected_batch_size: 562
+sample_rate: (min) 0.03, (max) 0.71, expected_batch_size: 86
+sample_rate: (min) 0.03, (max) 0.74, expected_batch_size: 822
+sample_rate: (min) 0.03, (max) 0.73, expected_batch_size: 583
+sample_rate: (min) 0.03, (max) 0.74, expected_batch_size: 66
+sample_rate: (min) 0.03, (max) 0.73, expected_batch_size: 473
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [4.441464740445936, 4.452560630310308, 3.957148978803456, 4.232126556619421, 4.743771711921414, 4.44047523458072, 4.902195316160628, 5.07613599708928, 5.357871969683328, 3.8727212988002124]
+Round=14, per client global perf=[0.393, 0.7229, 0.6231, 0.6361, 0.9088, 0.9059, 0.9358, 0.4903, 0.7273, 0.3369], mean perf=13779/20406 (0.6752%)
+Round=14, per client personal perf=[0.8792, 0.9372, 0.9286, 0.9377, 0.9694, 0.9919, 0.9616, 0.9381, 0.8903, 0.948], mean perf=19259/20406 (0.9438%)
+Round=14, per client personal pooled=[0.5578, 0.4783, 0.5383, 0.5592, 0.4654, 0.3884, 0.5745, 0.4158, 0.6108, 0.4517], mean perf=102854/204060 (0.5040%)
+Mean performance of ditto rpdp global, Perf=0.6602
+Mean performance of ditto rpdp personal, Perf=0.9456
+Mean performance of ditto rpdp pooled, Perf=0.5192
+Finished seed 42
+----------------------------------------
+=== Running reg_param=1.0, num_steps=30 ===
+Running seed 42
+/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/experiments/datasets/fed_mnist/dirichlet_10_alpha_1
+ We run FedAvg with rPDP (ThreeLevels-0) ...
+max_epsilon :  10.0  noise_multiplier :  9.736328125
+The R-Squared value of the best-fit curve : 0.999749898528281
+learning rate =  0.01
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 231
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 425
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 301
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 842
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 550
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 79
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 810
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 563
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 68
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 483
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [3.554611437795162, 3.554611437795162, 2.8039339861853394, 3.3043856205918876, 3.8048372549984366, 3.554611437795162, 3.8048372549984366, 4.055063072201711, 4.305288889404985, 3.0541598033886133]
+Round=14, per client global perf=[0.4041, 0.7626, 0.6301, 0.5849, 0.9088, 0.914, 0.9444, 0.4941, 0.6803, 0.2579], mean perf=13530/20406 (0.6630%)
+Round=14, per client personal perf=[0.8598, 0.9629, 0.9123, 0.9303, 0.9566, 0.9892, 0.9702, 0.9586, 0.884, 0.9295], mean perf=19246/20406 (0.9432%)
+Round=14, per client personal pooled=[0.6098, 0.4992, 0.587, 0.4948, 0.5645, 0.329, 0.6191, 0.559, 0.5833, 0.4421], mean perf=107901/204060 (0.5288%)
+Mean performance of ditto rpdp global, Perf=0.6624
+Mean performance of ditto rpdp personal, Perf=0.9438
+Mean performance of ditto rpdp pooled, Perf=0.5411
+ We run FedAvg with rPDP (BoundedPareto-0) ...
+max_epsilon :  10.0  noise_multiplier :  9.736328125
+The R-Squared value of the best-fit curve : 0.999749898528281
+learning rate =  0.01
+sample_rate: (min) 0.03, (max) 0.76, expected_batch_size: 156
+sample_rate: (min) 0.03, (max) 0.69, expected_batch_size: 284
+sample_rate: (min) 0.03, (max) 0.67, expected_batch_size: 196
+sample_rate: (min) 0.03, (max) 0.98, expected_batch_size: 570
+sample_rate: (min) 0.03, (max) 0.93, expected_batch_size: 381
+sample_rate: (min) 0.03, (max) 0.73, expected_batch_size: 55
+sample_rate: (min) 0.03, (max) 0.75, expected_batch_size: 542
+sample_rate: (min) 0.03, (max) 0.81, expected_batch_size: 380
+sample_rate: (min) 0.03, (max) 0.62, expected_batch_size: 45
+sample_rate: (min) 0.03, (max) 0.62, expected_batch_size: 324
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [4.752415310075706, 4.319656280960529, 3.116421646411862, 6.0748074655109106, 6.577901701762658, 4.552836647619267, 4.9460204841016475, 5.726566365650261, 4.42076175750789, 3.1533820324004593]
+Round=14, per client global perf=[0.3847, 0.6225, 0.4802, 0.4321, 0.8887, 0.8952, 0.9223, 0.4869, 0.6019, 0.3051], mean perf=12335/20406 (0.6045%)
+Round=14, per client personal perf=[0.9004, 0.9613, 0.9364, 0.9283, 0.9814, 0.9758, 0.9587, 0.9355, 0.8715, 0.9418], mean perf=19291/20406 (0.9454%)
+Round=14, per client personal pooled=[0.6239, 0.5206, 0.5352, 0.5923, 0.3002, 0.3678, 0.5823, 0.42, 0.5756, 0.4501], mean perf=101377/204060 (0.4968%)
+Mean performance of ditto rpdp global, Perf=0.6196
+Mean performance of ditto rpdp personal, Perf=0.9354
+Mean performance of ditto rpdp pooled, Perf=0.5000
+ We run FedAvg with rPDP (BoundedMixGauss-0) ...
+max_epsilon :  10.0  noise_multiplier :  9.736328125
+The R-Squared value of the best-fit curve : 0.999749898528281
+learning rate =  0.01
+sample_rate: (min) 0.03, (max) 0.71, expected_batch_size: 223
+sample_rate: (min) 0.03, (max) 0.72, expected_batch_size: 412
+sample_rate: (min) 0.03, (max) 0.79, expected_batch_size: 322
+sample_rate: (min) 0.03, (max) 0.72, expected_batch_size: 837
+sample_rate: (min) 0.03, (max) 0.72, expected_batch_size: 562
+sample_rate: (min) 0.03, (max) 0.71, expected_batch_size: 86
+sample_rate: (min) 0.03, (max) 0.74, expected_batch_size: 822
+sample_rate: (min) 0.03, (max) 0.73, expected_batch_size: 583
+sample_rate: (min) 0.03, (max) 0.74, expected_batch_size: 66
+sample_rate: (min) 0.03, (max) 0.73, expected_batch_size: 473
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [4.441464740445936, 4.452560630310308, 3.957148978803456, 4.232126556619421, 4.743771711921414, 4.44047523458072, 4.902195316160628, 5.07613599708928, 5.357871969683328, 3.8727212988002124]
+Round=14, per client global perf=[0.3948, 0.7269, 0.633, 0.6384, 0.91, 0.9032, 0.9379, 0.4915, 0.7367, 0.3638], mean perf=13889/20406 (0.6806%)
+Round=14, per client personal perf=[0.8875, 0.9548, 0.9024, 0.8839, 0.9251, 0.9866, 0.9708, 0.9131, 0.8746, 0.9392], mean perf=18882/20406 (0.9253%)
+Round=14, per client personal pooled=[0.6492, 0.5894, 0.5249, 0.4148, 0.406, 0.4171, 0.6329, 0.3929, 0.6499, 0.5421], mean perf=106503/204060 (0.5219%)
+Mean performance of ditto rpdp global, Perf=0.6638
+Mean performance of ditto rpdp personal, Perf=0.9287
+Mean performance of ditto rpdp pooled, Perf=0.4931
+Finished seed 42
+----------------------------------------
+=== Running reg_param=10, num_steps=15 ===
+Running seed 42
+/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/experiments/datasets/fed_mnist/dirichlet_10_alpha_1
+ We run FedAvg with rPDP (ThreeLevels-0) ...
+max_epsilon :  10.0  noise_multiplier :  9.736328125
+The R-Squared value of the best-fit curve : 0.999749898528281
+learning rate =  0.01
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 231
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 425
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 301
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 842
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 550
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 79
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 810
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 563
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 68
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 483
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [3.554611437795162, 3.554611437795162, 2.8039339861853394, 3.3043856205918876, 3.8048372549984366, 3.554611437795162, 3.8048372549984366, 4.055063072201711, 4.305288889404985, 3.0541598033886133]
+Round=14, per client global perf=[0.4041, 0.761, 0.6294, 0.5841, 0.9092, 0.9113, 0.9442, 0.4934, 0.6771, 0.2606], mean perf=13525/20406 (0.6628%)
+Round=14, per client personal perf=[0.8755, 0.9362, 0.9194, 0.9425, 0.9469, 0.9624, 0.9418, 0.9472, 0.8527, 0.9506], mean perf=19133/20406 (0.9376%)
+Round=14, per client personal pooled=[0.6836, 0.6265, 0.5973, 0.6206, 0.5424, 0.5136, 0.7103, 0.5785, 0.6252, 0.5449], mean perf=123314/204060 (0.6043%)
+Mean performance of ditto rpdp global, Perf=0.6627
+Mean performance of ditto rpdp personal, Perf=0.9346
+Mean performance of ditto rpdp pooled, Perf=0.6017
+ We run FedAvg with rPDP (BoundedPareto-0) ...
+max_epsilon :  10.0  noise_multiplier :  9.736328125
+The R-Squared value of the best-fit curve : 0.999749898528281
+learning rate =  0.01
+sample_rate: (min) 0.03, (max) 0.76, expected_batch_size: 156
+sample_rate: (min) 0.03, (max) 0.69, expected_batch_size: 284
+sample_rate: (min) 0.03, (max) 0.67, expected_batch_size: 196
+sample_rate: (min) 0.03, (max) 0.98, expected_batch_size: 570
+sample_rate: (min) 0.03, (max) 0.93, expected_batch_size: 381
+sample_rate: (min) 0.03, (max) 0.73, expected_batch_size: 55
+sample_rate: (min) 0.03, (max) 0.75, expected_batch_size: 542
+sample_rate: (min) 0.03, (max) 0.81, expected_batch_size: 380
+sample_rate: (min) 0.03, (max) 0.62, expected_batch_size: 45
+sample_rate: (min) 0.03, (max) 0.62, expected_batch_size: 324
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [4.752415310075706, 4.319656280960529, 3.116421646411862, 6.0748074655109106, 6.577901701762658, 4.552836647619267, 4.9460204841016475, 5.726566365650261, 4.42076175750789, 3.1533820324004593]
+Round=14, per client global perf=[0.3902, 0.618, 0.4774, 0.4402, 0.8891, 0.9032, 0.9286, 0.4884, 0.605, 0.3144], mean perf=12414/20406 (0.6084%)
+Round=14, per client personal perf=[0.8229, 0.9197, 0.9095, 0.9341, 0.9503, 0.9758, 0.9336, 0.9469, 0.8213, 0.9215], mean perf=18902/20406 (0.9263%)
+Round=14, per client personal pooled=[0.6558, 0.5563, 0.5381, 0.6073, 0.4627, 0.471, 0.6584, 0.4908, 0.6014, 0.5235], mean perf=113566/204060 (0.5565%)
+Mean performance of ditto rpdp global, Perf=0.6212
+Mean performance of ditto rpdp personal, Perf=0.9292
+Mean performance of ditto rpdp pooled, Perf=0.5513
+ We run FedAvg with rPDP (BoundedMixGauss-0) ...
+max_epsilon :  10.0  noise_multiplier :  9.736328125
+The R-Squared value of the best-fit curve : 0.999749898528281
+learning rate =  0.01
+sample_rate: (min) 0.03, (max) 0.71, expected_batch_size: 223
+sample_rate: (min) 0.03, (max) 0.72, expected_batch_size: 412
+sample_rate: (min) 0.03, (max) 0.79, expected_batch_size: 322
+sample_rate: (min) 0.03, (max) 0.72, expected_batch_size: 837
+sample_rate: (min) 0.03, (max) 0.72, expected_batch_size: 562
+sample_rate: (min) 0.03, (max) 0.71, expected_batch_size: 86
+sample_rate: (min) 0.03, (max) 0.74, expected_batch_size: 822
+sample_rate: (min) 0.03, (max) 0.73, expected_batch_size: 583
+sample_rate: (min) 0.03, (max) 0.74, expected_batch_size: 66
+sample_rate: (min) 0.03, (max) 0.73, expected_batch_size: 473
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [4.441464740445936, 4.452560630310308, 3.957148978803456, 4.232126556619421, 4.743771711921414, 4.44047523458072, 4.902195316160628, 5.07613599708928, 5.357871969683328, 3.8727212988002124]
+Round=14, per client global perf=[0.393, 0.7229, 0.6231, 0.6361, 0.9088, 0.9059, 0.9358, 0.4903, 0.7273, 0.3369], mean perf=13779/20406 (0.6752%)
+Round=14, per client personal perf=[0.8644, 0.9222, 0.9229, 0.9448, 0.9337, 0.9516, 0.9358, 0.9476, 0.8056, 0.9462], mean perf=19022/20406 (0.9322%)
+Round=14, per client personal pooled=[0.6774, 0.5734, 0.5882, 0.5966, 0.6136, 0.5229, 0.6753, 0.5616, 0.6446, 0.5563], mean perf=122639/204060 (0.6010%)
+Mean performance of ditto rpdp global, Perf=0.6602
+Mean performance of ditto rpdp personal, Perf=0.9306
+Mean performance of ditto rpdp pooled, Perf=0.5897
+Finished seed 42
+----------------------------------------
+=== Running reg_param=10, num_steps=30 ===
+Running seed 42
+/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/experiments/datasets/fed_mnist/dirichlet_10_alpha_1
+ We run FedAvg with rPDP (ThreeLevels-0) ...
+max_epsilon :  10.0  noise_multiplier :  9.736328125
+The R-Squared value of the best-fit curve : 0.999749898528281
+learning rate =  0.01
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 231
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 425
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 301
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 842
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 550
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 79
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 810
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 563
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 68
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 483
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [3.554611437795162, 3.554611437795162, 2.8039339861853394, 3.3043856205918876, 3.8048372549984366, 3.554611437795162, 3.8048372549984366, 4.055063072201711, 4.305288889404985, 3.0541598033886133]
+Round=14, per client global perf=[0.4041, 0.7626, 0.6301, 0.5849, 0.9088, 0.914, 0.9444, 0.4941, 0.6803, 0.2579], mean perf=13530/20406 (0.6630%)
+Round=14, per client personal perf=[0.8902, 0.9362, 0.9165, 0.9498, 0.9306, 0.922, 0.9552, 0.9146, 0.815, 0.9515], mean perf=19072/20406 (0.9346%)
+Round=14, per client personal pooled=[0.6573, 0.649, 0.5963, 0.6187, 0.6692, 0.6109, 0.7362, 0.678, 0.7133, 0.5771], mean perf=132765/204060 (0.6506%)
+Mean performance of ditto rpdp global, Perf=0.6624
+Mean performance of ditto rpdp personal, Perf=0.9333
+Mean performance of ditto rpdp pooled, Perf=0.6305
+ We run FedAvg with rPDP (BoundedPareto-0) ...
+max_epsilon :  10.0  noise_multiplier :  9.736328125
+The R-Squared value of the best-fit curve : 0.999749898528281
+learning rate =  0.01
+sample_rate: (min) 0.03, (max) 0.76, expected_batch_size: 156
+sample_rate: (min) 0.03, (max) 0.69, expected_batch_size: 284
+sample_rate: (min) 0.03, (max) 0.67, expected_batch_size: 196
+sample_rate: (min) 0.03, (max) 0.98, expected_batch_size: 570
+sample_rate: (min) 0.03, (max) 0.93, expected_batch_size: 381
+sample_rate: (min) 0.03, (max) 0.73, expected_batch_size: 55
+sample_rate: (min) 0.03, (max) 0.75, expected_batch_size: 542
+sample_rate: (min) 0.03, (max) 0.81, expected_batch_size: 380
+sample_rate: (min) 0.03, (max) 0.62, expected_batch_size: 45
+sample_rate: (min) 0.03, (max) 0.62, expected_batch_size: 324
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [4.752415310075706, 4.319656280960529, 3.116421646411862, 6.0748074655109106, 6.577901701762658, 4.552836647619267, 4.9460204841016475, 5.726566365650261, 4.42076175750789, 3.1533820324004593]
+Round=14, per client global perf=[0.3847, 0.6225, 0.4802, 0.4321, 0.8887, 0.8952, 0.9223, 0.4869, 0.6019, 0.3051], mean perf=12335/20406 (0.6045%)
+Round=14, per client personal perf=[0.8459, 0.9337, 0.8989, 0.9265, 0.917, 0.9462, 0.9455, 0.9408, 0.7618, 0.9175], mean perf=18814/20406 (0.9220%)
+Round=14, per client personal pooled=[0.6201, 0.6056, 0.6063, 0.6288, 0.6166, 0.5019, 0.6779, 0.5214, 0.6321, 0.539], mean perf=121409/204060 (0.5950%)
+Mean performance of ditto rpdp global, Perf=0.6196
+Mean performance of ditto rpdp personal, Perf=0.9249
+Mean performance of ditto rpdp pooled, Perf=0.5872
+ We run FedAvg with rPDP (BoundedMixGauss-0) ...
+max_epsilon :  10.0  noise_multiplier :  9.736328125
+The R-Squared value of the best-fit curve : 0.999749898528281
+learning rate =  0.01
+sample_rate: (min) 0.03, (max) 0.71, expected_batch_size: 223
+sample_rate: (min) 0.03, (max) 0.72, expected_batch_size: 412
+sample_rate: (min) 0.03, (max) 0.79, expected_batch_size: 322
+sample_rate: (min) 0.03, (max) 0.72, expected_batch_size: 837
+sample_rate: (min) 0.03, (max) 0.72, expected_batch_size: 562
+sample_rate: (min) 0.03, (max) 0.71, expected_batch_size: 86
+sample_rate: (min) 0.03, (max) 0.74, expected_batch_size: 822
+sample_rate: (min) 0.03, (max) 0.73, expected_batch_size: 583
+sample_rate: (min) 0.03, (max) 0.74, expected_batch_size: 66
+sample_rate: (min) 0.03, (max) 0.73, expected_batch_size: 473
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [4.441464740445936, 4.452560630310308, 3.957148978803456, 4.232126556619421, 4.743771711921414, 4.44047523458072, 4.902195316160628, 5.07613599708928, 5.357871969683328, 3.8727212988002124]
+Round=14, per client global perf=[0.3948, 0.7269, 0.633, 0.6384, 0.91, 0.9032, 0.9379, 0.4915, 0.7367, 0.3638], mean perf=13889/20406 (0.6806%)
+Round=14, per client personal perf=[0.8773, 0.9383, 0.9194, 0.947, 0.9213, 0.9758, 0.9263, 0.8896, 0.837, 0.9387], mean perf=18853/20406 (0.9239%)
+Round=14, per client personal pooled=[0.6701, 0.6531, 0.5945, 0.6272, 0.7086, 0.537, 0.753, 0.6101, 0.7097, 0.5719], mean perf=131317/204060 (0.6435%)
+Mean performance of ditto rpdp global, Perf=0.6638
+Mean performance of ditto rpdp personal, Perf=0.9268
+Mean performance of ditto rpdp pooled, Perf=0.6236
+Finished seed 42
+----------------------------------------
+=== Running reg_param=20, num_steps=15 ===
+Running seed 42
+/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/experiments/datasets/fed_mnist/dirichlet_10_alpha_1
+ We run FedAvg with rPDP (ThreeLevels-0) ...
+max_epsilon :  10.0  noise_multiplier :  9.736328125
+The R-Squared value of the best-fit curve : 0.999749898528281
+learning rate =  0.01
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 231
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 425
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 301
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 842
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 550
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 79
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 810
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 563
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 68
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 483
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [3.554611437795162, 3.554611437795162, 2.8039339861853394, 3.3043856205918876, 3.8048372549984366, 3.554611437795162, 3.8048372549984366, 4.055063072201711, 4.305288889404985, 3.0541598033886133]
+Round=14, per client global perf=[0.4041, 0.761, 0.6294, 0.5841, 0.9092, 0.9113, 0.9442, 0.4934, 0.6771, 0.2606], mean perf=13525/20406 (0.6628%)
+Round=14, per client personal perf=[0.857, 0.9091, 0.9123, 0.9389, 0.9372, 0.9516, 0.9263, 0.9378, 0.8088, 0.9409], mean perf=18886/20406 (0.9255%)
+Round=14, per client personal pooled=[0.6413, 0.6478, 0.6103, 0.6425, 0.5697, 0.4905, 0.698, 0.6153, 0.6521, 0.5638], mean perf=125114/204060 (0.6131%)
+Mean performance of ditto rpdp global, Perf=0.6627
+Mean performance of ditto rpdp personal, Perf=0.9215
+Mean performance of ditto rpdp pooled, Perf=0.6152
+ We run FedAvg with rPDP (BoundedPareto-0) ...
+max_epsilon :  10.0  noise_multiplier :  9.736328125
+The R-Squared value of the best-fit curve : 0.999749898528281
+learning rate =  0.01
+sample_rate: (min) 0.03, (max) 0.76, expected_batch_size: 156
+sample_rate: (min) 0.03, (max) 0.69, expected_batch_size: 284
+sample_rate: (min) 0.03, (max) 0.67, expected_batch_size: 196
+sample_rate: (min) 0.03, (max) 0.98, expected_batch_size: 570
+sample_rate: (min) 0.03, (max) 0.93, expected_batch_size: 381
+sample_rate: (min) 0.03, (max) 0.73, expected_batch_size: 55
+sample_rate: (min) 0.03, (max) 0.75, expected_batch_size: 542
+sample_rate: (min) 0.03, (max) 0.81, expected_batch_size: 380
+sample_rate: (min) 0.03, (max) 0.62, expected_batch_size: 45
+sample_rate: (min) 0.03, (max) 0.62, expected_batch_size: 324
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [4.752415310075706, 4.319656280960529, 3.116421646411862, 6.0748074655109106, 6.577901701762658, 4.552836647619267, 4.9460204841016475, 5.726566365650261, 4.42076175750789, 3.1533820324004593]
+Round=14, per client global perf=[0.3902, 0.618, 0.4774, 0.4402, 0.8891, 0.9032, 0.9286, 0.4884, 0.605, 0.3144], mean perf=12414/20406 (0.6084%)
+Round=14, per client personal perf=[0.8256, 0.9106, 0.9059, 0.9301, 0.9154, 0.8952, 0.9173, 0.9298, 0.8088, 0.9145], mean perf=18619/20406 (0.9124%)
+Round=14, per client personal pooled=[0.618, 0.5487, 0.5726, 0.6085, 0.5595, 0.5532, 0.6398, 0.5508, 0.6009, 0.5407], mean perf=118204/204060 (0.5793%)
+Mean performance of ditto rpdp global, Perf=0.6212
+Mean performance of ditto rpdp personal, Perf=0.9141
+Mean performance of ditto rpdp pooled, Perf=0.5687
+ We run FedAvg with rPDP (BoundedMixGauss-0) ...
+max_epsilon :  10.0  noise_multiplier :  9.736328125
+The R-Squared value of the best-fit curve : 0.999749898528281
+learning rate =  0.01
+sample_rate: (min) 0.03, (max) 0.71, expected_batch_size: 223
+sample_rate: (min) 0.03, (max) 0.72, expected_batch_size: 412
+sample_rate: (min) 0.03, (max) 0.79, expected_batch_size: 322
+sample_rate: (min) 0.03, (max) 0.72, expected_batch_size: 837
+sample_rate: (min) 0.03, (max) 0.72, expected_batch_size: 562
+sample_rate: (min) 0.03, (max) 0.71, expected_batch_size: 86
+sample_rate: (min) 0.03, (max) 0.74, expected_batch_size: 822
+sample_rate: (min) 0.03, (max) 0.73, expected_batch_size: 583
+sample_rate: (min) 0.03, (max) 0.74, expected_batch_size: 66
+sample_rate: (min) 0.03, (max) 0.73, expected_batch_size: 473
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [4.441464740445936, 4.452560630310308, 3.957148978803456, 4.232126556619421, 4.743771711921414, 4.44047523458072, 4.902195316160628, 5.07613599708928, 5.357871969683328, 3.8727212988002124]
+Round=14, per client global perf=[0.393, 0.7229, 0.6231, 0.6361, 0.9088, 0.9059, 0.9358, 0.4903, 0.7273, 0.3369], mean perf=13779/20406 (0.6752%)
+Round=14, per client personal perf=[0.8469, 0.9041, 0.9158, 0.9313, 0.931, 0.9597, 0.9136, 0.9313, 0.7931, 0.9317], mean perf=18736/20406 (0.9182%)
+Round=14, per client personal pooled=[0.6429, 0.6202, 0.5909, 0.6168, 0.6064, 0.527, 0.68, 0.5956, 0.6523, 0.5626], mean perf=124368/204060 (0.6095%)
+Mean performance of ditto rpdp global, Perf=0.6602
+Mean performance of ditto rpdp personal, Perf=0.9131
+Mean performance of ditto rpdp pooled, Perf=0.6021
+Finished seed 42
+----------------------------------------
+=== Running reg_param=20, num_steps=30 ===
+Running seed 42
+/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/experiments/datasets/fed_mnist/dirichlet_10_alpha_1
+ We run FedAvg with rPDP (ThreeLevels-0) ...
+max_epsilon :  10.0  noise_multiplier :  9.736328125
+The R-Squared value of the best-fit curve : 0.999749898528281
+learning rate =  0.01
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 231
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 425
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 301
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 842
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 550
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 79
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 810
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 563
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 68
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 483
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [3.554611437795162, 3.554611437795162, 2.8039339861853394, 3.3043856205918876, 3.8048372549984366, 3.554611437795162, 3.8048372549984366, 4.055063072201711, 4.305288889404985, 3.0541598033886133]
+Round=14, per client global perf=[0.4041, 0.7626, 0.6301, 0.5849, 0.9088, 0.914, 0.9444, 0.4941, 0.6803, 0.2579], mean perf=13530/20406 (0.6630%)
+Round=14, per client personal perf=[0.857, 0.9187, 0.913, 0.946, 0.9123, 0.9247, 0.936, 0.9142, 0.8276, 0.9405], mean perf=18840/20406 (0.9233%)
+Round=14, per client personal pooled=[0.607, 0.6804, 0.6192, 0.6437, 0.6893, 0.5975, 0.7367, 0.6849, 0.7026, 0.589], mean perf=133667/204060 (0.6550%)
+Mean performance of ditto rpdp global, Perf=0.6624
+Mean performance of ditto rpdp personal, Perf=0.9234
+Mean performance of ditto rpdp pooled, Perf=0.6420
+ We run FedAvg with rPDP (BoundedPareto-0) ...
+max_epsilon :  10.0  noise_multiplier :  9.736328125
+The R-Squared value of the best-fit curve : 0.999749898528281
+learning rate =  0.01
+sample_rate: (min) 0.03, (max) 0.76, expected_batch_size: 156
+sample_rate: (min) 0.03, (max) 0.69, expected_batch_size: 284
+sample_rate: (min) 0.03, (max) 0.67, expected_batch_size: 196
+sample_rate: (min) 0.03, (max) 0.98, expected_batch_size: 570
+sample_rate: (min) 0.03, (max) 0.93, expected_batch_size: 381
+sample_rate: (min) 0.03, (max) 0.73, expected_batch_size: 55
+sample_rate: (min) 0.03, (max) 0.75, expected_batch_size: 542
+sample_rate: (min) 0.03, (max) 0.81, expected_batch_size: 380
+sample_rate: (min) 0.03, (max) 0.62, expected_batch_size: 45
+sample_rate: (min) 0.03, (max) 0.62, expected_batch_size: 324
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [4.752415310075706, 4.319656280960529, 3.116421646411862, 6.0748074655109106, 6.577901701762658, 4.552836647619267, 4.9460204841016475, 5.726566365650261, 4.42076175750789, 3.1533820324004593]
+Round=14, per client global perf=[0.3847, 0.6225, 0.4802, 0.4321, 0.8887, 0.8952, 0.9223, 0.4869, 0.6019, 0.3051], mean perf=12335/20406 (0.6045%)
+Round=14, per client personal perf=[0.8312, 0.9292, 0.8911, 0.9141, 0.8704, 0.914, 0.9221, 0.9268, 0.7994, 0.9189], mean perf=18486/20406 (0.9059%)
+Round=14, per client personal pooled=[0.6112, 0.611, 0.6059, 0.6462, 0.6428, 0.553, 0.6892, 0.5488, 0.6362, 0.5382], mean perf=124121/204060 (0.6083%)
+Mean performance of ditto rpdp global, Perf=0.6196
+Mean performance of ditto rpdp personal, Perf=0.9116
+Mean performance of ditto rpdp pooled, Perf=0.6014
+ We run FedAvg with rPDP (BoundedMixGauss-0) ...
+max_epsilon :  10.0  noise_multiplier :  9.736328125
+The R-Squared value of the best-fit curve : 0.999749898528281
+learning rate =  0.01
+sample_rate: (min) 0.03, (max) 0.71, expected_batch_size: 223
+sample_rate: (min) 0.03, (max) 0.72, expected_batch_size: 412
+sample_rate: (min) 0.03, (max) 0.79, expected_batch_size: 322
+sample_rate: (min) 0.03, (max) 0.72, expected_batch_size: 837
+sample_rate: (min) 0.03, (max) 0.72, expected_batch_size: 562
+sample_rate: (min) 0.03, (max) 0.71, expected_batch_size: 86
+sample_rate: (min) 0.03, (max) 0.74, expected_batch_size: 822
+sample_rate: (min) 0.03, (max) 0.73, expected_batch_size: 583
+sample_rate: (min) 0.03, (max) 0.74, expected_batch_size: 66
+sample_rate: (min) 0.03, (max) 0.73, expected_batch_size: 473
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [4.441464740445936, 4.452560630310308, 3.957148978803456, 4.232126556619421, 4.743771711921414, 4.44047523458072, 4.902195316160628, 5.07613599708928, 5.357871969683328, 3.8727212988002124]
+Round=14, per client global perf=[0.3948, 0.7269, 0.633, 0.6384, 0.91, 0.9032, 0.9379, 0.4915, 0.7367, 0.3638], mean perf=13889/20406 (0.6806%)
+Round=14, per client personal perf=[0.8487, 0.9242, 0.918, 0.9399, 0.9131, 0.957, 0.9215, 0.9245, 0.8276, 0.9361], mean perf=18801/20406 (0.9213%)
+Round=14, per client personal pooled=[0.6962, 0.6702, 0.6041, 0.6455, 0.7061, 0.5742, 0.7329, 0.6115, 0.6887, 0.5747], mean perf=132727/204060 (0.6504%)
+Mean performance of ditto rpdp global, Perf=0.6638
+Mean performance of ditto rpdp personal, Perf=0.9217
+Mean performance of ditto rpdp pooled, Perf=0.6312
+Finished seed 42
+----------------------------------------

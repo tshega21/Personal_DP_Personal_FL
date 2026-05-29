@@ -18,12 +18,21 @@ parser = argparse.ArgumentParser()
 parser.add_argument("--dataset", type=str, default='heart_disease')
 parser.add_argument("--gpuid", type=int, default=7,
                     help="Index of the GPU device.")
-parser.add_argument("--seed", type=int, default=41, 
+parser.add_argument(
+    "--data_type", type=str, default="iid_10",
+    choices=[
+        "niid_10_5",
+        "niid_10_2",
+        "niid_dir_1",
+        "niid_dir_5",
+        "iid_10",
+    ],
+    help="Dataset partition type"
+)
+parser.add_argument("--epsilon", type=float, default=5, 
+                    help="epsilon")
+parser.add_argument("--seed", type=int, default=42, 
                     help="random seed")
-parser.add_argument("--data_type", type=str, default="iid",
-                    choices=["iid", "niid"],
-                    help="Type of data partition: iid or niid")
-args = parser.parse_args()
 args = parser.parse_args()
 
 os.environ['CUDA_LAUNCH_BLOCKING'] = '1'
@@ -34,7 +43,6 @@ def set_random_seed(seed_value):
     torch.cuda.manual_seed(seed_value)
 set_random_seed(args.seed)
 
-#torch.manual_seed(args.seed) 
 
 device = torch.device(f"cuda:{args.gpuid}" if torch.cuda.is_available() else "cpu")
 module_name = f"datasets.fed_{args.dataset}"
@@ -53,10 +61,20 @@ except ModuleNotFoundError as e:
 project_abspath = os.path.abspath(os.path.join(os.getcwd(),".."))
 dict = read_config(get_config_file_path(dataset_name=f"fed_{args.dataset}", debug=False))
 # save_dir
-save_dir = os.path.join(project_abspath, dict["save_dir"])
-if not os.path.exists(save_dir):
-    os.mkdir(save_dir)
-save_filename = os.path.join(save_dir, f"{args.data_type}_results_fedavg_unidp_{args.dataset}.csv")
+opt_method = "fedavg"
+
+# Base save directory from config "results folder"
+base_save_dir = os.path.join(project_abspath, dict["save_dir"])
+
+# Subfolder by dataset type (e.g., iid / niid)
+save_dir = os.path.join(base_save_dir, args.data_type,opt_method)
+
+# Ensure the folder exists
+os.makedirs(save_dir, exist_ok=True)
+
+
+
+save_file = os.path.join(save_dir, f"{args.data_type}_results_fedavg_unidp_{args.dataset}.csv")
 
 
 NUM_CLIENTS = dict["fedavg"]["num_clients"]
@@ -68,7 +86,7 @@ LR = dict["fedavg"]["learning_rate"]
 
 LR_DP = dict["dpfedavg"]["learning_rate"]
 MAX_GRAD_NORM = dict["dpfedavg"]["max_grad_norm"]
-TARGET_EPSILON = dict["dpfedavg"]["target_epsilon"]
+TARGET_EPSILON = args.epsilon 
 TARGET_DELTA = dict["dpfedavg"]["target_delta"]
 MAX_PHYSICAL_BATCH_SIZE = dict["dpfedavg"]["max_physical_batch_size"]
 
@@ -77,18 +95,32 @@ MAX_PHYSICAL_BATCH_SIZE = dict["dpfedavg"]["max_physical_batch_size"]
 if args.dataset == "heart_disease":
     data_path = os.path.join(project_abspath, dict["dataset_dir"])
 else:
-    data_path = os.path.join(project_abspath, dict["dataset_dir"][f"{args.data_type}_{NUM_CLIENTS}"]) 
+    data_path = os.path.join(project_abspath, dict["dataset_dir"][f"{args.data_type}"]) 
     
+
 rawdata = RawClass(data_path=data_path)
 test_dls, training_dls = [], []
-for i in range(NUM_CLIENTS): # NUM_CLIENTS
-    train_data = FedClass(rawdata=rawdata, center=i, train=True)
-    train_dl = DataLoader(train_data, batch_size=BATCH_SIZE)
-    training_dls.append(train_dl)
 
-    test_data = FedClass(rawdata=rawdata, center=i, train=False)
-    test_dl = DataLoader(test_data, batch_size=BATCH_SIZE)
-    test_dls.append(test_dl)
+
+train_datasets = []
+test_datasets = []
+
+train_datasets = [
+    FedClass(rawdata,center = i, train=True)
+    for i in range(NUM_CLIENTS)
+]
+test_datasets = [
+    FedClass(rawdata, center = i, train=False)
+    for i in range(NUM_CLIENTS)
+]
+    
+for i in range(NUM_CLIENTS):
+    train_ds = FedClass(rawdata=rawdata, center=i, train=True)
+    test_ds = FedClass(rawdata=rawdata, center=i, train=False)
+    
+    training_dls.append(DataLoader(train_ds, batch_size=BATCH_SIZE, shuffle=True))
+    test_dls.append(DataLoader(test_ds, batch_size=BATCH_SIZE))
+
 
 """ Prepare model and loss """
 # We set model and dataloaders to be the same for each rep
@@ -130,7 +162,7 @@ current_args["privacy_engine"] = privacy_engine
 s = FedAvg(**current_args, log=False)
 cm, perf = s.run()
 mean_perf = np.mean(perf[-3:])
-print(f"Mean performance of dp-fedavg, eps={TARGET_EPSILON}, delta={TARGET_DELTA}, Perf={mean_perf:.4f}")
+print(f"Mean performance of unidp-fedavg, eps={TARGET_EPSILON}, delta={TARGET_DELTA}, Perf={mean_perf:.4f}")
 """
 record_row = [{
     "timestamp": datetime.datetime.now().strftime("%Y-%m-%d %H:%M"),
@@ -145,7 +177,7 @@ record_row = [{
     "client_rate": CLIENT_RATE
 }]
 """
-record_row = [{
+record = [{
     "perf": str(perf),  # store as string
     "mean_perf": round(mean_perf, 4),
     "e": TARGET_EPSILON,
@@ -155,6 +187,9 @@ record_row = [{
     "bs": BATCH_SIZE,
     "seed": args.seed
 }]
-results = pd.DataFrame.from_dict(record_row)
-write_header = not os.path.exists(save_filename)
-results.to_csv(save_filename, mode='a', index=False, header=write_header)
+results_df = pd.DataFrame.from_dict(record)
+
+ # Append to CSV
+write_header = not os.path.exists(save_file)
+results_df.to_csv(save_file, mode='a', index=False, header=write_header)
+# ======== End Training ============

@@ -79,6 +79,7 @@ class _Model:
         self._test_dl = test_dl # added by Junxu 
         
         #Where learning rate is specified
+        self.learning_rate = lr
         self._optimizer = optimizer_class(self.model.parameters(), lr)
         self._loss = copy.deepcopy(loss)
         self._metric = copy.deepcopy(metric)
@@ -193,17 +194,12 @@ class _Model:
                 
                 # if last history entry has num_steps - 1 = i
                 # i is only incremented at the end of DP accountant. history
-                
-                
-                ## NEED TO FIGURE OUT WHY THIS CONDITION WASNT WORKING
-                ## INFINITE LOOP
-                i+=1
-                # TEMPORARY FIX
+             
                 if len(privacy_accountant) and (i == privacy_accountant.history[-1][-1] - 1):
                     i += 1
                     current_batch_size = 0
                     
-    def _ditto_local_train(self, personal_model, num_p_updates, reg_param, privacy_accountant = None):
+    def _ditto_local_train(self, global_params, num_personal_steps, reg_param, privacy_accountant = None):
         """
         This method passes in the personalized model object
         performs a local update following federated averaging to self
@@ -215,89 +211,122 @@ class _Model:
         #sets model in training mode and eval mode to false
         #modifies nn.BatchNorm behaviour --> normalizes inputs
         """
-        #self.model = self.model.train()
-        personal_model.model.train()
+        self.model.train()
     
         #No privacy preservation
-        if privacy_accountant is None:
-            train_loader_iter = iter(personal_model._train_dl)
+        if privacy_accountant is None and num_personal_steps > 0:
+            train_loader_iter = iter(self._train_dl)
             i = 0
-            while i < num_p_updates:
+            while i < num_personal_steps:
                 try:
                     batch = next(train_loader_iter)
                 except StopIteration:
-                    train_loader_iter = iter(personal_model._train_dl)
+                    train_loader_iter = iter(self._train_dl)
                     batch = next(train_loader_iter)
             
-                batch = tuple(t.to(personal_model._device) for t in batch)
+                batch = tuple(t.to(self._device) for t in batch)
                 if len(batch) == 2: # for other datasets
                     #forward pass on train data batch
-                    logits = personal_model.model(batch[0])
+                    logits = self.model(batch[0])
                     #calculate loss with true labels in batch
-                    loss = personal_model._loss(logits, batch[1])
+                    loss = self._loss(logits, batch[1])
 
                 elif len(batch) == 4: # for snli dataset
                     inputs = {'input_ids':    batch[0],
                                 'attention_mask': batch[1],
                                 'token_type_ids': batch[2],
                                 'labels':         batch[3]}
-                    outputs = personal_model.model(**inputs) # output = loss, logits, hidden_states, attentions
+                    outputs = self.model(**inputs) # output = loss, logits, hidden_states, attentions
                     loss, logits = outputs[:2]
                     
                 # DITTO PERSONALIZATION
+                #print("before reg", loss)
+
                 l_2_reg = 0
-                for param_personal, param_global in zip(personal_model.model.parameters(),self.model.parameters()):
+                for param_personal, param_global in zip(self.model.parameters(),global_params):
                     # gradient v_k= 0.5 ||v_k - w^t||^2 = (v_k - w_t)
                     
                     l_2_reg += torch.sum((param_personal-param_global.detach())**2)
                 loss = loss + (reg_param/2)*l_2_reg
-                
-                #clears gradients for next batch, accumulated across microbatch
-                personal_model._optimizer.zero_grad()
+                #print("after reg", loss)
+
+             
                 #backward pass - computes grads of loss wrt to local model parameters
                 loss.backward()
                 # updates model with optimizer
-                personal_model._optimizer.step()
+                self._optimizer.step()
+    
+                #clears gradients for next batch, accumulated across microbatch
+                self._optimizer.zero_grad()
                 
                 i += 1
 
         else:
             
             # DO I USE A DIFFERENT DATA LOADER OR THE LOCAL MODEL DATA LOADER
-            train_loader_iter = iter(personal_model._train_dl)
+            train_loader_iter = iter(self._train_dl)
             current_batch_size, i = 0, 0
-            while i < num_p_updates:
+            while i < num_personal_steps:
                 try:
                     batch = next(train_loader_iter)
                 except StopIteration:
-                    train_loader_iter = iter(personal_model._train_dl) # restart dataloader iteration
+                    train_loader_iter = iter(self._train_dl) # restart dataloader iteration
                     batch = next(train_loader_iter)
                 current_batch_size += len(batch[-1]) 
-                batch = tuple(t.to(personal_model._device) for t in batch)
+                batch = tuple(t.to(self._device) for t in batch)
                 if len(batch) == 2: # for other datasets
-                    logits = personal_model.model(batch[0])
-                    loss = personal_model._loss(logits, batch[1])
+                    logits = self.model(batch[0])
+                    loss = self._loss(logits, batch[1])
 
                 elif len(batch) == 4: # for snli dataset
                     inputs = {'input_ids':    batch[0],
                                 'attention_mask': batch[1],
                                 'token_type_ids': batch[2],
                                 'labels':         batch[3]}
-                    outputs = personal_model.model(**inputs) # output = loss, logits, hidden_states, attentions
+                    outputs = self.model(**inputs) # output = loss, logits, hidden_states, attentions
                     loss, logits = outputs[:2]
                     
+
                 # DITTO PERSONALIZATION
                 l_2_reg = 0
-                for param_personal, param_global in zip(personal_model.model.parameters(),self.model.parameters()):
+                for param_personal, param_global in zip(self.model.parameters(),global_params):
                     # gradient v_k 0.5 ||v_k - w^t||^2 = (v_k - w_t)
                     # want to detach param_global so it is not gradient 
                     l_2_reg += torch.sum((param_personal-param_global.detach())**2)
                 loss = loss + (reg_param/2)*l_2_reg
 
-                personal_model._optimizer.zero_grad()
+                #backward pass - computes grads of loss wrt to local model parameters
                 loss.backward()
-                personal_model._optimizer.step()
+                # updates model with optimizer
+                self._optimizer.step()
+    
+                #clears gradients for next batch, accumulated across microbatch
+                self._optimizer.zero_grad()
+
+                # pre_batch_params = self._get_current_params()
+                # #reg_param2 = 1-reg_param/2
                 
+                # global_ps = [param.cpu().detach().clone().numpy() for param in global_params]
+                # #regularization_term = [self.learning_rate * reg_param * (pp - gp) for pp, gp in zip(pre_batch_params, global_regs)]
+              
+                #loss.backward()
+                # self._optimizer.step()
+                
+                # curr_params = self._get_current_params()
+                
+                # #update = [pb - (cp - pb * reg_param2) + (self.learning_rate * reg_param * (pb - gp)) for pb, cp, gp in zip(pre_batch_params, curr_params, global_ps)]
+                
+                # step = [(cp - pb) for pb ,cp in  zip(pre_batch_params,curr_params)]
+                # update = [(pb - (st - self.learning_rate * reg_param *(pb - gp))) for pb,st,gp in zip(pre_batch_params,step,global_ps) ]
+                
+                # #print("before reg", self._get_current_params()[0][0][0][0][0])
+                
+                # #self._update_params([p - r for p, r in zip(self._get_current_params(), regularization_term)])
+                # self._update_params(update)
+                # #print("after reg", self._get_current_params()[0][0][0][0][0])
+
+
+                #self._optimizer.zero_grad()
                 
 
                 # if last history entry has num_steps - 1 = i
@@ -305,9 +334,112 @@ class _Model:
                 if len(privacy_accountant) and (i == privacy_accountant.history[-1][-1] - 1):
                     i += 1
                     current_batch_size = 0
-                    
+
+    """              
+    def _mr_mtl_local_train(self, personal_model, num_personal_steps, reg_param, privacy_accountant = None):
+            
+            This method passes in the personalized model object
+            performs a local update following federated averaging to self mean model
+            # self = local model with untrained global params
+            performs ditto's method of personalized regularization to the personal
+            # Num_updates = num_steps in ditto.py
+            # personal_updates = # of rounds in which the personal training is occuring
+            
+            #sets model in training mode and eval mode to false
+            #modifies nn.BatchNorm behaviour --> normalizes inputs
+            
+            #self.model = self.model.train()
+            personal_model.model.train()
         
-  
+            #No privacy preservation
+            if privacy_accountant is None:
+                train_loader_iter = iter(personal_model._train_dl)
+                i = 0
+                while i < num_personal_steps:
+                    try:
+                        batch = next(train_loader_iter)
+                    except StopIteration:
+                        train_loader_iter = iter(personal_model._train_dl)
+                        batch = next(train_loader_iter)
+                
+                    batch = tuple(t.to(personal_model._device) for t in batch)
+                    if len(batch) == 2: # for other datasets
+                        #forward pass on train data batch
+                        logits = personal_model.model(batch[0])
+                        #calculate loss with true labels in batch
+                        loss = personal_model._loss(logits, batch[1])
+
+                    elif len(batch) == 4: # for snli dataset
+                        inputs = {'input_ids':    batch[0],
+                                    'attention_mask': batch[1],
+                                    'token_type_ids': batch[2],
+                                    'labels':         batch[3]}
+                        outputs = personal_model.model(**inputs) # output = loss, logits, hidden_states, attentions
+                        loss, logits = outputs[:2]
+                        
+                    # DITTO PERSONALIZATION
+                    l_2_reg = 0
+                    for param_personal, param_global in zip(personal_model.model.parameters(),self.model.parameters()):
+                        # gradient v_k= 0.5 ||v_k - w^t||^2 = (v_k - w_t)
+                        
+                        l_2_reg += torch.sum((param_personal-param_global.detach())**2)
+                    loss = loss + (reg_param/2)*l_2_reg
+                    
+                    #clears gradients for next batch, accumulated across microbatch
+                    personal_model._optimizer.zero_grad()
+                    #backward pass - computes grads of loss wrt to local model parameters
+                    loss.backward()
+                    # updates model with optimizer
+                    personal_model._optimizer.step()
+                    
+                    i += 1
+
+            else:
+                
+                train_loader_iter = iter(personal_model._train_dl)
+                current_batch_size, i = 0, 0
+                while i < num_personal_steps:
+                    try:
+                        batch = next(train_loader_iter)
+                    except StopIteration:
+                        train_loader_iter = iter(personal_model._train_dl) # restart dataloader iteration
+                        batch = next(train_loader_iter)
+                    current_batch_size += len(batch[-1]) 
+                    batch = tuple(t.to(personal_model._device) for t in batch)
+                    if len(batch) == 2: # for other datasets
+                        logits = personal_model.model(batch[0])
+                        loss = personal_model._loss(logits, batch[1])
+
+                    elif len(batch) == 4: # for snli dataset
+                        inputs = {'input_ids':    batch[0],
+                                    'attention_mask': batch[1],
+                                    'token_type_ids': batch[2],
+                                    'labels':         batch[3]}
+                        outputs = personal_model.model(**inputs) # output = loss, logits, hidden_states, attentions
+                        loss, logits = outputs[:2]
+                        
+                    # MR_MTL PERSONALIZATION
+                    l_2_reg = 0
+                    for param_personal, param_global in zip(personal_model.model.parameters(),self.model.parameters()):
+                        # gradient v_k 0.5 ||v_k - w^t||^2 = (v_k - w_t)
+                        # want to detach param_global so it is not gradient 
+                        l_2_reg += torch.sum((param_personal-param_global.detach())**2)
+                    loss = loss + (reg_param/2)*l_2_reg
+
+                    personal_model._optimizer.zero_grad()
+                    loss.backward()
+                    personal_model._optimizer.step()
+                    
+                    
+
+                    # if last history entry has num_steps - 1 = i
+                    # i is only incremented at the end of DP accountant. history
+                    if len(privacy_accountant) and (i == privacy_accountant.history[-1][-1] - 1):
+                        i += 1
+                        current_batch_size = 0
+                        
+            
+    """
     @torch.no_grad()
     def _get_current_params(self):
         """Returns the current weights of the pytorch model.

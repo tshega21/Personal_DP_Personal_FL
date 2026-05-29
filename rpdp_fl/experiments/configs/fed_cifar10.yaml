@@ -1,9 +1,11 @@
 save_dir: experiments/results/fed_cifar10
 # dataset info
 dataset_dir:
-  non-iid: experiments/datasets/fed_cifar10/niid_5way_1200shot
+  niid_10_5: experiments/datasets/fed_cifar10/niid_10_5way_1200shot
+  niid_10_2: experiments/datasets/fed_cifar10/niid_10_2way_1000shot
+  niid_dir_1: experiments/datasets/fed_cifar10/dirichlet_10_alpha_1
+  niid_dir_5: experiments/datasets/fed_cifar10/dirichlet_10_alpha_5
   iid_10: experiments/datasets/fed_cifar10/iid_10
-  iid_50: experiments/datasets/fed_cifar10/iid_50
 num_labels: 10
 # for fedavg experiments
 fedavg:
@@ -12,7 +14,7 @@ fedavg:
   num_rounds: 15
   client_rate: 0.8
   batch_size: 32
-  learning_rate: 0.005
+  learning_rate: 0.001 #0.005 originally
 dpfedavg:
   learning_rate: 0.001
   max_grad_norm: 1.0

@@ -46,7 +46,8 @@ def get_config_file_path(dataset_name, debug):
         "fed_heart_disease",
         "fed_mnist",
         "fed_cifar10",
-        "fed_snli"
+        "fed_snli",
+        "fed_fashion_mnist"
     ], f"Dataset name {dataset_name} not valid."
     config_file_name = (
         f"{dataset_name}_debug.yaml" if debug else f"{dataset_name}.yaml"

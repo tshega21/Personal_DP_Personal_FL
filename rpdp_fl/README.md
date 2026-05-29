@@ -30,12 +30,16 @@ The following instruction would work for Ubuntu 22.04 Linux users with NVIDIA Ge
 ## Create isolated Miniconda environment
 First, please download and install the latest [Miniconda](https://docs.anaconda.com/free/miniconda/)  (a minimal version of Anaconda) version for your operating system.
 
+run bash 
+ctrl -b  d 
+tmux attach -t session name
+
 Next, change directory (cd) into your preferred folder, then type:
 ```bash
 conda create -n rpdp python=3.8
 conda activate rpdp
 conda install pytorch==1.13.1 torchvision==0.14.1 torchaudio==0.13.1 pytorch-cuda=11.7 -c pytorch -c nvidia
-pip install -r requirements.txt
+pip install -r requirements_new.txt
 ```
 
 Then add all the path of all dependent modules to `PYTHONPATH` (in a manual or temporary way if you download this source code in ZIP format).
@@ -48,7 +52,7 @@ export PYTHONPATH=$PYTHONPATH:/your/path/rpdp_fl:/your/path/rpdp_fl/myopacus:/yo
 ```bash
 export PYTHONPATH=$PYTHONPATH:/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl:/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus:/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/torchdp:/your/path/rpdp_fl/experiments
 ```
-
+nvidia-smi | grep python | awk '{print $5}' | xargs -r kill -9
 # Running Experiments
 
 ## Downloading and preprocessing instructions
@@ -66,19 +70,65 @@ We also pre-specified some hyperparameter values for different experiments in fo
 The top-level codes that start running the experiments displayed in our paper can be found in folder `./experiments/`. For example, in order to train a private model that achieves record-level personalied DP on the `Fed-Heart-Disease` dataset in the FL setting, users can run the Python file `fedavg_rpdp.py` as follows.
 ```bash
 cd experiments
-# dataset flags: {"heart_disease", "mnist", "cifar10", "snli"}
-python fedavg_vanilla.py --dataset mnist --gpuid 0 --seed 42 --data_type iid
-python fedavg_unidp.py --dataset mnist --gpuid 0 --seed 42 --data_type iid
-python fedavg_rpdp.py --dataset mnist --gpuid 0 --seed 42 --data_type iid
+# dataset flags: {"heart_disease", "mnist", "fashion_mnist" "cifar10", "snli"}
 
-python ditto_vanilla.py --dataset mnist --gpuid 0 --seed 42 --data_type iid
-python ditto_unidp.py --dataset mnist --gpuid 0 --seed 42 --data_type iid
-python ditto_rpdp.py --dataset mnist --gpuid 0 --seed 42 --data_type iid
+# datatype flags: {"niid_10_2, niid_10_5, niid_dir_1, niid_dir_5, iid_10}
+
+python fedavg_vanilla.py --dataset cifar10 --gpuid 0 --data_type niid_10_5 --seed 42
+python fedavg_unidp.py --dataset mnist --gpuid 0 --data_type iid_10 --seed 42
+python fedavg_rpdp.py --dataset mnist --gpuid 0 --data_type iid_10 --seed 42
+
+python ditto_vanilla.py --dataset mnist --gpuid 0  --seed 42 --data_type niid_dir_5 --reg_param 0.0 --num_personal_steps 30
+
+python ditto_unidp.py --dataset mnist --gpuid 0  --seed 42 --data_type iid_10 --epsilon 0.1 --reg_param 0 --num_personal_steps 30
+
+python dp_ditto_unidp.py --dataset mnist --gpuid 0  --seed 42 --data_type iid_10 --epsilon 5 --reg_param 10 --num_personal_steps 10
 
 
-python fedavg_vanilla_orginal.py --dataset mnist --gpuid 0 --seed 42
+python dp_ditto_unidp.py --dataset mnist --gpuid 0  --seed 42 --data_type iid_10 --epsilon 0.5 --reg_param 0.20 --num_personal_steps 10
 
-```
+python ditto_rpdp.py --dataset mnist --gpuid 0  --seed 42 --data_type iid_10 --epsilon 5 --reg_param 1 --num_personal_steps 5
+
+
+python ditto_rpdp_data_dep.py --dataset mnist --gpuid 0  --seed 42 --data_type niid_dir_5 --epsilon 5 --reg_param 0 --num_personal_steps 15
+
+
+
+
+""" Table 1 commands """
+
+# dataset flags: {"heart_disease", "mnist", "fashion_mnist" "cifar10"}
+chmod +x table1_experiments.sh
+./table1_experiments.sh
+
+python ditto_vanilla.py --dataset mnist --gpuid 0  --seed 42 --data_type iid --reg_param 0.0 --num_personal_steps 1
+python ditto_vanilla.py --dataset mnist --gpuid 0  --seed 43 --data_type iid --reg_param 0.0 --num_personal_steps 1
+python ditto_vanilla.py --dataset mnist --gpuid 0  --seed 44 --data_type iid --reg_param 0.0 --num_personal_steps 1
+python ditto_vanilla.py --dataset mnist --gpuid 0  --seed 45 --data_type iid --reg_param 0.0 --num_personal_steps 1
+python ditto_vanilla.py --dataset mnist --gpuid 0  --seed 46 --data_type iid --reg_param 0.0 --num_personal_steps 1
+
+
+""" Table 2 commands """
+
+python ditto_vanilla.py --dataset mnist --gpuid 0  --seed 42 --data_type niid_10_5 --reg_param 0.0 --num_personal_steps 1
+python ditto_vanilla.py --dataset mnist --gpuid 0  --seed 43 --data_type niid_10_5 --reg_param 0.0 --num_personal_steps 1
+python ditto_vanilla.py --dataset mnist --gpuid 0  --seed 44 --data_type niid_10_5 --reg_param 0.0 --num_personal_steps 1
+python ditto_vanilla.py --dataset mnist --gpuid 0  --seed 45 --data_type niid_10_5 --reg_param 0.0 --num_personal_steps 1
+python ditto_vanilla.py --dataset mnist --gpuid 0  --seed 46 --data_type niid_10_5 --reg_param 0.0 --num_personal_steps 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 We provide the estimated running time of each experiment for your reference:
 - `LogisticRegression-HeartDisease` experiment: ~3 compute-minutes
 - `DNN+mnist` experiment: ~30 compute-minutes

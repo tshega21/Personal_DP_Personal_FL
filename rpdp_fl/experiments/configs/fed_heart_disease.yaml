@@ -5,7 +5,7 @@ num_labels: 2
 # for fedavg experiments
 fedavg:
   num_clients: 4
-  num_steps: 50
+  num_steps: 10
   num_rounds: 15
   client_rate: 1.0
   batch_size: 16

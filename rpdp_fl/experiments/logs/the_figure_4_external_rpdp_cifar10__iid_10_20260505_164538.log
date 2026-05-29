@@ -1,0 +1,1449 @@
+PARAMS: dataset=cifar10, gpu=0, data_type=iid_10
+=== Running reg_param=0, num_steps=15 ===
+Running seed 42
+/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/experiments/datasets/fed_cifar10/iid_10
+
+Client 0 label distribution:
+[(0, 340), (1, 343), (2, 338), (3, 341), (4, 302), (5, 348), (6, 308), (7, 336), (8, 332), (9, 312)]
+
+Client 1 label distribution:
+[(0, 343), (1, 302), (2, 323), (3, 332), (4, 346), (5, 351), (6, 349), (7, 311), (8, 311), (9, 332)]
+
+Client 2 label distribution:
+[(0, 327), (1, 349), (2, 284), (3, 317), (4, 345), (5, 334), (6, 344), (7, 329), (8, 347), (9, 324)]
+
+Client 3 label distribution:
+[(0, 327), (1, 306), (2, 331), (3, 340), (4, 310), (5, 343), (6, 346), (7, 324), (8, 322), (9, 351)]
+
+Client 4 label distribution:
+[(0, 327), (1, 330), (2, 321), (3, 348), (4, 332), (5, 324), (6, 356), (7, 328), (8, 327), (9, 307)]
+
+Client 5 label distribution:
+[(0, 322), (1, 327), (2, 345), (3, 312), (4, 321), (5, 333), (6, 333), (7, 327), (8, 346), (9, 334)]
+
+Client 6 label distribution:
+[(0, 317), (1, 317), (2, 334), (3, 320), (4, 343), (5, 341), (6, 313), (7, 345), (8, 341), (9, 329)]
+
+Client 7 label distribution:
+[(0, 320), (1, 364), (2, 361), (3, 320), (4, 336), (5, 326), (6, 318), (7, 319), (8, 271), (9, 365)]
+
+Client 8 label distribution:
+[(0, 342), (1, 346), (2, 318), (3, 338), (4, 322), (5, 321), (6, 296), (7, 333), (8, 353), (9, 331)]
+
+Client 9 label distribution:
+[(0, 341), (1, 320), (2, 337), (3, 365), (4, 324), (5, 330), (6, 320), (7, 341), (8, 309), (9, 313)]
+Client 0: avg epsilon = 0.7455
+Client 1: avg epsilon = 0.7626
+Client 2: avg epsilon = 0.7655
+Client 3: avg epsilon = 0.7974
+Client 4: avg epsilon = 0.7345
+Client 5: avg epsilon = 0.7795
+Client 6: avg epsilon = 0.7756
+Client 7: avg epsilon = 0.8029
+Client 8: avg epsilon = 0.7786
+Client 9: avg epsilon = 0.7581
+ We run FedAvg with rPDP (ThreeLevels-0) ...
+max_epsilon :  10.0  noise_multiplier :  11.4404296875
+The R-Squared value of the best-fit curve : 0.9998649040687166
+learning rate =  0.001
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 348
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 354
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 356
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 368
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 344
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 361
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 360
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 369
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 361
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 354
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [4.896127762871594, 4.179701435149603, 3.940892659242272, 4.418510211056934, 4.896127762871594, 4.418510211056934, 4.896127762871594, 5.10082093327143, 4.896127762871594, 4.657318986964264]
+Round=14, per client global perf=[0.1335, 0.1482, 0.1424, 0.1565, 0.1618, 0.1341, 0.1388, 0.1376, 0.1371, 0.1476], mean perf=2444/17000 (0.1438%)
+Round=14, per client personal perf=[0.1471, 0.1624, 0.2029, 0.1547, 0.1741, 0.1435, 0.1976, 0.2053, 0.2082, 0.2259], mean perf=3097/17000 (0.1822%)
+Round=14, per client personal pooled=[0.1412, 0.1728, 0.2054, 0.1474, 0.1674, 0.1514, 0.1835, 0.1916, 0.2239, 0.2158], mean perf=30606/170000 (0.1800%)
+Mean performance of ditto rpdp global, Perf=0.1399, seed=42
+Mean performance of ditto rpdp personal, Perf=0.1808, seed=42
+Mean performance of ditto rpdp pooled, Perf=0.1817, seed=42
+Client 0: avg epsilon = 0.3393
+Client 1: avg epsilon = 0.3536
+Client 2: avg epsilon = 0.3698
+Client 3: avg epsilon = 0.3875
+Client 4: avg epsilon = 0.3919
+Client 5: avg epsilon = 0.4191
+Client 6: avg epsilon = 0.4412
+Client 7: avg epsilon = 0.4692
+Client 8: avg epsilon = 0.5161
+Client 9: avg epsilon = 0.6364
+ We run FedAvg with rPDP (BoundedPareto-0) ...
+max_epsilon :  10.0  noise_multiplier :  11.4404296875
+The R-Squared value of the best-fit curve : 0.9998649040687166
+learning rate =  0.001
+sample_rate: (min) 0.03, (max) 0.14, expected_batch_size: 197
+sample_rate: (min) 0.03, (max) 0.15, expected_batch_size: 204
+sample_rate: (min) 0.03, (max) 0.16, expected_batch_size: 211
+sample_rate: (min) 0.03, (max) 0.17, expected_batch_size: 220
+sample_rate: (min) 0.03, (max) 0.18, expected_batch_size: 221
+sample_rate: (min) 0.03, (max) 0.2, expected_batch_size: 234
+sample_rate: (min) 0.03, (max) 0.22, expected_batch_size: 244
+sample_rate: (min) 0.03, (max) 0.25, expected_batch_size: 255
+sample_rate: (min) 0.03, (max) 0.32, expected_batch_size: 275
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 319
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Traceback (most recent call last):
+  File "ditto_rpdp_data_dep.py", line 215, in <module>
+    cm, perf_global, perf_personal, perf_pooled = s.run()
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 436, in run
+    self.perform_round()
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 359, in perform_round
+    self._local_optimization(local_model)
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 269, in _local_optimization
+    _model._local_train(self.num_steps, \
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/strategies_utils.py", line 190, in _local_train
+    loss.backward()
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/_tensor.py", line 488, in backward
+    torch.autograd.backward(
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/autograd/__init__.py", line 197, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/nn/modules/module.py", line 62, in __call__
+    return self.hook(module, *args, **kwargs)
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/grad_sample/grad_sample_module.py", line 340, in capture_backprops_hook
+    create_or_accumulate_grad_sample(
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/grad_sample/grad_sample_module.py", line 57, in create_or_accumulate_grad_sample
+    param._current_grad_sample = torch.zeros(
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 288.00 MiB (GPU 0; 9.66 GiB total capacity; 4.39 GiB already allocated; 11.88 MiB free; 8.79 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+Finished seed 42
+----------------------------------------
+Running seed 43
+/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/experiments/datasets/fed_cifar10/iid_10
+
+Client 0 label distribution:
+[(0, 340), (1, 343), (2, 338), (3, 341), (4, 302), (5, 348), (6, 308), (7, 336), (8, 332), (9, 312)]
+
+Client 1 label distribution:
+[(0, 343), (1, 302), (2, 323), (3, 332), (4, 346), (5, 351), (6, 349), (7, 311), (8, 311), (9, 332)]
+
+Client 2 label distribution:
+[(0, 327), (1, 349), (2, 284), (3, 317), (4, 345), (5, 334), (6, 344), (7, 329), (8, 347), (9, 324)]
+
+Client 3 label distribution:
+[(0, 327), (1, 306), (2, 331), (3, 340), (4, 310), (5, 343), (6, 346), (7, 324), (8, 322), (9, 351)]
+
+Client 4 label distribution:
+[(0, 327), (1, 330), (2, 321), (3, 348), (4, 332), (5, 324), (6, 356), (7, 328), (8, 327), (9, 307)]
+
+Client 5 label distribution:
+[(0, 322), (1, 327), (2, 345), (3, 312), (4, 321), (5, 333), (6, 333), (7, 327), (8, 346), (9, 334)]
+
+Client 6 label distribution:
+[(0, 317), (1, 317), (2, 334), (3, 320), (4, 343), (5, 341), (6, 313), (7, 345), (8, 341), (9, 329)]
+
+Client 7 label distribution:
+[(0, 320), (1, 364), (2, 361), (3, 320), (4, 336), (5, 326), (6, 318), (7, 319), (8, 271), (9, 365)]
+
+Client 8 label distribution:
+[(0, 342), (1, 346), (2, 318), (3, 338), (4, 322), (5, 321), (6, 296), (7, 333), (8, 353), (9, 331)]
+
+Client 9 label distribution:
+[(0, 341), (1, 320), (2, 337), (3, 365), (4, 324), (5, 330), (6, 320), (7, 341), (8, 309), (9, 313)]
+Client 0: avg epsilon = 0.7455
+Client 1: avg epsilon = 0.7626
+Client 2: avg epsilon = 0.7655
+Client 3: avg epsilon = 0.7974
+Client 4: avg epsilon = 0.7345
+Client 5: avg epsilon = 0.7795
+Client 6: avg epsilon = 0.7756
+Client 7: avg epsilon = 0.8029
+Client 8: avg epsilon = 0.7786
+Client 9: avg epsilon = 0.7581
+ We run FedAvg with rPDP (ThreeLevels-0) ...
+max_epsilon :  10.0  noise_multiplier :  11.4404296875
+The R-Squared value of the best-fit curve : 0.9998649040687166
+learning rate =  0.001
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 348
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 354
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 356
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 368
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 344
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 361
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 360
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 369
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 361
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 354
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [4.179701435149603, 4.418510211056934, 4.418510211056934, 4.418510211056934, 4.179701435149603, 4.657318986964264, 4.179701435149603, 4.179701435149603, 3.940892659242272, 4.657318986964264]
+Round=14, per client global perf=[0.1159, 0.1306, 0.1288, 0.1453, 0.1465, 0.1147, 0.1241, 0.1229, 0.12, 0.1282], mean perf=2171/17000 (0.1277%)
+Round=14, per client personal perf=[0.1118, 0.23, 0.1776, 0.1706, 0.1535, 0.1771, 0.1976, 0.1559, 0.1459, 0.2253], mean perf=2967/17000 (0.1745%)
+Round=14, per client personal pooled=[0.1256, 0.2271, 0.1813, 0.1686, 0.1515, 0.186, 0.1738, 0.1668, 0.1535, 0.2226], mean perf=29868/170000 (0.1757%)
+Mean performance of ditto rpdp global, Perf=0.1255, seed=43
+Mean performance of ditto rpdp personal, Perf=0.1767, seed=43
+Mean performance of ditto rpdp pooled, Perf=0.1764, seed=43
+Client 0: avg epsilon = 0.3419
+Client 1: avg epsilon = 0.3562
+Client 2: avg epsilon = 0.3722
+Client 3: avg epsilon = 0.3897
+Client 4: avg epsilon = 0.3944
+Client 5: avg epsilon = 0.4223
+Client 6: avg epsilon = 0.4445
+Client 7: avg epsilon = 0.4740
+Client 8: avg epsilon = 0.5219
+Client 9: avg epsilon = 0.6556
+ We run FedAvg with rPDP (BoundedPareto-0) ...
+max_epsilon :  10.0  noise_multiplier :  11.4404296875
+The R-Squared value of the best-fit curve : 0.9998649040687166
+learning rate =  0.001
+sample_rate: (min) 0.03, (max) 0.14, expected_batch_size: 199
+sample_rate: (min) 0.03, (max) 0.15, expected_batch_size: 205
+sample_rate: (min) 0.03, (max) 0.16, expected_batch_size: 213
+sample_rate: (min) 0.03, (max) 0.17, expected_batch_size: 221
+sample_rate: (min) 0.03, (max) 0.18, expected_batch_size: 223
+sample_rate: (min) 0.03, (max) 0.2, expected_batch_size: 235
+sample_rate: (min) 0.03, (max) 0.22, expected_batch_size: 245
+sample_rate: (min) 0.03, (max) 0.26, expected_batch_size: 258
+sample_rate: (min) 0.03, (max) 0.32, expected_batch_size: 278
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 326
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Traceback (most recent call last):
+  File "ditto_rpdp_data_dep.py", line 215, in <module>
+    cm, perf_global, perf_personal, perf_pooled = s.run()
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 436, in run
+    self.perform_round()
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 359, in perform_round
+    self._local_optimization(local_model)
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 269, in _local_optimization
+    _model._local_train(self.num_steps, \
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/strategies_utils.py", line 190, in _local_train
+    loss.backward()
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/_tensor.py", line 488, in backward
+    torch.autograd.backward(
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/autograd/__init__.py", line 197, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/nn/modules/module.py", line 62, in __call__
+    return self.hook(module, *args, **kwargs)
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/grad_sample/grad_sample_module.py", line 340, in capture_backprops_hook
+    create_or_accumulate_grad_sample(
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/grad_sample/grad_sample_module.py", line 57, in create_or_accumulate_grad_sample
+    param._current_grad_sample = torch.zeros(
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 288.00 MiB (GPU 0; 9.66 GiB total capacity; 4.39 GiB already allocated; 15.88 MiB free; 8.78 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+Finished seed 43
+----------------------------------------
+Running seed 44
+/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/experiments/datasets/fed_cifar10/iid_10
+
+Client 0 label distribution:
+[(0, 340), (1, 343), (2, 338), (3, 341), (4, 302), (5, 348), (6, 308), (7, 336), (8, 332), (9, 312)]
+
+Client 1 label distribution:
+[(0, 343), (1, 302), (2, 323), (3, 332), (4, 346), (5, 351), (6, 349), (7, 311), (8, 311), (9, 332)]
+
+Client 2 label distribution:
+[(0, 327), (1, 349), (2, 284), (3, 317), (4, 345), (5, 334), (6, 344), (7, 329), (8, 347), (9, 324)]
+
+Client 3 label distribution:
+[(0, 327), (1, 306), (2, 331), (3, 340), (4, 310), (5, 343), (6, 346), (7, 324), (8, 322), (9, 351)]
+
+Client 4 label distribution:
+[(0, 327), (1, 330), (2, 321), (3, 348), (4, 332), (5, 324), (6, 356), (7, 328), (8, 327), (9, 307)]
+
+Client 5 label distribution:
+[(0, 322), (1, 327), (2, 345), (3, 312), (4, 321), (5, 333), (6, 333), (7, 327), (8, 346), (9, 334)]
+
+Client 6 label distribution:
+[(0, 317), (1, 317), (2, 334), (3, 320), (4, 343), (5, 341), (6, 313), (7, 345), (8, 341), (9, 329)]
+
+Client 7 label distribution:
+[(0, 320), (1, 364), (2, 361), (3, 320), (4, 336), (5, 326), (6, 318), (7, 319), (8, 271), (9, 365)]
+
+Client 8 label distribution:
+[(0, 342), (1, 346), (2, 318), (3, 338), (4, 322), (5, 321), (6, 296), (7, 333), (8, 353), (9, 331)]
+
+Client 9 label distribution:
+[(0, 341), (1, 320), (2, 337), (3, 365), (4, 324), (5, 330), (6, 320), (7, 341), (8, 309), (9, 313)]
+Client 0: avg epsilon = 0.7455
+Client 1: avg epsilon = 0.7626
+Client 2: avg epsilon = 0.7655
+Client 3: avg epsilon = 0.7974
+Client 4: avg epsilon = 0.7345
+Client 5: avg epsilon = 0.7795
+Client 6: avg epsilon = 0.7756
+Client 7: avg epsilon = 0.8029
+Client 8: avg epsilon = 0.7786
+Client 9: avg epsilon = 0.7581
+ We run FedAvg with rPDP (ThreeLevels-0) ...
+max_epsilon :  10.0  noise_multiplier :  11.4404296875
+The R-Squared value of the best-fit curve : 0.9998649040687166
+learning rate =  0.001
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 348
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 354
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 356
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 368
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 344
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 361
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 360
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 369
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 361
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 354
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [4.418510211056934, 4.896127762871594, 4.896127762871594, 3.463275107427612, 4.657318986964264, 3.702083883334942, 3.463275107427612, 4.179701435149603, 4.657318986964264, 4.657318986964264]
+Round=14, per client global perf=[0.1259, 0.1418, 0.1412, 0.1518, 0.1512, 0.1282, 0.1341, 0.1359, 0.1335, 0.1406], mean perf=2353/17000 (0.1384%)
+Round=14, per client personal perf=[0.1794, 0.2076, 0.2159, 0.1594, 0.14, 0.1624, 0.1641, 0.1671, 0.2353, 0.2206], mean perf=3148/17000 (0.1852%)
+Round=14, per client personal pooled=[0.1871, 0.2232, 0.2098, 0.1631, 0.1394, 0.1702, 0.1754, 0.1874, 0.2372, 0.2122], mean perf=32385/170000 (0.1905%)
+Mean performance of ditto rpdp global, Perf=0.1367, seed=44
+Mean performance of ditto rpdp personal, Perf=0.1708, seed=44
+Mean performance of ditto rpdp pooled, Perf=0.1725, seed=44
+Client 0: avg epsilon = 0.3404
+Client 1: avg epsilon = 0.3550
+Client 2: avg epsilon = 0.3714
+Client 3: avg epsilon = 0.3895
+Client 4: avg epsilon = 0.3940
+Client 5: avg epsilon = 0.4213
+Client 6: avg epsilon = 0.4428
+Client 7: avg epsilon = 0.4721
+Client 8: avg epsilon = 0.5178
+Client 9: avg epsilon = 0.6362
+ We run FedAvg with rPDP (BoundedPareto-0) ...
+max_epsilon :  10.0  noise_multiplier :  11.4404296875
+The R-Squared value of the best-fit curve : 0.9998649040687166
+learning rate =  0.001
+sample_rate: (min) 0.03, (max) 0.14, expected_batch_size: 198
+sample_rate: (min) 0.03, (max) 0.15, expected_batch_size: 205
+sample_rate: (min) 0.03, (max) 0.16, expected_batch_size: 212
+sample_rate: (min) 0.03, (max) 0.17, expected_batch_size: 220
+sample_rate: (min) 0.03, (max) 0.18, expected_batch_size: 222
+sample_rate: (min) 0.03, (max) 0.2, expected_batch_size: 235
+sample_rate: (min) 0.03, (max) 0.22, expected_batch_size: 244
+sample_rate: (min) 0.03, (max) 0.25, expected_batch_size: 257
+sample_rate: (min) 0.03, (max) 0.32, expected_batch_size: 276
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 319
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [0.7901982327935574, 0.9162186642324852, 0.9802351472193898, 0.773212053031313, 1.099359689962599, 0.9858719329804058, 1.0373714837751795, 1.475359027072132, 2.133799047622879, 8.99511746679484]
+Round=14, per client global perf=[0.1647, 0.1729, 0.1812, 0.18, 0.2035, 0.1706, 0.1618, 0.1653, 0.1659, 0.18], mean perf=2968/17000 (0.1746%)
+Round=14, per client personal perf=[0.1541, 0.1982, 0.2106, 0.0935, 0.2071, 0.1971, 0.1288, 0.1388, 0.2029, 0.1506], mean perf=2859/17000 (0.1682%)
+Round=14, per client personal pooled=[0.1516, 0.196, 0.2182, 0.1014, 0.2009, 0.196, 0.1299, 0.1403, 0.2029, 0.1379], mean perf=28477/170000 (0.1675%)
+Mean performance of ditto rpdp global, Perf=0.1828, seed=44
+Mean performance of ditto rpdp personal, Perf=0.1687, seed=44
+Mean performance of ditto rpdp pooled, Perf=0.1664, seed=44
+Client 0: avg epsilon = 0.6425
+Client 1: avg epsilon = 0.7060
+Client 2: avg epsilon = 0.7321
+Client 3: avg epsilon = 0.7819
+Client 4: avg epsilon = 0.7383
+Client 5: avg epsilon = 0.7992
+Client 6: avg epsilon = 0.8126
+Client 7: avg epsilon = 0.8614
+Client 8: avg epsilon = 0.8610
+Client 9: avg epsilon = 0.8729
+ We run FedAvg with rPDP (BoundedMixGauss-0) ...
+max_epsilon :  10.0  noise_multiplier :  11.4404296875
+The R-Squared value of the best-fit curve : 0.9998649040687166
+learning rate =  0.001
+sample_rate: (min) 0.03, (max) 0.54, expected_batch_size: 312
+sample_rate: (min) 0.03, (max) 0.56, expected_batch_size: 336
+sample_rate: (min) 0.03, (max) 0.58, expected_batch_size: 346
+sample_rate: (min) 0.03, (max) 0.59, expected_batch_size: 364
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 347
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 370
+sample_rate: (min) 0.03, (max) 0.63, expected_batch_size: 375
+sample_rate: (min) 0.03, (max) 0.64, expected_batch_size: 390
+sample_rate: (min) 0.03, (max) 0.66, expected_batch_size: 391
+sample_rate: (min) 0.03, (max) 0.77, expected_batch_size: 393
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Traceback (most recent call last):
+  File "ditto_rpdp_data_dep.py", line 215, in <module>
+    cm, perf_global, perf_personal, perf_pooled = s.run()
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 436, in run
+    self.perform_round()
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 359, in perform_round
+    self._local_optimization(local_model)
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 269, in _local_optimization
+    _model._local_train(self.num_steps, \
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/strategies_utils.py", line 190, in _local_train
+    loss.backward()
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/_tensor.py", line 488, in backward
+    torch.autograd.backward(
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/autograd/__init__.py", line 197, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/nn/modules/module.py", line 62, in __call__
+    return self.hook(module, *args, **kwargs)
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/grad_sample/grad_sample_module.py", line 340, in capture_backprops_hook
+    create_or_accumulate_grad_sample(
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/grad_sample/grad_sample_module.py", line 57, in create_or_accumulate_grad_sample
+    param._current_grad_sample = torch.zeros(
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 288.00 MiB (GPU 0; 9.66 GiB total capacity; 4.41 GiB already allocated; 105.88 MiB free; 8.70 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+Finished seed 44
+----------------------------------------
+Running seed 45
+/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/experiments/datasets/fed_cifar10/iid_10
+
+Client 0 label distribution:
+[(0, 340), (1, 343), (2, 338), (3, 341), (4, 302), (5, 348), (6, 308), (7, 336), (8, 332), (9, 312)]
+
+Client 1 label distribution:
+[(0, 343), (1, 302), (2, 323), (3, 332), (4, 346), (5, 351), (6, 349), (7, 311), (8, 311), (9, 332)]
+
+Client 2 label distribution:
+[(0, 327), (1, 349), (2, 284), (3, 317), (4, 345), (5, 334), (6, 344), (7, 329), (8, 347), (9, 324)]
+
+Client 3 label distribution:
+[(0, 327), (1, 306), (2, 331), (3, 340), (4, 310), (5, 343), (6, 346), (7, 324), (8, 322), (9, 351)]
+
+Client 4 label distribution:
+[(0, 327), (1, 330), (2, 321), (3, 348), (4, 332), (5, 324), (6, 356), (7, 328), (8, 327), (9, 307)]
+
+Client 5 label distribution:
+[(0, 322), (1, 327), (2, 345), (3, 312), (4, 321), (5, 333), (6, 333), (7, 327), (8, 346), (9, 334)]
+
+Client 6 label distribution:
+[(0, 317), (1, 317), (2, 334), (3, 320), (4, 343), (5, 341), (6, 313), (7, 345), (8, 341), (9, 329)]
+
+Client 7 label distribution:
+[(0, 320), (1, 364), (2, 361), (3, 320), (4, 336), (5, 326), (6, 318), (7, 319), (8, 271), (9, 365)]
+
+Client 8 label distribution:
+[(0, 342), (1, 346), (2, 318), (3, 338), (4, 322), (5, 321), (6, 296), (7, 333), (8, 353), (9, 331)]
+
+Client 9 label distribution:
+[(0, 341), (1, 320), (2, 337), (3, 365), (4, 324), (5, 330), (6, 320), (7, 341), (8, 309), (9, 313)]
+Client 0: avg epsilon = 0.7455
+Client 1: avg epsilon = 0.7626
+Client 2: avg epsilon = 0.7655
+Client 3: avg epsilon = 0.7974
+Client 4: avg epsilon = 0.7345
+Client 5: avg epsilon = 0.7795
+Client 6: avg epsilon = 0.7756
+Client 7: avg epsilon = 0.8029
+Client 8: avg epsilon = 0.7786
+Client 9: avg epsilon = 0.7581
+ We run FedAvg with rPDP (ThreeLevels-0) ...
+max_epsilon :  10.0  noise_multiplier :  11.4404296875
+The R-Squared value of the best-fit curve : 0.9998649040687166
+learning rate =  0.001
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 348
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 354
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 356
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 368
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 344
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 361
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 360
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 369
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 361
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 354
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [4.896127762871594, 4.418510211056934, 4.657318986964264, 4.418510211056934, 4.418510211056934, 4.657318986964264, 4.418510211056934, 4.179701435149603, 4.657318986964264, 4.657318986964264]
+Round=14, per client global perf=[0.1359, 0.1488, 0.14, 0.1576, 0.1641, 0.1282, 0.1353, 0.1418, 0.1335, 0.1488], mean perf=2438/17000 (0.1434%)
+Round=14, per client personal perf=[0.1829, 0.2024, 0.1982, 0.1518, 0.1676, 0.1765, 0.2224, 0.0806, 0.2141, 0.2047], mean perf=3062/17000 (0.1801%)
+Round=14, per client personal pooled=[0.1789, 0.1971, 0.1935, 0.1525, 0.1735, 0.1915, 0.2134, 0.0846, 0.2073, 0.1983], mean perf=30440/170000 (0.1791%)
+Mean performance of ditto rpdp global, Perf=0.1407, seed=45
+Mean performance of ditto rpdp personal, Perf=0.1695, seed=45
+Mean performance of ditto rpdp pooled, Perf=0.1694, seed=45
+Client 0: avg epsilon = 0.3402
+Client 1: avg epsilon = 0.3543
+Client 2: avg epsilon = 0.3702
+Client 3: avg epsilon = 0.3872
+Client 4: avg epsilon = 0.3922
+Client 5: avg epsilon = 0.4197
+Client 6: avg epsilon = 0.4421
+Client 7: avg epsilon = 0.4712
+Client 8: avg epsilon = 0.5180
+Client 9: avg epsilon = 0.6414
+ We run FedAvg with rPDP (BoundedPareto-0) ...
+max_epsilon :  10.0  noise_multiplier :  11.4404296875
+The R-Squared value of the best-fit curve : 0.9998649040687166
+learning rate =  0.001
+sample_rate: (min) 0.03, (max) 0.14, expected_batch_size: 198
+sample_rate: (min) 0.03, (max) 0.15, expected_batch_size: 204
+sample_rate: (min) 0.03, (max) 0.16, expected_batch_size: 212
+sample_rate: (min) 0.03, (max) 0.17, expected_batch_size: 219
+sample_rate: (min) 0.03, (max) 0.18, expected_batch_size: 222
+sample_rate: (min) 0.03, (max) 0.2, expected_batch_size: 234
+sample_rate: (min) 0.03, (max) 0.22, expected_batch_size: 244
+sample_rate: (min) 0.03, (max) 0.25, expected_batch_size: 256
+sample_rate: (min) 0.03, (max) 0.32, expected_batch_size: 276
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 320
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Traceback (most recent call last):
+  File "ditto_rpdp_data_dep.py", line 215, in <module>
+    cm, perf_global, perf_personal, perf_pooled = s.run()
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 436, in run
+    self.perform_round()
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 359, in perform_round
+    self._local_optimization(local_model)
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 269, in _local_optimization
+    _model._local_train(self.num_steps, \
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/strategies_utils.py", line 190, in _local_train
+    loss.backward()
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/_tensor.py", line 488, in backward
+    torch.autograd.backward(
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/autograd/__init__.py", line 197, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/nn/modules/module.py", line 62, in __call__
+    return self.hook(module, *args, **kwargs)
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/grad_sample/grad_sample_module.py", line 340, in capture_backprops_hook
+    create_or_accumulate_grad_sample(
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/grad_sample/grad_sample_module.py", line 57, in create_or_accumulate_grad_sample
+    param._current_grad_sample = torch.zeros(
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 288.00 MiB (GPU 0; 9.66 GiB total capacity; 4.40 GiB already allocated; 249.88 MiB free; 8.55 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+Finished seed 45
+----------------------------------------
+Running seed 46
+/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/experiments/datasets/fed_cifar10/iid_10
+
+Client 0 label distribution:
+[(0, 340), (1, 343), (2, 338), (3, 341), (4, 302), (5, 348), (6, 308), (7, 336), (8, 332), (9, 312)]
+
+Client 1 label distribution:
+[(0, 343), (1, 302), (2, 323), (3, 332), (4, 346), (5, 351), (6, 349), (7, 311), (8, 311), (9, 332)]
+
+Client 2 label distribution:
+[(0, 327), (1, 349), (2, 284), (3, 317), (4, 345), (5, 334), (6, 344), (7, 329), (8, 347), (9, 324)]
+
+Client 3 label distribution:
+[(0, 327), (1, 306), (2, 331), (3, 340), (4, 310), (5, 343), (6, 346), (7, 324), (8, 322), (9, 351)]
+
+Client 4 label distribution:
+[(0, 327), (1, 330), (2, 321), (3, 348), (4, 332), (5, 324), (6, 356), (7, 328), (8, 327), (9, 307)]
+
+Client 5 label distribution:
+[(0, 322), (1, 327), (2, 345), (3, 312), (4, 321), (5, 333), (6, 333), (7, 327), (8, 346), (9, 334)]
+
+Client 6 label distribution:
+[(0, 317), (1, 317), (2, 334), (3, 320), (4, 343), (5, 341), (6, 313), (7, 345), (8, 341), (9, 329)]
+
+Client 7 label distribution:
+[(0, 320), (1, 364), (2, 361), (3, 320), (4, 336), (5, 326), (6, 318), (7, 319), (8, 271), (9, 365)]
+
+Client 8 label distribution:
+[(0, 342), (1, 346), (2, 318), (3, 338), (4, 322), (5, 321), (6, 296), (7, 333), (8, 353), (9, 331)]
+
+Client 9 label distribution:
+[(0, 341), (1, 320), (2, 337), (3, 365), (4, 324), (5, 330), (6, 320), (7, 341), (8, 309), (9, 313)]
+Client 0: avg epsilon = 0.7455
+Client 1: avg epsilon = 0.7626
+Client 2: avg epsilon = 0.7655
+Client 3: avg epsilon = 0.7974
+Client 4: avg epsilon = 0.7345
+Client 5: avg epsilon = 0.7795
+Client 6: avg epsilon = 0.7756
+Client 7: avg epsilon = 0.8029
+Client 8: avg epsilon = 0.7786
+Client 9: avg epsilon = 0.7581
+ We run FedAvg with rPDP (ThreeLevels-0) ...
+max_epsilon :  10.0  noise_multiplier :  11.4404296875
+The R-Squared value of the best-fit curve : 0.9998649040687166
+learning rate =  0.001
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 348
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 354
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 356
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 368
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 344
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 361
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 360
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 369
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 361
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 354
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [4.418510211056934, 4.657318986964264, 4.418510211056934, 4.657318986964264, 3.940892659242272, 4.896127762871594, 4.896127762871594, 5.10082093327143, 5.10082093327143, 5.10082093327143]
+Round=14, per client global perf=[0.1206, 0.1394, 0.1288, 0.1512, 0.1535, 0.1206, 0.1282, 0.1312, 0.1265, 0.1335], mean perf=2267/17000 (0.1334%)
+Round=14, per client personal perf=[0.2012, 0.1729, 0.1841, 0.1812, 0.1771, 0.1812, 0.2006, 0.1971, 0.2029, 0.2018], mean perf=3230/17000 (0.1900%)
+Round=14, per client personal pooled=[0.2068, 0.167, 0.1849, 0.1676, 0.186, 0.1869, 0.1907, 0.1777, 0.2067, 0.2028], mean perf=31910/170000 (0.1877%)
+Mean performance of ditto rpdp global, Perf=0.1324, seed=46
+Mean performance of ditto rpdp personal, Perf=0.1843, seed=46
+Mean performance of ditto rpdp pooled, Perf=0.1854, seed=46
+Client 0: avg epsilon = 0.3376
+Client 1: avg epsilon = 0.3522
+Client 2: avg epsilon = 0.3678
+Client 3: avg epsilon = 0.3857
+Client 4: avg epsilon = 0.3908
+Client 5: avg epsilon = 0.4184
+Client 6: avg epsilon = 0.4393
+Client 7: avg epsilon = 0.4683
+Client 8: avg epsilon = 0.5182
+Client 9: avg epsilon = 0.6376
+ We run FedAvg with rPDP (BoundedPareto-0) ...
+max_epsilon :  10.0  noise_multiplier :  11.4404296875
+The R-Squared value of the best-fit curve : 0.9998649040687166
+learning rate =  0.001
+sample_rate: (min) 0.03, (max) 0.14, expected_batch_size: 197
+sample_rate: (min) 0.03, (max) 0.15, expected_batch_size: 203
+sample_rate: (min) 0.03, (max) 0.16, expected_batch_size: 211
+sample_rate: (min) 0.03, (max) 0.17, expected_batch_size: 219
+sample_rate: (min) 0.03, (max) 0.18, expected_batch_size: 221
+sample_rate: (min) 0.03, (max) 0.2, expected_batch_size: 233
+sample_rate: (min) 0.03, (max) 0.22, expected_batch_size: 243
+sample_rate: (min) 0.03, (max) 0.25, expected_batch_size: 255
+sample_rate: (min) 0.03, (max) 0.32, expected_batch_size: 276
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 319
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Traceback (most recent call last):
+  File "ditto_rpdp_data_dep.py", line 215, in <module>
+    cm, perf_global, perf_personal, perf_pooled = s.run()
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 436, in run
+    self.perform_round()
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 359, in perform_round
+    self._local_optimization(local_model)
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 269, in _local_optimization
+    _model._local_train(self.num_steps, \
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/strategies_utils.py", line 190, in _local_train
+    loss.backward()
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/_tensor.py", line 488, in backward
+    torch.autograd.backward(
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/autograd/__init__.py", line 197, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/nn/modules/module.py", line 62, in __call__
+    return self.hook(module, *args, **kwargs)
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/grad_sample/grad_sample_module.py", line 340, in capture_backprops_hook
+    create_or_accumulate_grad_sample(
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/grad_sample/grad_sample_module.py", line 57, in create_or_accumulate_grad_sample
+    param._current_grad_sample = torch.zeros(
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 288.00 MiB (GPU 0; 9.66 GiB total capacity; 4.39 GiB already allocated; 11.88 MiB free; 8.79 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+Finished seed 46
+----------------------------------------
+=== Running reg_param=0.001, num_steps=15 ===
+Running seed 42
+/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/experiments/datasets/fed_cifar10/iid_10
+
+Client 0 label distribution:
+[(0, 340), (1, 343), (2, 338), (3, 341), (4, 302), (5, 348), (6, 308), (7, 336), (8, 332), (9, 312)]
+
+Client 1 label distribution:
+[(0, 343), (1, 302), (2, 323), (3, 332), (4, 346), (5, 351), (6, 349), (7, 311), (8, 311), (9, 332)]
+
+Client 2 label distribution:
+[(0, 327), (1, 349), (2, 284), (3, 317), (4, 345), (5, 334), (6, 344), (7, 329), (8, 347), (9, 324)]
+
+Client 3 label distribution:
+[(0, 327), (1, 306), (2, 331), (3, 340), (4, 310), (5, 343), (6, 346), (7, 324), (8, 322), (9, 351)]
+
+Client 4 label distribution:
+[(0, 327), (1, 330), (2, 321), (3, 348), (4, 332), (5, 324), (6, 356), (7, 328), (8, 327), (9, 307)]
+
+Client 5 label distribution:
+[(0, 322), (1, 327), (2, 345), (3, 312), (4, 321), (5, 333), (6, 333), (7, 327), (8, 346), (9, 334)]
+
+Client 6 label distribution:
+[(0, 317), (1, 317), (2, 334), (3, 320), (4, 343), (5, 341), (6, 313), (7, 345), (8, 341), (9, 329)]
+
+Client 7 label distribution:
+[(0, 320), (1, 364), (2, 361), (3, 320), (4, 336), (5, 326), (6, 318), (7, 319), (8, 271), (9, 365)]
+
+Client 8 label distribution:
+[(0, 342), (1, 346), (2, 318), (3, 338), (4, 322), (5, 321), (6, 296), (7, 333), (8, 353), (9, 331)]
+
+Client 9 label distribution:
+[(0, 341), (1, 320), (2, 337), (3, 365), (4, 324), (5, 330), (6, 320), (7, 341), (8, 309), (9, 313)]
+Client 0: avg epsilon = 0.7455
+Client 1: avg epsilon = 0.7626
+Client 2: avg epsilon = 0.7655
+Client 3: avg epsilon = 0.7974
+Client 4: avg epsilon = 0.7345
+Client 5: avg epsilon = 0.7795
+Client 6: avg epsilon = 0.7756
+Client 7: avg epsilon = 0.8029
+Client 8: avg epsilon = 0.7786
+Client 9: avg epsilon = 0.7581
+ We run FedAvg with rPDP (ThreeLevels-0) ...
+max_epsilon :  10.0  noise_multiplier :  11.4404296875
+The R-Squared value of the best-fit curve : 0.9998649040687166
+learning rate =  0.001
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 348
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 354
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 356
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 368
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 344
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 361
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 360
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 369
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 361
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 354
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [4.896127762871594, 4.179701435149603, 3.940892659242272, 4.418510211056934, 4.896127762871594, 4.418510211056934, 4.896127762871594, 5.10082093327143, 4.896127762871594, 4.657318986964264]
+Round=14, per client global perf=[0.1335, 0.1482, 0.1424, 0.1565, 0.1618, 0.1341, 0.1388, 0.1376, 0.1371, 0.1476], mean perf=2444/17000 (0.1438%)
+Round=14, per client personal perf=[0.13, 0.1582, 0.1924, 0.1541, 0.1535, 0.13, 0.2147, 0.1712, 0.2035, 0.2082], mean perf=2917/17000 (0.1716%)
+Round=14, per client personal pooled=[0.1239, 0.1669, 0.1835, 0.1522, 0.1489, 0.1356, 0.197, 0.1706, 0.2163, 0.2102], mean perf=28986/170000 (0.1705%)
+Mean performance of ditto rpdp global, Perf=0.1399, seed=42
+Mean performance of ditto rpdp personal, Perf=0.1736, seed=42
+Mean performance of ditto rpdp pooled, Perf=0.1727, seed=42
+Client 0: avg epsilon = 0.3393
+Client 1: avg epsilon = 0.3536
+Client 2: avg epsilon = 0.3698
+Client 3: avg epsilon = 0.3875
+Client 4: avg epsilon = 0.3919
+Client 5: avg epsilon = 0.4191
+Client 6: avg epsilon = 0.4412
+Client 7: avg epsilon = 0.4692
+Client 8: avg epsilon = 0.5161
+Client 9: avg epsilon = 0.6364
+ We run FedAvg with rPDP (BoundedPareto-0) ...
+max_epsilon :  10.0  noise_multiplier :  11.4404296875
+The R-Squared value of the best-fit curve : 0.9998649040687166
+learning rate =  0.001
+sample_rate: (min) 0.03, (max) 0.14, expected_batch_size: 197
+sample_rate: (min) 0.03, (max) 0.15, expected_batch_size: 204
+sample_rate: (min) 0.03, (max) 0.16, expected_batch_size: 211
+sample_rate: (min) 0.03, (max) 0.17, expected_batch_size: 220
+sample_rate: (min) 0.03, (max) 0.18, expected_batch_size: 221
+sample_rate: (min) 0.03, (max) 0.2, expected_batch_size: 234
+sample_rate: (min) 0.03, (max) 0.22, expected_batch_size: 244
+sample_rate: (min) 0.03, (max) 0.25, expected_batch_size: 255
+sample_rate: (min) 0.03, (max) 0.32, expected_batch_size: 275
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 319
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Traceback (most recent call last):
+  File "ditto_rpdp_data_dep.py", line 215, in <module>
+    cm, perf_global, perf_personal, perf_pooled = s.run()
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 436, in run
+    self.perform_round()
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 359, in perform_round
+    self._local_optimization(local_model)
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 269, in _local_optimization
+    _model._local_train(self.num_steps, \
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/strategies_utils.py", line 190, in _local_train
+    loss.backward()
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/_tensor.py", line 488, in backward
+    torch.autograd.backward(
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/autograd/__init__.py", line 197, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/nn/modules/module.py", line 62, in __call__
+    return self.hook(module, *args, **kwargs)
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/grad_sample/grad_sample_module.py", line 340, in capture_backprops_hook
+    create_or_accumulate_grad_sample(
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/grad_sample/grad_sample_module.py", line 57, in create_or_accumulate_grad_sample
+    param._current_grad_sample = torch.zeros(
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 288.00 MiB (GPU 0; 9.66 GiB total capacity; 4.39 GiB already allocated; 11.88 MiB free; 8.79 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+Finished seed 42
+----------------------------------------
+Running seed 43
+/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/experiments/datasets/fed_cifar10/iid_10
+
+Client 0 label distribution:
+[(0, 340), (1, 343), (2, 338), (3, 341), (4, 302), (5, 348), (6, 308), (7, 336), (8, 332), (9, 312)]
+
+Client 1 label distribution:
+[(0, 343), (1, 302), (2, 323), (3, 332), (4, 346), (5, 351), (6, 349), (7, 311), (8, 311), (9, 332)]
+
+Client 2 label distribution:
+[(0, 327), (1, 349), (2, 284), (3, 317), (4, 345), (5, 334), (6, 344), (7, 329), (8, 347), (9, 324)]
+
+Client 3 label distribution:
+[(0, 327), (1, 306), (2, 331), (3, 340), (4, 310), (5, 343), (6, 346), (7, 324), (8, 322), (9, 351)]
+
+Client 4 label distribution:
+[(0, 327), (1, 330), (2, 321), (3, 348), (4, 332), (5, 324), (6, 356), (7, 328), (8, 327), (9, 307)]
+
+Client 5 label distribution:
+[(0, 322), (1, 327), (2, 345), (3, 312), (4, 321), (5, 333), (6, 333), (7, 327), (8, 346), (9, 334)]
+
+Client 6 label distribution:
+[(0, 317), (1, 317), (2, 334), (3, 320), (4, 343), (5, 341), (6, 313), (7, 345), (8, 341), (9, 329)]
+
+Client 7 label distribution:
+[(0, 320), (1, 364), (2, 361), (3, 320), (4, 336), (5, 326), (6, 318), (7, 319), (8, 271), (9, 365)]
+
+Client 8 label distribution:
+[(0, 342), (1, 346), (2, 318), (3, 338), (4, 322), (5, 321), (6, 296), (7, 333), (8, 353), (9, 331)]
+
+Client 9 label distribution:
+[(0, 341), (1, 320), (2, 337), (3, 365), (4, 324), (5, 330), (6, 320), (7, 341), (8, 309), (9, 313)]
+Client 0: avg epsilon = 0.7455
+Client 1: avg epsilon = 0.7626
+Client 2: avg epsilon = 0.7655
+Client 3: avg epsilon = 0.7974
+Client 4: avg epsilon = 0.7345
+Client 5: avg epsilon = 0.7795
+Client 6: avg epsilon = 0.7756
+Client 7: avg epsilon = 0.8029
+Client 8: avg epsilon = 0.7786
+Client 9: avg epsilon = 0.7581
+ We run FedAvg with rPDP (ThreeLevels-0) ...
+max_epsilon :  10.0  noise_multiplier :  11.4404296875
+The R-Squared value of the best-fit curve : 0.9998649040687166
+learning rate =  0.001
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 348
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 354
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 356
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 368
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 344
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 361
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 360
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 369
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 361
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 354
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [4.179701435149603, 4.418510211056934, 4.418510211056934, 4.418510211056934, 4.179701435149603, 4.657318986964264, 4.179701435149603, 4.179701435149603, 3.940892659242272, 4.657318986964264]
+Round=14, per client global perf=[0.1159, 0.1306, 0.1288, 0.1453, 0.1465, 0.1147, 0.1241, 0.1229, 0.12, 0.1282], mean perf=2171/17000 (0.1277%)
+Round=14, per client personal perf=[0.11, 0.1994, 0.1588, 0.1559, 0.1512, 0.1671, 0.1971, 0.1324, 0.1365, 0.2047], mean perf=2742/17000 (0.1613%)
+Round=14, per client personal pooled=[0.1177, 0.1942, 0.1702, 0.1541, 0.1521, 0.1776, 0.1769, 0.1459, 0.1356, 0.2069], mean perf=27731/170000 (0.1631%)
+Mean performance of ditto rpdp global, Perf=0.1255, seed=43
+Mean performance of ditto rpdp personal, Perf=0.1657, seed=43
+Mean performance of ditto rpdp pooled, Perf=0.1661, seed=43
+Client 0: avg epsilon = 0.3419
+Client 1: avg epsilon = 0.3562
+Client 2: avg epsilon = 0.3722
+Client 3: avg epsilon = 0.3897
+Client 4: avg epsilon = 0.3944
+Client 5: avg epsilon = 0.4223
+Client 6: avg epsilon = 0.4445
+Client 7: avg epsilon = 0.4740
+Client 8: avg epsilon = 0.5219
+Client 9: avg epsilon = 0.6556
+ We run FedAvg with rPDP (BoundedPareto-0) ...
+max_epsilon :  10.0  noise_multiplier :  11.4404296875
+The R-Squared value of the best-fit curve : 0.9998649040687166
+learning rate =  0.001
+sample_rate: (min) 0.03, (max) 0.14, expected_batch_size: 199
+sample_rate: (min) 0.03, (max) 0.15, expected_batch_size: 205
+sample_rate: (min) 0.03, (max) 0.16, expected_batch_size: 213
+sample_rate: (min) 0.03, (max) 0.17, expected_batch_size: 221
+sample_rate: (min) 0.03, (max) 0.18, expected_batch_size: 223
+sample_rate: (min) 0.03, (max) 0.2, expected_batch_size: 235
+sample_rate: (min) 0.03, (max) 0.22, expected_batch_size: 245
+sample_rate: (min) 0.03, (max) 0.26, expected_batch_size: 258
+sample_rate: (min) 0.03, (max) 0.32, expected_batch_size: 278
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 326
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Traceback (most recent call last):
+  File "ditto_rpdp_data_dep.py", line 215, in <module>
+    cm, perf_global, perf_personal, perf_pooled = s.run()
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 436, in run
+    self.perform_round()
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 359, in perform_round
+    self._local_optimization(local_model)
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 269, in _local_optimization
+    _model._local_train(self.num_steps, \
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/strategies_utils.py", line 190, in _local_train
+    loss.backward()
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/_tensor.py", line 488, in backward
+    torch.autograd.backward(
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/autograd/__init__.py", line 197, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/nn/modules/module.py", line 62, in __call__
+    return self.hook(module, *args, **kwargs)
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/grad_sample/grad_sample_module.py", line 340, in capture_backprops_hook
+    create_or_accumulate_grad_sample(
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/grad_sample/grad_sample_module.py", line 57, in create_or_accumulate_grad_sample
+    param._current_grad_sample = torch.zeros(
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 288.00 MiB (GPU 0; 9.66 GiB total capacity; 4.39 GiB already allocated; 15.88 MiB free; 8.78 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+Finished seed 43
+----------------------------------------
+Running seed 44
+/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/experiments/datasets/fed_cifar10/iid_10
+
+Client 0 label distribution:
+[(0, 340), (1, 343), (2, 338), (3, 341), (4, 302), (5, 348), (6, 308), (7, 336), (8, 332), (9, 312)]
+
+Client 1 label distribution:
+[(0, 343), (1, 302), (2, 323), (3, 332), (4, 346), (5, 351), (6, 349), (7, 311), (8, 311), (9, 332)]
+
+Client 2 label distribution:
+[(0, 327), (1, 349), (2, 284), (3, 317), (4, 345), (5, 334), (6, 344), (7, 329), (8, 347), (9, 324)]
+
+Client 3 label distribution:
+[(0, 327), (1, 306), (2, 331), (3, 340), (4, 310), (5, 343), (6, 346), (7, 324), (8, 322), (9, 351)]
+
+Client 4 label distribution:
+[(0, 327), (1, 330), (2, 321), (3, 348), (4, 332), (5, 324), (6, 356), (7, 328), (8, 327), (9, 307)]
+
+Client 5 label distribution:
+[(0, 322), (1, 327), (2, 345), (3, 312), (4, 321), (5, 333), (6, 333), (7, 327), (8, 346), (9, 334)]
+
+Client 6 label distribution:
+[(0, 317), (1, 317), (2, 334), (3, 320), (4, 343), (5, 341), (6, 313), (7, 345), (8, 341), (9, 329)]
+
+Client 7 label distribution:
+[(0, 320), (1, 364), (2, 361), (3, 320), (4, 336), (5, 326), (6, 318), (7, 319), (8, 271), (9, 365)]
+
+Client 8 label distribution:
+[(0, 342), (1, 346), (2, 318), (3, 338), (4, 322), (5, 321), (6, 296), (7, 333), (8, 353), (9, 331)]
+
+Client 9 label distribution:
+[(0, 341), (1, 320), (2, 337), (3, 365), (4, 324), (5, 330), (6, 320), (7, 341), (8, 309), (9, 313)]
+Client 0: avg epsilon = 0.7455
+Client 1: avg epsilon = 0.7626
+Client 2: avg epsilon = 0.7655
+Client 3: avg epsilon = 0.7974
+Client 4: avg epsilon = 0.7345
+Client 5: avg epsilon = 0.7795
+Client 6: avg epsilon = 0.7756
+Client 7: avg epsilon = 0.8029
+Client 8: avg epsilon = 0.7786
+Client 9: avg epsilon = 0.7581
+ We run FedAvg with rPDP (ThreeLevels-0) ...
+max_epsilon :  10.0  noise_multiplier :  11.4404296875
+The R-Squared value of the best-fit curve : 0.9998649040687166
+learning rate =  0.001
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 348
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 354
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 356
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 368
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 344
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 361
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 360
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 369
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 361
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 354
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [4.418510211056934, 4.896127762871594, 4.896127762871594, 3.463275107427612, 4.657318986964264, 3.702083883334942, 3.463275107427612, 4.179701435149603, 4.657318986964264, 4.657318986964264]
+Round=14, per client global perf=[0.1259, 0.1418, 0.1412, 0.1518, 0.1512, 0.1282, 0.1341, 0.1359, 0.1335, 0.1406], mean perf=2353/17000 (0.1384%)
+Round=14, per client personal perf=[0.1918, 0.2, 0.1994, 0.1971, 0.1518, 0.1553, 0.1682, 0.1176, 0.2282, 0.2006], mean perf=3077/17000 (0.1810%)
+Round=14, per client personal pooled=[0.1965, 0.2249, 0.2049, 0.1965, 0.1511, 0.1605, 0.172, 0.1297, 0.2308, 0.2031], mean perf=31789/170000 (0.1870%)
+Mean performance of ditto rpdp global, Perf=0.1367, seed=44
+Mean performance of ditto rpdp personal, Perf=0.1714, seed=44
+Mean performance of ditto rpdp pooled, Perf=0.1733, seed=44
+Client 0: avg epsilon = 0.3404
+Client 1: avg epsilon = 0.3550
+Client 2: avg epsilon = 0.3714
+Client 3: avg epsilon = 0.3895
+Client 4: avg epsilon = 0.3940
+Client 5: avg epsilon = 0.4213
+Client 6: avg epsilon = 0.4428
+Client 7: avg epsilon = 0.4721
+Client 8: avg epsilon = 0.5178
+Client 9: avg epsilon = 0.6362
+ We run FedAvg with rPDP (BoundedPareto-0) ...
+max_epsilon :  10.0  noise_multiplier :  11.4404296875
+The R-Squared value of the best-fit curve : 0.9998649040687166
+learning rate =  0.001
+sample_rate: (min) 0.03, (max) 0.14, expected_batch_size: 198
+sample_rate: (min) 0.03, (max) 0.15, expected_batch_size: 205
+sample_rate: (min) 0.03, (max) 0.16, expected_batch_size: 212
+sample_rate: (min) 0.03, (max) 0.17, expected_batch_size: 220
+sample_rate: (min) 0.03, (max) 0.18, expected_batch_size: 222
+sample_rate: (min) 0.03, (max) 0.2, expected_batch_size: 235
+sample_rate: (min) 0.03, (max) 0.22, expected_batch_size: 244
+sample_rate: (min) 0.03, (max) 0.25, expected_batch_size: 257
+sample_rate: (min) 0.03, (max) 0.32, expected_batch_size: 276
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 319
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [0.7901982327935574, 0.9162186642324852, 0.9802351472193898, 0.773212053031313, 1.099359689962599, 0.9858719329804058, 1.0373714837751795, 1.475359027072132, 2.133799047622879, 8.99511746679484]
+Round=14, per client global perf=[0.1647, 0.1729, 0.1812, 0.18, 0.2035, 0.1706, 0.1618, 0.1653, 0.1659, 0.18], mean perf=2968/17000 (0.1746%)
+Round=14, per client personal perf=[0.1524, 0.2147, 0.2065, 0.1, 0.2071, 0.1659, 0.1294, 0.1218, 0.1647, 0.1282], mean perf=2704/17000 (0.1591%)
+Round=14, per client personal pooled=[0.1549, 0.1993, 0.2053, 0.1069, 0.2162, 0.1713, 0.1235, 0.1346, 0.165, 0.1212], mean perf=27171/170000 (0.1598%)
+Mean performance of ditto rpdp global, Perf=0.1828, seed=44
+Mean performance of ditto rpdp personal, Perf=0.1622, seed=44
+Mean performance of ditto rpdp pooled, Perf=0.1620, seed=44
+Client 0: avg epsilon = 0.6425
+Client 1: avg epsilon = 0.7060
+Client 2: avg epsilon = 0.7321
+Client 3: avg epsilon = 0.7819
+Client 4: avg epsilon = 0.7383
+Client 5: avg epsilon = 0.7992
+Client 6: avg epsilon = 0.8126
+Client 7: avg epsilon = 0.8614
+Client 8: avg epsilon = 0.8610
+Client 9: avg epsilon = 0.8729
+ We run FedAvg with rPDP (BoundedMixGauss-0) ...
+max_epsilon :  10.0  noise_multiplier :  11.4404296875
+The R-Squared value of the best-fit curve : 0.9998649040687166
+learning rate =  0.001
+sample_rate: (min) 0.03, (max) 0.54, expected_batch_size: 312
+sample_rate: (min) 0.03, (max) 0.56, expected_batch_size: 336
+sample_rate: (min) 0.03, (max) 0.58, expected_batch_size: 346
+sample_rate: (min) 0.03, (max) 0.59, expected_batch_size: 364
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 347
+sample_rate: (min) 0.03, (max) 0.61, expected_batch_size: 370
+sample_rate: (min) 0.03, (max) 0.63, expected_batch_size: 375
+sample_rate: (min) 0.03, (max) 0.64, expected_batch_size: 390
+sample_rate: (min) 0.03, (max) 0.66, expected_batch_size: 391
+sample_rate: (min) 0.03, (max) 0.77, expected_batch_size: 393
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Traceback (most recent call last):
+  File "ditto_rpdp_data_dep.py", line 215, in <module>
+    cm, perf_global, perf_personal, perf_pooled = s.run()
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 436, in run
+    self.perform_round()
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 359, in perform_round
+    self._local_optimization(local_model)
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 269, in _local_optimization
+    _model._local_train(self.num_steps, \
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/strategies_utils.py", line 190, in _local_train
+    loss.backward()
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/_tensor.py", line 488, in backward
+    torch.autograd.backward(
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/autograd/__init__.py", line 197, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/nn/modules/module.py", line 62, in __call__
+    return self.hook(module, *args, **kwargs)
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/grad_sample/grad_sample_module.py", line 340, in capture_backprops_hook
+    create_or_accumulate_grad_sample(
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/grad_sample/grad_sample_module.py", line 57, in create_or_accumulate_grad_sample
+    param._current_grad_sample = torch.zeros(
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 288.00 MiB (GPU 0; 9.66 GiB total capacity; 4.41 GiB already allocated; 105.88 MiB free; 8.70 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+Finished seed 44
+----------------------------------------
+Running seed 45
+/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/experiments/datasets/fed_cifar10/iid_10
+
+Client 0 label distribution:
+[(0, 340), (1, 343), (2, 338), (3, 341), (4, 302), (5, 348), (6, 308), (7, 336), (8, 332), (9, 312)]
+
+Client 1 label distribution:
+[(0, 343), (1, 302), (2, 323), (3, 332), (4, 346), (5, 351), (6, 349), (7, 311), (8, 311), (9, 332)]
+
+Client 2 label distribution:
+[(0, 327), (1, 349), (2, 284), (3, 317), (4, 345), (5, 334), (6, 344), (7, 329), (8, 347), (9, 324)]
+
+Client 3 label distribution:
+[(0, 327), (1, 306), (2, 331), (3, 340), (4, 310), (5, 343), (6, 346), (7, 324), (8, 322), (9, 351)]
+
+Client 4 label distribution:
+[(0, 327), (1, 330), (2, 321), (3, 348), (4, 332), (5, 324), (6, 356), (7, 328), (8, 327), (9, 307)]
+
+Client 5 label distribution:
+[(0, 322), (1, 327), (2, 345), (3, 312), (4, 321), (5, 333), (6, 333), (7, 327), (8, 346), (9, 334)]
+
+Client 6 label distribution:
+[(0, 317), (1, 317), (2, 334), (3, 320), (4, 343), (5, 341), (6, 313), (7, 345), (8, 341), (9, 329)]
+
+Client 7 label distribution:
+[(0, 320), (1, 364), (2, 361), (3, 320), (4, 336), (5, 326), (6, 318), (7, 319), (8, 271), (9, 365)]
+
+Client 8 label distribution:
+[(0, 342), (1, 346), (2, 318), (3, 338), (4, 322), (5, 321), (6, 296), (7, 333), (8, 353), (9, 331)]
+
+Client 9 label distribution:
+[(0, 341), (1, 320), (2, 337), (3, 365), (4, 324), (5, 330), (6, 320), (7, 341), (8, 309), (9, 313)]
+Client 0: avg epsilon = 0.7455
+Client 1: avg epsilon = 0.7626
+Client 2: avg epsilon = 0.7655
+Client 3: avg epsilon = 0.7974
+Client 4: avg epsilon = 0.7345
+Client 5: avg epsilon = 0.7795
+Client 6: avg epsilon = 0.7756
+Client 7: avg epsilon = 0.8029
+Client 8: avg epsilon = 0.7786
+Client 9: avg epsilon = 0.7581
+ We run FedAvg with rPDP (ThreeLevels-0) ...
+max_epsilon :  10.0  noise_multiplier :  11.4404296875
+The R-Squared value of the best-fit curve : 0.9998649040687166
+learning rate =  0.001
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 348
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 354
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 356
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 368
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 344
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 361
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 360
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 369
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 361
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 354
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [4.896127762871594, 4.418510211056934, 4.657318986964264, 4.418510211056934, 4.418510211056934, 4.657318986964264, 4.418510211056934, 4.179701435149603, 4.657318986964264, 4.657318986964264]
+Round=14, per client global perf=[0.1359, 0.1488, 0.14, 0.1576, 0.1641, 0.1282, 0.1353, 0.1418, 0.1335, 0.1488], mean perf=2438/17000 (0.1434%)
+Round=14, per client personal perf=[0.1571, 0.1853, 0.1865, 0.1529, 0.1641, 0.1694, 0.2012, 0.1965, 0.1971, 0.1741], mean perf=3033/17000 (0.1784%)
+Round=14, per client personal pooled=[0.15, 0.1836, 0.1811, 0.1518, 0.1683, 0.1749, 0.1964, 0.2112, 0.1956, 0.1723], mean perf=30348/170000 (0.1785%)
+Mean performance of ditto rpdp global, Perf=0.1407, seed=45
+Mean performance of ditto rpdp personal, Perf=0.1701, seed=45
+Mean performance of ditto rpdp pooled, Perf=0.1704, seed=45
+Client 0: avg epsilon = 0.3402
+Client 1: avg epsilon = 0.3543
+Client 2: avg epsilon = 0.3702
+Client 3: avg epsilon = 0.3872
+Client 4: avg epsilon = 0.3922
+Client 5: avg epsilon = 0.4197
+Client 6: avg epsilon = 0.4421
+Client 7: avg epsilon = 0.4712
+Client 8: avg epsilon = 0.5180
+Client 9: avg epsilon = 0.6414
+ We run FedAvg with rPDP (BoundedPareto-0) ...
+max_epsilon :  10.0  noise_multiplier :  11.4404296875
+The R-Squared value of the best-fit curve : 0.9998649040687166
+learning rate =  0.001
+sample_rate: (min) 0.03, (max) 0.14, expected_batch_size: 198
+sample_rate: (min) 0.03, (max) 0.15, expected_batch_size: 204
+sample_rate: (min) 0.03, (max) 0.16, expected_batch_size: 212
+sample_rate: (min) 0.03, (max) 0.17, expected_batch_size: 219
+sample_rate: (min) 0.03, (max) 0.18, expected_batch_size: 222
+sample_rate: (min) 0.03, (max) 0.2, expected_batch_size: 234
+sample_rate: (min) 0.03, (max) 0.22, expected_batch_size: 244
+sample_rate: (min) 0.03, (max) 0.25, expected_batch_size: 256
+sample_rate: (min) 0.03, (max) 0.32, expected_batch_size: 276
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 320
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Traceback (most recent call last):
+  File "ditto_rpdp_data_dep.py", line 215, in <module>
+    cm, perf_global, perf_personal, perf_pooled = s.run()
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 436, in run
+    self.perform_round()
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 359, in perform_round
+    self._local_optimization(local_model)
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 269, in _local_optimization
+    _model._local_train(self.num_steps, \
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/strategies_utils.py", line 190, in _local_train
+    loss.backward()
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/_tensor.py", line 488, in backward
+    torch.autograd.backward(
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/autograd/__init__.py", line 197, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/nn/modules/module.py", line 62, in __call__
+    return self.hook(module, *args, **kwargs)
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/grad_sample/grad_sample_module.py", line 340, in capture_backprops_hook
+    create_or_accumulate_grad_sample(
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/grad_sample/grad_sample_module.py", line 57, in create_or_accumulate_grad_sample
+    param._current_grad_sample = torch.zeros(
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 288.00 MiB (GPU 0; 9.66 GiB total capacity; 4.40 GiB already allocated; 249.88 MiB free; 8.55 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+Finished seed 45
+----------------------------------------
+Running seed 46
+/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/experiments/datasets/fed_cifar10/iid_10
+
+Client 0 label distribution:
+[(0, 340), (1, 343), (2, 338), (3, 341), (4, 302), (5, 348), (6, 308), (7, 336), (8, 332), (9, 312)]
+
+Client 1 label distribution:
+[(0, 343), (1, 302), (2, 323), (3, 332), (4, 346), (5, 351), (6, 349), (7, 311), (8, 311), (9, 332)]
+
+Client 2 label distribution:
+[(0, 327), (1, 349), (2, 284), (3, 317), (4, 345), (5, 334), (6, 344), (7, 329), (8, 347), (9, 324)]
+
+Client 3 label distribution:
+[(0, 327), (1, 306), (2, 331), (3, 340), (4, 310), (5, 343), (6, 346), (7, 324), (8, 322), (9, 351)]
+
+Client 4 label distribution:
+[(0, 327), (1, 330), (2, 321), (3, 348), (4, 332), (5, 324), (6, 356), (7, 328), (8, 327), (9, 307)]
+
+Client 5 label distribution:
+[(0, 322), (1, 327), (2, 345), (3, 312), (4, 321), (5, 333), (6, 333), (7, 327), (8, 346), (9, 334)]
+
+Client 6 label distribution:
+[(0, 317), (1, 317), (2, 334), (3, 320), (4, 343), (5, 341), (6, 313), (7, 345), (8, 341), (9, 329)]
+
+Client 7 label distribution:
+[(0, 320), (1, 364), (2, 361), (3, 320), (4, 336), (5, 326), (6, 318), (7, 319), (8, 271), (9, 365)]
+
+Client 8 label distribution:
+[(0, 342), (1, 346), (2, 318), (3, 338), (4, 322), (5, 321), (6, 296), (7, 333), (8, 353), (9, 331)]
+
+Client 9 label distribution:
+[(0, 341), (1, 320), (2, 337), (3, 365), (4, 324), (5, 330), (6, 320), (7, 341), (8, 309), (9, 313)]
+Client 0: avg epsilon = 0.7455
+Client 1: avg epsilon = 0.7626
+Client 2: avg epsilon = 0.7655
+Client 3: avg epsilon = 0.7974
+Client 4: avg epsilon = 0.7345
+Client 5: avg epsilon = 0.7795
+Client 6: avg epsilon = 0.7756
+Client 7: avg epsilon = 0.8029
+Client 8: avg epsilon = 0.7786
+Client 9: avg epsilon = 0.7581
+ We run FedAvg with rPDP (ThreeLevels-0) ...
+max_epsilon :  10.0  noise_multiplier :  11.4404296875
+The R-Squared value of the best-fit curve : 0.9998649040687166
+learning rate =  0.001
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 348
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 354
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 356
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 368
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 344
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 361
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 360
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 369
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 361
+sample_rate: (min) 0.03, (max) 0.6, expected_batch_size: 354
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [4.418510211056934, 4.657318986964264, 4.418510211056934, 4.657318986964264, 3.940892659242272, 4.896127762871594, 4.896127762871594, 5.10082093327143, 5.10082093327143, 5.10082093327143]
+Round=14, per client global perf=[0.1206, 0.1394, 0.1288, 0.1512, 0.1535, 0.1206, 0.1282, 0.1312, 0.1265, 0.1335], mean perf=2267/17000 (0.1334%)
+Round=14, per client personal perf=[0.1947, 0.1676, 0.1641, 0.1753, 0.1835, 0.1965, 0.1941, 0.2041, 0.1759, 0.2129], mean perf=3177/17000 (0.1869%)
+Round=14, per client personal pooled=[0.1988, 0.1685, 0.1716, 0.1603, 0.1842, 0.1997, 0.1764, 0.1878, 0.1832, 0.2103], mean perf=31296/170000 (0.1841%)
+Mean performance of ditto rpdp global, Perf=0.1324, seed=46
+Mean performance of ditto rpdp personal, Perf=0.1735, seed=46
+Mean performance of ditto rpdp pooled, Perf=0.1741, seed=46
+Client 0: avg epsilon = 0.3376
+Client 1: avg epsilon = 0.3522
+Client 2: avg epsilon = 0.3678
+Client 3: avg epsilon = 0.3857
+Client 4: avg epsilon = 0.3908
+Client 5: avg epsilon = 0.4184
+Client 6: avg epsilon = 0.4393
+Client 7: avg epsilon = 0.4683
+Client 8: avg epsilon = 0.5182
+Client 9: avg epsilon = 0.6376
+ We run FedAvg with rPDP (BoundedPareto-0) ...
+max_epsilon :  10.0  noise_multiplier :  11.4404296875
+The R-Squared value of the best-fit curve : 0.9998649040687166
+learning rate =  0.001
+sample_rate: (min) 0.03, (max) 0.14, expected_batch_size: 197
+sample_rate: (min) 0.03, (max) 0.15, expected_batch_size: 203
+sample_rate: (min) 0.03, (max) 0.16, expected_batch_size: 211
+sample_rate: (min) 0.03, (max) 0.17, expected_batch_size: 219
+sample_rate: (min) 0.03, (max) 0.18, expected_batch_size: 221
+sample_rate: (min) 0.03, (max) 0.2, expected_batch_size: 233
+sample_rate: (min) 0.03, (max) 0.22, expected_batch_size: 243
+sample_rate: (min) 0.03, (max) 0.25, expected_batch_size: 255
+sample_rate: (min) 0.03, (max) 0.32, expected_batch_size: 276
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 319
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Traceback (most recent call last):
+  File "ditto_rpdp_data_dep.py", line 215, in <module>
+    cm, perf_global, perf_personal, perf_pooled = s.run()
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 436, in run
+    self.perform_round()
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 359, in perform_round
+    self._local_optimization(local_model)
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/ditto.py", line 269, in _local_optimization
+    _model._local_train(self.num_steps, \
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/strategies/strategies_utils.py", line 190, in _local_train
+    loss.backward()
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/_tensor.py", line 488, in backward
+    torch.autograd.backward(
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/autograd/__init__.py", line 197, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+  File "/Volumes/Users/shegao_t1/.conda/envs/rpdp/lib/python3.8/site-packages/torch/nn/modules/module.py", line 62, in __call__
+    return self.hook(module, *args, **kwargs)
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/grad_sample/grad_sample_module.py", line 340, in capture_backprops_hook
+    create_or_accumulate_grad_sample(
+  File "/Volumes/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/myopacus/grad_sample/grad_sample_module.py", line 57, in create_or_accumulate_grad_sample
+    param._current_grad_sample = torch.zeros(
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 288.00 MiB (GPU 0; 9.66 GiB total capacity; 4.39 GiB already allocated; 11.88 MiB free; 8.79 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+Finished seed 46
+----------------------------------------
+=== Running reg_param=0.01, num_steps=15 ===
+Running seed 42

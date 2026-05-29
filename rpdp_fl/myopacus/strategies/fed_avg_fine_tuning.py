@@ -33,7 +33,7 @@ class FedAvgFineTuning(FedAvg):
         The learning rate to be given to the optimizer_class.
     num_updates : int
         The number of updates to do on each client at each round.
-    nrounds : int
+    nrounds : int 
         The number of communication rounds to do.
     num_fine_tuning_steps: int
         The number of SGD fine-tuning updates to be performed on the
