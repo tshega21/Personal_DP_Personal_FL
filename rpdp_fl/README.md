@@ -30,10 +30,6 @@ The following instruction would work for Ubuntu 22.04 Linux users with NVIDIA Ge
 ## Create isolated Miniconda environment
 First, please download and install the latest [Miniconda](https://docs.anaconda.com/free/miniconda/)  (a minimal version of Anaconda) version for your operating system.
 
-run bash 
-ctrl -b  d 
-tmux attach -t session name
-
 Next, change directory (cd) into your preferred folder, then type:
 ```bash
 conda create -n rpdp python=3.8
@@ -41,6 +37,11 @@ conda activate rpdp
 conda install pytorch==1.13.1 torchvision==0.14.1 torchaudio==0.13.1 pytorch-cuda=11.7 -c pytorch -c nvidia
 pip install -r requirements_new.txt
 ```
+
+run bash 
+ctrl -b  d 
+tmux attach -t session name
+
 
 Then add all the path of all dependent modules to `PYTHONPATH` (in a manual or temporary way if you download this source code in ZIP format).
 ```bash

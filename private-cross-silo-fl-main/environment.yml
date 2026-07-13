@@ -1,0 +1,29 @@
+# environment.yml
+name: myenv
+channels:
+  - conda-forge
+  - nvidia
+  - defaults
+dependencies:
+  - python=3.9
+  - numpy=1.23
+  - scipy=1.8
+  - pandas=1.4
+  - scikit-learn=1.1
+  - tqdm
+  - matplotlib
+  - optax=0.1.0
+  - filelock
+  - pip
+  # CUDA 11.8 runtime libraries
+  - cudatoolkit=11.8
+
+  - pip:
+      - jax==0.3.12
+      - dm-haiku==0.0.5
+      - chex==0.1.5
+      - optax==0.1.0
+      - tensorflow==2.8.4
+      - tensorflow_privacy==0.7.3
+      - tensorflow_probability==0.16.0
+prefix: /usr/local/share/anaconda/envs/myenv-linux
