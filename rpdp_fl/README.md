@@ -79,7 +79,7 @@ python fedavg_vanilla.py --dataset cifar10 --gpuid 0 --data_type niid_10_5 --see
 python fedavg_unidp.py --dataset mnist --gpuid 0 --data_type iid_10 --seed 42
 python fedavg_rpdp.py --dataset mnist --gpuid 0 --data_type iid_10 --seed 42
 
-python ditto_vanilla.py --dataset mnist --gpuid 0  --seed 42 --data_type niid_dir_5 --reg_param 0.0 --num_personal_steps 30
+python ditto_vanilla.py --dataset mnist --gpuid 0  --seed 42 --data_type niid_dir_5 --reg_param 0.0 --num_personal_steps 10
 
 python ditto_unidp.py --dataset mnist --gpuid 0  --seed 42 --data_type iid_10 --epsilon 0.1 --reg_param 0 --num_personal_steps 30
 
@@ -91,7 +91,7 @@ python dp_ditto_unidp.py --dataset mnist --gpuid 0  --seed 42 --data_type iid_10
 python ditto_rpdp.py --dataset mnist --gpuid 0  --seed 42 --data_type iid_10 --epsilon 5 --reg_param 1 --num_personal_steps 5
 
 
-python ditto_rpdp_data_dep.py --dataset mnist --gpuid 0  --seed 42 --data_type niid_dir_5 --epsilon 5 --reg_param 0 --num_personal_steps 15
+python ditto_rpdp_data_dep.py --dataset fashion_mnist --gpuid 0  --seed 42 --data_type niid_10_2 --epsilon 5 --reg_param 0 --num_personal_steps 15
 
 
 

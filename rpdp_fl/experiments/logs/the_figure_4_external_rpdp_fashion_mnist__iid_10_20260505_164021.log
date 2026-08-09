@@ -1,3 +1,0 @@
-PARAMS: dataset=fashion_mnist, gpu=0, data_type=iid_10
-=== Running reg_param=0, num_steps=15 ===
-Running seed 42

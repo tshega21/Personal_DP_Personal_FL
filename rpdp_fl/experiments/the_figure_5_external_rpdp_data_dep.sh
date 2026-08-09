@@ -17,11 +17,11 @@
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$SCRIPT_DIR"
 
-DATASET="mnist"
+DATASET="fashion_mnist"
 GPU=0
 
-DATA_TYPES=("niid_10_2")
-REG_PARAMS=(0 10)
+DATA_TYPES=("niid_10_5" "niid_dir_1" "niid_dir_5" )
+REG_PARAMS=(0 0.1 1.0 10)
 EPS=5
 NUM_STEPS_LIST=(15)
 
@@ -31,7 +31,7 @@ LOG_DIR="$SCRIPT_DIR/logs"
 mkdir -p "$LOG_DIR"
 
 for DATA_TYPE in "${DATA_TYPES[@]}"; do
-    LOG_FILE="$LOG_DIR/the_figure_4_external_rpdp_data_dep_extreme${DATASET}__${DATA_TYPE}_$(date +%Y%m%d_%H%M%S).log"
+    LOG_FILE="$LOG_DIR/the_figure_5_external_rpdp_data_dep_extreme${DATASET}__${DATA_TYPE}_$(date +%Y%m%d_%H%M%S).log"
     echo "Logging to $LOG_FILE"
     echo "PARAMS: dataset=$DATASET, gpu=$GPU, data_type=$DATA_TYPE" | tee -a "$LOG_FILE"
 

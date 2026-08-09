@@ -27,14 +27,17 @@ First, please download and install the latest [Miniconda](https://docs.anaconda.
 Next, change directory (cd) into your preferred folder, then type:
 
 ```bash
-conda create env create -f environment.yml
+conda env create -f environment.yml
 conda activate myenv
 ```
 
 Install older jaxlib hosted on JAX release index 
 
 ```bash
-pip install jaxlib==0.3.10 -f https://storage.googleapis.com/jax-releases/jax_releases.html
+
+pip install jax==0.3.10 jaxlib==0.3.10 \
+    -f https://storage.googleapis.com/jax-releases/jax_releases.html
+
 ```
 
 ## 
@@ -64,6 +67,8 @@ For example, to reproduce the results on School of Fig. 3(c) at $\varepsilon = 6
 
 ```bash
 bash runners/school/dp/run_fedavg.sh -r 5 -t 200 -eps 6 -lr 0.01  
+bash runners/school/dp/run_ditto.sh -r 5 -t 200 -eps 6 -lr 0.01  
+
 
 # gives ~ 0.02564
 bash runners/school/dp/run_local.sh -r 5 -t 200 -eps 6 -lr 0.01   # gives ~ 0.02628

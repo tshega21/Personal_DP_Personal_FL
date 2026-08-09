@@ -1,0 +1,1625 @@
+PARAMS: dataset=fashion_mnist, gpu=0, data_type=niid_dir_1
+=== Running reg_param=0, num_steps=15 ===
+Running seed 42
+/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/experiments/datasets/fed_fashion_mnist/dirichlet_10_alpha_1
+
+Client 0 label distribution:
+[(0, 3), (1, 20), (3, 1868), (4, 1598), (5, 161), (7, 4), (8, 661), (9, 2)]
+
+Client 1 label distribution:
+[(0, 3094), (1, 2826), (3, 7), (6, 164), (7, 224), (8, 2673), (9, 2)]
+
+Client 2 label distribution:
+[(1, 122), (4, 1), (6, 2929)]
+
+Client 3 label distribution:
+[(0, 119), (1, 26), (4, 122), (6, 8), (7, 609), (8, 71)]
+
+Client 4 label distribution:
+[(2, 289), (3, 1925), (4, 188), (5, 2600), (6, 650), (7, 12), (9, 1)]
+
+Client 5 label distribution:
+[(1, 945), (2, 3636), (3, 120), (4, 963), (5, 719), (6, 193), (8, 5)]
+
+Client 6 label distribution:
+[(0, 441), (4, 219), (5, 425), (8, 520), (9, 4)]
+
+Client 7 label distribution:
+[(0, 320), (1, 7), (3, 2), (4, 848), (5, 1), (7, 2), (9, 147)]
+
+Client 8 label distribution:
+[(2, 15), (5, 48), (6, 7), (9, 3807)]
+
+Client 9 label distribution:
+[(0, 1), (2, 2), (3, 1), (5, 87), (6, 1), (7, 3128), (8, 1), (9, 1)]
+Client 0: avg epsilon = 0.7026
+Client 1: avg epsilon = 1.3576
+Client 2: avg epsilon = 0.1000
+Client 3: avg epsilon = 2.8770
+Client 4: avg epsilon = 0.1100
+Client 5: avg epsilon = 0.1030
+Client 6: avg epsilon = 1.3850
+Client 7: avg epsilon = 1.2026
+Client 8: avg epsilon = 9.8253
+Client 9: avg epsilon = 3.8917
+ We run FedAvg with rPDP (ThreeLevels-0) ...
+max_epsilon :  10.0  noise_multiplier :  9.736328125
+The R-Squared value of the best-fit curve : 0.999749898528281
+learning rate =  0.001
+sample_rate: (min) 0.03, (max) 0.51, expected_batch_size: 432
+sample_rate: (min) 0.03, (max) 0.51, expected_batch_size: 1634
+sample_rate: (min) 0.03, (max) 0.03, expected_batch_size: 76
+sample_rate: (min) 0.03, (max) 0.51, expected_batch_size: 354
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 149
+sample_rate: (min) 0.03, (max) 0.51, expected_batch_size: 168
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 296
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 177
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 3810
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 1602
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [2.888922200264604, 2.888922200264604, 0.05997229379927632, 2.713667276648133, 7.341489632879909, 2.888922200264604, 7.341489632879909, 7.879532215750026, 8.417574798620144, 5.727361884269555]
+Round=14, per client global perf=[0.1362, 0.3016, 0.0006, 0.1623, 0.0, 0.0012, 0.3096, 0.0336, 0.4149, 0.1872], mean perf=3205/20405 (0.1571%)
+Round=14, per client personal perf=[0.9065, 0.9555, 0.9542, 0.9574, 0.8585, 0.8219, 0.9313, 0.9722, 0.989, 0.9669], mean perf=18728/20405 (0.9178%)
+Round=14, per client personal pooled=[0.3457, 0.3852, 0.1083, 0.4592, 0.2763, 0.3675, 0.3735, 0.2913, 0.2097, 0.099], mean perf=59491/204050 (0.2916%)
+Mean performance of ditto rpdp global, Perf=0.1929, seed=42
+Mean performance of ditto rpdp personal, Perf=0.9158, seed=42
+Mean performance of ditto rpdp pooled, Perf=0.2883, seed=42
+Finished seed 42
+----------------------------------------
+Running seed 43
+/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/experiments/datasets/fed_fashion_mnist/dirichlet_10_alpha_1
+
+Client 0 label distribution:
+[(0, 3), (1, 20), (3, 1868), (4, 1598), (5, 161), (7, 4), (8, 661), (9, 2)]
+
+Client 1 label distribution:
+[(0, 3094), (1, 2826), (3, 7), (6, 164), (7, 224), (8, 2673), (9, 2)]
+
+Client 2 label distribution:
+[(1, 122), (4, 1), (6, 2929)]
+
+Client 3 label distribution:
+[(0, 119), (1, 26), (4, 122), (6, 8), (7, 609), (8, 71)]
+
+Client 4 label distribution:
+[(2, 289), (3, 1925), (4, 188), (5, 2600), (6, 650), (7, 12), (9, 1)]
+
+Client 5 label distribution:
+[(1, 945), (2, 3636), (3, 120), (4, 963), (5, 719), (6, 193), (8, 5)]
+
+Client 6 label distribution:
+[(0, 441), (4, 219), (5, 425), (8, 520), (9, 4)]
+
+Client 7 label distribution:
+[(0, 320), (1, 7), (3, 2), (4, 848), (5, 1), (7, 2), (9, 147)]
+
+Client 8 label distribution:
+[(2, 15), (5, 48), (6, 7), (9, 3807)]
+
+Client 9 label distribution:
+[(0, 1), (2, 2), (3, 1), (5, 87), (6, 1), (7, 3128), (8, 1), (9, 1)]
+Client 0: avg epsilon = 0.7026
+Client 1: avg epsilon = 1.3576
+Client 2: avg epsilon = 0.1000
+Client 3: avg epsilon = 2.8770
+Client 4: avg epsilon = 0.1100
+Client 5: avg epsilon = 0.1030
+Client 6: avg epsilon = 1.3850
+Client 7: avg epsilon = 1.2026
+Client 8: avg epsilon = 9.8253
+Client 9: avg epsilon = 3.8917
+ We run FedAvg with rPDP (ThreeLevels-0) ...
+max_epsilon :  10.0  noise_multiplier :  9.736328125
+The R-Squared value of the best-fit curve : 0.999749898528281
+learning rate =  0.001
+sample_rate: (min) 0.03, (max) 0.51, expected_batch_size: 432
+sample_rate: (min) 0.03, (max) 0.51, expected_batch_size: 1634
+sample_rate: (min) 0.03, (max) 0.03, expected_batch_size: 76
+sample_rate: (min) 0.03, (max) 0.51, expected_batch_size: 354
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 149
+sample_rate: (min) 0.03, (max) 0.51, expected_batch_size: 168
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 296
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 177
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 3810
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 1602
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [3.055936862776558, 2.888922200264604, 0.07214729257008984, 3.055936862776558, 5.189319301399437, 2.888922200264604, 5.727361884269555, 4.065705449544012, 5.727361884269555, 7.879532215750026]
+Round=14, per client global perf=[0.0944, 0.2159, 0.0, 0.6613, 0.0024, 0.0009, 0.1976, 0.0015, 0.0, 0.9663], mean perf=3316/20405 (0.1625%)
+Round=14, per client personal perf=[0.902, 0.9538, 0.9866, 0.9615, 0.863, 0.8207, 0.9133, 0.7997, 0.988, 0.9771], mean perf=18654/20405 (0.9142%)
+Round=14, per client personal pooled=[0.3443, 0.3933, 0.1822, 0.4521, 0.2977, 0.3513, 0.3733, 0.2305, 0.0998, 0.1298], mean perf=58241/204050 (0.2854%)
+Mean performance of ditto rpdp global, Perf=0.1284, seed=43
+Mean performance of ditto rpdp personal, Perf=0.9085, seed=43
+Mean performance of ditto rpdp pooled, Perf=0.2700, seed=43
+Finished seed 43
+----------------------------------------
+Running seed 44
+/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/experiments/datasets/fed_fashion_mnist/dirichlet_10_alpha_1
+
+Client 0 label distribution:
+[(0, 3), (1, 20), (3, 1868), (4, 1598), (5, 161), (7, 4), (8, 661), (9, 2)]
+
+Client 1 label distribution:
+[(0, 3094), (1, 2826), (3, 7), (6, 164), (7, 224), (8, 2673), (9, 2)]
+
+Client 2 label distribution:
+[(1, 122), (4, 1), (6, 2929)]
+
+Client 3 label distribution:
+[(0, 119), (1, 26), (4, 122), (6, 8), (7, 609), (8, 71)]
+
+Client 4 label distribution:
+[(2, 289), (3, 1925), (4, 188), (5, 2600), (6, 650), (7, 12), (9, 1)]
+
+Client 5 label distribution:
+[(1, 945), (2, 3636), (3, 120), (4, 963), (5, 719), (6, 193), (8, 5)]
+
+Client 6 label distribution:
+[(0, 441), (4, 219), (5, 425), (8, 520), (9, 4)]
+
+Client 7 label distribution:
+[(0, 320), (1, 7), (3, 2), (4, 848), (5, 1), (7, 2), (9, 147)]
+
+Client 8 label distribution:
+[(2, 15), (5, 48), (6, 7), (9, 3807)]
+
+Client 9 label distribution:
+[(0, 1), (2, 2), (3, 1), (5, 87), (6, 1), (7, 3128), (8, 1), (9, 1)]
+Client 0: avg epsilon = 0.7026
+Client 1: avg epsilon = 1.3576
+Client 2: avg epsilon = 0.1000
+Client 3: avg epsilon = 2.8770
+Client 4: avg epsilon = 0.1100
+Client 5: avg epsilon = 0.1030
+Client 6: avg epsilon = 1.3850
+Client 7: avg epsilon = 1.2026
+Client 8: avg epsilon = 9.8253
+Client 9: avg epsilon = 3.8917
+ We run FedAvg with rPDP (ThreeLevels-0) ...
+max_epsilon :  10.0  noise_multiplier :  9.736328125
+The R-Squared value of the best-fit curve : 0.999749898528281
+learning rate =  0.001
+sample_rate: (min) 0.03, (max) 0.51, expected_batch_size: 432
+sample_rate: (min) 0.03, (max) 0.51, expected_batch_size: 1634
+sample_rate: (min) 0.03, (max) 0.03, expected_batch_size: 76
+sample_rate: (min) 0.03, (max) 0.51, expected_batch_size: 354
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 149
+sample_rate: (min) 0.03, (max) 0.51, expected_batch_size: 168
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 296
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 177
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 3810
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 1602
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [3.055936862776558, 3.5569808503124216, 0.08299634815037049, 1.7512846237718216, 8.417574798620144, 2.4833484928873713, 5.189319301399437, 5.727361884269555, 5.189319301399437, 6.803447050009791]
+Round=14, per client global perf=[0.1367, 0.4791, 0.0045, 0.211, 0.0, 0.0115, 0.4325, 0.1023, 0.0, 0.1644], mean perf=3375/20405 (0.1654%)
+Round=14, per client personal perf=[0.9092, 0.9564, 0.9892, 0.8966, 0.8678, 0.818, 0.9205, 0.9561, 0.988, 0.9675], mean perf=18756/20405 (0.9192%)
+Round=14, per client personal pooled=[0.3518, 0.4051, 0.1844, 0.3334, 0.2914, 0.3245, 0.3704, 0.2878, 0.0998, 0.0994], mean perf=56073/204050 (0.2748%)
+Mean performance of ditto rpdp global, Perf=0.1934, seed=44
+Mean performance of ditto rpdp personal, Perf=0.9154, seed=44
+Mean performance of ditto rpdp pooled, Perf=0.2706, seed=44
+Finished seed 44
+----------------------------------------
+Running seed 45
+/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/experiments/datasets/fed_fashion_mnist/dirichlet_10_alpha_1
+
+Client 0 label distribution:
+[(0, 3), (1, 20), (3, 1868), (4, 1598), (5, 161), (7, 4), (8, 661), (9, 2)]
+
+Client 1 label distribution:
+[(0, 3094), (1, 2826), (3, 7), (6, 164), (7, 224), (8, 2673), (9, 2)]
+
+Client 2 label distribution:
+[(1, 122), (4, 1), (6, 2929)]
+
+Client 3 label distribution:
+[(0, 119), (1, 26), (4, 122), (6, 8), (7, 609), (8, 71)]
+
+Client 4 label distribution:
+[(2, 289), (3, 1925), (4, 188), (5, 2600), (6, 650), (7, 12), (9, 1)]
+
+Client 5 label distribution:
+[(1, 945), (2, 3636), (3, 120), (4, 963), (5, 719), (6, 193), (8, 5)]
+
+Client 6 label distribution:
+[(0, 441), (4, 219), (5, 425), (8, 520), (9, 4)]
+
+Client 7 label distribution:
+[(0, 320), (1, 7), (3, 2), (4, 848), (5, 1), (7, 2), (9, 147)]
+
+Client 8 label distribution:
+[(2, 15), (5, 48), (6, 7), (9, 3807)]
+
+Client 9 label distribution:
+[(0, 1), (2, 2), (3, 1), (5, 87), (6, 1), (7, 3128), (8, 1), (9, 1)]
+Client 0: avg epsilon = 0.7026
+Client 1: avg epsilon = 1.3576
+Client 2: avg epsilon = 0.1000
+Client 3: avg epsilon = 2.8770
+Client 4: avg epsilon = 0.1100
+Client 5: avg epsilon = 0.1030
+Client 6: avg epsilon = 1.3850
+Client 7: avg epsilon = 1.2026
+Client 8: avg epsilon = 9.8253
+Client 9: avg epsilon = 3.8917
+ We run FedAvg with rPDP (ThreeLevels-0) ...
+max_epsilon :  10.0  noise_multiplier :  9.736328125
+The R-Squared value of the best-fit curve : 0.999749898528281
+learning rate =  0.001
+sample_rate: (min) 0.03, (max) 0.51, expected_batch_size: 432
+sample_rate: (min) 0.03, (max) 0.51, expected_batch_size: 1634
+sample_rate: (min) 0.03, (max) 0.03, expected_batch_size: 76
+sample_rate: (min) 0.03, (max) 0.51, expected_batch_size: 354
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 149
+sample_rate: (min) 0.03, (max) 0.51, expected_batch_size: 168
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 296
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 177
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 3810
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 1602
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [2.888922200264604, 2.888922200264604, 0.07214729257008984, 2.022710925365847, 6.803447050009791, 3.222951525288513, 6.803447050009791, 5.189319301399437, 7.341489632879909, 7.879532215750026]
+Round=14, per client global perf=[0.0004, 0.0022, 0.0, 0.002, 0.0295, 0.2828, 0.0024, 0.0863, 0.986, 0.0006], mean perf=3089/20405 (0.1514%)
+Round=14, per client personal perf=[0.8894, 0.9452, 0.9657, 0.9026, 0.853, 0.8375, 0.9157, 0.9532, 0.988, 0.9735], mean perf=18653/20405 (0.9141%)
+Round=14, per client personal pooled=[0.3314, 0.3875, 0.1295, 0.3383, 0.2729, 0.3927, 0.3683, 0.2878, 0.0998, 0.1192], mean perf=55655/204050 (0.2728%)
+Mean performance of ditto rpdp global, Perf=0.1196, seed=45
+Mean performance of ditto rpdp personal, Perf=0.9105, seed=45
+Mean performance of ditto rpdp pooled, Perf=0.2663, seed=45
+Finished seed 45
+----------------------------------------
+Running seed 46
+/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/experiments/datasets/fed_fashion_mnist/dirichlet_10_alpha_1
+
+Client 0 label distribution:
+[(0, 3), (1, 20), (3, 1868), (4, 1598), (5, 161), (7, 4), (8, 661), (9, 2)]
+
+Client 1 label distribution:
+[(0, 3094), (1, 2826), (3, 7), (6, 164), (7, 224), (8, 2673), (9, 2)]
+
+Client 2 label distribution:
+[(1, 122), (4, 1), (6, 2929)]
+
+Client 3 label distribution:
+[(0, 119), (1, 26), (4, 122), (6, 8), (7, 609), (8, 71)]
+
+Client 4 label distribution:
+[(2, 289), (3, 1925), (4, 188), (5, 2600), (6, 650), (7, 12), (9, 1)]
+
+Client 5 label distribution:
+[(1, 945), (2, 3636), (3, 120), (4, 963), (5, 719), (6, 193), (8, 5)]
+
+Client 6 label distribution:
+[(0, 441), (4, 219), (5, 425), (8, 520), (9, 4)]
+
+Client 7 label distribution:
+[(0, 320), (1, 7), (3, 2), (4, 848), (5, 1), (7, 2), (9, 147)]
+
+Client 8 label distribution:
+[(2, 15), (5, 48), (6, 7), (9, 3807)]
+
+Client 9 label distribution:
+[(0, 1), (2, 2), (3, 1), (5, 87), (6, 1), (7, 3128), (8, 1), (9, 1)]
+Client 0: avg epsilon = 0.7026
+Client 1: avg epsilon = 1.3576
+Client 2: avg epsilon = 0.1000
+Client 3: avg epsilon = 2.8770
+Client 4: avg epsilon = 0.1100
+Client 5: avg epsilon = 0.1030
+Client 6: avg epsilon = 1.3850
+Client 7: avg epsilon = 1.2026
+Client 8: avg epsilon = 9.8253
+Client 9: avg epsilon = 3.8917
+ We run FedAvg with rPDP (ThreeLevels-0) ...
+max_epsilon :  10.0  noise_multiplier :  9.736328125
+The R-Squared value of the best-fit curve : 0.999749898528281
+learning rate =  0.001
+sample_rate: (min) 0.03, (max) 0.51, expected_batch_size: 432
+sample_rate: (min) 0.03, (max) 0.51, expected_batch_size: 1634
+sample_rate: (min) 0.03, (max) 0.03, expected_batch_size: 76
+sample_rate: (min) 0.03, (max) 0.51, expected_batch_size: 354
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 149
+sample_rate: (min) 0.03, (max) 0.51, expected_batch_size: 168
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 296
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 177
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 3810
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 1602
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [2.713667276648133, 3.055936862776558, 0.07214729257008984, 2.888922200264604, 6.265404467139673, 2.888922200264604, 6.803447050009791, 8.417574798620144, 7.879532215750026, 6.803447050009791]
+Round=14, per client global perf=[0.1353, 0.3966, 0.0051, 0.4239, 0.0017, 0.0035, 0.3795, 0.0614, 0.0, 0.4913], mean perf=3545/20405 (0.1737%)
+Round=14, per client personal perf=[0.8871, 0.9521, 0.9886, 0.9594, 0.8623, 0.8222, 0.9193, 0.9664, 0.9905, 0.9753], mean perf=18739/20405 (0.9184%)
+Round=14, per client personal pooled=[0.3576, 0.3909, 0.1841, 0.464, 0.2913, 0.3394, 0.3759, 0.2974, 0.1724, 0.1272], mean perf=61220/204050 (0.3000%)
+Mean performance of ditto rpdp global, Perf=0.1678, seed=46
+Mean performance of ditto rpdp personal, Perf=0.9176, seed=46
+Mean performance of ditto rpdp pooled, Perf=0.2997, seed=46
+Finished seed 46
+----------------------------------------
+=== Running reg_param=0.1, num_steps=15 ===
+Running seed 42
+/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/experiments/datasets/fed_fashion_mnist/dirichlet_10_alpha_1
+
+Client 0 label distribution:
+[(0, 3), (1, 20), (3, 1868), (4, 1598), (5, 161), (7, 4), (8, 661), (9, 2)]
+
+Client 1 label distribution:
+[(0, 3094), (1, 2826), (3, 7), (6, 164), (7, 224), (8, 2673), (9, 2)]
+
+Client 2 label distribution:
+[(1, 122), (4, 1), (6, 2929)]
+
+Client 3 label distribution:
+[(0, 119), (1, 26), (4, 122), (6, 8), (7, 609), (8, 71)]
+
+Client 4 label distribution:
+[(2, 289), (3, 1925), (4, 188), (5, 2600), (6, 650), (7, 12), (9, 1)]
+
+Client 5 label distribution:
+[(1, 945), (2, 3636), (3, 120), (4, 963), (5, 719), (6, 193), (8, 5)]
+
+Client 6 label distribution:
+[(0, 441), (4, 219), (5, 425), (8, 520), (9, 4)]
+
+Client 7 label distribution:
+[(0, 320), (1, 7), (3, 2), (4, 848), (5, 1), (7, 2), (9, 147)]
+
+Client 8 label distribution:
+[(2, 15), (5, 48), (6, 7), (9, 3807)]
+
+Client 9 label distribution:
+[(0, 1), (2, 2), (3, 1), (5, 87), (6, 1), (7, 3128), (8, 1), (9, 1)]
+Client 0: avg epsilon = 0.7026
+Client 1: avg epsilon = 1.3576
+Client 2: avg epsilon = 0.1000
+Client 3: avg epsilon = 2.8770
+Client 4: avg epsilon = 0.1100
+Client 5: avg epsilon = 0.1030
+Client 6: avg epsilon = 1.3850
+Client 7: avg epsilon = 1.2026
+Client 8: avg epsilon = 9.8253
+Client 9: avg epsilon = 3.8917
+ We run FedAvg with rPDP (ThreeLevels-0) ...
+max_epsilon :  10.0  noise_multiplier :  9.736328125
+The R-Squared value of the best-fit curve : 0.999749898528281
+learning rate =  0.001
+sample_rate: (min) 0.03, (max) 0.51, expected_batch_size: 432
+sample_rate: (min) 0.03, (max) 0.51, expected_batch_size: 1634
+sample_rate: (min) 0.03, (max) 0.03, expected_batch_size: 76
+sample_rate: (min) 0.03, (max) 0.51, expected_batch_size: 354
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 149
+sample_rate: (min) 0.03, (max) 0.51, expected_batch_size: 168
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 296
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 177
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 3810
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 1602
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [2.888922200264604, 2.888922200264604, 0.05997229379927632, 2.713667276648133, 7.341489632879909, 2.888922200264604, 7.341489632879909, 7.879532215750026, 8.417574798620144, 5.727361884269555]
+Round=14, per client global perf=[0.1362, 0.3016, 0.0006, 0.1623, 0.0, 0.0012, 0.3096, 0.0336, 0.4149, 0.1872], mean perf=3205/20405 (0.1571%)
+Round=14, per client personal perf=[0.8912, 0.9365, 0.9771, 0.9574, 0.8643, 0.8163, 0.8964, 0.9547, 0.9895, 0.9669], mean perf=18600/20405 (0.9115%)
+Round=14, per client personal pooled=[0.3407, 0.3613, 0.1546, 0.4628, 0.2885, 0.3772, 0.3689, 0.2896, 0.2029, 0.099], mean perf=60104/204050 (0.2946%)
+Mean performance of ditto rpdp global, Perf=0.1929, seed=42
+Mean performance of ditto rpdp personal, Perf=0.9115, seed=42
+Mean performance of ditto rpdp pooled, Perf=0.2872, seed=42
+Finished seed 42
+----------------------------------------
+Running seed 43
+/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/experiments/datasets/fed_fashion_mnist/dirichlet_10_alpha_1
+
+Client 0 label distribution:
+[(0, 3), (1, 20), (3, 1868), (4, 1598), (5, 161), (7, 4), (8, 661), (9, 2)]
+
+Client 1 label distribution:
+[(0, 3094), (1, 2826), (3, 7), (6, 164), (7, 224), (8, 2673), (9, 2)]
+
+Client 2 label distribution:
+[(1, 122), (4, 1), (6, 2929)]
+
+Client 3 label distribution:
+[(0, 119), (1, 26), (4, 122), (6, 8), (7, 609), (8, 71)]
+
+Client 4 label distribution:
+[(2, 289), (3, 1925), (4, 188), (5, 2600), (6, 650), (7, 12), (9, 1)]
+
+Client 5 label distribution:
+[(1, 945), (2, 3636), (3, 120), (4, 963), (5, 719), (6, 193), (8, 5)]
+
+Client 6 label distribution:
+[(0, 441), (4, 219), (5, 425), (8, 520), (9, 4)]
+
+Client 7 label distribution:
+[(0, 320), (1, 7), (3, 2), (4, 848), (5, 1), (7, 2), (9, 147)]
+
+Client 8 label distribution:
+[(2, 15), (5, 48), (6, 7), (9, 3807)]
+
+Client 9 label distribution:
+[(0, 1), (2, 2), (3, 1), (5, 87), (6, 1), (7, 3128), (8, 1), (9, 1)]
+Client 0: avg epsilon = 0.7026
+Client 1: avg epsilon = 1.3576
+Client 2: avg epsilon = 0.1000
+Client 3: avg epsilon = 2.8770
+Client 4: avg epsilon = 0.1100
+Client 5: avg epsilon = 0.1030
+Client 6: avg epsilon = 1.3850
+Client 7: avg epsilon = 1.2026
+Client 8: avg epsilon = 9.8253
+Client 9: avg epsilon = 3.8917
+ We run FedAvg with rPDP (ThreeLevels-0) ...
+max_epsilon :  10.0  noise_multiplier :  9.736328125
+The R-Squared value of the best-fit curve : 0.999749898528281
+learning rate =  0.001
+sample_rate: (min) 0.03, (max) 0.51, expected_batch_size: 432
+sample_rate: (min) 0.03, (max) 0.51, expected_batch_size: 1634
+sample_rate: (min) 0.03, (max) 0.03, expected_batch_size: 76
+sample_rate: (min) 0.03, (max) 0.51, expected_batch_size: 354
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 149
+sample_rate: (min) 0.03, (max) 0.51, expected_batch_size: 168
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 296
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 177
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 3810
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 1602
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [3.055936862776558, 2.888922200264604, 0.07214729257008984, 3.055936862776558, 5.189319301399437, 2.888922200264604, 5.727361884269555, 4.065705449544012, 5.727361884269555, 7.879532215750026]
+Round=14, per client global perf=[0.0944, 0.2159, 0.0, 0.6613, 0.0024, 0.0009, 0.1976, 0.0015, 0.0, 0.9663], mean perf=3316/20405 (0.1625%)
+Round=14, per client personal perf=[0.9078, 0.9514, 0.9886, 0.9533, 0.8462, 0.8204, 0.9108, 0.8582, 0.988, 0.9675], mean perf=18627/20405 (0.9129%)
+Round=14, per client personal pooled=[0.3717, 0.3867, 0.1776, 0.4593, 0.2547, 0.3636, 0.3582, 0.2642, 0.0998, 0.0991], mean perf=57847/204050 (0.2835%)
+Mean performance of ditto rpdp global, Perf=0.1284, seed=43
+Mean performance of ditto rpdp personal, Perf=0.9063, seed=43
+Mean performance of ditto rpdp pooled, Perf=0.2658, seed=43
+Finished seed 43
+----------------------------------------
+Running seed 44
+/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/experiments/datasets/fed_fashion_mnist/dirichlet_10_alpha_1
+
+Client 0 label distribution:
+[(0, 3), (1, 20), (3, 1868), (4, 1598), (5, 161), (7, 4), (8, 661), (9, 2)]
+
+Client 1 label distribution:
+[(0, 3094), (1, 2826), (3, 7), (6, 164), (7, 224), (8, 2673), (9, 2)]
+
+Client 2 label distribution:
+[(1, 122), (4, 1), (6, 2929)]
+
+Client 3 label distribution:
+[(0, 119), (1, 26), (4, 122), (6, 8), (7, 609), (8, 71)]
+
+Client 4 label distribution:
+[(2, 289), (3, 1925), (4, 188), (5, 2600), (6, 650), (7, 12), (9, 1)]
+
+Client 5 label distribution:
+[(1, 945), (2, 3636), (3, 120), (4, 963), (5, 719), (6, 193), (8, 5)]
+
+Client 6 label distribution:
+[(0, 441), (4, 219), (5, 425), (8, 520), (9, 4)]
+
+Client 7 label distribution:
+[(0, 320), (1, 7), (3, 2), (4, 848), (5, 1), (7, 2), (9, 147)]
+
+Client 8 label distribution:
+[(2, 15), (5, 48), (6, 7), (9, 3807)]
+
+Client 9 label distribution:
+[(0, 1), (2, 2), (3, 1), (5, 87), (6, 1), (7, 3128), (8, 1), (9, 1)]
+Client 0: avg epsilon = 0.7026
+Client 1: avg epsilon = 1.3576
+Client 2: avg epsilon = 0.1000
+Client 3: avg epsilon = 2.8770
+Client 4: avg epsilon = 0.1100
+Client 5: avg epsilon = 0.1030
+Client 6: avg epsilon = 1.3850
+Client 7: avg epsilon = 1.2026
+Client 8: avg epsilon = 9.8253
+Client 9: avg epsilon = 3.8917
+ We run FedAvg with rPDP (ThreeLevels-0) ...
+max_epsilon :  10.0  noise_multiplier :  9.736328125
+The R-Squared value of the best-fit curve : 0.999749898528281
+learning rate =  0.001
+sample_rate: (min) 0.03, (max) 0.51, expected_batch_size: 432
+sample_rate: (min) 0.03, (max) 0.51, expected_batch_size: 1634
+sample_rate: (min) 0.03, (max) 0.03, expected_batch_size: 76
+sample_rate: (min) 0.03, (max) 0.51, expected_batch_size: 354
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 149
+sample_rate: (min) 0.03, (max) 0.51, expected_batch_size: 168
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 296
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 177
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 3810
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 1602
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [3.055936862776558, 3.5569808503124216, 0.08299634815037049, 1.7512846237718216, 8.417574798620144, 2.4833484928873713, 5.189319301399437, 5.727361884269555, 5.189319301399437, 6.803447050009791]
+Round=14, per client global perf=[0.1367, 0.4791, 0.0045, 0.211, 0.0, 0.0115, 0.4325, 0.1023, 0.0, 0.1644], mean perf=3375/20405 (0.1654%)
+Round=14, per client personal perf=[0.9065, 0.9372, 0.986, 0.8966, 0.8585, 0.8113, 0.9096, 0.9532, 0.988, 0.9681], mean perf=18596/20405 (0.9113%)
+Round=14, per client personal pooled=[0.3694, 0.3481, 0.1742, 0.3377, 0.2723, 0.3108, 0.3702, 0.2888, 0.0998, 0.1033], mean perf=54575/204050 (0.2675%)
+Mean performance of ditto rpdp global, Perf=0.1934, seed=44
+Mean performance of ditto rpdp personal, Perf=0.9108, seed=44
+Mean performance of ditto rpdp pooled, Perf=0.2652, seed=44
+Finished seed 44
+----------------------------------------
+Running seed 45
+/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/experiments/datasets/fed_fashion_mnist/dirichlet_10_alpha_1
+
+Client 0 label distribution:
+[(0, 3), (1, 20), (3, 1868), (4, 1598), (5, 161), (7, 4), (8, 661), (9, 2)]
+
+Client 1 label distribution:
+[(0, 3094), (1, 2826), (3, 7), (6, 164), (7, 224), (8, 2673), (9, 2)]
+
+Client 2 label distribution:
+[(1, 122), (4, 1), (6, 2929)]
+
+Client 3 label distribution:
+[(0, 119), (1, 26), (4, 122), (6, 8), (7, 609), (8, 71)]
+
+Client 4 label distribution:
+[(2, 289), (3, 1925), (4, 188), (5, 2600), (6, 650), (7, 12), (9, 1)]
+
+Client 5 label distribution:
+[(1, 945), (2, 3636), (3, 120), (4, 963), (5, 719), (6, 193), (8, 5)]
+
+Client 6 label distribution:
+[(0, 441), (4, 219), (5, 425), (8, 520), (9, 4)]
+
+Client 7 label distribution:
+[(0, 320), (1, 7), (3, 2), (4, 848), (5, 1), (7, 2), (9, 147)]
+
+Client 8 label distribution:
+[(2, 15), (5, 48), (6, 7), (9, 3807)]
+
+Client 9 label distribution:
+[(0, 1), (2, 2), (3, 1), (5, 87), (6, 1), (7, 3128), (8, 1), (9, 1)]
+Client 0: avg epsilon = 0.7026
+Client 1: avg epsilon = 1.3576
+Client 2: avg epsilon = 0.1000
+Client 3: avg epsilon = 2.8770
+Client 4: avg epsilon = 0.1100
+Client 5: avg epsilon = 0.1030
+Client 6: avg epsilon = 1.3850
+Client 7: avg epsilon = 1.2026
+Client 8: avg epsilon = 9.8253
+Client 9: avg epsilon = 3.8917
+ We run FedAvg with rPDP (ThreeLevels-0) ...
+max_epsilon :  10.0  noise_multiplier :  9.736328125
+The R-Squared value of the best-fit curve : 0.999749898528281
+learning rate =  0.001
+sample_rate: (min) 0.03, (max) 0.51, expected_batch_size: 432
+sample_rate: (min) 0.03, (max) 0.51, expected_batch_size: 1634
+sample_rate: (min) 0.03, (max) 0.03, expected_batch_size: 76
+sample_rate: (min) 0.03, (max) 0.51, expected_batch_size: 354
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 149
+sample_rate: (min) 0.03, (max) 0.51, expected_batch_size: 168
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 296
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 177
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 3810
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 1602
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [2.888922200264604, 2.888922200264604, 0.07214729257008984, 2.022710925365847, 6.803447050009791, 3.222951525288513, 6.803447050009791, 5.189319301399437, 7.341489632879909, 7.879532215750026]
+Round=14, per client global perf=[0.0004, 0.0022, 0.0, 0.002, 0.0295, 0.2828, 0.0024, 0.0863, 0.986, 0.0006], mean perf=3089/20405 (0.1514%)
+Round=14, per client personal perf=[0.8844, 0.9391, 0.9784, 0.9249, 0.853, 0.8163, 0.9108, 0.9444, 0.988, 0.9669], mean perf=18552/20405 (0.9092%)
+Round=14, per client personal pooled=[0.337, 0.36, 0.1601, 0.3637, 0.2848, 0.3311, 0.3676, 0.2858, 0.0998, 0.0995], mean perf=54879/204050 (0.2689%)
+Mean performance of ditto rpdp global, Perf=0.1196, seed=45
+Mean performance of ditto rpdp personal, Perf=0.9089, seed=45
+Mean performance of ditto rpdp pooled, Perf=0.2700, seed=45
+Finished seed 45
+----------------------------------------
+Running seed 46
+/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/experiments/datasets/fed_fashion_mnist/dirichlet_10_alpha_1
+
+Client 0 label distribution:
+[(0, 3), (1, 20), (3, 1868), (4, 1598), (5, 161), (7, 4), (8, 661), (9, 2)]
+
+Client 1 label distribution:
+[(0, 3094), (1, 2826), (3, 7), (6, 164), (7, 224), (8, 2673), (9, 2)]
+
+Client 2 label distribution:
+[(1, 122), (4, 1), (6, 2929)]
+
+Client 3 label distribution:
+[(0, 119), (1, 26), (4, 122), (6, 8), (7, 609), (8, 71)]
+
+Client 4 label distribution:
+[(2, 289), (3, 1925), (4, 188), (5, 2600), (6, 650), (7, 12), (9, 1)]
+
+Client 5 label distribution:
+[(1, 945), (2, 3636), (3, 120), (4, 963), (5, 719), (6, 193), (8, 5)]
+
+Client 6 label distribution:
+[(0, 441), (4, 219), (5, 425), (8, 520), (9, 4)]
+
+Client 7 label distribution:
+[(0, 320), (1, 7), (3, 2), (4, 848), (5, 1), (7, 2), (9, 147)]
+
+Client 8 label distribution:
+[(2, 15), (5, 48), (6, 7), (9, 3807)]
+
+Client 9 label distribution:
+[(0, 1), (2, 2), (3, 1), (5, 87), (6, 1), (7, 3128), (8, 1), (9, 1)]
+Client 0: avg epsilon = 0.7026
+Client 1: avg epsilon = 1.3576
+Client 2: avg epsilon = 0.1000
+Client 3: avg epsilon = 2.8770
+Client 4: avg epsilon = 0.1100
+Client 5: avg epsilon = 0.1030
+Client 6: avg epsilon = 1.3850
+Client 7: avg epsilon = 1.2026
+Client 8: avg epsilon = 9.8253
+Client 9: avg epsilon = 3.8917
+ We run FedAvg with rPDP (ThreeLevels-0) ...
+max_epsilon :  10.0  noise_multiplier :  9.736328125
+The R-Squared value of the best-fit curve : 0.999749898528281
+learning rate =  0.001
+sample_rate: (min) 0.03, (max) 0.51, expected_batch_size: 432
+sample_rate: (min) 0.03, (max) 0.51, expected_batch_size: 1634
+sample_rate: (min) 0.03, (max) 0.03, expected_batch_size: 76
+sample_rate: (min) 0.03, (max) 0.51, expected_batch_size: 354
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 149
+sample_rate: (min) 0.03, (max) 0.51, expected_batch_size: 168
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 296
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 177
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 3810
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 1602
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [2.713667276648133, 3.055936862776558, 0.07214729257008984, 2.888922200264604, 6.265404467139673, 2.888922200264604, 6.803447050009791, 8.417574798620144, 7.879532215750026, 6.803447050009791]
+Round=14, per client global perf=[0.1353, 0.3966, 0.0051, 0.4239, 0.0017, 0.0035, 0.3795, 0.0614, 0.0, 0.4913], mean perf=3545/20405 (0.1737%)
+Round=14, per client personal perf=[0.8925, 0.9439, 0.9797, 0.9493, 0.8537, 0.8225, 0.8976, 0.9518, 0.99, 0.9681], mean perf=18629/20405 (0.9130%)
+Round=14, per client personal pooled=[0.3586, 0.3847, 0.1722, 0.4349, 0.3111, 0.3732, 0.3583, 0.2906, 0.1975, 0.1018], mean perf=60866/204050 (0.2983%)
+Mean performance of ditto rpdp global, Perf=0.1678, seed=46
+Mean performance of ditto rpdp personal, Perf=0.9096, seed=46
+Mean performance of ditto rpdp pooled, Perf=0.2925, seed=46
+Finished seed 46
+----------------------------------------
+=== Running reg_param=1.0, num_steps=15 ===
+Running seed 42
+/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/experiments/datasets/fed_fashion_mnist/dirichlet_10_alpha_1
+
+Client 0 label distribution:
+[(0, 3), (1, 20), (3, 1868), (4, 1598), (5, 161), (7, 4), (8, 661), (9, 2)]
+
+Client 1 label distribution:
+[(0, 3094), (1, 2826), (3, 7), (6, 164), (7, 224), (8, 2673), (9, 2)]
+
+Client 2 label distribution:
+[(1, 122), (4, 1), (6, 2929)]
+
+Client 3 label distribution:
+[(0, 119), (1, 26), (4, 122), (6, 8), (7, 609), (8, 71)]
+
+Client 4 label distribution:
+[(2, 289), (3, 1925), (4, 188), (5, 2600), (6, 650), (7, 12), (9, 1)]
+
+Client 5 label distribution:
+[(1, 945), (2, 3636), (3, 120), (4, 963), (5, 719), (6, 193), (8, 5)]
+
+Client 6 label distribution:
+[(0, 441), (4, 219), (5, 425), (8, 520), (9, 4)]
+
+Client 7 label distribution:
+[(0, 320), (1, 7), (3, 2), (4, 848), (5, 1), (7, 2), (9, 147)]
+
+Client 8 label distribution:
+[(2, 15), (5, 48), (6, 7), (9, 3807)]
+
+Client 9 label distribution:
+[(0, 1), (2, 2), (3, 1), (5, 87), (6, 1), (7, 3128), (8, 1), (9, 1)]
+Client 0: avg epsilon = 0.7026
+Client 1: avg epsilon = 1.3576
+Client 2: avg epsilon = 0.1000
+Client 3: avg epsilon = 2.8770
+Client 4: avg epsilon = 0.1100
+Client 5: avg epsilon = 0.1030
+Client 6: avg epsilon = 1.3850
+Client 7: avg epsilon = 1.2026
+Client 8: avg epsilon = 9.8253
+Client 9: avg epsilon = 3.8917
+ We run FedAvg with rPDP (ThreeLevels-0) ...
+max_epsilon :  10.0  noise_multiplier :  9.736328125
+The R-Squared value of the best-fit curve : 0.999749898528281
+learning rate =  0.001
+sample_rate: (min) 0.03, (max) 0.51, expected_batch_size: 432
+sample_rate: (min) 0.03, (max) 0.51, expected_batch_size: 1634
+sample_rate: (min) 0.03, (max) 0.03, expected_batch_size: 76
+sample_rate: (min) 0.03, (max) 0.51, expected_batch_size: 354
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 149
+sample_rate: (min) 0.03, (max) 0.51, expected_batch_size: 168
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 296
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 177
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 3810
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 1602
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [2.888922200264604, 2.888922200264604, 0.05997229379927632, 2.713667276648133, 7.341489632879909, 2.888922200264604, 7.341489632879909, 7.879532215750026, 8.417574798620144, 5.727361884269555]
+Round=14, per client global perf=[0.1362, 0.3016, 0.0006, 0.1623, 0.0, 0.0012, 0.3096, 0.0336, 0.4149, 0.1872], mean perf=3205/20405 (0.1571%)
+Round=14, per client personal perf=[0.8665, 0.8895, 0.9498, 0.9067, 0.8171, 0.7502, 0.8699, 0.9181, 0.988, 0.9669], mean perf=17847/20405 (0.8746%)
+Round=14, per client personal pooled=[0.3175, 0.28, 0.1004, 0.3427, 0.2329, 0.2533, 0.3528, 0.2819, 0.1241, 0.099], mean perf=48656/204050 (0.2385%)
+Mean performance of ditto rpdp global, Perf=0.1929, seed=42
+Mean performance of ditto rpdp personal, Perf=0.8724, seed=42
+Mean performance of ditto rpdp pooled, Perf=0.2439, seed=42
+Finished seed 42
+----------------------------------------
+Running seed 43
+/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/experiments/datasets/fed_fashion_mnist/dirichlet_10_alpha_1
+
+Client 0 label distribution:
+[(0, 3), (1, 20), (3, 1868), (4, 1598), (5, 161), (7, 4), (8, 661), (9, 2)]
+
+Client 1 label distribution:
+[(0, 3094), (1, 2826), (3, 7), (6, 164), (7, 224), (8, 2673), (9, 2)]
+
+Client 2 label distribution:
+[(1, 122), (4, 1), (6, 2929)]
+
+Client 3 label distribution:
+[(0, 119), (1, 26), (4, 122), (6, 8), (7, 609), (8, 71)]
+
+Client 4 label distribution:
+[(2, 289), (3, 1925), (4, 188), (5, 2600), (6, 650), (7, 12), (9, 1)]
+
+Client 5 label distribution:
+[(1, 945), (2, 3636), (3, 120), (4, 963), (5, 719), (6, 193), (8, 5)]
+
+Client 6 label distribution:
+[(0, 441), (4, 219), (5, 425), (8, 520), (9, 4)]
+
+Client 7 label distribution:
+[(0, 320), (1, 7), (3, 2), (4, 848), (5, 1), (7, 2), (9, 147)]
+
+Client 8 label distribution:
+[(2, 15), (5, 48), (6, 7), (9, 3807)]
+
+Client 9 label distribution:
+[(0, 1), (2, 2), (3, 1), (5, 87), (6, 1), (7, 3128), (8, 1), (9, 1)]
+Client 0: avg epsilon = 0.7026
+Client 1: avg epsilon = 1.3576
+Client 2: avg epsilon = 0.1000
+Client 3: avg epsilon = 2.8770
+Client 4: avg epsilon = 0.1100
+Client 5: avg epsilon = 0.1030
+Client 6: avg epsilon = 1.3850
+Client 7: avg epsilon = 1.2026
+Client 8: avg epsilon = 9.8253
+Client 9: avg epsilon = 3.8917
+ We run FedAvg with rPDP (ThreeLevels-0) ...
+max_epsilon :  10.0  noise_multiplier :  9.736328125
+The R-Squared value of the best-fit curve : 0.999749898528281
+learning rate =  0.001
+sample_rate: (min) 0.03, (max) 0.51, expected_batch_size: 432
+sample_rate: (min) 0.03, (max) 0.51, expected_batch_size: 1634
+sample_rate: (min) 0.03, (max) 0.03, expected_batch_size: 76
+sample_rate: (min) 0.03, (max) 0.51, expected_batch_size: 354
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 149
+sample_rate: (min) 0.03, (max) 0.51, expected_batch_size: 168
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 296
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 177
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 3810
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 1602
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [3.055936862776558, 2.888922200264604, 0.07214729257008984, 3.055936862776558, 5.189319301399437, 2.888922200264604, 5.727361884269555, 4.065705449544012, 5.727361884269555, 7.879532215750026]
+Round=14, per client global perf=[0.0944, 0.2159, 0.0, 0.6613, 0.0024, 0.0009, 0.1976, 0.0015, 0.0, 0.9663], mean perf=3316/20405 (0.1625%)
+Round=14, per client personal perf=[0.8593, 0.9003, 0.9498, 0.9026, 0.7962, 0.7832, 0.8639, 0.7997, 0.988, 0.9669], mean perf=17844/20405 (0.8745%)
+Round=14, per client personal pooled=[0.3445, 0.2825, 0.1004, 0.34, 0.2231, 0.2828, 0.3284, 0.2415, 0.0998, 0.099], mean perf=47788/204050 (0.2342%)
+Mean performance of ditto rpdp global, Perf=0.1284, seed=43
+Mean performance of ditto rpdp personal, Perf=0.8694, seed=43
+Mean performance of ditto rpdp pooled, Perf=0.2197, seed=43
+Finished seed 43
+----------------------------------------
+Running seed 44
+/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/experiments/datasets/fed_fashion_mnist/dirichlet_10_alpha_1
+
+Client 0 label distribution:
+[(0, 3), (1, 20), (3, 1868), (4, 1598), (5, 161), (7, 4), (8, 661), (9, 2)]
+
+Client 1 label distribution:
+[(0, 3094), (1, 2826), (3, 7), (6, 164), (7, 224), (8, 2673), (9, 2)]
+
+Client 2 label distribution:
+[(1, 122), (4, 1), (6, 2929)]
+
+Client 3 label distribution:
+[(0, 119), (1, 26), (4, 122), (6, 8), (7, 609), (8, 71)]
+
+Client 4 label distribution:
+[(2, 289), (3, 1925), (4, 188), (5, 2600), (6, 650), (7, 12), (9, 1)]
+
+Client 5 label distribution:
+[(1, 945), (2, 3636), (3, 120), (4, 963), (5, 719), (6, 193), (8, 5)]
+
+Client 6 label distribution:
+[(0, 441), (4, 219), (5, 425), (8, 520), (9, 4)]
+
+Client 7 label distribution:
+[(0, 320), (1, 7), (3, 2), (4, 848), (5, 1), (7, 2), (9, 147)]
+
+Client 8 label distribution:
+[(2, 15), (5, 48), (6, 7), (9, 3807)]
+
+Client 9 label distribution:
+[(0, 1), (2, 2), (3, 1), (5, 87), (6, 1), (7, 3128), (8, 1), (9, 1)]
+Client 0: avg epsilon = 0.7026
+Client 1: avg epsilon = 1.3576
+Client 2: avg epsilon = 0.1000
+Client 3: avg epsilon = 2.8770
+Client 4: avg epsilon = 0.1100
+Client 5: avg epsilon = 0.1030
+Client 6: avg epsilon = 1.3850
+Client 7: avg epsilon = 1.2026
+Client 8: avg epsilon = 9.8253
+Client 9: avg epsilon = 3.8917
+ We run FedAvg with rPDP (ThreeLevels-0) ...
+max_epsilon :  10.0  noise_multiplier :  9.736328125
+The R-Squared value of the best-fit curve : 0.999749898528281
+learning rate =  0.001
+sample_rate: (min) 0.03, (max) 0.51, expected_batch_size: 432
+sample_rate: (min) 0.03, (max) 0.51, expected_batch_size: 1634
+sample_rate: (min) 0.03, (max) 0.03, expected_batch_size: 76
+sample_rate: (min) 0.03, (max) 0.51, expected_batch_size: 354
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 149
+sample_rate: (min) 0.03, (max) 0.51, expected_batch_size: 168
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 296
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 177
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 3810
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 1602
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [3.055936862776558, 3.5569808503124216, 0.08299634815037049, 1.7512846237718216, 8.417574798620144, 2.4833484928873713, 5.189319301399437, 5.727361884269555, 5.189319301399437, 6.803447050009791]
+Round=14, per client global perf=[0.1367, 0.4791, 0.0045, 0.211, 0.0, 0.0115, 0.4325, 0.1023, 0.0, 0.1644], mean perf=3375/20405 (0.1654%)
+Round=14, per client personal perf=[0.8642, 0.8657, 0.9498, 0.8803, 0.8201, 0.7915, 0.8723, 0.9196, 0.988, 0.9669], mean perf=17871/20405 (0.8758%)
+Round=14, per client personal pooled=[0.3378, 0.2707, 0.1004, 0.3146, 0.242, 0.2934, 0.3543, 0.2818, 0.1086, 0.099], mean perf=49023/204050 (0.2402%)
+Mean performance of ditto rpdp global, Perf=0.1934, seed=44
+Mean performance of ditto rpdp personal, Perf=0.8727, seed=44
+Mean performance of ditto rpdp pooled, Perf=0.2366, seed=44
+Finished seed 44
+----------------------------------------
+Running seed 45
+/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/experiments/datasets/fed_fashion_mnist/dirichlet_10_alpha_1
+
+Client 0 label distribution:
+[(0, 3), (1, 20), (3, 1868), (4, 1598), (5, 161), (7, 4), (8, 661), (9, 2)]
+
+Client 1 label distribution:
+[(0, 3094), (1, 2826), (3, 7), (6, 164), (7, 224), (8, 2673), (9, 2)]
+
+Client 2 label distribution:
+[(1, 122), (4, 1), (6, 2929)]
+
+Client 3 label distribution:
+[(0, 119), (1, 26), (4, 122), (6, 8), (7, 609), (8, 71)]
+
+Client 4 label distribution:
+[(2, 289), (3, 1925), (4, 188), (5, 2600), (6, 650), (7, 12), (9, 1)]
+
+Client 5 label distribution:
+[(1, 945), (2, 3636), (3, 120), (4, 963), (5, 719), (6, 193), (8, 5)]
+
+Client 6 label distribution:
+[(0, 441), (4, 219), (5, 425), (8, 520), (9, 4)]
+
+Client 7 label distribution:
+[(0, 320), (1, 7), (3, 2), (4, 848), (5, 1), (7, 2), (9, 147)]
+
+Client 8 label distribution:
+[(2, 15), (5, 48), (6, 7), (9, 3807)]
+
+Client 9 label distribution:
+[(0, 1), (2, 2), (3, 1), (5, 87), (6, 1), (7, 3128), (8, 1), (9, 1)]
+Client 0: avg epsilon = 0.7026
+Client 1: avg epsilon = 1.3576
+Client 2: avg epsilon = 0.1000
+Client 3: avg epsilon = 2.8770
+Client 4: avg epsilon = 0.1100
+Client 5: avg epsilon = 0.1030
+Client 6: avg epsilon = 1.3850
+Client 7: avg epsilon = 1.2026
+Client 8: avg epsilon = 9.8253
+Client 9: avg epsilon = 3.8917
+ We run FedAvg with rPDP (ThreeLevels-0) ...
+max_epsilon :  10.0  noise_multiplier :  9.736328125
+The R-Squared value of the best-fit curve : 0.999749898528281
+learning rate =  0.001
+sample_rate: (min) 0.03, (max) 0.51, expected_batch_size: 432
+sample_rate: (min) 0.03, (max) 0.51, expected_batch_size: 1634
+sample_rate: (min) 0.03, (max) 0.03, expected_batch_size: 76
+sample_rate: (min) 0.03, (max) 0.51, expected_batch_size: 354
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 149
+sample_rate: (min) 0.03, (max) 0.51, expected_batch_size: 168
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 296
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 177
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 3810
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 1602
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [2.888922200264604, 2.888922200264604, 0.07214729257008984, 2.022710925365847, 6.803447050009791, 3.222951525288513, 6.803447050009791, 5.189319301399437, 7.341489632879909, 7.879532215750026]
+Round=14, per client global perf=[0.0004, 0.0022, 0.0, 0.002, 0.0295, 0.2828, 0.0024, 0.0863, 0.986, 0.0006], mean perf=3089/20405 (0.1514%)
+Round=14, per client personal perf=[0.8422, 0.8327, 0.9498, 0.8519, 0.7886, 0.7865, 0.8506, 0.9196, 0.988, 0.9669], mean perf=17528/20405 (0.8590%)
+Round=14, per client personal pooled=[0.2942, 0.2628, 0.1004, 0.2855, 0.2342, 0.2882, 0.334, 0.2723, 0.0998, 0.099], mean perf=46325/204050 (0.2270%)
+Mean performance of ditto rpdp global, Perf=0.1196, seed=45
+Mean performance of ditto rpdp personal, Perf=0.8554, seed=45
+Mean performance of ditto rpdp pooled, Perf=0.2227, seed=45
+Finished seed 45
+----------------------------------------
+Running seed 46
+/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/experiments/datasets/fed_fashion_mnist/dirichlet_10_alpha_1
+
+Client 0 label distribution:
+[(0, 3), (1, 20), (3, 1868), (4, 1598), (5, 161), (7, 4), (8, 661), (9, 2)]
+
+Client 1 label distribution:
+[(0, 3094), (1, 2826), (3, 7), (6, 164), (7, 224), (8, 2673), (9, 2)]
+
+Client 2 label distribution:
+[(1, 122), (4, 1), (6, 2929)]
+
+Client 3 label distribution:
+[(0, 119), (1, 26), (4, 122), (6, 8), (7, 609), (8, 71)]
+
+Client 4 label distribution:
+[(2, 289), (3, 1925), (4, 188), (5, 2600), (6, 650), (7, 12), (9, 1)]
+
+Client 5 label distribution:
+[(1, 945), (2, 3636), (3, 120), (4, 963), (5, 719), (6, 193), (8, 5)]
+
+Client 6 label distribution:
+[(0, 441), (4, 219), (5, 425), (8, 520), (9, 4)]
+
+Client 7 label distribution:
+[(0, 320), (1, 7), (3, 2), (4, 848), (5, 1), (7, 2), (9, 147)]
+
+Client 8 label distribution:
+[(2, 15), (5, 48), (6, 7), (9, 3807)]
+
+Client 9 label distribution:
+[(0, 1), (2, 2), (3, 1), (5, 87), (6, 1), (7, 3128), (8, 1), (9, 1)]
+Client 0: avg epsilon = 0.7026
+Client 1: avg epsilon = 1.3576
+Client 2: avg epsilon = 0.1000
+Client 3: avg epsilon = 2.8770
+Client 4: avg epsilon = 0.1100
+Client 5: avg epsilon = 0.1030
+Client 6: avg epsilon = 1.3850
+Client 7: avg epsilon = 1.2026
+Client 8: avg epsilon = 9.8253
+Client 9: avg epsilon = 3.8917
+ We run FedAvg with rPDP (ThreeLevels-0) ...
+max_epsilon :  10.0  noise_multiplier :  9.736328125
+The R-Squared value of the best-fit curve : 0.999749898528281
+learning rate =  0.001
+sample_rate: (min) 0.03, (max) 0.51, expected_batch_size: 432
+sample_rate: (min) 0.03, (max) 0.51, expected_batch_size: 1634
+sample_rate: (min) 0.03, (max) 0.03, expected_batch_size: 76
+sample_rate: (min) 0.03, (max) 0.51, expected_batch_size: 354
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 149
+sample_rate: (min) 0.03, (max) 0.51, expected_batch_size: 168
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 296
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 177
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 3810
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 1602
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [2.713667276648133, 3.055936862776558, 0.07214729257008984, 2.888922200264604, 6.265404467139673, 2.888922200264604, 6.803447050009791, 8.417574798620144, 7.879532215750026, 6.803447050009791]
+Round=14, per client global perf=[0.1353, 0.3966, 0.0051, 0.4239, 0.0017, 0.0035, 0.3795, 0.0614, 0.0, 0.4913], mean perf=3545/20405 (0.1737%)
+Round=14, per client personal perf=[0.8656, 0.9052, 0.9498, 0.9168, 0.8106, 0.7824, 0.8735, 0.9327, 0.988, 0.9675], mean perf=18027/20405 (0.8835%)
+Round=14, per client personal pooled=[0.3476, 0.2839, 0.1015, 0.354, 0.2837, 0.3246, 0.3484, 0.2857, 0.1478, 0.12], mean perf=52997/204050 (0.2597%)
+Mean performance of ditto rpdp global, Perf=0.1678, seed=46
+Mean performance of ditto rpdp personal, Perf=0.8712, seed=46
+Mean performance of ditto rpdp pooled, Perf=0.2516, seed=46
+Finished seed 46
+----------------------------------------
+=== Running reg_param=10, num_steps=15 ===
+Running seed 42
+/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/experiments/datasets/fed_fashion_mnist/dirichlet_10_alpha_1
+
+Client 0 label distribution:
+[(0, 3), (1, 20), (3, 1868), (4, 1598), (5, 161), (7, 4), (8, 661), (9, 2)]
+
+Client 1 label distribution:
+[(0, 3094), (1, 2826), (3, 7), (6, 164), (7, 224), (8, 2673), (9, 2)]
+
+Client 2 label distribution:
+[(1, 122), (4, 1), (6, 2929)]
+
+Client 3 label distribution:
+[(0, 119), (1, 26), (4, 122), (6, 8), (7, 609), (8, 71)]
+
+Client 4 label distribution:
+[(2, 289), (3, 1925), (4, 188), (5, 2600), (6, 650), (7, 12), (9, 1)]
+
+Client 5 label distribution:
+[(1, 945), (2, 3636), (3, 120), (4, 963), (5, 719), (6, 193), (8, 5)]
+
+Client 6 label distribution:
+[(0, 441), (4, 219), (5, 425), (8, 520), (9, 4)]
+
+Client 7 label distribution:
+[(0, 320), (1, 7), (3, 2), (4, 848), (5, 1), (7, 2), (9, 147)]
+
+Client 8 label distribution:
+[(2, 15), (5, 48), (6, 7), (9, 3807)]
+
+Client 9 label distribution:
+[(0, 1), (2, 2), (3, 1), (5, 87), (6, 1), (7, 3128), (8, 1), (9, 1)]
+Client 0: avg epsilon = 0.7026
+Client 1: avg epsilon = 1.3576
+Client 2: avg epsilon = 0.1000
+Client 3: avg epsilon = 2.8770
+Client 4: avg epsilon = 0.1100
+Client 5: avg epsilon = 0.1030
+Client 6: avg epsilon = 1.3850
+Client 7: avg epsilon = 1.2026
+Client 8: avg epsilon = 9.8253
+Client 9: avg epsilon = 3.8917
+ We run FedAvg with rPDP (ThreeLevels-0) ...
+max_epsilon :  10.0  noise_multiplier :  9.736328125
+The R-Squared value of the best-fit curve : 0.999749898528281
+learning rate =  0.001
+sample_rate: (min) 0.03, (max) 0.51, expected_batch_size: 432
+sample_rate: (min) 0.03, (max) 0.51, expected_batch_size: 1634
+sample_rate: (min) 0.03, (max) 0.03, expected_batch_size: 76
+sample_rate: (min) 0.03, (max) 0.51, expected_batch_size: 354
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 149
+sample_rate: (min) 0.03, (max) 0.51, expected_batch_size: 168
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 296
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 177
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 3810
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 1602
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [2.888922200264604, 2.888922200264604, 0.05997229379927632, 2.713667276648133, 7.341489632879909, 2.888922200264604, 7.341489632879909, 7.879532215750026, 8.417574798620144, 5.727361884269555]
+Round=14, per client global perf=[0.1362, 0.3016, 0.0006, 0.1623, 0.0, 0.0012, 0.3096, 0.0336, 0.4149, 0.1872], mean perf=3205/20405 (0.1571%)
+Round=14, per client personal perf=[0.7986, 0.6563, 0.9498, 0.8073, 0.7674, 0.6685, 0.7916, 0.8801, 0.988, 0.9669], mean perf=16054/20405 (0.7868%)
+Round=14, per client personal pooled=[0.2518, 0.2097, 0.1029, 0.2629, 0.2269, 0.217, 0.2802, 0.2495, 0.1439, 0.1322], mean perf=42378/204050 (0.2077%)
+Mean performance of ditto rpdp global, Perf=0.1929, seed=42
+Mean performance of ditto rpdp personal, Perf=0.7944, seed=42
+Mean performance of ditto rpdp pooled, Perf=0.2053, seed=42
+Finished seed 42
+----------------------------------------
+Running seed 43
+/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/experiments/datasets/fed_fashion_mnist/dirichlet_10_alpha_1
+
+Client 0 label distribution:
+[(0, 3), (1, 20), (3, 1868), (4, 1598), (5, 161), (7, 4), (8, 661), (9, 2)]
+
+Client 1 label distribution:
+[(0, 3094), (1, 2826), (3, 7), (6, 164), (7, 224), (8, 2673), (9, 2)]
+
+Client 2 label distribution:
+[(1, 122), (4, 1), (6, 2929)]
+
+Client 3 label distribution:
+[(0, 119), (1, 26), (4, 122), (6, 8), (7, 609), (8, 71)]
+
+Client 4 label distribution:
+[(2, 289), (3, 1925), (4, 188), (5, 2600), (6, 650), (7, 12), (9, 1)]
+
+Client 5 label distribution:
+[(1, 945), (2, 3636), (3, 120), (4, 963), (5, 719), (6, 193), (8, 5)]
+
+Client 6 label distribution:
+[(0, 441), (4, 219), (5, 425), (8, 520), (9, 4)]
+
+Client 7 label distribution:
+[(0, 320), (1, 7), (3, 2), (4, 848), (5, 1), (7, 2), (9, 147)]
+
+Client 8 label distribution:
+[(2, 15), (5, 48), (6, 7), (9, 3807)]
+
+Client 9 label distribution:
+[(0, 1), (2, 2), (3, 1), (5, 87), (6, 1), (7, 3128), (8, 1), (9, 1)]
+Client 0: avg epsilon = 0.7026
+Client 1: avg epsilon = 1.3576
+Client 2: avg epsilon = 0.1000
+Client 3: avg epsilon = 2.8770
+Client 4: avg epsilon = 0.1100
+Client 5: avg epsilon = 0.1030
+Client 6: avg epsilon = 1.3850
+Client 7: avg epsilon = 1.2026
+Client 8: avg epsilon = 9.8253
+Client 9: avg epsilon = 3.8917
+ We run FedAvg with rPDP (ThreeLevels-0) ...
+max_epsilon :  10.0  noise_multiplier :  9.736328125
+The R-Squared value of the best-fit curve : 0.999749898528281
+learning rate =  0.001
+sample_rate: (min) 0.03, (max) 0.51, expected_batch_size: 432
+sample_rate: (min) 0.03, (max) 0.51, expected_batch_size: 1634
+sample_rate: (min) 0.03, (max) 0.03, expected_batch_size: 76
+sample_rate: (min) 0.03, (max) 0.51, expected_batch_size: 354
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 149
+sample_rate: (min) 0.03, (max) 0.51, expected_batch_size: 168
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 296
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 177
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 3810
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 1602
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [3.055936862776558, 2.888922200264604, 0.07214729257008984, 3.055936862776558, 5.189319301399437, 2.888922200264604, 5.727361884269555, 4.065705449544012, 5.727361884269555, 7.879532215750026]
+Round=14, per client global perf=[0.0944, 0.2159, 0.0, 0.6613, 0.0024, 0.0009, 0.1976, 0.0015, 0.0, 0.9663], mean perf=3316/20405 (0.1625%)
+Round=14, per client personal perf=[0.7221, 0.6617, 0.9498, 0.7059, 0.6495, 0.5603, 0.6988, 0.6535, 0.988, 0.9669], mean perf=14916/20405 (0.7310%)
+Round=14, per client personal pooled=[0.2167, 0.2079, 0.1004, 0.1877, 0.1905, 0.1009, 0.2386, 0.1036, 0.1247, 0.099], mean perf=32036/204050 (0.1570%)
+Mean performance of ditto rpdp global, Perf=0.1284, seed=43
+Mean performance of ditto rpdp personal, Perf=0.7258, seed=43
+Mean performance of ditto rpdp pooled, Perf=0.1561, seed=43
+Finished seed 43
+----------------------------------------
+Running seed 44
+/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/experiments/datasets/fed_fashion_mnist/dirichlet_10_alpha_1
+
+Client 0 label distribution:
+[(0, 3), (1, 20), (3, 1868), (4, 1598), (5, 161), (7, 4), (8, 661), (9, 2)]
+
+Client 1 label distribution:
+[(0, 3094), (1, 2826), (3, 7), (6, 164), (7, 224), (8, 2673), (9, 2)]
+
+Client 2 label distribution:
+[(1, 122), (4, 1), (6, 2929)]
+
+Client 3 label distribution:
+[(0, 119), (1, 26), (4, 122), (6, 8), (7, 609), (8, 71)]
+
+Client 4 label distribution:
+[(2, 289), (3, 1925), (4, 188), (5, 2600), (6, 650), (7, 12), (9, 1)]
+
+Client 5 label distribution:
+[(1, 945), (2, 3636), (3, 120), (4, 963), (5, 719), (6, 193), (8, 5)]
+
+Client 6 label distribution:
+[(0, 441), (4, 219), (5, 425), (8, 520), (9, 4)]
+
+Client 7 label distribution:
+[(0, 320), (1, 7), (3, 2), (4, 848), (5, 1), (7, 2), (9, 147)]
+
+Client 8 label distribution:
+[(2, 15), (5, 48), (6, 7), (9, 3807)]
+
+Client 9 label distribution:
+[(0, 1), (2, 2), (3, 1), (5, 87), (6, 1), (7, 3128), (8, 1), (9, 1)]
+Client 0: avg epsilon = 0.7026
+Client 1: avg epsilon = 1.3576
+Client 2: avg epsilon = 0.1000
+Client 3: avg epsilon = 2.8770
+Client 4: avg epsilon = 0.1100
+Client 5: avg epsilon = 0.1030
+Client 6: avg epsilon = 1.3850
+Client 7: avg epsilon = 1.2026
+Client 8: avg epsilon = 9.8253
+Client 9: avg epsilon = 3.8917
+ We run FedAvg with rPDP (ThreeLevels-0) ...
+max_epsilon :  10.0  noise_multiplier :  9.736328125
+The R-Squared value of the best-fit curve : 0.999749898528281
+learning rate =  0.001
+sample_rate: (min) 0.03, (max) 0.51, expected_batch_size: 432
+sample_rate: (min) 0.03, (max) 0.51, expected_batch_size: 1634
+sample_rate: (min) 0.03, (max) 0.03, expected_batch_size: 76
+sample_rate: (min) 0.03, (max) 0.51, expected_batch_size: 354
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 149
+sample_rate: (min) 0.03, (max) 0.51, expected_batch_size: 168
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 296
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 177
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 3810
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 1602
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [3.055936862776558, 3.5569808503124216, 0.08299634815037049, 1.7512846237718216, 8.417574798620144, 2.4833484928873713, 5.189319301399437, 5.727361884269555, 5.189319301399437, 6.803447050009791]
+Round=14, per client global perf=[0.1367, 0.4791, 0.0045, 0.211, 0.0, 0.0115, 0.4325, 0.1023, 0.0, 0.1644], mean perf=3375/20405 (0.1654%)
+Round=14, per client personal perf=[0.8129, 0.6535, 0.9498, 0.8154, 0.7427, 0.5594, 0.8349, 0.8494, 0.988, 0.9669], mean perf=15650/20405 (0.7670%)
+Round=14, per client personal pooled=[0.2625, 0.2027, 0.1004, 0.2748, 0.2004, 0.1008, 0.3168, 0.2293, 0.1382, 0.1197], mean perf=39701/204050 (0.1946%)
+Mean performance of ditto rpdp global, Perf=0.1934, seed=44
+Mean performance of ditto rpdp personal, Perf=0.7711, seed=44
+Mean performance of ditto rpdp pooled, Perf=0.1933, seed=44
+Finished seed 44
+----------------------------------------
+Running seed 45
+/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/experiments/datasets/fed_fashion_mnist/dirichlet_10_alpha_1
+
+Client 0 label distribution:
+[(0, 3), (1, 20), (3, 1868), (4, 1598), (5, 161), (7, 4), (8, 661), (9, 2)]
+
+Client 1 label distribution:
+[(0, 3094), (1, 2826), (3, 7), (6, 164), (7, 224), (8, 2673), (9, 2)]
+
+Client 2 label distribution:
+[(1, 122), (4, 1), (6, 2929)]
+
+Client 3 label distribution:
+[(0, 119), (1, 26), (4, 122), (6, 8), (7, 609), (8, 71)]
+
+Client 4 label distribution:
+[(2, 289), (3, 1925), (4, 188), (5, 2600), (6, 650), (7, 12), (9, 1)]
+
+Client 5 label distribution:
+[(1, 945), (2, 3636), (3, 120), (4, 963), (5, 719), (6, 193), (8, 5)]
+
+Client 6 label distribution:
+[(0, 441), (4, 219), (5, 425), (8, 520), (9, 4)]
+
+Client 7 label distribution:
+[(0, 320), (1, 7), (3, 2), (4, 848), (5, 1), (7, 2), (9, 147)]
+
+Client 8 label distribution:
+[(2, 15), (5, 48), (6, 7), (9, 3807)]
+
+Client 9 label distribution:
+[(0, 1), (2, 2), (3, 1), (5, 87), (6, 1), (7, 3128), (8, 1), (9, 1)]
+Client 0: avg epsilon = 0.7026
+Client 1: avg epsilon = 1.3576
+Client 2: avg epsilon = 0.1000
+Client 3: avg epsilon = 2.8770
+Client 4: avg epsilon = 0.1100
+Client 5: avg epsilon = 0.1030
+Client 6: avg epsilon = 1.3850
+Client 7: avg epsilon = 1.2026
+Client 8: avg epsilon = 9.8253
+Client 9: avg epsilon = 3.8917
+ We run FedAvg with rPDP (ThreeLevels-0) ...
+max_epsilon :  10.0  noise_multiplier :  9.736328125
+The R-Squared value of the best-fit curve : 0.999749898528281
+learning rate =  0.001
+sample_rate: (min) 0.03, (max) 0.51, expected_batch_size: 432
+sample_rate: (min) 0.03, (max) 0.51, expected_batch_size: 1634
+sample_rate: (min) 0.03, (max) 0.03, expected_batch_size: 76
+sample_rate: (min) 0.03, (max) 0.51, expected_batch_size: 354
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 149
+sample_rate: (min) 0.03, (max) 0.51, expected_batch_size: 168
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 296
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 177
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 3810
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 1602
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [2.888922200264604, 2.888922200264604, 0.07214729257008984, 2.022710925365847, 6.803447050009791, 3.222951525288513, 6.803447050009791, 5.189319301399437, 7.341489632879909, 7.879532215750026]
+Round=14, per client global perf=[0.0004, 0.0022, 0.0, 0.002, 0.0295, 0.2828, 0.0024, 0.0863, 0.986, 0.0006], mean perf=3089/20405 (0.1514%)
+Round=14, per client personal perf=[0.5418, 0.7735, 0.9498, 0.6329, 0.6831, 0.5606, 0.7217, 0.6564, 0.988, 0.9669], mean perf=15117/20405 (0.7408%)
+Round=14, per client personal pooled=[0.1714, 0.245, 0.1004, 0.1052, 0.174, 0.1009, 0.245, 0.101, 0.1268, 0.099], mean perf=29970/204050 (0.1469%)
+Mean performance of ditto rpdp global, Perf=0.1196, seed=45
+Mean performance of ditto rpdp personal, Perf=0.7323, seed=45
+Mean performance of ditto rpdp pooled, Perf=0.1431, seed=45
+Finished seed 45
+----------------------------------------
+Running seed 46
+/Users/shegao_t1/DP_Research/Personal_DP_Personal_FL/rpdp_fl/experiments/datasets/fed_fashion_mnist/dirichlet_10_alpha_1
+
+Client 0 label distribution:
+[(0, 3), (1, 20), (3, 1868), (4, 1598), (5, 161), (7, 4), (8, 661), (9, 2)]
+
+Client 1 label distribution:
+[(0, 3094), (1, 2826), (3, 7), (6, 164), (7, 224), (8, 2673), (9, 2)]
+
+Client 2 label distribution:
+[(1, 122), (4, 1), (6, 2929)]
+
+Client 3 label distribution:
+[(0, 119), (1, 26), (4, 122), (6, 8), (7, 609), (8, 71)]
+
+Client 4 label distribution:
+[(2, 289), (3, 1925), (4, 188), (5, 2600), (6, 650), (7, 12), (9, 1)]
+
+Client 5 label distribution:
+[(1, 945), (2, 3636), (3, 120), (4, 963), (5, 719), (6, 193), (8, 5)]
+
+Client 6 label distribution:
+[(0, 441), (4, 219), (5, 425), (8, 520), (9, 4)]
+
+Client 7 label distribution:
+[(0, 320), (1, 7), (3, 2), (4, 848), (5, 1), (7, 2), (9, 147)]
+
+Client 8 label distribution:
+[(2, 15), (5, 48), (6, 7), (9, 3807)]
+
+Client 9 label distribution:
+[(0, 1), (2, 2), (3, 1), (5, 87), (6, 1), (7, 3128), (8, 1), (9, 1)]
+Client 0: avg epsilon = 0.7026
+Client 1: avg epsilon = 1.3576
+Client 2: avg epsilon = 0.1000
+Client 3: avg epsilon = 2.8770
+Client 4: avg epsilon = 0.1100
+Client 5: avg epsilon = 0.1030
+Client 6: avg epsilon = 1.3850
+Client 7: avg epsilon = 1.2026
+Client 8: avg epsilon = 9.8253
+Client 9: avg epsilon = 3.8917
+ We run FedAvg with rPDP (ThreeLevels-0) ...
+max_epsilon :  10.0  noise_multiplier :  9.736328125
+The R-Squared value of the best-fit curve : 0.999749898528281
+learning rate =  0.001
+sample_rate: (min) 0.03, (max) 0.51, expected_batch_size: 432
+sample_rate: (min) 0.03, (max) 0.51, expected_batch_size: 1634
+sample_rate: (min) 0.03, (max) 0.03, expected_batch_size: 76
+sample_rate: (min) 0.03, (max) 0.51, expected_batch_size: 354
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 149
+sample_rate: (min) 0.03, (max) 0.51, expected_batch_size: 168
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 296
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 177
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 3810
+sample_rate: (min) 0.03, (max) 1.0, expected_batch_size: 1602
+initial privacy cost of all clients:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Round=0
+Round=1
+Round=2
+Round=3
+Round=4
+Round=5
+Round=6
+Round=7
+Round=8
+Round=9
+Round=10
+Round=11
+Round=12
+Round=13
+Round=14
+current privacy cost of all clients:  [2.713667276648133, 3.055936862776558, 0.07214729257008984, 2.888922200264604, 6.265404467139673, 2.888922200264604, 6.803447050009791, 8.417574798620144, 7.879532215750026, 6.803447050009791]
+Round=14, per client global perf=[0.1353, 0.3966, 0.0051, 0.4239, 0.0017, 0.0035, 0.3795, 0.0614, 0.0, 0.4913], mean perf=3545/20405 (0.1737%)
+Round=14, per client personal perf=[0.8174, 0.7794, 0.9485, 0.8682, 0.7427, 0.6762, 0.8229, 0.9108, 0.988, 0.9675], mean perf=16696/20405 (0.8182%)
+Round=14, per client personal pooled=[0.3928, 0.2862, 0.122, 0.3298, 0.2482, 0.2917, 0.3166, 0.2792, 0.1661, 0.1632], mean perf=52968/204050 (0.2596%)
+Mean performance of ditto rpdp global, Perf=0.1678, seed=46
+Mean performance of ditto rpdp personal, Perf=0.8113, seed=46
+Mean performance of ditto rpdp pooled, Perf=0.2435, seed=46
+Finished seed 46
+----------------------------------------
