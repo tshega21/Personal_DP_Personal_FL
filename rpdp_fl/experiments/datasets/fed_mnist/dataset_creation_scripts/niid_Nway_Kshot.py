@@ -4,12 +4,25 @@ import random
 
 from torchvision.datasets import MNIST
 
+# 10 Clients
 #WAY = 5
-WAY = 2
 #SHOT = 1200
-SHOT = 3000
+
+
+#WAY = 2
+#SHOT = 3000
+#_________________________
+# 20 Clients
+WAY = 5
+SHOT = 600
+
+
+#WAY = 2
+#SHOT = 1500
+
+
 NUM_LABELS = 10
-NUM_CLIENTS = 10
+NUM_CLIENTS = 20
 
 dataset_abspath = os.path.abspath(os.path.join(os.getcwd(),"../.."))
 data_path = os.path.join(dataset_abspath, "mnist")

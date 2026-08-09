@@ -5,10 +5,10 @@ from torchvision.datasets import MNIST
 
 np_rng = np.random.default_rng(42)
 
-NUM_CLIENTS = 10
+NUM_CLIENTS = 20
 NUM_LABELS = 10
 BATCH_SIZE = 200
-ALPHA = 0.5  # Dirichlet concentration parameter
+ALPHA = 0.1  # Dirichlet concentration parameter
 
 dataset_abspath = os.path.abspath(os.path.join(os.getcwd(),"../.."))
 data_path = os.path.join(dataset_abspath, "mnist")
