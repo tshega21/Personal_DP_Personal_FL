@@ -91,7 +91,7 @@ python dp_ditto_unidp.py --dataset mnist --gpuid 0  --seed 42 --data_type iid_10
 python ditto_rpdp.py --dataset mnist --gpuid 0  --seed 42 --data_type iid_10 --epsilon 5 --reg_param 1 --num_personal_steps 5
 
 
-python ditto_rpdp_data_dep.py --dataset fashion_mnist --gpuid 0  --seed 42 --data_type niid_10_2 --epsilon 5 --reg_param 0 --num_personal_steps 15
+python ditto_rpdp_data_dep.py --dataset mnist --gpuid 0  --seed 42 --data_type niid_20_2 --epsilon 5 --reg_param 0 --num_personal_steps 15
 
 
 

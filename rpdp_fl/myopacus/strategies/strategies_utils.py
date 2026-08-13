@@ -334,6 +334,82 @@ class _Model:
                 if len(privacy_accountant) and (i == privacy_accountant.history[-1][-1] - 1):
                     i += 1
                     current_batch_size = 0
+    def _per_fed_avg_train(self, num_updates, privacy_accountant = None):
+            """This method trains the model using the dataloader given
+            for num_updates.
+            """
+            #IS NUM UPDATES = NUM STEPS?? NEED TO GO THROUGH PRIVACY ENGINE
+            #YES TENTATIVELY
+            
+            #sets model in training mode and eval mode to false
+            #modifies nn.BatchNorm behaviour --> normalizes inputs
+            self.model = self.model.train()
+            if privacy_accountant is None:
+                train_loader_iter = iter(self._train_dl)
+                i = 0
+                while i < num_updates:
+                    try:
+                        batch = next(train_loader_iter)
+                    except StopIteration:
+                        train_loader_iter = iter(self._train_dl)
+                        batch = next(train_loader_iter)
+                
+                    batch = tuple(t.to(self._device) for t in batch)
+                    if len(batch) == 2: # for other datasets
+                        #forward pass on train data batch
+                        logits = self.model(batch[0])
+                        #calculate loss with true labels in batch
+                        loss = self._loss(logits, batch[1])
+    
+                    elif len(batch) == 4: # for snli dataset
+                        inputs = {'input_ids':    batch[0],
+                                    'attention_mask': batch[1],
+                                    'token_type_ids': batch[2],
+                                    'labels':         batch[3]}
+                        outputs = self.model(**inputs) # output = loss, logits, hidden_states, attentions
+                        loss, logits = outputs[:2]
+                    
+                    #backward pass - computes grads of loss wrt to model parameters
+                    loss.backward()
+                    # updates model with optimizer
+                    self._optimizer.step()
+                    #clears gradients for next batch, accumulated across microbatch
+                    self._optimizer.zero_grad()
+                    i += 1
+    
+            else:
+                train_loader_iter = iter(self._train_dl)
+                current_batch_size, i = 0, 0
+                while i < num_updates:
+                    try:
+                        batch = next(train_loader_iter)
+                    except StopIteration:
+                        train_loader_iter = iter(self._train_dl) # restart dataloader iteration
+                        batch = next(train_loader_iter)
+                    current_batch_size += len(batch[-1]) 
+                    batch = tuple(t.to(self._device) for t in batch)
+                    if len(batch) == 2: # for other datasets
+                        logits = self.model(batch[0])
+                        loss = self._loss(logits, batch[1])
+    
+                    elif len(batch) == 4: # for snli dataset
+                        inputs = {'input_ids':    batch[0],
+                                    'attention_mask': batch[1],
+                                    'token_type_ids': batch[2],
+                                    'labels':         batch[3]}
+                        outputs = self.model(**inputs) # output = loss, logits, hidden_states, attentions
+                        loss, logits = outputs[:2]
+                    loss.backward()
+                    self._optimizer.step()
+                    self._optimizer.zero_grad()
+                    
+                    
+                    # if last history entry has num_steps - 1 = i
+                    # i is only incremented at the end of DP accountant. history
+                 
+                    if len(privacy_accountant) and (i == privacy_accountant.history[-1][-1] - 1):
+                        i += 1
+                        current_batch_size = 0
 
     """              
     def _mr_mtl_local_train(self, personal_model, num_personal_steps, reg_param, privacy_accountant = None):

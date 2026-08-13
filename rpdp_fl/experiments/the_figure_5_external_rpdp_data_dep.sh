@@ -14,14 +14,17 @@
 
 # "iid_10" "niid_10_5" "niid_10_2" "niid_dir_1" "niid_dir_5" 
 
+# "iid_20" "niid_20_5" "niid_20_2" "niid_20_dir_1" "niid_20_dir_5" 
+
+
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$SCRIPT_DIR"
 
-DATASET="fashion_mnist"
+DATASET="mnist"
 GPU=0
 
-DATA_TYPES=("niid_10_5" "niid_dir_1" "niid_dir_5" )
-REG_PARAMS=(0 0.1 1.0 10)
+DATA_TYPES=( "niid_20_2" "niid_20_dir_1" "niid_20_dir_5")
+REG_PARAMS=(0 1.0 10)
 EPS=5
 NUM_STEPS_LIST=(15)
 

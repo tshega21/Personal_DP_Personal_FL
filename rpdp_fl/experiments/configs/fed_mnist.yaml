@@ -6,10 +6,16 @@ dataset_dir:
   niid_dir_1: experiments/datasets/fed_mnist/dirichlet_10_alpha_1
   niid_dir_5: experiments/datasets/fed_mnist/dirichlet_10_alpha_5
   iid_10: experiments/datasets/fed_mnist/iid_10
+  niid_20_2: experiments/datasets/fed_mnist/niid_20_2way_1500shot
+  niid_20_5: experiments/datasets/fed_mnist/niid_20_5way_600shot
+  niid_20_dir_1: experiments/datasets/fed_mnist/dirichlet_20_alpha_1
+  niid_20_dir_5: experiments/datasets/fed_mnist/dirichlet_20_alpha_5
+  iid_20: experiments/datasets/fed_mnist/iid_20
 num_labels: 10
 # for fedavg experiments
 fedavg:
-  num_clients: 10
+  # num_clients: 10
+  num_clients: 20
   num_steps: 50
   num_rounds: 15
   client_rate: 0.5

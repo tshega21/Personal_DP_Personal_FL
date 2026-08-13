@@ -32,6 +32,11 @@ parser.add_argument(
         "niid_dir_1",
         "niid_dir_5",
         "iid_10",
+        "niid_20_5",
+        "niid_20_2",
+        "niid_20_dir_1",
+        "niid_20_dir_5",
+        "iid_20"
     ],
     help="Dataset partition type"
 )
@@ -182,7 +187,8 @@ for ename in epsilons[:1]:
 
     original_indices = [[sorted_labels[idx][2] for idx in range(len(sorted_labels)) if sorted_labels[idx][1]==i] for i in range(NUM_CLIENTS)]
     target_epsilons= [full_epsilons[client_indices[i]] for i in range(NUM_CLIENTS)]
-    target_epsilons =  np.array([[e for _, e in sorted(zip(original_indices[i], target_epsilons[i]))] for i in range(NUM_CLIENTS)])
+    # target_epsilons =  np.array([[e for _, e in sorted(zip(original_indices[i], target_epsilons[i]))] for i in range(NUM_CLIENTS)])
+    target_epsilons = [[e for _, e in sorted(zip(original_indices[i], target_epsilons[i]))] for i in range(NUM_CLIENTS)]
 
     for i, eps in enumerate(target_epsilons):
         print(f"Client {i}: avg epsilon = {np.mean(eps):.4f}")

@@ -3,7 +3,8 @@ import os
 from torchvision.datasets import FashionMNIST
 
 NUM_LABELS = 10
-NUM_CLIENTS = 10
+# NUM_CLIENTS = 10
+NUM_CLIENTS = 20
 
 dataset_abspath = os.path.abspath(os.path.join(os.getcwd(),"../.."))
 data_path = os.path.join(dataset_abspath, "fashion_mnist")
