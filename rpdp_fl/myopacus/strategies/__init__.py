@@ -1,5 +1,6 @@
 from myopacus.strategies.fed_avg import FedAvg
 from myopacus.strategies.ditto import Ditto
+from myopacus.strategies.per_fedavg import Per_FedAvg
 
 
 from myopacus.strategies.fed_avg_orginal import FedAvgOriginal

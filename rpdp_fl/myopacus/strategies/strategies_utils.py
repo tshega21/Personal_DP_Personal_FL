@@ -240,7 +240,6 @@ class _Model:
                     loss, logits = outputs[:2]
                     
                 # DITTO PERSONALIZATION
-                #print("before reg", loss)
 
                 l_2_reg = 0
                 for param_personal, param_global in zip(self.model.parameters(),global_params):
@@ -334,7 +333,7 @@ class _Model:
                 if len(privacy_accountant) and (i == privacy_accountant.history[-1][-1] - 1):
                     i += 1
                     current_batch_size = 0
-    def _per_fed_avg_train(self, num_updates, privacy_accountant = None):
+    def _per_fed_avg_train(self, num_updates, global_params, meta_learning_rate, privacy_accountant = None):
             """This method trains the model using the dataloader given
             for num_updates.
             """
@@ -344,23 +343,31 @@ class _Model:
             #sets model in training mode and eval mode to false
             #modifies nn.BatchNorm behaviour --> normalizes inputs
             self.model = self.model.train()
+            
+            # zero'd out params in shape of personal model
+            meta_grads = {name: torch.zeros_like(param) for name, param in global_params}
+            data_batches = {}
             if privacy_accountant is None:
                 train_loader_iter = iter(self._train_dl)
                 i = 0
                 while i < num_updates:
-                    try:
-                        batch = next(train_loader_iter)
-                    except StopIteration:
-                        train_loader_iter = iter(self._train_dl)
-                        batch = next(train_loader_iter)
-                
-                    batch = tuple(t.to(self._device) for t in batch)
+                    for j in range (2):
+                        try:
+                            batch = next(train_loader_iter)
+                        except StopIteration:
+                            train_loader_iter = iter(self._train_dl)
+                            batch = next(train_loader_iter)
+                            
+                        batch = tuple(t.to(self._device) for t in batch)
+                        data_batches[j] = batch
+                        
                     if len(batch) == 2: # for other datasets
                         #forward pass on train data batch
-                        logits = self.model(batch[0])
+                        logits_1 = self.model(data_batches[0][0])
                         #calculate loss with true labels in batch
-                        loss = self._loss(logits, batch[1])
+                        loss_1 = self._loss(logits_1, data_batches[0][1])
     
+                    """
                     elif len(batch) == 4: # for snli dataset
                         inputs = {'input_ids':    batch[0],
                                     'attention_mask': batch[1],
@@ -368,12 +375,28 @@ class _Model:
                                     'labels':         batch[3]}
                         outputs = self.model(**inputs) # output = loss, logits, hidden_states, attentions
                         loss, logits = outputs[:2]
+                    """
                     
                     #backward pass - computes grads of loss wrt to model parameters
-                    loss.backward()
+                    loss_1.backward()
                     # updates model with optimizer
+                    #compute w_i
                     self._optimizer.step()
+                    
+                    
+                    
+                    if len(batch) == 2: # for other datasets
+                                            #forward pass on train data batch
+                                            logits_2 = self.model(data_batches[1][0])
+                                            #calculate loss with true labels in batch
+                                            loss_2 = self._loss(logits_2, data_batches[1][1])
+                    
+                    
+                    grads_2 = torch.autograd.grad(loss_2, self.model.parameters(),retain_graph=False,create_graph=False)
+                    
+                    
                     #clears gradients for next batch, accumulated across microbatch
+                    # DO I ZERO GRAD PERSONAL MODEL AFTER THIS
                     self._optimizer.zero_grad()
                     i += 1
     

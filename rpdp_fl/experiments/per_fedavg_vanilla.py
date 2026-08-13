@@ -10,7 +10,7 @@ import warnings
 warnings.simplefilter("ignore")
 
 from configs.config_utils import read_config, get_config_file_path
-from myopacus.strategies import Ditto
+from myopacus.strategies import Per_FedAvg
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--dataset", type=str, default='heart_disease')
@@ -29,6 +29,8 @@ parser.add_argument(
 )
 parser.add_argument("--reg_param", type=float, default=0.1, 
                     help="regularization parameter")
+parser.add_argument("--meta_learning_rate", type=float, default=0.1, 
+                    help="meta learning rate")
 parser.add_argument("--num_personal_steps", type=int, default=5, 
                     help="random seed")
 parser.add_argument("--seed", type=int, default=42, 
@@ -59,7 +61,7 @@ project_abspath = os.path.abspath(os.path.join(os.getcwd(),".."))
 dict = read_config(get_config_file_path(dataset_name=f"fed_{args.dataset}", debug=False))
 # save_dir
 
-opt_method = "ditto"
+opt_method = "per_fedavg"
 # Base save directory from config "results folder"
 base_save_dir = os.path.join(project_abspath, dict["save_dir"])
 
@@ -71,7 +73,7 @@ os.makedirs(save_dir, exist_ok=True)
 
 
 
-save_file = os.path.join(save_dir, f"{args.data_type}_results_ditto_vanilla_{args.dataset}.csv")
+save_file = os.path.join(save_dir, f"{args.data_type}_results_per_fedavg_vanilla_{args.dataset}.csv")
 
 
 
@@ -154,8 +156,8 @@ for key in ["global", "personal", "pooled"]:
     perf = perf_data[key]
     mean_perf = np.mean(perf[-3:])
     
-    print(f"All rounds performance of vanilla ditto {key}, Perf={perf}")
-    print(f"Mean performance of vanilla ditto {key}, Perf={mean_perf:.4f}")
+    print(f"All rounds performance of vanilla per fedavg {key}, Perf={perf}")
+    print(f"Mean performance of vanilla per fedavg {key}, Perf={mean_perf:.4f}")
 
     
     record = [{ 

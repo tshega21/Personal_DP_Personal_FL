@@ -101,8 +101,8 @@ def evaluate_model_on_tests(
         return results_dict
     
 
-class Ditto:
-    """Federated Averaging Strategy class.
+class Per_FedAvg:
+    """Personalized Federated Averaging Strategy class.
 
     The Federated Averaging strategy is the most simple centralized FL strategy.
     Each client first trains his version of a global model locally on its data,
@@ -161,6 +161,7 @@ class Ditto:
         num_steps: int,
         num_rounds: int,
         num_personal_steps: int,
+        meta_learning_rate: float = 0.1, # meta learning rate
         reg_param: float = 1, #regularization parameter
         privacy_engine: PrivacyEngine = None,
         privacy_engine_ditto: PrivacyEngine = None,
@@ -176,6 +177,7 @@ class Ditto:
         self.privacy_engine = privacy_engine
         self.privacy_engine_ditto = privacy_engine_ditto
         self.reg_param = reg_param
+        self.meta_learning_rate = meta_learning_rate
         self.client_rate = client_rate
         self.num_rounds = num_rounds
         self.num_steps = num_steps
@@ -270,21 +272,21 @@ class Ditto:
                                 privacy_accountant=self.privacy_engine.accountant.accountants[_model.client_id])
 
 
-    def _personal_optimization(self, personal_model: _Model, global_params: List[torch.Tensor]):
+    def _meta_optimization(self, personal_model: _Model, global_params: List[torch.Tensor]):
         """Carry out the local optimization step."""
         if self.privacy_engine_ditto is None:
-            personal_model._ditto_local_train(global_params,\
+            personal_model._per_fed_avg_train(global_params,\
                                             self.num_personal_steps, self.reg_param)
             
         # privacy engine exists that is not idp (multiple accountants)
         elif not (self.privacy_engine_ditto.accountant.mechanism() == "idp"):
-            personal_model._ditto_local_train(global_params, \
+            personal_model._per_fed_avg_train(global_params, \
                                 self.num_personal_steps, self.reg_param, \
                                 privacy_accountant=self.privacy_engine_ditto.accountant)
             
         # every client has their own privacy accountant
         else:
-            personal_model._ditto_local_train(global_params, \
+            personal_model._per_fed_avg_train(global_params, \
                                self.num_personal_steps, self.reg_param,\
                                privacy_accountant=self.privacy_engine_ditto.accountant.accountants[personal_model.client_id] )
     """
@@ -360,7 +362,7 @@ class Ditto:
             _local_next_state = local_model._get_current_params()
 
 
-            self._personal_optimization(personal_model, global_snapshot)            
+            self._meta_optimization(personal_model, global_snapshot)            
             
 
             
